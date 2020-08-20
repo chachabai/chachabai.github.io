@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-08-20T12:41:20.910Z</updated>
+  <updated>2020-08-20T11:57:22.395Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,21 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>templateOfC</title>
-    <link href="https://dna049.com/templateOfC/"/>
-    <id>https://dna049.com/templateOfC/</id>
-    <published>2020-08-20T12:41:20.910Z</published>
-    <updated>2020-08-20T12:41:20.910Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>butterfly 主题</title>
@@ -118,9 +103,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -166,9 +151,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
     
@@ -195,9 +180,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
@@ -264,11 +249,11 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -290,9 +275,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -313,9 +298,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
@@ -389,9 +374,9 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -433,9 +418,9 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
   </entry>
   
@@ -478,6 +463,25 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>悄悄话</title>
+    <link href="https://dna049.com/scrite/"/>
+    <id>https://dna049.com/scrite/</id>
+    <published>2020-04-05T14:18:59.000Z</published>
+    <updated>2020-08-20T12:57:03.560Z</updated>
+    
+    <summary type="html">
+    
+      Here&#39;s something encrypted, password is required to continue reading.
+    
+    </summary>
+    
+    
+    
+      <category term="Life" scheme="https://dna049.com/tags/Life/"/>
     
   </entry>
   
