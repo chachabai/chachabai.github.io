@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+
+\author{15110840001 Chenzhipeng}
+\title{Some problems on First Class}
+
+\begin{document}
+
+\maketitle
+I only considered some of the problems. I spent about 25 hours to consider these problems and learn \TeX. I choose to use English because It is real fussy to use Chinese in \TeX.
+
+\section{Complex Symmetric Matrix}
+
+\textbf{Define:} $A$ is called \textit{Complex Symmetirc Matrix}\newline
+if it satisfies that 
+\[ A=A^T \] 
+where $A$ is a complex matrix.\newline
+
+None of property did I find in \textit{Complex Symmetirc Matrix}, since $A$ isn't a \textit{normal matrix}($A^*A=AA^*$)in general,so it can't be diaged by a unitary matrix.\newline
+Here is a example: 
+\[ A = \left( \begin{array}{ccc}
+0 & i  & 0 \\
+i & 1  & 2i \\
+0 & 2i & 2 \end{array} \right) \]
+We can MATLAB to illustate that $A$ is can't be diaged by a unitary matrix, and their eigenvalues are all complex.\newline
+
+Since no good property found in complex symmetric matrix, we usually consider a Hermite matrix instead of complex symmetric matrix. What's more, The $A'$ in MATLAB donates the conjugate transpose of $A$ instead of transpose of $ A $. Real symmetric matrix which we usually considered, essentially, is a kind of Hermite matrix.
+
+
+\section{A Matrix Factorization}
+
+We all know that any complex square matrix $A$,there are matrix $B$ and $C$ such that 
+\[ A=B+C \]
+where $B$ is Herimite matrix,and $C$ is a anti-Hermite matrix. This factorization of $A$ is unique. \newline
+\textit{Prove}: suggest
+\[ A = B + C \]
+holds,then we have
+\[ A^* = B^* + C^* = B - C \]
+so
+\[ B = \frac{A + A^*}{2} ,\,\,\, C = \frac{A - A^*}{2} \]
+hence $B$ and $C$ are unique,and we can check that $B$ is Herimite matrix and $C$ is anti-Herimite matrix.
+
+Similarly,we have 
+\[ A = B + iC \]
+where
+\[ B = \frac{A + A^*}{2} ,\,\,\, C = \frac{A - A^*}{2i} \]
+both $B$ and $C$ are unique Hermite matrix.
+
+\subsection*{Matrix Inequality}
+
+\[ |Re(\lambda(A))| \leq \rho(\frac{A+A^*}{2}) \leq \sigma_{max}(A) \] 
+\[ |Im(\lambda(A))| \leq \rho(\frac{A-A^*}{2i}) \leq \sigma_{max}(A) \] 
+here $\lambda(A)$ represent any eigenvalue of square matrix A.
+
+In order to prove the inequality briefly,we introduce a matrix norm $w(A)$ defined as follows,
+\[ w(A) \equiv \max_{\|x\|_2 = 1} |x^*Ax| = w(A^*) \]
+we can easy prove that $w(A)$ is a matrix norm and unitary invariant.
+
+We have following inequality (it's well known and easy to prove)
+\[ \rho(A) \leq w(A) \leq \sigma_{\max}(A) \]
+Equation holds for any \textit{normal} matrix $A$.
+
+Now, I'm going to prove our matrix inequality.\newline
+Let $\lambda_0$ be a eigenvalue of $A$, and $x_0$ be it's correspond eigenvector, we may wish to set that $\|x_0\|_2 = 1$. Thus we have
+\[ A x_0 = \lambda_0 x_0 \]
+so 
+\[ x_0^* \, A x_0 = x_0^* \lambda_0 x_0 = \lambda_0 x_0^* x_0 = \lambda_0 \]
+hence we have,
+\[ x_0^* \, A^* x_0 = \overline{\lambda_0} \]
+thus,
+\[ x_0^* \frac{A^* + A}{2} x_0 = \frac{\lambda_0 + \overline{\lambda_0}}{2} = Re{\lambda_0} \]
+Note that $\frac{A^* + A}{2}$ is a hermite matrix, hence we have 
+\[ |Re{\lambda_0}|= |x_0^* \frac{A^* + A}{2} x_0| \leq w(\frac{A^* + A}{2}) = \rho(\frac{A^* + A}{2}) \]
+On the other hand,we have 
+\[ \rho(\frac{A^* + A}{2}) = w(\frac{A^* + A}{2}) \leq w(\frac{A^*}{2}) + w(\frac{A}{2}) = w(A) \leq \sigma(A) \]
+Similarly,we can prove the second inequation.
+
+\textbf{The form of the inequation is real beautiful}, They say that any eigenvalue of a square matrix $A$ can be bounded by two Hermite matrix $B,C$ where $A=B+iC$,and $B,C$ is unique determined by $A$.
+
+\textbf{I explain my inequation in another way}\newline
+$\forall A \in \mathrm{C}^{n \times n}$ there is a unique Hermite matrix $B$ and anti-Hermite matrix $C$ such that $A=B+iC$. In addition,the real part of $\lambda(A)$ is bounded by $\rho(B)$ and the image part of $\lambda(A)$ is bounded by $\rho(C)$.
+
+\subsection*{Real Matrix Inequality}
+
+Since real symmetric matrix is a kind of Hermite matrix and $\rho(iC)=\rho(C)$, we can get the real form of our inequation as follows,
+\[ |Re(\lambda(A))| \leq \rho(\frac{A+A^T}{2}) \leq \sigma_{max}(A) \] 
+\[ |Im(\lambda(A))| \leq \rho(\frac{A-A^T}{2}) \leq \sigma_{max}(A) \] 
+
+Inparticular,if $A$ is a non-negetive matrix.Using theorem of Perron-Frobenius about non-negtive matrix, we know that $A$ has a non-negtive eigenvalue and equal to $\rho(A)$, so using our inequality we have,
+\[\rho(A) \leq \rho(\frac{A+A^T}{2}) \leq \sigma_{max}(A) \]
+holds for any non-negtive square matrix.
+
+Thanks to my teacher Mr.Wei who let me consider the relationship between $A = B + C$. I had no thought about this at first, but I soon found these interesting inequation when I choose some rand matrix to do experiment in MATLAB.I don't know whether the result had been found before, anyway, I'm so happy to discover and prove the inequation independently.
+
+
+\section{Minimax Principle}
+
+(Minimax principle) If $\phi \colon \mathrm{C}^n \to \mathrm{R}$ is continue in $\mathrm{C}^n$, then
+\[ s_k \equiv \max_{\begin{matrix} S \subseteq \mathrm{C}^n \\ \dim S = k \end{matrix} } \min_{\begin{matrix} x \in S \\ \|x\|=1 \end{matrix} } \phi(x) \leq
+\min_{\begin{matrix} T \subseteq \mathrm{C}^n \\ \dim T = n-k+1 \end{matrix}} \max_{\begin{matrix} x \in T \\ \|x\|=1 \end{matrix} } \phi(x) \equiv t_k \]
+\textit{Prove}:
+There exists a $S_0 \subseteq \mathrm{C}^n$ such that
+\[ s_k = \min_{\begin{matrix} x \in S_0 \\ \|x\|=1 \end{matrix} } \phi(x) \]
+$ \forall T \subseteq \mathrm{C}^n,\dim{T}=n-k+1 \text{ ,we have} $
+\[ \dim{T \cap S_0} = \dim{T}+\dim{S_0}-\dim{T \cup S_0} \geq 1\]
+thus we have $x_0 \in T \cap S_0 , \|x_0\| = 1 $.
+\[ \max_{\begin{matrix} x \in T \\ \|x\|=1 \end{matrix} } \phi(x) \geq \phi(x_0) \geq \min_{\begin{matrix} x \in S_0 \\ \|x\|=1 \end{matrix} } \phi(x) = s_k \] 
+hence
+\[ \max_{\begin{matrix} S \subseteq \mathrm{C}^n \\ \dim S = k \end{matrix} } \min_{\begin{matrix} x \in S \\ \|x\|=1 \end{matrix} } \phi(x) \leq
+\min_{\begin{matrix} T \subseteq \mathrm{C}^n \\ \dim T = n-k+1 \end{matrix}} \max_{\begin{matrix} x \in T \\ \|x\|=1 \end{matrix} } \phi(x) \] 
+I try to prove that the opposite side is also true, but fail since the opposite side doesn't hold in general. 
+
+if $A$ is Hermitian,then $\phi(x)=x^*Ax \in \mathrm{R}$,we choose $\|\cdot\|=\|\cdot\|_2$.Then we have $s_k = t_k = \lambda_k $. This is called \textbf{Courant-Fischer's minimax theorem}.
+
+Since $\forall x \in \mathrm{C}^n, \phi(x)=x^*Ax \in \mathrm{R} \iff A $ is a Hermite matrix.\newline
+In order to generalize \textit{Courant-Fischer's minimax theorem},we choose vector \textit{norm} to be \[ \|\cdot\|=\|\cdot\|_2 \] and from now on, define $\phi(x)$ and as follows,
+\[ \phi(x)=|x^*Ax| \]
+
+If we arrange eigenvalues in absolute descending order.I'm going to prove that for any \textit{normal} matrix $A$
+\[ t_k \equiv
+\min_{\begin{matrix} T \subseteq \mathrm{C}^n \\ \dim T = n-k+1 \end{matrix}} \max_{\begin{matrix} x \in T \\ \|x\|_2=1 \end{matrix} } |x^*Ax| = | \lambda_k | \]
+Since $A$ is a \textit{normal} matrix,by Schur's theorem,we know
+$A$ can be diaged by unitary matrix,that is to say, $A$ have orthogonal eigenvectors $x_1,\cdots\,x_n$ coincide with it's eigenvalues $\lambda_1,\ldots\,\lambda_n$.\newline
+Let $ T_0 = \sigma(x_k,\ldots\,x_n)$,then $\forall x\in T_0$
+\[x=\langle x,x_k \rangle x_k+,\cdots\,+ \langle x,x_n \rangle x_n \]
+hence
+\[ |x^*Ax| = |\sum_{i=k}^n |\langle x,x_i \rangle |^2x_i| \leq \sum_{i=k}^n |\langle x,\lambda_i \rangle |^2|\lambda_i| \leq |\lambda_k| \sum_{i=k}^n |\langle x,x_i \rangle |^2 = |\lambda_k| \|x\|_2 \]
+so
+\[ t_k \leq \max_{\begin{matrix} x \in T_0 \\ \|x\|_2=1 \end{matrix} } |x^*Ax| \leq |\lambda_k| \]
+end my prove.
+
+I'm now give an example shows that $ t_k < |\lambda_k| $ maybe true for some $k$ even the matrix is Hermitian.
+
+Example 1.\newline
+\[ A=\left( \begin{matrix} 
+1 & 0 \\
+0 & -1 \end{matrix} \right) \]
+$|\lambda_1|=|\lambda_2|=1 $ but $t_1=1,t_2=0$,thus $ t_2 < |\lambda_2| $
+
+Since $A$ is anti-Hermitian $\iff iA$ is Hermitian.
+we can get coincide \textit{Courant-Fischer’s minimax theorem} for anti-Hermite matrix.
+\[ i\lambda_i (A) = \max_{\begin{matrix} S \subseteq \mathrm{C}^n \\ \dim S = k \end{matrix} } \min_{\begin{matrix} x \in S \\ \|x\|_2=1 \end{matrix} } x^*iAx =
+\min_{\begin{matrix} T \subseteq \mathrm{C}^n \\ \dim T = n-k+1 \end{matrix}} \max_{\begin{matrix} x \in T \\ \|x\|_2=1 \end{matrix} } x^*iAx \]
+for any anti-Hermite matrix $A$.
+
+
+\section{Some Prove in Our Books}
+\subsection{Brief prove of some theorem}
+\begin{enumerate}
+\item
+\textbf{Courant-Fischer's minimax theorem} can be proved using dimension formula and spectral theory.
+\item
+\textbf{Cauchy's interlace theorem} can be proved using \textbf{Courant-Fischer's minimax theorem}. so is \textbf{Weyl's theory}.
+\end{enumerate}
+
+\subsection{Shorter prove of some theorem}
+The prove of following result in our book(Page 5-6)is real fussy.
+\begin{enumerate}
+\item
+For any matrix $A$
+\[ \|A\|_2 = \sigma_{\max}(A) \] 
+\textit{Prove}:
+\[ \|A\|_2 = \max_{\|x\|_2 = 1} \|Ax\|_2 = \max_{\|x\|_2 = 1} [x^*(A^*A)x]^\frac{1}{2} = [\rho(A^*A)]^\frac{1}{2} = \sigma_{\max}(A) \]
+\item
+For any \textit{unitary} matrices $Q$ and $Z$
+\[ \|A\|_F= \|QAZ\|_F \]
+\textit{Prove}:
+\[ \|QAZ\|_F = [tr(Z^*A^*Q^*QAZ)]^\frac{1}{2}= [tr(Z^*A^*AZ)]^\frac{1}{2}=[tr(ZZ^*A^*A)]^\frac{1}{2}=tr(A^*A)]^\frac{1}{2}= \|A\|_F \]
+\end{enumerate}
+
+
+\section{Condition Number}
+
+Let $\|\cdot\|$ be any matrix norm and A be an invertible matrix.The condition number of A is define as follows,
+\[ \kappa(A) \equiv \|A\| \cdot \|A^{-1}\| \]
+but,what is the condition number for singular matrix ?
+Actually,we can replace $A^{-1}$ to \textit{Moore-Penrose's generalized inverse} $A^{+}$ which satisfied following equations
+\[ AXA = A \]
+\[ XAX = X \]
+\[ (AX)^* = AX \]
+\[ (XA)^* = XA \]
+we can prove that $X$ is exists and unique,we mark it as $A^{+}$.\newline
+In fact,if $A=U \Delta V$ is a SVD of A,where $\Delta = \text{diag}(\sigma_1,\sigma_2,\ldots,\sigma_k,0,\ldots,0)$ with $\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_k >0 $.\newline 
+Then we  have 
+\[ A^{+}=V^* \hat{\Delta} U^* \]
+where $\hat{\Delta} = \text{diag}(\frac{1}{\sigma_1},\frac{1}{\sigma_2},\ldots,\frac{1}{\sigma_k},0,\ldots,0)$.
+In addition,if we have a norm for any matrix(not need to be square),then using \textit{Moore-Penrose's generalized inverse} we can define condition number for any matrix as follows,
+\[ \kappa(A) \equiv \|A\| \cdot \|A^{+}\| \]
+In particular,if A is a square matrix and $\|\cdot\| \equiv \|\cdot\|_2 $.then  
+\[ \kappa(A) = \|A\|_2 \cdot \|A^{+}\|_2 = \frac{\sigma_1(A)}{\sigma_k(A)} \]
+here $\sigma_1(A)$ is greatest singular value of $A$, and $\sigma_k(A)$ is the leastest non-zero singular value of $A$.
+
+
+\section{I can't find such Norm}
+$\forall \epsilon>0,\exists \|\cdot\|_*$ satisfies that
+\[ \|A\|_* < \rho(A) + \epsilon \]
+hold for all matrix $A \in \mathrm{C}^{n \times n}$.
+
+If such proposition is ture,I choose a $\epsilon_0>0$ then $\exists \|\cdot\|_*$ satisfies that
+\[ \|A\|_* < \rho(A) + \epsilon \]
+hold for all matrix $A \in \mathrm{C}^{n \times n}$.\newline
+There must be a matrix $A_1$ in $\mathrm{C}^{n \times n}$ such that 
+\[ \rho(A_1) < \|A_1\|_* < \|A_1\|_* + \epsilon_0 \]
+so 
+\[ \|A_1\|_* = \rho(A_1) + \epsilon_1 \]
+where $0<\epsilon_1<\epsilon_0$
+so 
+\[ \|\frac{2\epsilon_0}{\epsilon_1}A_1\|_* = \frac{2\epsilon_0}{\epsilon_1}\|A_1\|_* = \frac{2\epsilon_0}{\epsilon_1}\rho(A_1) +\frac{2\epsilon_0}{\epsilon_1}\epsilon_1 = \rho(\frac{2\epsilon_0}{\epsilon_1}A_1) + 2\epsilon_0 \]
+contradicte the condition.
+
+The following proposition may be right,but I couldn't prove it.
+$\forall A \in \mathrm{C}^{n \times n}, \forall \epsilon>0,\exists \|\cdot\|_*$ satisfies that
+\[ \|A\|_* < \rho(A) + \epsilon \]
+
+\end{document}

@@ -1,0 +1,237 @@
+%!TEX program = xelatex
+%!TEX TS-program = xelatex
+\documentclass[12pt]{article}
+\usepackage{color}
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage{graphicx} 
+\usepackage{amsmath}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+
+%--------------------中文设置--------------------
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} %设置中文字体
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+\newfontfamily{\H}{Heiti SC} %设定新的字体快捷命令
+\newfontfamily{\E}{Weibei SC} %设定新的字体快捷命令
+%--------------------中文设置--------------------
+
+\title{ACM-ICPC 管理员配置 for ECUST}
+\author{DNA049 10110057 math112 ECUST}
+
+\begin{document}
+\maketitle
+
+
+\section{说点啥呢}
+
+作为华理数学系本科生，有幸于大二结束的那个暑假加入母校ACM集训队。开始了我大学一段美好的计算机算法学习时光。2015年5月，母校举办ACM-ICPC上海邀请赛，2015年11月举办区域赛。作为ACMer有幸能负责整个比赛的软件系统配置，确实是一件幸福的事。特此记录
+
+
+
+\section{Ubuntu的下载和安装}
+
+Ubuntu镜像来自\href{http://mirrors.163.com}{网易开源镜像}。
+
+下好Server版和Desktop版之后可以在windows下使用win32diskimager制作U盘启动盘（最后可用大白菜还原U盘）
+
+Server版安装的一些细节：
+\begin{enumerate}
+\item
+安装时插上网线，通过学校内网的DHCP初始化网络配置
+\item
+安装时会有选择安装包，其中Java一定要安装，其它几个随意
+\item
+安装版本最好与最近一年ACM-ICPC World Final一致
+\item
+为了比赛安全，服务器内存最少16G
+\item
+最好找一台服务器通过rsync做备份(虽然完全没必要)
+\item
+服务器任何时候都不需要连接外网的
+\end{enumerate}
+
+Desktop版正常安装即可。唯一需要注意的是，它需要发射到200多台机器上，所以样机一定要考虑周全再发射，因为发射是相当费时的。发射完之后调试好，所有机器没问题了之后马上备份，练习赛结束之后还原。
+
+Desktop版安装的几点注意事项
+\begin{enumerate}
+\item
+因为发射实际上是整个磁盘copy，所以可能有些不该copy的也copy了，一个直接的问题是被copy的机器会多出一个eth1。解决方法是在样机上执行 \\
+rm /etc/udev/rules.d/70-persistent-net.rules
+\item
+发射之后如果不用dhcp来配置所有队伍机器的IP的话，每台机器设置IP还是很麻烦的。所以这是可以在样机当前目录～下建一个setip.sh。内容如下：
+\begin{verbatim}
+#!/bin/bash
+netfile='/etc/network/interfaces'
+echo $netfile
+echo 'auto eth0' >> $netfile
+echo 'iface eth0 inet static' >> $netfile
+echo 'address 10.0.0.'$1 >> $netfile
+echo 'netmask 255.255.255.0' >> $netfile
+echo 'gateway 10.0.0.1' >> $netfile
+\end{verbatim}
+然后每台样机执行./setip id重启即可。
+\item
+一般比赛要禁掉U盘并开启防火墙的 \\
+sudo mv /lib/modules/3.16.0-38-generic/kernel/drivers/usb/storage/usb-storage.ko /lib/modules/3.16.0-38-generic/kernel/drivers/usb/storage/usb-storage.ko.bak \\
+sudo ufw enable \\
+执行上述命令重启即可（原理是改驱动名，U盘驱动就无效了）。当然3.16.0-38-generic
+可能需要相应修改（与uname -r下显示的一致即可)。
+裁判方机器和管理员机器发射完后再自己设置回来即可。
+\end{enumerate}
+上述注意事项都是在发射前操作的。
+
+\subsection*{IP分配}
+比赛现场搭环境之前，肯定需要约定好服务器IP，打印服务器IP，榜单IP。以及所有客户端的IP的设置规则(拉网线，建局域网需要学校计算中心的帮助)。一般说来，队伍在220以内，所以C类网络就够用来。子网掩码可以设置成255.255.255.0。服务器留2个IP，以一个为主，打印服务器和榜单服务器类似。管理员和裁判的IP也可以预留，虽然不太必要，队伍端利用剩余的IP。例如：
+可以让前20个ip分给服务器和裁判机器。当然裁判机器可以看作与队伍机器等价。这样前10个ip留出来就够了。比如10.0.0.10给管理员（最好把榜单和管理员放在一台机器上，这样做很方便，并且不要让管理员判题，防止崩溃）。9给服务器，8给备用服务器，7给打印机，至少要有两台机器配有打印机程序，只要用一台就可以了。2-6留用（1是网关，255是广播）。11－254可以分给客户端和裁判（如果是手动设置IP11-20就分给裁判比较好）。
+
+sudo vim /etc/network/interfaces \\
+auto lo \\
+iface lo inet loopback \\
+auto eth0 \\
+iface eth0 inet static \\
+address 10.0.0.240 \\
+netmask 255.255.255.0 \\
+gateway 10.0.0.1
+
+设置完后 sudo ifdown eth0后再sudo ifup eth0
+
+如果某些机器IP出了问题，需要修改IP，设置前可以先ping一下防止IP冲突。
+
+\section{PC2的下载和配置}
+
+PC2软件（管理员手册在doc目录下）可在\href{http://www.ecs.csus.edu/pc2/}{Programming Contest Control System}中找到PC2 system下载。作为管理员，必须将手册的每一个细节都搞清楚试清楚。
+
+
+\subsection{服务器配置PC2}
+在校内服务器连外网是相当麻烦的，其实也是没有必要的。我们将pc2-*.tar.gz下载到U盘，用U盘导入到服务器就行了。
+\begin{enumerate}
+\item
+插入U盘前后调用cat /proc/partitions来查看此U盘的所在路径，一般是在sdb1(sdc1等)。
+\item
+调用mount -t -vfat /dev/sdb1 /mnt 将U盘挂载至/mnt目录下。
+特别注意的是/mnt目录是不允许解压的，即使使用root权限也不行。
+\item
+cp /mnt/pc2*.tar.gz ~/ 将pc2复制到当前用户的目录下。\\
+tar -zxvf pc2*.tar.gz  解压pc2
+\item
+为了方便起见，可以讲pc2的pc2v9.ini文件copy到其bin目录中(客户端也是这样)
+\item
+{\color{green}{特别注意:}} pc2sever文件一定要修改，最后一句中-Xms64M -Xmx1600M，为了使用更好的服务器性能，可以将Xms设置成服务器内存的1/16，Xmx设置成1/2。
+\item
+{\color{green}{运行:}} ./pc2server --nogui --login site1 --password site1 --contestpassword ecust520 打开pc2服务器。其中site1 site1是服务器默认的账号密码，ecust520是用户设置的密码，主要用于服务器关闭再次进入需要的密码以及，压缩包解压的密码。
+\end{enumerate}
+至此服务器的配置就完成了。
+
+
+\subsection{客户端配置PC2}
+
+下载或U盘导入PC2系统。
+
+PC2的客户端有：1.管理员pc2admin，2.裁判pc2judge，3.队伍pc2team，4.榜单pc2board。
+
+进入pc2将pc2v9.ini文件修改中localhost改成服务器的IP。
+
+进入bin目录运行./pc2admin 进入登陆界面（请保证服务器开启）。账号密码默认为 root administrator1,比赛前务必修改root密码。这时你就可以产生账号了，例如10个judge，200个team，2个scoreboard。此后team和judge就可以登陆了。默认账号密码是一致的，例如team1，team1。其它的登录类似。
+
+队伍端桌面有三个程序（快捷方式）：打印，榜，pc2
+这些程序都可以用c来写：
+\begin{verbatim}
+system("cd PC2HOME/bin&&PC2HOME/bin/pc2team");//pc2
+
+system("firefox 10.0.0.7:8080"); // 打印
+
+system("firefox 10.0.0.10:8060");//榜
+\end{verbatim}
+{\color{green}{特别:}}：解压pc2后一定要查看bin目录是否都是可运行的权限,否则进入 \\
+cd [pc2]/bin  \\
+chmod +777 * \\
+来改变权限，如果在发射之后才发现就麻烦了。
+
+
+
+\section{客户端软件安装}
+再次说明，我们不可能每台机器都装一次Ubuntu，一般学校机房都是有装万欣恢复卡的。版本不同操作也不同，如何用万欣恢复卡装系统，以及如何系统备份，如何系统还原，如何发射，这些可以问校内计算中心的老师（一般F10设置各种东西包括发射和系统备份，Ctrl＋r是还原）。安装好Ubuntu之后，默认是带有gcc和python的。连上外网后。\\
+sudo apt-get update 更新源 \\
+sudo apt-get upgrade 更新依赖库 \\
+sudo apt-get intall g++ 安装g++ \\
+openjdk-7-jdk,vim-gtk安装类似.
+
+安装完编译器之后就开始安装编译器了，Codeblocks，Eclipse可以直接在ubuntu软件中心中安装，Eclipse版本会很低（不过无所谓，安装时务必记得勾选cdt就行了，因为部分队伍喜欢用Eclipse写c，c++）。
+ubuntu软件中心安装的netbeans安装会导致无法使用，可以在官网安装稳定且最新的版本，安装十分简单，但是最好前面加sudo命令安装，这样安装的目录就不是在home目录下，而是在/etc等目录下。默认安装netbeans是不会在桌面显示图标的。可以到/usr/shar/applications中找到netbeans图标。将其拖到桌面或者启动栏。在pc2官网下载与服务器版本一致的pc2。注意netbeans可以不装。\\	
+客户端的软件安装就告一段落来。
+
+
+
+\section{最后的配置}
+请确保在此之前，服务器和客户端的安装都以成功。现在选择2台客户端作为打印服务器，榜单服务器。下面分别介绍其安装
+
+
+\subsection{打印机安装}
+购买3-5台hp打印机,Ubuntu是默认有hp打印程序。将打印机全部插上，在打印服务器（可以用dpkg -l hplip查看打印程序内核，用hp-setup安装打印机驱动。
+安装好之后在设置打印池，打印机设置add中有两个选项，其中一个就是clas，设置一下就行了，并将这个class设为默认打印机。利用lp filename看是否离线打印。
+
+下面介绍一下网络打印。ccpc提供了该网络打印的\href{http://board.acmicpc.cn/soft.html}{程序}。使用安装如下：
+\begin{enumerate}
+\item
+Install CUPS and Mongo DB \\
+sudo apt-get install cups-pdf \\
+sudo apt-get install mongodb
+\item
+在/tmp目录下新建个目录叫srcfiles
+\item
+unzip prserv1.6.zip
+\item
+sudo MONGODB=WARMUP prserv-1.6c/bin/prserv -Dhttp.port=8080
+\item
+访问 http://[prservip]:8080  \\
+Default admin passowrd is ccpc2015cn \\
+account and password file format: \\
+team1[TAB]password[TAB]seatno 
+\end{enumerate}
+
+
+\subsection{榜单设置}
+榜单，在pc2/bin/html下会默认生成一些榜(但无index.html),为此我们可以将pc2-*/samps/web/xsl/wf.index.xsl删掉带png的一行并且更名为index.html放置在pc2-*/data/xsl目录下就可以使用index.html作为队伍们可以看到的榜。在/pc2/bin/html文件下调用python -m SimpleHTTPServer 8060（大于6000且与客户端所配置的一致就行，随意），其它地方用火狐输入榜单ip:8060就可以看到榜了。
+
+比赛时两个榜单，一个是公共榜单scoreboard1（最后一小时关闭）在打印服务器上开启，一个是用于送气球的榜单scoreboard2可放在管理员机器上（节约机器），需要在管理员端进行配置。
+
+\subsection{气球设置}
+生成气球的话pc2是在admin这边设置的，notification这边选择site和scoreboard客户端号，配置题目对应颜色和loopprint路径即可,具体如下
+假设scoreboard1用于榜单，scoreboard2用于气球生成，那么在管理员端的notification这边设置选择scoreboard2。print device设置为/home/username/ballonprinter(其实随便什么都行)。然后在装打印机的机器上，开启打印服务。localhost里面在此设置一下class。设置好之后，将pc2提供的loopprint文件进行修改。进入localhost:631为printer设置class。路径设置成/home/username/ballonprinter（与上面一致）。执行./loopprint即可。可以点击测试打印查看。
+
+
+\subsection{管理员比赛配置}
+pc2服务器开启后，pc2admin就应该：
+\begin{enumerate}
+\item
+设置账号（先产生帐号，后导入文件设置帐号密码）
+\item
+设置语言（C，C++，java）和相应参数
+\item
+添加题目,special judge可看文档和例子题目对应的气球以及气球设置，比赛名设置，裁判可以看到的信息设置，默认回复设置，auto judge设置，开始比赛。
+PC2的使用还有很多细节都可以在官方文档中查到，作为管理员有责任和义务通读掌握。
+\item
+推荐使用稳定版本pc2-9.2.3。
+\item
+管理员不要判题。练习赛是很多队伍都会提交各种坑爹代码，所以管理员不要判题，正常情况也是没有时间判题的。
+\item
+最好不要将客户端机器的密码告诉参赛人员。
+\item
+如果出现pc2无法连接或闪退情况，第一件事是检测队伍段机器网线接口是否正常。如果出现pc2死掉，ctrl+alt+T进入终端killall java即可。如果出现死机，可以选择ctrl+alt+F1后ctrl+alt+del快速重启机器，对队伍没有太大的影响。
+\item
+所有服务器必须用千兆网线，客户端和裁判端可以用百兆网线。另外榜单服务器，最好使用nginx配置，因为SimpleHTTPServer是单线程，可能会被某台机器卡死。
+
+\end{enumerate}
+
+
+\section{写在最后}
+
+比赛开始后，基本管理员和裁判前10分钟会比较闲，之后就开始忙碌了，注意每一个autojudge至少要保证一个没崩溃，不然就有些麻烦了，记得1小时前封榜（只关一个榜，管气球的榜不要关了。）。最后的10分钟超级忙碌，不过也不要慌乱，判题有延迟也无所谓的，只要不判错就ok。判完题后可以开启关闭的榜，进行更新榜单。至于滚榜这一点，我们没有做，实际上ccpc也做了这个程序，只是当时木有拿来。（很感谢周专家的帮忙和几位学长，老师和志愿者的帮助）。
+
+希望该文不仅仅作为纪录，还能给你提供一些微薄的帮助。
+
+
+\end{document}

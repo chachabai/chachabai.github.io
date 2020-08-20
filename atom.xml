@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dna049</title>
+  <icon>https://dna049.com/icon.png</icon>
+  <subtitle>love math love zly</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://dna049.com/"/>
+  <updated>2020-08-20T10:47:37.466Z</updated>
+  <id>https://dna049.com/</id>
+  
+  <author>
+    <name>dna049</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>butterfly 主题</title>
+    <link href="https://dna049.com/butterfly/"/>
+    <id>https://dna049.com/butterfly/</id>
+    <published>2020-08-20T09:19:44.000Z</published>
+    <updated>2020-08-20T10:47:37.466Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;再次换主题，一个月前（2020/7/20）看到了 Butterfly 主题，十分心动，知道前两天才开始换从 next 换到 Butterfly。Butterfly 主题真的太美了，现在看唯一的缺点就是不支持 &lt;code&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Theme" scheme="https://dna049.com/tags/Theme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从数列极限到点集拓扑学(from array limit to point set topology)</title>
+    <link href="https://dna049.com/pointSetTopology/"/>
+    <id>https://dna049.com/pointSetTopology/</id>
+    <published>2020-07-29T02:07:20.000Z</published>
+    <updated>2020-08-20T08:53:57.276Z</updated>
+    
+    <summary type="html">
+    
+      Here&#39;s something encrypted, password is required to continue reading.
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dna049 的C++模板</title>
+    <link href="https://dna049.com/templateOfCpp/"/>
+    <id>https://dna049.com/templateOfCpp/</id>
+    <published>2020-07-17T17:25:02.000Z</published>
+    <updated>2020-08-20T08:53:57.306Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此处包含C++代码规范，C++模板，C++ STL的使用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译器比你想象中的聪明，所以写让&lt;strong&gt;编译器好优化&lt;/strong&gt;并且&lt;strong&gt;易读&lt;/strong&gt;的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;Vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用&lt;code&gt;Vector&lt;/code&gt;结合&lt;code&gt;C++17&lt;/code&gt;可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为0，局部变量要加&lt;code&gt;= {}&lt;/code&gt;才会初始化为0&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快速数论变换</title>
+    <link href="https://dna049.com/nft/"/>
+    <id>https://dna049.com/nft/</id>
+    <published>2020-06-01T21:45:09.000Z</published>
+    <updated>2020-08-20T08:53:57.266Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;快速Fourier变换，被称为20世纪最伟大的十大算法之一。所以很多软件都有对应的FFT，例如Python的 &lt;code&gt;scipy.fftpack&lt;/code&gt;中就有关于FFT的包。所以个人写FFT就没有那么必要了。但是NFT的包一般都没多少，而且会写NFT必然就会写FFT了。大约在5年前就写过NFT的C++代码，现在一看依然不记得蝶式映射到底是咋想的，&lt;del&gt;所以想独立思考出整个过程&lt;/del&gt;(失败）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;发现NFT一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为$3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
+&lt;p&gt;选择$n$个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底$p_1,\cdots, p_n$ 使得$p_1\cdots p_n$大于ans的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把ans搞出来了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>$x^2 \equiv a \mod n$ 何时有解</title>
+    <link href="https://dna049.com/quadraticModEquation/"/>
+    <id>https://dna049.com/quadraticModEquation/</id>
+    <published>2020-05-28T13:21:52.000Z</published>
+    <updated>2020-08-20T08:53:57.296Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;显然，我们只需考虑$0 \leq a &amp;lt; n $ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作&lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和Gauss互反律&quot;&gt;二次剩余和Gauss互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Codeforces汇总</title>
+    <link href="https://dna049.com/codeforces/"/>
+    <id>https://dna049.com/codeforces/</id>
+    <published>2020-05-22T09:32:11.000Z</published>
+    <updated>2020-08-20T08:53:57.056Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近感觉自己又行了。就很想重新开始打 &lt;a href=&quot;https://codeforces.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Codeforces&lt;/a&gt;，这里罗列一下从 2020/05/16 开始提交的(不是特别水的）AC代码。想有生之年上一次黄，先定个小目标上个1900！菜鸡 dna049 加油！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;优雅的代码极大的避免了低级错误&lt;/strong&gt;，边界处理至少占三分之一的工作量！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要急着写代码，不要急着写代码，不要急着写代码，重要的事情说三遍！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划</title>
+    <link href="https://dna049.com/dynamicProgramming/"/>
+    <id>https://dna049.com/dynamicProgramming/</id>
+    <published>2020-05-21T15:36:13.000Z</published>
+    <updated>2020-08-20T08:53:57.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;动态规划是研究一大类问题（特别是最值问题）的一种思路。从大二刚开始 ICPC 竞赛的时候第一次遇到，到大三学运筹学系统的了解，再到后来一直成为解决问题的一种思考方式。可以说动态规划真的是万金油的方法。&lt;/p&gt;
+&lt;p&gt;计算机领域（或者说博弈论）中的动态规划，就如同数学中的数学归纳法，一样重要。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;运用动态规划的能力，就好比武侠小说中的内功，是随着时间慢慢累积的。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
+    
+      <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grossman 常数</title>
+    <link href="https://dna049.com/grossmanConstant/"/>
+    <id>https://dna049.com/grossmanConstant/</id>
+    <published>2020-05-16T14:17:57.000Z</published>
+    <updated>2020-08-20T08:53:57.156Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+A_{n+2} = \frac{A_n}{1+A_{n+1}}\\
+A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得$\lbrace A_n \rbrace$收敛。这个 $x_0 = 0.7373383…$  被称为Grossman 常数。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mathworld.wolfram.com/GrossmansConstant.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Grossman 常数&lt;/a&gt; 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 &lt;a href=&quot;1987_Article_MathematicalEntertainments.pdf&quot;&gt;Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. &lt;em&gt;Math. Intel.&lt;/em&gt; &lt;strong&gt;9&lt;/strong&gt;, 40-43, 1987.&lt;/a&gt; 折腾终于下下来了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;吐槽一下 Wolfram 百科提供的所有Reference链接没法访问。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vim 和 Linux Shell</title>
+    <link href="https://dna049.com/vimWithLinuxShell/"/>
+    <id>https://dna049.com/vimWithLinuxShell/</id>
+    <published>2020-05-13T05:20:20.000Z</published>
+    <updated>2020-08-20T08:53:57.306Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Windows10+WSL(Ubuntu20.04LTS) 用的越来越多，就想系统的入门一下： vim 和 Linux Shell&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中国剩余定理</title>
+    <link href="https://dna049.com/chineseRemainTheorem/"/>
+    <id>https://dna049.com/chineseRemainTheorem/</id>
+    <published>2020-05-05T15:45:40.000Z</published>
+    <updated>2020-08-20T08:53:57.056Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;仅以此博文，感谢知乎好友 &lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;中国剩余定理也称孙子定理，是中国古代求解一次同余方程组的方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上流开源免费数学软件之SageMath</title>
+    <link href="https://dna049.com/sageMath/"/>
+    <id>https://dna049.com/sageMath/</id>
+    <published>2020-05-04T03:13:26.000Z</published>
+    <updated>2020-08-20T08:53:57.296Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sage的是“ 圣”的意思，所以&lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt;懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代MATLAB（20G)，Mathematics(5G）等商业软件。 而SageMath安装包仅1G不到，而且语言基于Python，就很快乐。而且你还能免费注册账号用基于Jupyter Notebook的&lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;感谢知乎好友&lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; 的推荐&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 调用 C/C++ 之 ctypes</title>
+    <link href="https://dna049.com/ctypes/"/>
+    <id>https://dna049.com/ctypes/</id>
+    <published>2020-05-03T03:47:05.000Z</published>
+    <updated>2020-08-20T08:53:57.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;放弃 Julia 之后，我开始想要用 Python + ctypes 满足自己的需求。由于 Windows 搞这个很麻烦，就在 Ubuntu 上搞了，不过我是在 WSL 上做的哈哈。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Make" scheme="https://dna049.com/tags/Make/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Julia 入门到放弃</title>
+    <link href="https://dna049.com/juliaLearning/"/>
+    <id>https://dna049.com/juliaLearning/</id>
+    <published>2020-05-02T01:58:57.000Z</published>
+    <updated>2020-08-20T08:53:57.186Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C/C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了&lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有C快吗？没有！有Python方便吗？没有！安装个包就跟求它借100w一样（国内源安装不了）&lt;/p&gt;
+&lt;p&gt;免费是取代MATLAB，Mathematics的理由吗？不是，收费是一件好事！！！&lt;/p&gt;
+&lt;p&gt;学术界的高性能计算的人员，它们学校至少买了MATLAB或者Mathematics好吧！&lt;/p&gt;
+&lt;p&gt;非上述人员，真的需要高性能计算吗？？？再说了真的性能高吗？向量化计算竟然还没有循环快，我吐了好吧&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Julia" scheme="https://dna049.com/tags/Julia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>$GL_n(\mathbb{Z}_m)$ 的阶数</title>
+    <link href="https://dna049.com/orderOfGLnZm/"/>
+    <id>https://dna049.com/orderOfGLnZm/</id>
+    <published>2020-04-25T00:50:58.000Z</published>
+    <updated>2020-08-20T08:53:57.276Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是$|GL_n(\mathbb{Z}_m)|$  却是一个相对复杂的问题，它本质上是在考虑有限Abel群的自同构群的阶数问题。它又跟递推数列模$m$的周期密切相关。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不超过$x$的素数之和</title>
+    <link href="https://dna049.com/primePowSum/"/>
+    <id>https://dna049.com/primePowSum/</id>
+    <published>2020-04-17T06:47:43.000Z</published>
+    <updated>2020-08-20T08:53:57.276Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们可以在不求出&lt;strong&gt;不超过$x$的所有素数&lt;/strong&gt;的情况下，求出最终结果。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
+&lt;li&gt;$f_0(x) = \pi(x)$ 这个在 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;$f_1(x) = \sum_{p \leq x} p$ 这是我们关心的结果&lt;/li&gt;
+&lt;li&gt;对于一般的$k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>特殊数列</title>
+    <link href="https://dna049.com/SpecialNumberSequences/"/>
+    <id>https://dna049.com/SpecialNumberSequences/</id>
+    <published>2020-04-12T06:47:16.000Z</published>
+    <updated>2020-08-20T08:53:57.012Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在知乎上看到一个有趣的问题: &lt;a href=&quot;https://www.zhihu.com/question/383254359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何证明这个数列无界？&lt;/a&gt; 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。&lt;/p&gt;
+&lt;p&gt;证明：当$x$是无理数时，$f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor} $  无界&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x- \lfloor x \rfloor&amp;lt;1 $ 表示 $x$ 的小数部分&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>点灯问题之高斯消元法</title>
+    <link href="https://dna049.com/gaussianElimination/"/>
+    <id>https://dna049.com/gaussianElimination/</id>
+    <published>2020-04-11T02:45:49.000Z</published>
+    <updated>2020-08-20T08:53:57.156Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在知乎的 &lt;a href=&quot;https://zhuanlan.zhihu.com/skymath&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&amp;amp;算法&lt;/a&gt;专栏里看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/53646257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点灯游戏的$O(n^3)$算法&lt;/a&gt;，觉得挺有意思，特此记录，并且补充代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Python将图片换成字符</title>
+    <link href="https://dna049.com/imageToChar/"/>
+    <id>https://dna049.com/imageToChar/</id>
+    <published>2020-04-07T12:26:27.000Z</published>
+    <updated>2020-08-20T08:53:57.176Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我知乎上看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/126669800&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么用 Python 把图片转化为字符？&lt;/a&gt; 挺有趣的，自己也尝试了一下，当然他也是参考&lt;a href=&quot;https://github.com/RameshAditya/asciify/blob/master/asciify.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;原理就是：将图片（位图）转化成灰度图，即 0~255的数值，然后将这些数值换成特殊符号（自定义）&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第$n$个素数</title>
+    <link href="https://dna049.com/nthPrimeNumber/"/>
+    <id>https://dna049.com/nthPrimeNumber/</id>
+    <published>2020-04-06T03:04:19.000Z</published>
+    <updated>2020-08-20T08:53:57.276Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很早之前写过 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x) 的计算$&quot;&gt;$\pi(x) 的计算$&lt;/a&gt; ，在知乎上用它回答问题的时候，发现我怎么没有写 &lt;strong&gt;求第$n$ 个素数。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; 做法依赖于 $\pi(x)$ 的计算，$\pi(x)$ 表示不超过$x$ 的素数个数&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>悄悄话</title>
+    <link href="https://dna049.com/scrite/"/>
+    <id>https://dna049.com/scrite/</id>
+    <published>2020-04-05T14:18:59.000Z</published>
+    <updated>2020-08-20T08:53:57.296Z</updated>
+    
+    <summary type="html">
+    
+      Here&#39;s something encrypted, password is required to continue reading.
+    
+    </summary>
+    
+    
+    
+      <category term="Life" scheme="https://dna049.com/tags/Life/"/>
+    
+  </entry>
+  
+</feed>

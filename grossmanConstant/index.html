@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grossman 常数 | dna049</title><meta name="description" content="考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：  A_{n+2} &#x3D; \frac{A_n}{1+A_{n+1}}\\ A_0&#x3D;1,\; A_1&#x3D;x可以证明，有且仅有一个 $x&#x3D;x_0$ 使得$\lbrace A_n \rbrace$收敛。这个 $x_0 &#x3D; 0.7373383…$  被称为Grossman 常数。 Grossman 常数 在 Wolfram 百科里面"><meta name="keywords" content="Math"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/grossmanConstant/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Grossman 常数"><meta property="og:url" content="https://dna049.com/grossmanConstant/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：  A_{n+2} &#x3D; \frac{A_n}{1+A_{n+1}}\\ A_0&#x3D;1,\; A_1&#x3D;x可以证明，有且仅有一个 $x&#x3D;x_0$ 使得$\lbrace A_n \rbrace$收敛。这个 $x_0 &#x3D; 0.7373383…$  被称为Grossman 常数。 Grossman 常数 在 Wolfram 百科里面"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2020-05-16T14:17:57.000Z"><meta property="article:modified_time" content="2020-08-20T08:53:57.156Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  last_push_date: '',
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-20 16:53:57'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="dna049" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lim-A-n-x-0-当且仅当-A-n-x-关于-n-单调递减"><span class="toc-number">1.</span> <span class="toc-text">$\lim A_n(x) &#x3D;0$  当且仅当 $A_n(x)$ 关于$n$ 单调递减</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最多只有一个-x-使得-lim-A-n-x-0"><span class="toc-number">2.</span> <span class="toc-text">最多只有一个 $x$ 使得 $\lim A_n(x) &#x3D;0$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dini-定理"><span class="toc-number">3.</span> <span class="toc-text">Dini 定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存在唯一的-x-使得-lim-A-n-x-0"><span class="toc-number">4.</span> <span class="toc-text">存在唯一的 $x$ 使得 $\lim A_{n}(x) &#x3D; 0$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grossman-常数的推广"><span class="toc-number">5.</span> <span class="toc-text">Grossman 常数的推广</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grossman-常数的数值计算"><span class="toc-number">6.</span> <span class="toc-text">Grossman 常数的数值计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后来的故事"><span class="toc-number">7.</span> <span class="toc-text">后来的故事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#明显的推论：若-x-n-frac-x-n-2-1-f-x-n-1-，其中-f-0-infty-to-0-infty-为单调递增的连续函数，-则，对任意-x-geq-0-，存在唯一的-frac-x-0-1-f-x-0-leq-x-1-leq-x-0"><span class="toc-number">7.1.</span> <span class="toc-text">明显的推论：若 $x_n &#x3D; \frac{x_{n-2}}{1+f(x_{n-1})}$，其中 $f: (0,\infty) \to (0, \infty)$为单调递增的连续函数， 则，对任意 $x \geq 0$，存在唯一的 $\frac{x_0}{1+f(x_0)} \leq x_1 \leq x_0$</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dna049</a></span><span class="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Grossman 常数</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-16T14:17:57.000Z" title="发表于 2020-05-16 22:17:57">2020-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T08:53:57.156Z" title="更新于 2020-08-20 16:53:57">2020-08-20</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：</p>
+<script type="math/tex; mode=display">
+A_{n+2} = \frac{A_n}{1+A_{n+1}}\\
+A_0=1,\; A_1=x</script><p>可以证明，有且仅有一个 $x=x_0$ 使得$\lbrace A_n \rbrace$收敛。这个 $x_0 = 0.7373383…$  被称为Grossman 常数。</p>
+<p><a href="https://mathworld.wolfram.com/GrossmansConstant.html" target="_blank" rel="noopener">Grossman 常数</a> 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 <a href="1987_Article_MathematicalEntertainments.pdf">Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. <em>Math. Intel.</em> <strong>9</strong>, 40-43, 1987.</a> 折腾终于下下来了。</p>
+<blockquote>
+<p>吐槽一下 Wolfram 百科提供的所有Reference链接没法访问。。。</p>
+</blockquote>
+<a id="more"></a>
+<p>为了方便起见，我们记：</p>
+<script type="math/tex; mode=display">
+A_0(x) = \alpha >0 ,\; A_1(x) = x \\
+A_{n+2}(x) = \frac{A_{n}(x)}{1+A_{n+1}(x)}</script><p>首先罗列一些显而易见的结果：</p>
+<ul>
+<li><p>如果 $x&gt;0$，则 $A_n(x)&gt;0$，且 $A_{2n}(0)=\alpha,A_{2n+1}(0)=0$</p>
+</li>
+<li><p>$a(x) = \lim A_{2n}(x),\; b(x)= \lim A_{2n+1}(x)$ 均存在，且 $a(x)b(x)=0$</p>
+</li>
+<li><p>如果 $\lim A_n(x)$ 存在，则为 $0$</p>
+</li>
+<li><p>如果 $x \leq 0$，则 $\lim A_n(x)$ 不存在 （反证，奇偶项写出两个递推关系分析）</p>
+<p><strong>以下仅考虑 $x\geq 0$ 的情形</strong></p>
+</li>
+<li><p>$A_{2n}(x)$ 是连续单调递减的函数 （数学归纳）</p>
+</li>
+<li><p>$A_{2n+1}(x)$ 是连续单调递增的函数 （数学归纳）</p>
+</li>
+<li><p>$a(x) \geq 0$ 单调递减，$b(x) \geq 0$ 单调递增</p>
+</li>
+<li><p>$A_{2n}(x),\;A_{2n+1}(x)$ 都关于 $n$ 单调递减</p>
+</li>
+<li><p>重要公式（累和相加）： </p>
+<script type="math/tex; mode=display">
+\alpha - A_{2N+2}(x) =  \sum_{n=0} ^N A_{2n+1}(x) A_{2n+2}(x) \\
+x - A_{2N+3}(x) = \sum_{n=0} ^N A_{2n+3}(x) A_{2n+2}(x)</script></li>
+</ul>
+<blockquote>
+<p>以上罗列的结果按顺序证明是容易的！</p>
+</blockquote>
+<h2 id="lim-A-n-x-0-当且仅当-A-n-x-关于-n-单调递减"><a href="#lim-A-n-x-0-当且仅当-A-n-x-关于-n-单调递减" class="headerlink" title="$\lim A_n(x) =0$  当且仅当 $A_n(x)$ 关于$n$ 单调递减"></a>$\lim A_n(x) =0$  当且仅当 $A_n(x)$ 关于$n$ 单调递减</h2><p><strong>Proof</strong>： 若 $\lim A_n(x) =0$ ，再由上面的 “重要公式” 易知：</p>
+<script type="math/tex; mode=display">
+A_{2N+2}(x) =  \sum_{n=N+1} ^ \infty A_{2n+1}(x) A_{2n+2}(x) \\
+A_{2N+3}(x) = \sum_{n=N+1} ^ \infty A_{2n+3}(x) A_{2n+2}(x)</script><p>所以 $A_{2N+2}&gt;A_{2N+3}$ ，紧接着 $A_{2N+1} = \sum_{n=N+1} ^ \infty A_{2n+1}A_{2n} &gt; A_{2N+2}$，所以 $A_n(x)$ 关于 $n$ 单调递减</p>
+<blockquote>
+<p>这也提供了一个求解 Grossman 常数的数值依据。</p>
+</blockquote>
+<h2 id="最多只有一个-x-使得-lim-A-n-x-0"><a href="#最多只有一个-x-使得-lim-A-n-x-0" class="headerlink" title="最多只有一个 $x$ 使得 $\lim A_n(x) =0$"></a>最多只有一个 $x$ 使得 $\lim A_n(x) =0$</h2><p><strong>Proof</strong>：若 $\lim A_n(y) = \lim A_n(x) = 0,\; y&gt;x$，则：</p>
+<script type="math/tex; mode=display">
+\frac{A_{n+2}(y)}{A_{n+2}(x)} = \frac{A_{n}(y)}{A_{n}(x)} \frac{1+A_{n+1}(x)}{1+A_{n+1}(y)}</script><p>从而</p>
+<script type="math/tex; mode=display">
+\frac{A_{2n+2}(y)}{A_{2n+2}(x)} = \prod _{k=1} ^n \frac{1+A_{2k+1}(y)}{1+A_{2k+1}(x)} \\
+\frac{A_{2n+1}(y)}{A_{2n+1}(x)} = \frac{y}{x} \prod _{k=1} ^n \frac{1+A_{2k}(y)}{1+A_{2k}(x)}</script><p>从而  $\frac{A_{2n+2}(y)}{A_{2n+2}(x)}$ 单调递减收敛于 $L_1 \leq 1$，$\frac{A_{2n+1}(y)}{A_{2n+1}(x)}$  单调递增收敛于 $L_2&gt;1$。所以</p>
+<script type="math/tex; mode=display">
+\lim \frac{A_{2n+2}(y)}{A_{2n+2}(x)} \frac{A_{2n+1}(x)}{A_{2n+1}(y)} = \frac{L_1}{L_2} <1</script><p>但是另一方面</p>
+<script type="math/tex; mode=display">
+1 \geq \frac{A_{2n+2}(y)}{A_{2n+1}(y)} \geq \frac{A_{2n+3}(y)}{A_{2n+1}(y)} = \frac{1}{1+A_{2n+2}(y)} \to 1 \\
+1 \leq \frac{A_{2n+1}(x)}{A_{2n+2}(x)} \geq \frac{A_{2n+1}(x)}{A_{2n+3}(x)} = 1+A_{2n+2}(x) \to 1</script><p>矛盾！</p>
+<h2 id="Dini-定理"><a href="#Dini-定理" class="headerlink" title="Dini 定理"></a>Dini 定理</h2><p>为了证明的连贯性，先给出下面需要引用 <strong>Dini定理</strong>（证明见陈纪修《数学分析》下册定理10.2.7）</p>
+<p>设函数序列 $\{S_n(x)\}$ 在闭区间 $[a,b]$ 上（点态）收敛于 $S(x)$，且满足：</p>
+<ul>
+<li>$S_n(x)$ 在 $[a,b]$ 上连续</li>
+<li>$\{S_n(x)\}$ 关于 $n$ 单调</li>
+</ul>
+<p>则 $\{S_n(x)\}$ 在 $[a,b]$ 一致收敛于 $S(x)$ 当且仅当 $S(x)$ 在 $[a,b]$ 上连续 （”$\Rightarrow$”易证，”$\Leftarrow$” 称作 Dini <strong>定理</strong>）</p>
+<h2 id="存在唯一的-x-使得-lim-A-n-x-0"><a href="#存在唯一的-x-使得-lim-A-n-x-0" class="headerlink" title="存在唯一的 $x$ 使得 $\lim A_{n}(x) = 0$"></a>存在唯一的 $x$ 使得 $\lim A_{n}(x) = 0$</h2><p>由“重要公式”知：</p>
+<script type="math/tex; mode=display">
+\alpha - a(x) = \sum_{n=0} ^{\infty} A_{2n+1}(x) A_{2n+2}(x) \\
+x - b(x) = \sum_{n=0} ^{\infty} A_{2n+3}(x) A_{2n+2}(x) \\</script><p>从而 $\alpha -  a(x) &gt; x - b(x)$，所以 $b(\alpha) &gt; 0$，从而 $a(\alpha) = 0$，并且 $a(0) = \alpha,\; b(0) = 0$。令</p>
+<script type="math/tex; mode=display">
+x_0 = \sup \{ x \in [0, \alpha] \mid a(x) >0 \} \\
+x_1 = \inf \{ x \in [0,\alpha] \mid b(x)>0 \}</script><p>显然 $x_0 \leq x_1$， 若 $x_0 &lt; x_1$，则 对任意 $x_0 &lt; x &lt; x_1$ 有，$a(x) = b(x) = 0$，矛盾于收敛于 0 的 $x$ 最多只有一个，从而 $x_0 = x_1$。</p>
+<p>注意到 $\frac{1}{1+\alpha} A_{2n+1}(x) A_{2n+2}(x) \leq  A_{2n+3}(x) A_{2n+2}(x) \leq  A_{2n+1}(x) A_{2n+2}(x)$，所以 $a(x),b(x)$ 在闭区间 $D$ 上有共同的一致收敛性，从而由 <strong>Dini定理</strong> 知，$a(x)$ 在闭区间 $D$ 上连续当且仅当 $b(x)$ 在闭区间 $D$ 上连续。</p>
+<blockquote>
+<p>我们想要证明 $a(x),b(x) $ 在区间 $[0,\alpha]$ 上连续，从而 $a(x_0) = b(x_0) = 0$。</p>
+</blockquote>
+<p>当 $x &lt; x_0$ 时，$b(x)=0$，当 $x &gt; x_0$ 时，$a(x)=0$，所以 $a(x),b(x)$ 在 $[0,x_0) \cup (x_0, \alpha]$ 上连续。</p>
+<p>若 $a(x_0) &gt;0$，则 $b(x_0) = 0$，记 $b_0 = \lim_{x \to x_0 ^{+}} b(x)$，若 $b_0&gt;0$， 则</p>
+<script type="math/tex; mode=display">
+A_{2k+2}(x) = \prod_{j=1} ^k \frac{1}{1+A_{2j-1}(x)} < \frac{1}{(1+b_0)^k} \quad x \in (x_0, \alpha ] \\
+A_{2k+1}(x) = \prod_{j=1}^k \frac{1}{1+A_{2j}(x)} < \frac{1}{(1+a(x_0))^k} \quad x \in [0,x_0]</script><p>从而 $a(x),b(x)$ 在 $[0,\alpha]$ 上一致收敛，矛盾，从而 $b_0 = 0$，从而 $b(x)$ 连续，从而 $a(x)$ 连续，矛盾，从而 $a(x_0) = 0$。同理 $b(x_0) = 0$。所以 $\lim A_n(x) = 0$。</p>
+<h2 id="Grossman-常数的推广"><a href="#Grossman-常数的推广" class="headerlink" title="Grossman 常数的推广"></a>Grossman 常数的推广</h2><p>由上述过程可知，本质上，对每个给定的 $A_0 \geq 0$, 都存在唯一的 $0 \leq A_1 \leq A_0$ ，使得 $\lim A_n$ 存在（且等于 0）。我们不妨 $A_1 = F(A_0)$，其中 $F: [0, +\infty] \to [0, \infty]$，满足 $F(0)= 0$，若$x&gt;0$ 则，$0&lt;F(x)&lt;x$ ，假设 $A_0 = \alpha$，则 $A_1 = F(\alpha),\;A_2 = \frac{\alpha}{1+F(\alpha)}$，而 $(A_0, A_1) = (F(\alpha),\frac{\alpha}{1+F(\alpha)})$ 必然能使得 $\lim A_n = 0$， 所以 $F(F(\alpha)) = \frac{\alpha}{1+F(\alpha)}$，写成</p>
+<script type="math/tex; mode=display">
+x = (1+F(x))F(F(x))</script><p>由于 $a(x)$ 关于 $\alpha$ 连续，所以 $x_0(\alpha) = \sup \{ x \in [0, \alpha] \mid a(x) &gt;0 \}$ 关于 $\alpha$ 连续，即上述 $F(x)$ 连续，若可导​，则 $F(x)$ 单调递增。</p>
+<blockquote>
+<p>上述形式最早由 Gabor Nyerges 给出（由于找不到文献，所以就自己推导了一下）</p>
+</blockquote>
+<p>按照上述观点，从而 Grossman 常数就是 $F(1)$。</p>
+<h2 id="Grossman-常数的数值计算"><a href="#Grossman-常数的数值计算" class="headerlink" title="Grossman 常数的数值计算"></a>Grossman 常数的数值计算</h2><p>由于 $\lim A_n(x) =0$  当且仅当 $A_n(x)$ 关于 $n$ 单调递减 。令 $n_0$ 是最小的 $n$ 使得 $A_{n+1}(x) &gt; A_n(x)$，则</p>
+<script type="math/tex; mode=display">
+A_{n+3}(x) - A_{n+2}(x) = \frac{(A_{n+1} - A_n) + (A_{n+1}^2 - A_n A_{n+2}) }{(1+A_{n+2})(1+A_{n-1})} > 0</script><p>从而对任意 $k \geq 0$，$A_{n+2k+1} &gt; A_{n+2k}$。</p>
+<p>若 $n$ 为偶数，则 $b(x)&gt;a(x)$，从而 $b(x) &gt; 0 = a(x)$，即 $x&gt;x_0$。反之，若 $n$ 为奇数，则 $x &lt; x_0$。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bigercheck</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> m,<span class="keyword">int</span> <span class="built_in">step</span> = <span class="number">10000</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> ans=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(--<span class="built_in">step</span>&amp;&amp;x&gt;m)&#123;</span><br><span class="line">        ans = !ans;</span><br><span class="line">        <span class="keyword">double</span> t=x/(<span class="number">1</span>+m);</span><br><span class="line">        x = m;</span><br><span class="line">        m = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x&gt;m||ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">F</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> eps = <span class="number">1e-12</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> l =x/(<span class="number">1</span>+x),r = x;</span><br><span class="line">    <span class="keyword">while</span>(r-l&gt;eps)&#123;</span><br><span class="line">        <span class="keyword">double</span> m = (l+r)*<span class="number">0.5</span>;</span><br><span class="line">        <span class="keyword">if</span>(bigercheck(x,m))  r=m;</span><br><span class="line">        <span class="keyword">else</span> l=m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;x)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;F(x)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;F(F(x))*(F(x)+<span class="number">1</span>)-x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>高精度太耗时了！参考 <a href="https://oeis.org/A085835" target="_blank" rel="noopener">A085835</a> </p>
+</blockquote>
+<h2 id="后来的故事"><a href="#后来的故事" class="headerlink" title="后来的故事"></a>后来的故事</h2><p>Gabor Nyerges 在 2014年的论文 《On the convergence of $x_n = f(x_{n–2}, x_{n–1})$ when $f (x, y) &lt; x$. Advances in Difference Equations2014, 2014:8》中证明，只需 $f: (0,\infty)^2 \to (0,\infty)$，$f (x, y) &lt; x$，且$f(x,y)$ 关于 $y$ 递减，则对任意 $x_0 &gt; 0$，存在 $f(x_0,x_0)&lt;x_1&lt;x_0$ 使得 $x_n$ 单调递减趋于 0 。但是没法保证唯一性，毕竟条件这么弱。证明过程巧妙的应用了闭区间套定理。</p>
+<h3 id="明显的推论：若-x-n-frac-x-n-2-1-f-x-n-1-，其中-f-0-infty-to-0-infty-为单调递增的连续函数，-则，对任意-x-geq-0-，存在唯一的-frac-x-0-1-f-x-0-leq-x-1-leq-x-0"><a href="#明显的推论：若-x-n-frac-x-n-2-1-f-x-n-1-，其中-f-0-infty-to-0-infty-为单调递增的连续函数，-则，对任意-x-geq-0-，存在唯一的-frac-x-0-1-f-x-0-leq-x-1-leq-x-0" class="headerlink" title="明显的推论：若 $x_n = \frac{x_{n-2}}{1+f(x_{n-1})}$，其中 $f: (0,\infty) \to (0, \infty)$为单调递增的连续函数， 则，对任意 $x \geq 0$，存在唯一的 $\frac{x_0}{1+f(x_0)} \leq x_1 \leq x_0$"></a>明显的推论：若 $x_n = \frac{x_{n-2}}{1+f(x_{n-1})}$，其中 $f: (0,\infty) \to (0, \infty)$为单调递增的连续函数， 则，对任意 $x \geq 0$，存在唯一的 $\frac{x_0}{1+f(x_0)} \leq x_1 \leq x_0$</h3><p><strong>Proof</strong> ：存在性由 Gabor Nyerges 的证明显然，唯一性模仿之前的过程显然。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dna049</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dna049.com/grossmanConstant/">https://dna049.com/grossmanConstant/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dna049.com" target="_blank">dna049</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Math/">Math</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/rewardAlipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardAlipay.png" alt="下次"/></a><div class="post-qr-code-desc">下次</div></li><li class="reward-item"><a href="/img/rewardWechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardWechat.png" alt="一定"/></a><div class="post-qr-code-desc">一定</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/dynamicProgramming/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">动态规划</div></div></a></div><div class="next-post pull-right"><a href="/vimWithLinuxShell/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vim 和 Linux Shell</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/fastPowSumOfNaturalNumber/" title="自然数方幂和快速算法"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2016-05-08</div><div class="relatedPosts_title">自然数方幂和快速算法</div></div></a></div><div class="relatedPosts_item"><a href="/codeforces/" title="Codeforces汇总"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-22</div><div class="relatedPosts_title">Codeforces汇总</div></div></a></div><div class="relatedPosts_item"><a href="/nft/" title="快速数论变换"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-02</div><div class="relatedPosts_title">快速数论变换</div></div></a></div><div class="relatedPosts_item"><a href="/quadraticModEquation/" title="$x^2 \equiv a \mod n$ 何时有解"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="relatedPosts_title">$x^2 \equiv a \mod n$ 何时有解</div></div></a></div><div class="relatedPosts_item"><a href="/dynamicProgramming/" title="动态规划"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-21</div><div class="relatedPosts_title">动态规划</div></div></a></div><div class="relatedPosts_item"><a href="/chineseRemainTheorem/" title="中国剩余定理"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-05</div><div class="relatedPosts_title">中国剩余定理</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2020 By dna049</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va',
+      appKey: 'tQiWPCsXLT3YIbUTm3b9bewX',
+      placeholder: '2young2simple, sometimes naive',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

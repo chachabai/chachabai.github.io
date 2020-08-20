@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>特殊数列 | dna049</title><meta name="description" content="在知乎上看到一个有趣的问题: 如何证明这个数列无界？ 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。 证明：当$x$是无理数时，$f_n(x) &#x3D; \sum_{i&#x3D;1}^n (-1)^{\lfloor ix \rfloor} $  无界  $\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x-"><meta name="keywords" content="Math"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/SpecialNumberSequences/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="特殊数列"><meta property="og:url" content="https://dna049.com/SpecialNumberSequences/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="在知乎上看到一个有趣的问题: 如何证明这个数列无界？ 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。 证明：当$x$是无理数时，$f_n(x) &#x3D; \sum_{i&#x3D;1}^n (-1)^{\lfloor ix \rfloor} $  无界  $\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x-"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2020-04-12T06:47:16.000Z"><meta property="article:modified_time" content="2020-08-20T08:53:57.012Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  last_push_date: '',
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-20 16:53:57'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="dna049" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#连分数"><span class="toc-number">1.</span> <span class="toc-text">连分数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对任意一个数-x-构造连分数"><span class="toc-number">1.1.</span> <span class="toc-text">对任意一个数 $x$ 构造连分数:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充定义"><span class="toc-number">1.2.</span> <span class="toc-text">补充定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#唯一分解"><span class="toc-number">1.3.</span> <span class="toc-text">唯一分解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f-n-x-sum-i-1-n-1-lfloor-ix-rfloor-何时有界？"><span class="toc-number">2.</span> <span class="toc-text">$ f_n(x) &#x3D; \sum_{i&#x3D;1}^n (-1)^{\lfloor ix \rfloor} $ 何时有界？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当-x-是有理数时，记-x-frac-p-q-quad-p-q-1"><span class="toc-number">2.1.</span> <span class="toc-text">当 $x$ 是有理数时，记$ x &#x3D; \frac{p}{q},\quad (p,q)&#x3D;1$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对任意无理数-x-，我们证明-g-n-x-f-n-2x-无界，从而-f-n-x-无界。"><span class="toc-number">3.</span> <span class="toc-text">对任意无理数$x$，我们证明 $g_n(x) &#x3D; f_n(2x)$ 无界，从而 $f_n(x)$ 无界。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另一个相关问题-：https-www-zhihu-com-question-392014769"><span class="toc-number">4.</span> <span class="toc-text">另一个相关问题 ：https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;392014769</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存在无穷多个正整数-x-n-使得-sin-x-n-lt-frac-2-pi-x-n"><span class="toc-number">4.1.</span> <span class="toc-text">存在无穷多个正整数 $x_n$ 使得 $|\sin x_n| &lt; \frac{2 \pi}{x_n}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在无穷多个正整数-m-，使得-sin-m-lt-frac-pi-m"><span class="toc-number">4.2.</span> <span class="toc-text">存在无穷多个正整数$m$，使得 $|\sin m| &lt; \frac{\pi}{m}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Irrationality-Measure"><span class="toc-number">4.3.</span> <span class="toc-text">Irrationality Measure</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sagemath-数值测试-Jupyter-Notebook-上运行"><span class="toc-number">5.</span> <span class="toc-text">sagemath 数值测试(Jupyter Notebook 上运行)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-sum-s-in-S-frac-1-s-2-1-其中-S-a-m-a-gt-1-m-gt-1-a-m-in-mathbb-N"><span class="toc-number">5.1.</span> <span class="toc-text">$1 &#x3D; \sum_{s \in S} \frac{1}{s^2-1}$, 其中 $S &#x3D; \{a^m | a &gt; 1, m&gt;1, a,m \in \mathbb{N} \}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#f-n-m-sum-i-0-i-leq-n-im-C-n-im-i"><span class="toc-number">6.</span> <span class="toc-text">$f(n,m) &#x3D; \sum_{i&#x3D;0}^{i \leq n-im} C_{n-im}^i $</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无法过题的-O-m-log-m-log-n-代码，原因是没法找一个合适的基底。"><span class="toc-number">6.1.</span> <span class="toc-text">无法过题的 $O(m \log m \log n ) $代码，原因是没法找一个合适的基底。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求-m-阶线性递推关系式第-n-项"><span class="toc-number">7.</span> <span class="toc-text">求$m$阶线性递推关系式第$n$项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sum-i-equiv-r-pmod-m-binom-n-i-mod-M"><span class="toc-number">8.</span> <span class="toc-text">$\sum_{i \equiv r \pmod{m}} \binom{n}{i} \mod M $</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合数倒数交错和"><span class="toc-number">9.</span> <span class="toc-text">组合数倒数交错和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#To-be-continued"><span class="toc-number">10.</span> <span class="toc-text">To be continued</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dna049</a></span><span class="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">特殊数列</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-04-12T06:47:16.000Z" title="发表于 2020-04-12 14:47:16">2020-04-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T08:53:57.012Z" title="更新于 2020-08-20 16:53:57">2020-08-20</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>在知乎上看到一个有趣的问题: <a href="https://www.zhihu.com/question/383254359" target="_blank" rel="noopener">如何证明这个数列无界？</a> 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。</p>
+<p>证明：当$x$是无理数时，$f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor} $  无界</p>
+<blockquote>
+<p>$\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x- \lfloor x \rfloor&lt;1 $ 表示 $x$ 的小数部分</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>为了更顺畅的介绍这个数列，我们先来点前戏，不然插入的时候就不那么顺滑了0.0不要笑，我没有开车0.0</p>
+</blockquote>
+<h2 id="连分数"><a href="#连分数" class="headerlink" title="连分数"></a><a href="ContinuedFractions.pdf">连分数</a></h2><blockquote>
+<p> 它和Farey序列，无理数的有理逼近，密切相关</p>
+</blockquote>
+<p>我们将一个整数序列 $a_0,a_1, \cdots, a_n$ 构成的分数叫做连分数，记作</p>
+<script type="math/tex; mode=display">
+[a_0,a_1,\cdots, a_n] = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \cdots}}</script><p>其中$a_0$ 是整数， $a_i (i&gt;0)$是正整数。</p>
+<p>我们定义:</p>
+<p>$p_0 = a_0,p_1 = a_1a_0 +1,p_n = a_np_{n-1} + p_{n-2} (n&gt;1)$</p>
+<p>$q_0 = 1,q_1 = a_1,q_n=a_nq_{n-1}+q_{n-2} (n&gt;1)$</p>
+<p>那么数学归纳法易证：</p>
+<script type="math/tex; mode=display">
+[a_0,a_1,\cdots, a_n] = \frac{p_n}{q_n} = x_0</script><p>并且还有</p>
+<ul>
+<li>$[a_0,a_1,\cdots, a_n] = [a_0,a_1,\cdots, a_{n-1} + \frac{1}{a_n}]$</li>
+<li>$p_{n+1}q_n - q_{n+1}p_n = (-1)^n$</li>
+<li>从而 $(p_n,p_{n+1}) = (q_n,q_{n+1}) = (p_n,q_n) = 1$</li>
+<li>$x_{n+2} - x_n = \frac{(-1)^n a_{n+2}}{q_n q_{n+2}}$</li>
+<li>从而 $x_0 &lt; x_2&lt; x_4 &lt; \cdots &lt; x_5 &lt; x_3 &lt; x_1$</li>
+</ul>
+<h3 id="对任意一个数-x-构造连分数"><a href="#对任意一个数-x-构造连分数" class="headerlink" title="对任意一个数 $x$ 构造连分数:"></a>对任意一个数 $x$ 构造连分数:</h3><ol>
+<li>初始 $i = 0$</li>
+<li>$a_i = \lfloor x \rfloor$ 取 $x$  的整数部分。</li>
+<li>$x - a_i == 0$ 结束</li>
+<li>取 $x = \frac{1}{x-a_i}$ </li>
+<li>++$i$ 回到步骤1</li>
+</ol>
+<p>从构造中，我们看出：<strong>连分数长度有限当且仅当$x$是有理数</strong>，此时，最后一项得到的连分数就是$x$。</p>
+<p>当$x$ 是无理数时， $x_{2n} &lt; x &lt; x_{2n+1}$ ，又因为</p>
+<script type="math/tex; mode=display">
+x_{2n+1} - x_{2n} = \frac{1}{q_{2n}q_{2n+1}} \leq  \frac{1}{2n(2n+1)}</script><p>且  $x_{2n}$  单调递增，$x_{2n+1}$ 单调递减。所以 $\lim _{n \to \infty} x_n = x$。并且</p>
+<script type="math/tex; mode=display">
+|x - \frac{p_n}{q_n} | < \frac{1}{q_n ^2}</script><h3 id="补充定义"><a href="#补充定义" class="headerlink" title="补充定义"></a>补充定义</h3><script type="math/tex; mode=display">
+a_n' \doteq a_n'(x) \doteq [a_n, a_{n+1}, a_{n+2},\cdots]</script><script type="math/tex; mode=display">
+p_{n+1}' \doteq a_{n+1}' p_n + p_{n-1} = \frac{p_{n+2}'}{a_{n+2}'} \\ 
+q_{n+1}' \doteq a_{n+1}' q_n + q_{n-1} = \frac{q_{n+2}'}{a_{n+2}'}</script><p>显然，$x = \frac{p_n’}{q_n’} =  \frac{p_n}{q_n} + \frac{(-1)^n}{q_n q_{n+1}’}$</p>
+<h3 id="唯一分解"><a href="#唯一分解" class="headerlink" title="唯一分解"></a>唯一分解</h3><p>对于任意给定 $x = [a_0,a_1,\cdots,a_n,\cdots]$，对任意$N$，有如下唯一分解：</p>
+<script type="math/tex; mode=display">
+N = \sum c_i q_i  = \sum_{i=0} ^{m(N,x)} c_i(N,x)q_i(x)</script><p>其中 $0  \leq  c_i \leq a_{i+1}, c_m(N,x) &gt;0$ 且对任意 $0 \leq j \leq m(N,x)$，$\sum_{i=0} ^ j c_i q_i &lt; q_{j+1}$ 。</p>
+<h2 id="f-n-x-sum-i-1-n-1-lfloor-ix-rfloor-何时有界？"><a href="#f-n-x-sum-i-1-n-1-lfloor-ix-rfloor-何时有界？" class="headerlink" title="$ f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor} $ 何时有界？"></a>$ f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor} $ 何时有界？</h2><p>由于 $f_n(x+2) = f_n(x) $， 所以我们仅考虑 $x \in [0,2) $ ， 在不引起混淆时，简记成 $f_n $</p>
+<h3 id="当-x-是有理数时，记-x-frac-p-q-quad-p-q-1"><a href="#当-x-是有理数时，记-x-frac-p-q-quad-p-q-1" class="headerlink" title="当 $x$ 是有理数时，记$ x = \frac{p}{q},\quad (p,q)=1$"></a>当 $x$ 是有理数时，记$ x = \frac{p}{q},\quad (p,q)=1$</h3><p>则 $f_{2q+n} = f_{2q} + f_n$， 从而  $a_n$  有界当且仅当 $f_{2q} \neq 0 $</p>
+<script type="math/tex; mode=display">
+f_{2q} = \sum_{i=1}^{2q} (-1)^{\lfloor \frac{ip}{q} \rfloor } =\sum_{i=1}^{q} (-1)^{\lfloor \frac{ip}{q} \rfloor } + \sum_{i=1}^{q} (-1)^{\lfloor  \frac{(i+q)p}{q} \rfloor  } = (1+(-1)^p) f_q</script><ul>
+<li><p>当 $q$ 为奇数， $f_{2q} = 0$，即 $f_n$  有界</p>
+</li>
+<li><p>当$p$为偶数时，此时$q$ 为奇数，且$(\frac{p}{2},q)=1$，所以当 $i$ 跑遍 $[1, q]$ 时，$i\frac{p}{2} \mod q$ 跑遍 $[0,q-1]$，即</p>
+<script type="math/tex; mode=display">
+f_q = \sum_{i=1}^q (-1)^{ \lfloor \frac{2( i\frac{p}{2} \mod q)}{q} \rfloor} =\sum_{i=0} ^{q-1} (-1)^{\lfloor \frac{2i}{q} \rfloor} = \frac{q+1}{2} - \frac{q-1}{2} = 1</script><p>从而$f_{2q} = 2f_q = 2$ 推出$f_n$ 无界。</p>
+</li>
+</ul>
+<h2 id="对任意无理数-x-，我们证明-g-n-x-f-n-2x-无界，从而-f-n-x-无界。"><a href="#对任意无理数-x-，我们证明-g-n-x-f-n-2x-无界，从而-f-n-x-无界。" class="headerlink" title="对任意无理数$x$，我们证明 $g_n(x) = f_n(2x)$ 无界，从而 $f_n(x)$ 无界。"></a>对任意无理数$x$，我们证明 $g_n(x) = f_n(2x)$ 无界，从而 $f_n(x)$ 无界。</h2><blockquote>
+<p>目前没理解论文中的做法，太繁琐了</p>
+</blockquote>
+<p>显然，我们只需考虑 $0&lt; x &lt;1$</p>
+<p>我们考虑 $x$ 的连分数 $[0,a_1,a_2,\cdots,a_n,\cdots]$，由于 $(p_n,q_n)=(q_n,q_{n+1})=1$ (目前不知道有什么简单的操作)</p>
+<p>这个问题可以推广到更一般的情形 ： <a href="1.pdf">单栏阅读</a> <a href="2.pdf">双栏阅读</a></p>
+<blockquote>
+<p>里面定理一挺有意思的，虽然长但是很清晰。</p>
+</blockquote>
+<h2 id="另一个相关问题-：https-www-zhihu-com-question-392014769"><a href="#另一个相关问题-：https-www-zhihu-com-question-392014769" class="headerlink" title="另一个相关问题 ：https://www.zhihu.com/question/392014769"></a>另一个相关问题 ：<a href="https://www.zhihu.com/question/392014769" target="_blank" rel="noopener">https://www.zhihu.com/question/392014769</a></h2><p>是否存在$N$使得， $|\sin n|&gt;\frac{1}{n}$ 对所有 $n&gt;N$ 成立。(<a href="https://www.zhihu.com/people/dna049" target="_blank" rel="noopener">dna049</a> 和 <a href="https://www.zhihu.com/people/zhai-sen-8" target="_blank" rel="noopener">寨森Lambda-CDM</a> 建议修改)</p>
+<h3 id="存在无穷多个正整数-x-n-使得-sin-x-n-lt-frac-2-pi-x-n"><a href="#存在无穷多个正整数-x-n-使得-sin-x-n-lt-frac-2-pi-x-n" class="headerlink" title="存在无穷多个正整数 $x_n$ 使得 $|\sin x_n| &lt; \frac{2 \pi}{x_n}$"></a>存在无穷多个正整数 $x_n$ 使得 $|\sin x_n| &lt; \frac{2 \pi}{x_n}$</h3><p>引理： 对任意无理数 $a$ , 存在无穷多个 $x_n$，使得 $\min(\{a x_n\},\{-a x_n\}) &lt; \frac{2}{x_n}$</p>
+<p>我们考虑 $a $  的连分数 $[a_0,a_1,\cdots,a_n,\cdots]$, 我们知道 $|a - \frac{p_n}{q_n} | &lt; \frac{1}{q_n ^2}$，由于$(p_n,q_n) = 1$,  所以存在$u_n,v_n$ 使得 $p_n u_n + q_n v_n = 1$, 此时 $p_n(u_n+tq_n) + q_n(v_n - tp_n) = 1$，所以我们不妨假设 $q_n &lt; u_n &lt; 2q_n$。所以 </p>
+<script type="math/tex; mode=display">
+\{ a u_n \} = \{ (a-\frac{p_n}{q_n})u_n + \frac{p_n}{q_n}u_n \}  = \{ (a-\frac{p_n}{q_n})u_n + \frac{1}{q_n} \}</script><p>我们仅考虑 $n$ 为奇数数的情况，此时 $ -\frac{1}{q_n^2}<a-\frac{p_n}{q_n}<0 $，所以 $-\frac{1}{q_n} <(a-\frac{p_n}{q_n})u_n + \frac{1}{q_n} <\frac{1}{q_n}$。而 $x_n = u_{2n+1} > q_{2n+1}$  即为所求。</p>
+<blockquote>
+<p>实际上 $n$ 为偶数时，也可以取做，只是此时 $u_n$ 要换成 $3q_n - u_n$</p>
+</blockquote>
+<p>取引理中$a = \frac{1}{\pi}$，由于$|\sin(x)|$是周期为 $\pi$ 的偶函数。所以 $|\sin(x_n)| = |\sin(\{ax_n\}\pi)| = |\sin(\{-ax_n\}\pi)| &lt; \frac{2\pi}{x_n}$</p>
+<p>受 <a href="https://www.zhihu.com/people/zhai-sen-8" target="_blank" rel="noopener">寨森Lambda-CDM</a>  启发，可以不用引理直接证明：</p>
+<h3 id="存在无穷多个正整数-m-，使得-sin-m-lt-frac-pi-m"><a href="#存在无穷多个正整数-m-，使得-sin-m-lt-frac-pi-m" class="headerlink" title="存在无穷多个正整数$m$，使得 $|\sin m| &lt; \frac{\pi}{m}$"></a>存在无穷多个正整数$m$，使得 $|\sin m| &lt; \frac{\pi}{m}$</h3><p>Proof：考虑$\frac{1}{\pi}$ 的连分数 $[a_0,a_1,\cdots,a_n,\cdots]$，我们有 $|\frac{1}{\pi} - \frac{p_n}{q_n} | &lt; \frac{1}{q_n ^2}$，所以</p>
+<script type="math/tex; mode=display">
+|\sin q_n| = |\sin[(\frac{q_n}{\pi} -p_n) \pi + p_n\pi ]|  =  |\sin[(|\frac{q_n}{\pi} -p_n|) \pi]| < \frac{\pi}{q_n}</script><p>这个问题还关联这 <a href="https://mathworld.wolfram.com/IrrationalityMeasure.html" target="_blank" rel="noopener">Irrationality Measure</a>，菲尔兹奖级别的工作！</p>
+<h3 id="Irrationality-Measure"><a href="#Irrationality-Measure" class="headerlink" title="Irrationality Measure"></a><a href="https://mathworld.wolfram.com/IrrationalityMeasure.html" target="_blank" rel="noopener">Irrationality Measure</a></h3><p>对于给定是实数$x$, 定义</p>
+<script type="math/tex; mode=display">
+\mu(x) \doteq \inf_{u \in R} u \\
+R = \{ u\mid \exists \text{ infty } (p,q)\; s.t.\quad 0< |x -\frac{p}{q}| < \frac{1}{q^u} \}</script><p>显然考虑连分数，我们知道 当$x$是有理数时，$u(x) = 1$，无理数时，$\mu(x) \geq 2$。</p>
+<p>Roth证明，当$x$ 是代数数时$\mu(x) = 2$，因此获得Field奖。</p>
+<p>$\mu(L) = \infty$，其中 $L = \sum_{n=1} ^{\infty} 10^{-n!}$ 为刘维尔（Joseph Liouville）数</p>
+<p>我们下面证明：当$u&gt;2$时，$A = \{ x \mid 0&lt; |x -\frac{p}{q}| &lt; \frac{1}{q^u}\}$，则 $A$的外（lebesgue）测度$m^{\star}(A) = 0$，从而（lebesgue）测度$m(A)=0$</p>
+<p>由于 当$1\leq p \leq q$时， $(\frac{p}{q}-\frac{1}{q^u},\frac{p}{q} + \frac{1}{q^u})$ 只有可数个，记作$I_1, I_2,\cdots I_n,\cdots$ ，按照定义，$A \cap (0,1) \subseteq \overline\lim I_n$, 另一方面 $\sum_{i=1}^{\infty} I_n = \sum_{q=1}^{\infty} \frac{q+1}{q^u} &lt; +\infty$，从而 $m^{\star}(A \cup (0,1)) = 0$，同理可证了$m^{\star}(A \cup (n,n+1))=0, n \in \mathbb{Z}$，从而 </p>
+<script type="math/tex; mode=display">
+0 \leq m^{\star}(A) \leq \sum_{n \in \mathbb{Z}} m^{\star}(A \cup (n,n+1)) =0</script><p>从而$m^{\star}(A) = m(A) = 0$。其中 $m^{\star}(I) = \inf \{u|u=\sum_{k=1}^{\infty} |I_k|,\; \cup_{k=1}^ {\infty} I_k \supset m ,I_k \text{ 是开矩形 } \}$</p>
+<h2 id="sagemath-数值测试-Jupyter-Notebook-上运行"><a href="#sagemath-数值测试-Jupyter-Notebook-上运行" class="headerlink" title="sagemath 数值测试(Jupyter Notebook 上运行)"></a>sagemath 数值测试(Jupyter Notebook 上运行)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = continued_fraction(<span class="number">1</span>/pi).convergents()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">32</span>):</span><br><span class="line">    n = x[i].denominator()</span><br><span class="line">    print(N(abs(sin(n))-pi/n),<span class="string">"\t= "</span>,abs(sin(n))-pi/n ) <span class="comment"># 后来精度就崩了</span></span><br><span class="line">    </span><br><span class="line">x = continued_fraction(<span class="number">1</span>/pi).convergents()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">32</span>):</span><br><span class="line">    n = x[i].denominator()</span><br><span class="line">    print(i,N(abs(sin(n))*n),<span class="string">"\t= "</span>,abs(sin(n))*n) <span class="comment"># 后来精度就崩了</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-sum-s-in-S-frac-1-s-2-1-其中-S-a-m-a-gt-1-m-gt-1-a-m-in-mathbb-N"><a href="#1-sum-s-in-S-frac-1-s-2-1-其中-S-a-m-a-gt-1-m-gt-1-a-m-in-mathbb-N" class="headerlink" title="$1 = \sum_{s \in S} \frac{1}{s^2-1}$, 其中 $S = \{a^m | a &gt; 1, m&gt;1, a,m \in \mathbb{N} \}$"></a>$1 = \sum_{s \in S} \frac{1}{s^2-1}$, 其中 $S = \{a^m | a &gt; 1, m&gt;1, a,m \in \mathbb{N} \}$</h3><blockquote>
+<p>方法：<a href="https://link.zhihu.com/?target=https%3A//www.maa.org/sites/default/files/pdf/upload_library/22/Ford/bibiloni206.pdf">On a Series of Goldbach and Euler</a></p>
+</blockquote>
+<script type="math/tex; mode=display">
+\begin{aligned} \lim S(n)  &= \sum_{a \in A} \sum_{m\geq 2} \frac{1}{a^m -1} \\ &=  \sum_{a \in A} \sum_{m\geq 2} \frac{1}{a^m} + \sum_{a \in A} \sum_{m\geq 2} \frac{1}{a^m(a^m -1)} \\ & =  \sum_{a \in A} \frac{1}{a(a-1)} +   \sum_{b \in B} \frac{1}{b(b -1)} \\ & = \sum_{i=2}^n \frac{1}{n(n-1)} = 1 \end{aligned}</script><p>其中 $B = \{n \in \mathbb{N} \mid n = k^m , k&gt;1 \} $，$A= \{n \in \mathbb{N} \mid n &gt;1 \} - B$</p>
+<h2 id="f-n-m-sum-i-0-i-leq-n-im-C-n-im-i"><a href="#f-n-m-sum-i-0-i-leq-n-im-C-n-im-i" class="headerlink" title="$f(n,m) = \sum_{i=0}^{i \leq n-im} C_{n-im}^i $"></a>$f(n,m) = \sum_{i=0}^{i \leq n-im} C_{n-im}^i $</h2><blockquote>
+<p>洛谷题目，具体题号就不便说了。</p>
+</blockquote>
+<p>数据范围 $ 1 \leq n \leq 10^{18} , m \leq 100 $ 。我们注意考察 $f(n,m)$ 的意义！假设我们要上楼梯，每次只能上1步或者$m+1$步，那么 $f(n,m)$ 就是方案数，因此，我们显然有</p>
+<script type="math/tex; mode=display">
+f(n,m) = f(n-1,m)+f(n-m-1,m)</script><p>当然了我们不考虑意义直接用$f(n,m)-f(n-1,m)$ 也可以得到这个公式。</p>
+<h3 id="无法过题的-O-m-log-m-log-n-代码，原因是没法找一个合适的基底。"><a href="#无法过题的-O-m-log-m-log-n-代码，原因是没法找一个合适的基底。" class="headerlink" title="无法过题的 $O(m \log m \log n ) $代码，原因是没法找一个合适的基底。"></a>无法过题的 $O(m \log m \log n ) $代码，原因是没法找一个合适的基底。</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> LL=<span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">using</span> BI=__int128;</span><br><span class="line"><span class="keyword">const</span> LL mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M =<span class="number">10004</span>;</span><br><span class="line">BI a[<span class="number">4</span>*M],r[<span class="number">4</span>*M],ans[<span class="number">2</span>*M];</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> U&gt;</span><br><span class="line"><span class="function">T <span class="title">powmod</span><span class="params">(T x,U n,T p)</span></span>&#123;</span><br><span class="line">    <span class="function">T <span class="title">r</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r=r*x%p;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;  x=x*x%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bitreverse</span><span class="params">(BI *x,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j) swap(x[i],x[j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=len&gt;&gt;<span class="number">1</span>;(j^=l)&lt;l;l&gt;&gt;=<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> BI FM = BI(<span class="number">29</span>)&lt;&lt;<span class="number">57</span>|<span class="number">1</span>,gg=<span class="number">3</span>;</span><br><span class="line"><span class="comment">// the mod must NFT-friendly or (len+1)*mod^2 &lt; FM</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nft</span><span class="params">(BI *x,<span class="keyword">int</span> len,<span class="keyword">bool</span> isInverse=<span class="literal">false</span>)</span></span>&#123;</span><br><span class="line">    g = powmod(gg,(FM<span class="number">-1</span>)/len,FM);</span><br><span class="line">    <span class="keyword">if</span>(isInverse)&#123;</span><br><span class="line">        g=powmod(g,len<span class="number">-1</span>,FM);</span><br><span class="line">        BI invlen = powmod(BI(len),FM<span class="number">-2</span>,FM);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">            x[i]=x[i]*invlen%FM;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    bitreverse(x,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> half=<span class="number">1</span>,<span class="built_in">step</span>=<span class="number">2</span>;half!=len;half&lt;&lt;=<span class="number">1</span>,<span class="built_in">step</span>&lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        BI wn = powmod(g,len/<span class="built_in">step</span>,FM);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i+=<span class="built_in">step</span>)&#123;</span><br><span class="line">            <span class="function">BI <span class="title">w</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j&lt;i+half;++j)&#123;</span><br><span class="line">                BI t=(w*x[j+half])%FM;</span><br><span class="line">                x[j+half]=(FM-t+x[j])%FM;</span><br><span class="line">                x[j]=(x[j]+t)%FM;</span><br><span class="line">                w = w*wn%FM;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">stand</span><span class="params">(BI *a, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>*n;i&gt;n;--i)&#123;</span><br><span class="line">        a[i<span class="number">-1</span>]=(a[i<span class="number">-1</span>]+a[i])%mod;</span><br><span class="line">        a[i-n<span class="number">-1</span>]=(a[i-n<span class="number">-1</span>]+a[i])%mod;</span><br><span class="line">        a[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">square</span><span class="params">(BI *a, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(<span class="number">2</span>*n+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;++i)&#123;</span><br><span class="line">        a[i]=a[i]*a[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(a,len,<span class="number">1</span>);</span><br><span class="line">    stand(a,n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(BI *a,BI *b,<span class="keyword">int</span> na,<span class="keyword">int</span> nb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz((na+nb)+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);nft(b,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;++i)&#123;</span><br><span class="line">        a[i] = a[i]*b[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(b,len,<span class="number">1</span>);nft(a,len,<span class="number">1</span>);</span><br><span class="line">    stand(a,na);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initC</span><span class="params">(<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;++i)&#123;</span><br><span class="line">        ans[i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=m+<span class="number">1</span>;i&lt;=<span class="number">2</span>*m;++i)&#123;</span><br><span class="line">        ans[i] = (ans[i<span class="number">-1</span>]+ans[i-m<span class="number">-1</span>])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">    <span class="built_in">memset</span>(r,<span class="number">0</span>,<span class="keyword">sizeof</span>(r));</span><br><span class="line">    r[<span class="number">0</span>]=a[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">getans</span><span class="params">(LL n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    initC(m);</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) mul(r,a,m,m);</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>; square(a,m);</span><br><span class="line">    &#125;</span><br><span class="line">    LL ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;++i)&#123;</span><br><span class="line">        ret+=(r[i]*ans[i+m])%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret%mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("m","w",stdout);</span></span><br><span class="line">    <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);<span class="built_in">std</span>::<span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    LL n;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;powmod(<span class="number">2L</span>L,n,mod)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(n&lt;=m)&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;getans(n-m,m)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="求-m-阶线性递推关系式第-n-项"><a href="#求-m-阶线性递推关系式第-n-项" class="headerlink" title="求$m$阶线性递推关系式第$n$项"></a>求$m$阶线性递推关系式第$n$项</h2><blockquote>
+<p>参考：<a href="https://wenku.baidu.com/view/bac23be1c8d376eeafaa3111.html" target="_blank" rel="noopener">2013/03/02 线性递推关系和矩阵乘法</a></p>
+<p><strong>上面文献的意义</strong>：矩阵加速已经成为过去式了，多项式加速时代的到来，NFT加速多项式的时代到来。</p>
+</blockquote>
+<p>设$a_n = c_{m-1} a_{n-1} + c_{m-2} a_{n-2} + c_0 a_{n-m}$，给定了初值$a_1,a_2,\cdots,a_m$的情况下，求$a_n$</p>
+<p>我们记 </p>
+<script type="math/tex; mode=display">
+A = \begin{pmatrix}
+c_1 & c_2 &\cdots& c_m \\
+1 & 0&  & 0 \\
+& &\vdots&  \\
+0 & \cdots &1 & 0
+\end{pmatrix}</script><p>并且显然</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+a_n \\
+a_{n-1} \\
+\vdots \\
+a_{n-m+1}
+\end{pmatrix} = 
+A
+\begin{pmatrix}
+a_{n-1} \\
+a_{n-2} \\
+\vdots \\
+a_{n-m}
+\end{pmatrix}  = 
+A^{n-m}
+\begin{pmatrix}
+a_{m} \\
+a_{m-1} \\
+\vdots \\
+a_{1}
+\end{pmatrix}</script><p>我们就可以用矩阵乘法在$O(m^3 \log n) $ 解决这个问题了。</p>
+<p><strong>但线性递推关系式可以不用矩阵优化到</strong> $O(m^2 \log n)$ ：</p>
+<p>显然 $A$ 的特征多项式$f(x) = x^m - c_1 x^{m-1}- \cdots -c_m$，所以 $A^n = c_{m-1} A^{n-1} + \cdots c_0 I$，也就是说$A^n$ 可以由 $A^{m-1},A^{m-2},\cdots,I $ 线性表出，而 $A^{n_1+n_2} = A^{n1}A^{n_2}$然后运算就是卷积运算，相当于多项式乘法！也就是说我们可以在$O(m^2 \log n)$ 时间复杂度，求出 $A^n = b_0 I + b_1 A + \cdots b_{m-1} A^{m-1}$, 注意到</p>
+<script type="math/tex; mode=display">
+A^i \begin{pmatrix}
+a_{m} \\
+a_{m-1} \\
+\vdots \\
+a_{1}
+\end{pmatrix} =
+\begin{pmatrix}
+a_{i+m} \\
+a_{i+m-1} \\
+\vdots \\
+a_{i+1}
+\end{pmatrix}</script><p>所以我们只需预处理出$a_1,\cdots,a_{2m-1}$ 这 $2m-1$个数即可。<a href="/templateOfC/" title="代码见我博客的模板">代码见我博客的模板</a></p>
+<blockquote>
+<p>这也提供了一般$m$ 阶矩阵的$n$ 次方的一个 $O(m^3+m^2\log n)$ 的算法！！！卧槽！我也太帅了吧。</p>
+</blockquote>
+<p><del>最后如果递推关系中仅有常数个$c_i$不为0，此时还能用NFT（数论快速变换）</del> 利用<a href="https://cp-algorithms.com/algebra/polynomial.html" target="_blank" rel="noopener">多项式带模除法: Division with remainder</a> 的 $O(m \log m) $ 算法，上述算法可以优化到$O(m\log m \log n + m^2)$，（暂时不知道如何去掉$m^2$）但是写法太复杂。搞定！参考<a href="https://oi-wiki.org/math/linear-recurrence/" target="_blank" rel="noopener">这里</a>，不要涉及矩阵</p>
+<p>注意到一次乘法之后，会变成$I,A,\cdots A^{2m-1}$ 的线性组合，$A^{m},\cdots A^{2m-1}$这$m$个要再用前$m$线性表出，由于$c_i$ 仅有常数个不为0，可以 $O(m)$复杂度把他们写成前 $m$ 个的线性组合。</p>
+<blockquote>
+<p>当$m&gt;10^4$时，我们就有必要写带NFT的版本了（NFT模板可以在我博客中找到）有需求的时候再写吧。</p>
+</blockquote>
+<h2 id="sum-i-equiv-r-pmod-m-binom-n-i-mod-M"><a href="#sum-i-equiv-r-pmod-m-binom-n-i-mod-M" class="headerlink" title="$\sum_{i \equiv r \pmod{m}} \binom{n}{i} \mod M $"></a>$\sum_{i \equiv r \pmod{m}} \binom{n}{i} \mod M $</h2><p>数据范围：$1 \leq n \leq 10^{18},\; 2 \leq m \leq 2000,\; 0 \leq r &lt; m,\; 10^8 &lt; M &lt; 10^9$</p>
+<p>记$w$满足 $w^m = 1,w^n \neq 1, 0 &lt; n &lt; m $，则答案为 $\frac{1}{m}\sum_{i=0}^{m-1}F(w^i)$，其中 $F(x) = x^{m-r}(1+x)^n \mod x^{m}-1$</p>
+<p>假设$ F(x) = \sum_{i=0}^{m-1} a_i x^i $，则答案就是$a_0 $，即答案是$F(0)$</p>
+<p>这个跟上面一样本质是一样的，做带模的多项式运算。</p>
+<blockquote>
+<p>参考：<a href="https://codeforces.ml/blog/zscoder" target="_blank" rel="noopener">zscoder的博客</a></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> LL = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Poly</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">int</span> N = <span class="number">2003</span>;</span><br><span class="line">    <span class="keyword">int</span> d;</span><br><span class="line">    LL a[N];</span><br><span class="line">    Poly(<span class="keyword">int</span> _d):d(_d)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span>&amp; <span class="keyword">operator</span>[](<span class="keyword">int</span> i)&#123;</span><br><span class="line">        <span class="keyword">return</span> a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    Poly <span class="keyword">operator</span>*(Poly &amp;A)&#123;</span><br><span class="line">        <span class="function">Poly <span class="title">R</span><span class="params">(d+A.d)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=d;++i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=A.d;++j)&#123;</span><br><span class="line">                R[i+j] += a[i]*A[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">Poly <span class="title">mulmod</span><span class="params">(Poly &amp;A,Poly &amp;B,<span class="keyword">int</span> m,LL mod)</span></span>&#123;</span><br><span class="line">    Poly R = A*B;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=R.d;i&gt;=m;--i)&#123;</span><br><span class="line">        R[i-m] += R[i];</span><br><span class="line">        R[i]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    R.d = m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;++i)&#123;</span><br><span class="line">        R[i]%=mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> R;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span> U&gt;</span><br><span class="line"><span class="function">T <span class="title">powmod</span><span class="params">(T x,U n,<span class="keyword">int</span> m,LL mod)</span></span>&#123;</span><br><span class="line">    <span class="function">T <span class="title">r</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r=mulmod(r,x,m,mod);</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;  x=mulmod(x,x,m,mod);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in","r",stdin);</span></span><br><span class="line">    <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);<span class="built_in">std</span>::<span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">    LL n,r,mod;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;r&gt;&gt;mod)&#123;</span><br><span class="line">        <span class="function">Poly <span class="title">A</span><span class="params">(m<span class="number">-1</span>)</span></span>;</span><br><span class="line">        A[<span class="number">0</span>]=A[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        Poly R = powmod(A,n,m,mod);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;(R[r%m]*m%mod)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="组合数倒数交错和"><a href="#组合数倒数交错和" class="headerlink" title="组合数倒数交错和"></a>组合数倒数交错和</h2><p>$ \sum_{i=0}^n \frac{(-1)^i}{{n \choose i}}$</p>
+<p>考虑积分$F(n,m) = \int _0^1 x^m (1-x)^{n-m} dx $，显然 $F(n,m)=F(n,n-m),F(n,0) = \frac{1}{n+1} $<br>且分部积分即可知道 $F(n,m) = \frac{m}{n-m+1} F(n,m-1) = \frac{1}{(n+1){n \choose m}} $，再等比数列求和就有</p>
+<script type="math/tex; mode=display">
+\sum_{i=0}^n \frac{(-1)^i}{{n \choose i}} = (n+1) \int _0 ^1 \sum _{i=0} ^n (-x)^ i (1-x)^ {n-i} dx = (n+1) \int _0 ^1 (1-x)^{n+1}-(-x)^{n+1}dx = \frac{n+1}{n+2} (1+(-1)^n)</script><h2 id="To-be-continued"><a href="#To-be-continued" class="headerlink" title="To be continued"></a>To be continued</h2></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dna049</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dna049.com/SpecialNumberSequences/">https://dna049.com/SpecialNumberSequences/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dna049.com" target="_blank">dna049</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Math/">Math</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/rewardAlipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardAlipay.png" alt="下次"/></a><div class="post-qr-code-desc">下次</div></li><li class="reward-item"><a href="/img/rewardWechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardWechat.png" alt="一定"/></a><div class="post-qr-code-desc">一定</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/primePowSum/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">不超过$x$的素数之和</div></div></a></div><div class="next-post pull-right"><a href="/gaussianElimination/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">点灯问题之高斯消元法</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/fastPowSumOfNaturalNumber/" title="自然数方幂和快速算法"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2016-05-08</div><div class="relatedPosts_title">自然数方幂和快速算法</div></div></a></div><div class="relatedPosts_item"><a href="/codeforces/" title="Codeforces汇总"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-22</div><div class="relatedPosts_title">Codeforces汇总</div></div></a></div><div class="relatedPosts_item"><a href="/nft/" title="快速数论变换"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-02</div><div class="relatedPosts_title">快速数论变换</div></div></a></div><div class="relatedPosts_item"><a href="/quadraticModEquation/" title="$x^2 \equiv a \mod n$ 何时有解"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="relatedPosts_title">$x^2 \equiv a \mod n$ 何时有解</div></div></a></div><div class="relatedPosts_item"><a href="/dynamicProgramming/" title="动态规划"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-21</div><div class="relatedPosts_title">动态规划</div></div></a></div><div class="relatedPosts_item"><a href="/grossmanConstant/" title="Grossman 常数"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-16</div><div class="relatedPosts_title">Grossman 常数</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2020 By dna049</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va',
+      appKey: 'tQiWPCsXLT3YIbUTm3b9bewX',
+      placeholder: '2young2simple, sometimes naive',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

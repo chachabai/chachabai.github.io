@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>经典组合问题 | dna049</title><meta name="description" content="在此记录一些经典的组合问题，方便日后查阅。  卡特兰数，斯特林数，放球问题   卡特兰（Catalan ）数$n$ 个 0 和 $n$ 个 1 组成的序列中始终要保持 任意前缀中 0 的个多不超过 1 的个数的序列个数为 $\frac{1}{n+1} {2n \choose n }$  这个问题跟括号合理性等一系列问题合理性有关。  $n$ 个 0 和 $m$ 个 1 组成的序列（$n \leq"><meta name="keywords" content="Math,组合"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/classicalCombination/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="经典组合问题"><meta property="og:url" content="https://dna049.com/classicalCombination/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="在此记录一些经典的组合问题，方便日后查阅。  卡特兰数，斯特林数，放球问题   卡特兰（Catalan ）数$n$ 个 0 和 $n$ 个 1 组成的序列中始终要保持 任意前缀中 0 的个多不超过 1 的个数的序列个数为 $\frac{1}{n+1} {2n \choose n }$  这个问题跟括号合理性等一系列问题合理性有关。  $n$ 个 0 和 $m$ 个 1 组成的序列（$n \leq"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2020-03-17T06:37:03.000Z"><meta property="article:modified_time" content="2020-08-20T08:53:57.056Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  last_push_date: '',
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-20 16:53:57'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="dna049" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#卡特兰（Catalan-）数"><span class="toc-number">1.</span> <span class="toc-text">卡特兰（Catalan ）数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#斯特林（Stirling）数"><span class="toc-number">2.</span> <span class="toc-text">斯特林（Stirling）数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正整数分拆数"><span class="toc-number">3.</span> <span class="toc-text">正整数分拆数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正整数分拆成乘积数"><span class="toc-number">4.</span> <span class="toc-text">正整数分拆成乘积数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#n-个球放在-m-个盒子中"><span class="toc-number">5.</span> <span class="toc-text">$n$ 个球放在 $m$ 个盒子中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有限制的线性方程组的解"><span class="toc-number">6.</span> <span class="toc-text">有限制的线性方程组的解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划直接做复杂度-O-m-2-n"><span class="toc-number">6.1.</span> <span class="toc-text">动态规划直接做复杂度 O(m^2 n)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包容排斥原理做"><span class="toc-number">6.2.</span> <span class="toc-text">包容排斥原理做</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dna049</a></span><span class="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">经典组合问题</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-03-17T06:37:03.000Z" title="发表于 2020-03-17 14:37:03">2020-03-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T08:53:57.056Z" title="更新于 2020-08-20 16:53:57">2020-08-20</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">561</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>在此记录一些经典的组合问题，方便日后查阅。</p>
+<blockquote>
+<p>卡特兰数，斯特林数，放球问题</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="卡特兰（Catalan-）数"><a href="#卡特兰（Catalan-）数" class="headerlink" title="卡特兰（Catalan ）数"></a><a href="https://baike.baidu.com/item/卡特兰数/6125746?fr=aladdin" target="_blank" rel="noopener">卡特兰（Catalan ）数</a></h2><p>$n$ 个 0 和 $n$ 个 1 组成的序列中始终要保持 <strong>任意前缀中</strong> 0 的个多不超过 1 的个数的序列个数为 $\frac{1}{n+1} {2n \choose n }$</p>
+<blockquote>
+<p>这个问题跟括号合理性等一系列问题合理性有关。</p>
+</blockquote>
+<p>$n$ 个 0 和 $m$ 个 1 组成的序列（$n \leq m$) 保持 <strong>任意前缀中</strong> 0 的个数不超过 1 的个数的序列个数为：</p>
+<script type="math/tex; mode=display">
+{n+m \choose n} - {n+m \choose n-1}</script><blockquote>
+<p>把 0 当 $x$-轴，1 当 $y$-轴，不合理的情况必然经过 $y = x+1$, 在第一次不合理时，后面的路径就开始与 $y = x +1$ 对称，最终结束点为 $(n-1, m+1)$</p>
+</blockquote>
+<h2 id="斯特林（Stirling）数"><a href="#斯特林（Stirling）数" class="headerlink" title="斯特林（Stirling）数"></a><a href="https://baike.baidu.com/item/斯特林数" target="_blank" rel="noopener">斯特林（Stirling）数</a></h2><p>关于这个问题可以参考 <a href="https://www.cnblogs.com/gzy-cjoier/p/8426987.html" target="_blank" rel="noopener">这篇博客</a></p>
+<blockquote>
+<p>第一类斯特林数等到以后用到了再写吧</p>
+</blockquote>
+<p>第二类斯特林数： 将 $n$ 个不同的元素拆分成 $m$ 个非空集合的方案数 $S(n,m)$。显然有递推关系式：</p>
+<script type="math/tex; mode=display">
+S(n,m) = S(n-1,m-1)+mS(n-1,m)</script><p>又我们知道：</p>
+<script type="math/tex; mode=display">
+m^n = \sum _{i=0} ^ m S(n,i) \times i! \times {n \choose i}</script><p>将 $n$ 个任意的放在 $m$ 个不同盒子中。右边的枚举非空盒子数量 $i$，$i$ 个盒子因为是不同的所以要乘 $i!$ （不用担心算多了，因为一旦分配好了，盒子本身即使无区别，放了东西就有区别了）<br><a href="/inverseFormulaAndItsMatrixForm/" title="从我的这篇博文">从我的这篇博文</a> 直接可知 (把 $n$ 看作常数）：</p>
+<script type="math/tex; mode=display">
+S(n,m) m! = \sum_{i=0}^m (-1)^{m-i} {n \choose i} i^n</script><p>改写成大家通常见到的形式也就是：</p>
+<script type="math/tex; mode=display">
+S(n,m)  = \frac{1}{m!} \sum_{i=0}^m (-1)^{i} {n \choose i} (m-i)^n</script><blockquote>
+<p>补充：知乎上 <a href="https://www.zhihu.com/people/hzy-46-50" target="_blank" rel="noopener">Hongzy</a> 写了一篇 <a href="https://zhuanlan.zhihu.com/p/150779987" target="_blank" rel="noopener">斯特林数入门</a> 的文章，写的甚好。</p>
+</blockquote>
+<h2 id="正整数分拆数"><a href="#正整数分拆数" class="headerlink" title="正整数分拆数"></a>正整数分拆数</h2><p>将正整数 $n$ 拆分成 $m$ 个非负整数之和的方案数 $f(n,m)$：</p>
+<script type="math/tex; mode=display">
+f(n,m) = \left\{ \begin{array}{lr} 
+1 & n=m=1 \\
+f(n,n) & n<m \\
+1+f(n,n-1) & n=m \\
+f(n,m-1)+f(n-m,m) & n>m>1 
+\end{array} \right.</script><h2 id="正整数分拆成乘积数"><a href="#正整数分拆成乘积数" class="headerlink" title="正整数分拆成乘积数"></a><a href="https://oeis.org/A001055" target="_blank" rel="noopener">正整数分拆成乘积数</a></h2><p>记 $fcnt(n,m)$ 表示 $n$ 的乘法分解都不超过 $m$ 的数</p>
+<script type="math/tex; mode=display">
+fcnt(n,m) = \sum_{d|n} [d<=m] fcnt(\frac{n}{d},d)</script><ul>
+<li>打表时间复杂度 $O(n^{\frac{5}{2})}$，空间复杂度 $O(n^2)$ 不推荐！</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10004</span>;</span><br><span class="line"><span class="keyword">int</span> fcnt[N][N]; <span class="comment">// </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initFcnt</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;++i)  fcnt[<span class="number">1</span>][i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;N;++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> sn = <span class="built_in">sqrt</span>(i+<span class="number">0.2</span>); </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> d = <span class="number">1</span>;d&lt;=sn;++d)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i%d) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = N<span class="number">-1</span>;j&gt;=d;--j)  fcnt[i][j]+=fcnt[i/d][d];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=N<span class="number">-1</span>;j&gt;=i/d;--j)  fcnt[i][j]+=fcnt[d][i/d];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sn*sn == i)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = N<span class="number">-1</span>;j&gt;=sn;--j)  fcnt[i][j]-=fcnt[sn][sn];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getFcnt</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fcnt[<span class="number">1</span>][<span class="number">1</span>] != <span class="number">1</span>) initFcnt();</span><br><span class="line">    <span class="keyword">return</span> fcnt[n][n];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</span><br><span class="line">        <span class="keyword">time_t</span> now = time(<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;getFcnt(n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Time used: "</span>&lt;&lt;difftime(time(<span class="number">0</span>),now)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>递归 （推荐复杂度不好分析）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fcnt</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)  <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> sn = <span class="built_in">sqrt</span>(n+<span class="number">0.2</span>),ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> d = <span class="number">1</span>;d&lt;=sn;++d)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n%d)  <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(d&lt;=m &amp;&amp; d&gt;<span class="number">1</span>)  ans += fcnt(n/d,d);</span><br><span class="line">        <span class="keyword">if</span>(n/d&lt;=m) ans+= fcnt(d,n/d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sn*sn == n &amp;&amp; sn&lt;=m) ans-=fcnt(sn,sn);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123; <span class="comment">// n=98765432109876 = 9.8*10^13 用时 42s, N 大点，耗时会小点</span></span><br><span class="line">        <span class="keyword">time_t</span> now = time(<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;fcnt(n,n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Time used: "</span>&lt;&lt;difftime(time(<span class="number">0</span>),now)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="n-个球放在-m-个盒子中"><a href="#n-个球放在-m-个盒子中" class="headerlink" title="$n$ 个球放在 $m$ 个盒子中"></a><a href="https://blog.csdn.net/qq_39942341/article/details/80246780" target="_blank" rel="noopener">$n$ 个球放在 $m$ 个盒子中</a></h2><p>球有相同和不同两种情况，盒子也是，还有盒子能空和不能空，一共八种情况：</p>
+<ul>
+<li><p>球同，盒同，非空</p>
+<p>正整数拆分数之和 $f(n,m) - f(n,m-1)$</p>
+</li>
+<li><p>球同，盒同，能空</p>
+<p>正整数拆分数 $f(n,m)$</p>
+</li>
+<li><p>球同，盒异，非空</p>
+<p>等价于 $x_1 + \cdots + x_m = n$ 的正整数解，插空法知道 $n-1 \choose m-1$</p>
+</li>
+<li><p>球同，盒异，能空</p>
+<p>同上，$n+m-1 \choose m-1$</p>
+</li>
+<li><p>球异，盒同，非空</p>
+<p>第二类斯特林数： $S(n,m)$</p>
+</li>
+<li><p>球异，盒同，能空</p>
+<p>同上， $\sum_{i=1} ^m S(n,i)$</p>
+</li>
+<li><p>球异，盒异，非空： $m!S(n,m)$</p>
+</li>
+<li><p>球异，盒异，能空： $m^n$</p>
+</li>
+</ul>
+<h2 id="有限制的线性方程组的解"><a href="#有限制的线性方程组的解" class="headerlink" title="有限制的线性方程组的解"></a>有限制的线性方程组的解</h2><p>$x_1+⋯+x_n=m, c_i &lt; x_i \leq d_i$ 的正整数解的个数 ?</p>
+<h3 id="动态规划直接做复杂度-O-m-2-n"><a href="#动态规划直接做复杂度-O-m-2-n" class="headerlink" title="动态规划直接做复杂度 O(m^2 n)"></a>动态规划直接做复杂度 O(m^2 n)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> x = d[i];x&gt;c[i];--x)&#123;</span><br><span class="line">    dp[i][m] += dp[i<span class="number">-1</span>][m-x]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不妨设 $c_i = 0, d_i = k$</p>
+</blockquote>
+<h3 id="包容排斥原理做"><a href="#包容排斥原理做" class="headerlink" title="包容排斥原理做"></a>包容排斥原理做</h3><script type="math/tex; mode=display">
+{m-1 \choose n-1} - {n \choose 1} {m-k-1 \choose n-1} + \cdots (-1)^n {n \choose n} {m-nk-1 \choose n-1} = \sum_{i=0} ^ n (-1)^i {n \choose i} {m-ik-1 \choose n-1}</script></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dna049</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dna049.com/classicalCombination/">https://dna049.com/classicalCombination/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dna049.com" target="_blank">dna049</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Math/">Math</a><a class="post-meta__tags" href="/tags/%E7%BB%84%E5%90%88/">组合</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/rewardAlipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardAlipay.png" alt="下次"/></a><div class="post-qr-code-desc">下次</div></li><li class="reward-item"><a href="/img/rewardWechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardWechat.png" alt="一定"/></a><div class="post-qr-code-desc">一定</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/heapWithPy/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">堆</div></div></a></div><div class="next-post pull-right"><a href="/syntacticSugar/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python语法糖之防蛀牙</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/fastPowSumOfNaturalNumber/" title="自然数方幂和快速算法"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2016-05-08</div><div class="relatedPosts_title">自然数方幂和快速算法</div></div></a></div><div class="relatedPosts_item"><a href="/codeforces/" title="Codeforces汇总"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-22</div><div class="relatedPosts_title">Codeforces汇总</div></div></a></div><div class="relatedPosts_item"><a href="/nft/" title="快速数论变换"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-02</div><div class="relatedPosts_title">快速数论变换</div></div></a></div><div class="relatedPosts_item"><a href="/quadraticModEquation/" title="$x^2 \equiv a \mod n$ 何时有解"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="relatedPosts_title">$x^2 \equiv a \mod n$ 何时有解</div></div></a></div><div class="relatedPosts_item"><a href="/dynamicProgramming/" title="动态规划"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-21</div><div class="relatedPosts_title">动态规划</div></div></a></div><div class="relatedPosts_item"><a href="/grossmanConstant/" title="Grossman 常数"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-16</div><div class="relatedPosts_title">Grossman 常数</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2020 By dna049</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va',
+      appKey: 'tQiWPCsXLT3YIbUTm3b9bewX',
+      placeholder: '2young2simple, sometimes naive',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

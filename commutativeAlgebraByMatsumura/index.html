@@ -1,0 +1,682 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matsumura《Commutative Algebra》读书笔记 | dna049</title><meta name="description" content="在学习非交换环论的过程中, 发现交换环有些东西依然没搞清楚, 复习一下, 顺便再理一理 Matsumura 这本言简意赅的《Commutative Algebra》. 以下环都是指 含幺交换环(commutative ring with identity)  基本概念可以说书中没一句废话, 开头直接给出下面概念, 并且叙述一些常见等价刻画:   理想的 radical 的定义  prime ide"><meta name="keywords" content="Math"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/commutativeAlgebraByMatsumura/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Matsumura《Commutative Algebra》读书笔记"><meta property="og:url" content="https://dna049.com/commutativeAlgebraByMatsumura/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="在学习非交换环论的过程中, 发现交换环有些东西依然没搞清楚, 复习一下, 顺便再理一理 Matsumura 这本言简意赅的《Commutative Algebra》. 以下环都是指 含幺交换环(commutative ring with identity)  基本概念可以说书中没一句废话, 开头直接给出下面概念, 并且叙述一些常见等价刻画:   理想的 radical 的定义  prime ide"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2017-05-23T08:48:01.000Z"><meta property="article:modified_time" content="2020-08-20T08:53:57.056Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '4.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  last_push_date: '',
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-20 16:53:57'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="dna049" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平坦性-Flatness"><span class="toc-number">2.</span> <span class="toc-text">平坦性(Flatness)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#平坦模的等价刻画"><span class="toc-number">2.0.1.</span> <span class="toc-text">平坦模的等价刻画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平坦模的基本性质"><span class="toc-number">2.0.2.</span> <span class="toc-text">平坦模的基本性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部环上有限生成模是自由模"><span class="toc-number">2.0.3.</span> <span class="toc-text">局部环上有限生成模是自由模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平坦模"><span class="toc-number">2.0.4.</span> <span class="toc-text">平坦模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平坦的局部整体性"><span class="toc-number">2.0.5.</span> <span class="toc-text">平坦的局部整体性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忠实平坦-faithful-flat-f-f"><span class="toc-number">2.1.</span> <span class="toc-text">忠实平坦 faithful flat (f.f.)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#局部环中平坦和忠实平坦"><span class="toc-number">2.1.1.</span> <span class="toc-text">局部环中平坦和忠实平坦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#忠实平坦模的性质"><span class="toc-number">2.1.2.</span> <span class="toc-text">忠实平坦模的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#忠实平坦的等价刻画"><span class="toc-number">2.1.3.</span> <span class="toc-text">忠实平坦的等价刻画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#忠实平坦上的平坦"><span class="toc-number">2.1.4.</span> <span class="toc-text">忠实平坦上的平坦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整环上的忠实平坦"><span class="toc-number">2.1.5.</span> <span class="toc-text">整环上的忠实平坦</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Going-up-and-Going-down"><span class="toc-number">2.2.</span> <span class="toc-text">Going-up and Going-down</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#平坦-Going-down"><span class="toc-number">2.2.1.</span> <span class="toc-text">平坦 Going-down</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#整-Going-up"><span class="toc-number">2.2.2.</span> <span class="toc-text">整 Going-up</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代数几何中的-Constructible-Set"><span class="toc-number">2.3.</span> <span class="toc-text">代数几何中的 Constructible Set</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Noetherian-空间"><span class="toc-number">2.3.1.</span> <span class="toc-text">Noetherian 空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不可约闭集-irreducible-closed-set"><span class="toc-number">2.3.2.</span> <span class="toc-text">不可约闭集(irreducible closed set)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部闭集-locally-closed"><span class="toc-number">2.3.3.</span> <span class="toc-text">局部闭集(locally closed)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Noetherian-空间中-constructible-集"><span class="toc-number">2.3.4.</span> <span class="toc-text">Noetherian 空间中 constructible 集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#考察上述定义在-Spec-A-上的具体表现"><span class="toc-number">2.3.5.</span> <span class="toc-text">考察上述定义在 $Spec(A)$ 上的具体表现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-spec-B-to-Spec-A-成为-开-闭-连续映射"><span class="toc-number">2.3.6.</span> <span class="toc-text">$f: spec(B) \to Spec(A)$成为(开,闭)连续映射</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Noetherian-环上的-Associated-Primes"><span class="toc-number">2.4.</span> <span class="toc-text">Noetherian 环上的 Associated Primes</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ann-x-全体中的极大元在-Ass-M-中"><span class="toc-number">2.4.1.</span> <span class="toc-text">$Ann(x)$ 全体中的极大元在 $Ass(M)$ 中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ass-M-与局部化可交换"><span class="toc-number">2.4.2.</span> <span class="toc-text">$Ass(M)$ 与局部化可交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Supp-M-的极小元全体等于-Ass-M-的极小元全体"><span class="toc-number">2.4.3.</span> <span class="toc-text">$Supp(M)$ 的极小元全体等于 $Ass(M)$ 的极小元全体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Primary-Decomposition-准素分解"><span class="toc-number">2.5.</span> <span class="toc-text">Primary Decomposition(准素分解)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#co-primary-等价刻画"><span class="toc-number">2.5.1.</span> <span class="toc-text">co-primary 等价刻画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-primary-的交依然是-p-primary"><span class="toc-number">2.5.2.</span> <span class="toc-text">p-primary 的交依然是 p-primary</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#准素分解闪亮登场"><span class="toc-number">2.5.3.</span> <span class="toc-text">准素分解闪亮登场</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分次环和分次模"><span class="toc-number">2.6.</span> <span class="toc-text">分次环和分次模</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#次模的-Poincare-数"><span class="toc-number">2.6.1.</span> <span class="toc-text">次模的 Poincare 数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ring-of-filtration"><span class="toc-number">2.6.2.</span> <span class="toc-text">ring of filtration</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#module-of-filtration"><span class="toc-number">2.6.3.</span> <span class="toc-text">module of filtration</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Rees-环"><span class="toc-number">2.6.4.</span> <span class="toc-text">Rees 环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Rees-模"><span class="toc-number">2.6.5.</span> <span class="toc-text">Rees 模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Artin-Rees-引理"><span class="toc-number">2.6.6.</span> <span class="toc-text">Artin-Rees 引理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dimension-Theroy"><span class="toc-number">2.7.</span> <span class="toc-text">Dimension Theroy</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Noetherian-半局部环"><span class="toc-number">2.7.1.</span> <span class="toc-text">Noetherian 半局部环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Noetherian-局部环和-regular-local-ring-正则局部环"><span class="toc-number">2.7.2.</span> <span class="toc-text">Noetherian 局部环和 regular local ring(正则局部环)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Depth"><span class="toc-number">3.</span> <span class="toc-text">Depth</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#M-regular-sequence"><span class="toc-number">3.0.1.</span> <span class="toc-text">$M$-regular sequence</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Grade"><span class="toc-number">3.0.2.</span> <span class="toc-text">Grade</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cohen-Macaulay-Rings"><span class="toc-number">3.1.</span> <span class="toc-text">Cohen-Macaulay Rings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#To-be-Continue"><span class="toc-number">4.</span> <span class="toc-text">To be Continue</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">dna049</a></span><span class="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Matsumura《Commutative Algebra》读书笔记</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2017-05-23T08:48:01.000Z" title="发表于 2017-05-23 16:48:01">2017-05-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T08:53:57.056Z" title="更新于 2020-08-20 16:53:57">2020-08-20</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">15.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>68分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>在学习非交换环论的过程中, 发现交换环有些东西依然没搞清楚, 复习一下, 顺便再理一理 Matsumura 这本言简意赅的《Commutative Algebra》. 以下环都是指 <strong>含幺交换环(commutative ring with identity)</strong></p>
+<a id="more"></a>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>可以说书中没一句废话, 开头直接给出下面概念, 并且叙述一些常见等价刻画: </p>
+<ol>
+<li><p>理想的 radical 的定义</p>
+</li>
+<li><p>prime ideal 的(等价)定义</p>
+</li>
+<li><p>primary ideal 的定义, 说明 primary ideal 的 radical 是 prime ideal (反之不尽然), 并给出一个理想成为 primary ideal 的充分条件: 包含某个极大理想的某次幂.</p>
+</li>
+<li><p>定义了环 $A$ 上的 Zariski 拓扑(素谱) $Spec(A)$, 极大谱 $\Omega(A)$, 包含某个集合的素理想全体构成闭集(容易验证确实构成拓扑空间), 给出素谱的基本开邻域基. 由于每个理想都包含在某个极大理想中, 极大理想都是素的, 因此 $Spec(A) = \emptyset \Leftrightarrow A = 0$, 也就是说 $Spec$ 的定义是没有毛病的. $Spec(A)$ 连通当且仅当 $A$ 中无非平凡幂等元.</p>
+<script type="math/tex; mode=display">
+V(I) = V(J) \Longleftrightarrow \sqrt{I} = \sqrt{J}</script></li>
+<li><p>说明环之间的同态映射 $f: A \to B$ 可以诱导 $Spec(B) \to Spec(A)$ 之间的连续映射, 也就是说 $Spec$ 定义了一个环范畴到拓扑空间范畴的一个逆变函子.</p>
+</li>
+<li><p>给出了一个关于素理想并的常见引理: 一个理想包含在最多两个不是素理想的理想的并中, 则它必然包含在其中一个理想中. 当然这也说明了任意两个真理想的并不会是整个环.</p>
+</li>
+<li><p>给出了两个理想互素的定义(和为整个环), 并说明此时它们的积等于交. 证明用到 $(I+J)(I \cap J) \subset IJ$.</p>
+</li>
+<li><p>定义乘闭子集 $S$ 准备做局部化, 应用 Zorn 引理说明与 $S$ 不相交的理想中任意极大元都是素理想, 由此可以证明: $A$ 中幂零元全体 $nil(A)$ 是 $A$ 中所有素理想的交, 也等于 $A$ 中所有极小素理想的交. 再由此结论, 可以说明每个理想 $I$ 的 radical: $\sqrt{I}$ 是所有包含 $I$ 的素理想的交.</p>
+</li>
+<li><p>定义环 $A$ 在 $S$ 处的局部化 $S^{-1}A$. $S^{-1}A = 0 \Leftrightarrow 0 \in S$. 并且我们有自然映射 $\phi : A \to S^{-1}A, \quad a \mapsto a/1$, 它满足泛性质: 若 $f: A \to B$ 是环同态, 且 $f(S)$ 均为 $B$ 中可逆元, 那么有 $g: S^{-1}A \to B$ 使得 $f = g \phi$</p>
+</li>
+<li><p>$A$ 中与 $S$ 不交的理想(素, 准素)和 $S^{-1}A$ 中的理想(素, 准素)有保序一一对应.</p>
+</li>
+<li><p>类似于环, 可以对模 $M$ 作局部化$S^{-1}M \simeq S^{-1}A \otimes M$, 这个同构可以由两个自然的合理的互逆映射给出. 并且我们还有同构 $S^{-1}(M \otimes N) = S^{-1} M \otimes S^{-1}N$. 由于张量函子右正合, 用定义可以证明 $S^{-1}A \otimes -$ 是正合函子. 也就是说 $S^{-1}A$ 是平坦 $A$-模.</p>
+</li>
+<li><p>给出有限表示(finite presentation)的定义: 即一个有限生成模, 且其生成关系也是有限生成的. 等价于说有正合列: $A^m \to A^n \to M \to 0$ 此时我们有:</p>
+<script type="math/tex; mode=display">
+S^{-1}(\hom(M,N)) \simeq \hom(S^{-1}M, S^{-1}N)</script><p>证明的关键在于对于自由模$M=A^n$时有上述自然同构, 再由有限表示, 应用 five lemma 证明上式.</p>
+</li>
+<li><p><strong>局部整体关系</strong> $M \to \prod_{\max p} M_{p}$ 是单的. 其中 $M_{p} = (A - p)^{-1} M$. 证明应用定义说明 $Ann(x) = A$ 即可.</p>
+</li>
+<li><p><strong>整环的特殊情形</strong> 当 $A$ 为整环时, $A$ 在任意乘闭子集处的局部化都可以看做它的分式域的子环, 实际上我们有</p>
+<script type="math/tex; mode=display">
+A = \bigcap_{\max p} A_{p}</script><p>证明类似整数作有理数. 定义 $D = \lbrace a \in A | ax \in A \rbrace$ 说明若 $x \notin A$ 可知 $D \subset A$ (真包含), 因此 $D$ 在某个极大理想 $P$ 中, 可推出 $x \notin A_{P}$.</p>
+</li>
+<li><p>我们有自然的同构 $A/I \otimes M \simeq M/IM$, 同构可由正合列 $0 \to I \to A \to A/I \to 0$, 用 $- \otimes M$ 作用上去, 再由定义有 $I \otimes M \to IM$ 的自然满同态( $M$ 平坦时可以说明是同构), 得到正合列: $0 \to IM  \to M \to A/I \otimes M \to 0$<br>特别地, 我们有: $S^{-1}(A/I) = S^{-1}A / I(S^{-1}A)$</p>
+</li>
+<li><p><strong>Jacobson radical</strong>: $rad(A) = \lbrace x| 1+xy \in U(A) \rbrace$ 为所有极大理想的交.</p>
+</li>
+<li><p><strong>局部环</strong>: 若环 $A$ 只有一个极大素理想 $\mathfrak{m}$, 则称 $A$ 为局部环, $A/\mathfrak{m}$ 称为 $A$ 的 residue field.<br>局部环之所以重要是因为, 任意环 $A$ 在素理想 $p$ 处作局部化都是一个局部环 $A_p$. 此时 $A_p$ 的 residue field 记作 $k(p)$. 它恰好是整环 $A/p$ 的分式域 $K(A/p)$. 由 $A \to A/p$ 到 $A_p \to K(A/p)$ 因此, 我们有 $k(p) \simeq K(A/p)$</p>
+</li>
+<li><p><strong>局部映射</strong>: 若环 $(A, \mathfrak{m}, k)$ 和 $(A’, \mathfrak{m}’, k’)$ 为局部环, 且有环同态 $\phi: A \to A’$ 使得 $\phi(\mathfrak{m}) \subseteq \mathfrak{m}’$, 则称为局部映射, 此时 $\phi$ 自然诱导了环同态 $k \to k’$.<br>现在对任意环同态 $\phi: A \to B$, 考虑连续映射</p>
+<script type="math/tex; mode=display">
+\hat{\phi}: Spec(B) \to Spec(A), \quad P \to \phi^{-1}(P) = P \cap A = p</script><p>此时 $\phi(A-p) \subseteq B-P$, 即 $\phi$ 诱导了局部映射 $\phi_P: A_p \to B_P$.</p>
+</li>
+<li><p><strong>半局部环</strong> 若环 $A$ 只有有限个极大理想 $\mathfrak{m}_1, \mathfrak{m}_2, \cdots , \mathfrak{m}_r$, 则称 $A$ 为半局部环(semilocal ring).<br>由于不同极大理想必然互素, 因此</p>
+<script type="math/tex; mode=display">
+rad(A) = \mathfrak{m}_1 \cap \cdots \cap \mathfrak{m}_r = \prod \mathfrak{m}_i</script></li>
+<li><p><strong>NAK lemma</strong> 设 $I$ 是环 $A$ 的理想, $M$ 是有限生成(f.g.) $A$-模. 若 $IM = M$, 则存在 $t \in I$ 使得 $(1+t)M = 0$, 特别地, 若还有 $I \subseteq rad(A)$, 则 $M=0$.<br><strong>Proof</strong>: 设 $M=Am_1 + \cdots + Am_s$, 对 $s$ 数学归纳, $s=0$ 时, 结论显然, 设 $M’ = M / Am_s$, 则由归纳假设, $\exists x \in I$ 使得 $(1+x)M’=0$, 即 $(1+x)M \subseteq Aw_s$, 由于 $M = IM$, 我们有 $(1+x)M = I(1+x)M \subseteq I(Aw_s) = Iw_s$, 因此存在 $y \in I$ 使得 $(1+x)w_s = yw_s$. 所以<br>$(1+x-y)(1+x)M = 0$, $t = x-y+x+(x-y)x$ 即为所求.<br><strong>NAK lemma</strong> 常用如下应用形式: $I$ 为环 $A$ 的理想, $N \subset M$ 为 $A$-模, 若 $M = N + IM$, 且 $I$ 幂零或 $M$ 有限生成, 则 $M=N$.</p>
+</li>
+</ol>
+<blockquote>
+<p>不要以为有限生成, 理想幂零, 环是整环或者 reduced 条件很苛刻, 其实实际碰到的也都是这些环, 主要问题在于有没有丰富的结果, 这些条件在何时发挥着作用. 有限生成可以用数学归纳, 幂零理想可以用于幂次和根理想.</p>
+</blockquote>
+<ol>
+<li>给定局部环 $(A, \mathfrak{m},k)$ , $M$ 是 $A$-模, 若 $\mathfrak{m}$ 幂零(例如 $A$ 是 Artinian)或者 $M$ 有限生成, 则 $M$ 的子集 $G$ 生成 $M$, 当且仅当它在 $M/\mathfrak{m}M = M \otimes k$ 下像 $\bar{G}$ 生成 $M \otimes k$.</li>
+</ol>
+<blockquote>
+<p>由于 $M \otimes k$ 是域 $k$ 上的向量空间, 因此它的一组基提升之后就能生成 $M$, 但是一般地并不能保证这些生成元线性无关.</p>
+</blockquote>
+<ol>
+<li><p>$M$-regular: $a \in A$ 称为 $M$-regular, 若 $0 \to M \xrightarrow{a} M$, 显然, $M$-regular 元全体构成了一个乘闭子集. 设 $S_0$ 为 $A$-regular 元全体, 则 $S_0^{-1}A$ 称为 $A$ 的 total quotient ring. 此时 $\phi: A \to S_0^{-1} A$ 是环单同态.</p>
+</li>
+<li><p>若 $M$ 是 Noetherian 环 $A$ 上有限生成模,那么我们有投射表示:</p>
+<script type="math/tex; mode=display">
+\cdots \to X_i \to X_{i+1} \to \cdots X_0 \to M \to 0</script><p>其中 $X_i$ 为有限自由 $A$-模, 特别地, 此时 $M$ 是有限表示(finite presentation). 此时多项式环 $A[x_1, \cdots, x_n]$ 也是 Noetherian, 类似的形式幂级数环 $A[[x_1, \cdots, x_n]]$ 也是 Noetherian, $A$ 上的有限维代数也是 Noetherian.</p>
+</li>
+</ol>
+<blockquote>
+<p>任意环中, 理想链的长度不低于极大理想的个数.</p>
+</blockquote>
+<ol>
+<li><p>环 $A$ 是 Artinian, 当且仅当它作为 $A$-模是有限长的, 当且仅当它是 Noetherian, 并且它的素理想都是极大的.</p>
+</li>
+<li><p>设 $\mathfrak{a}$ 是环 $A$ 的理想, $b \in A$, 若 $\mathfrak{a} + bA$ 和 $\mathfrak{a}:bA$ 都有限生成, 则 $\mathfrak{a}$ 有限生成.<br><strong>Proof</strong>: 设 $a_i \in \mathfrak{a},\quad b_j \in A$ 使得 $\mathfrak{a} + bA = \sum a_iA + bA$ 且 $\mathfrak{a} : bA = \sum c_j A$. 设 $\mathfrak{a}’ = \sum a_iA + \sum bc_j A \subseteq \mathfrak{a}$. 对任意 $a \in \mathfrak{a}$, 我们有 $a \in \mathfrak{a}’ + bA$, 即 $a \equiv rb \mod \mathfrak{a}’$. 因此 $rb \in \mathfrak{a}$. 即 $r \in \mathfrak{a}: bA$, $rb \in \mathfrak{a}’$, 因此 $a \in \mathfrak{a}’$, 即 $\mathfrak{a} = \mathfrak{a}’$.</p>
+</li>
+<li><p>(Cohen)环 $A$ 是 Noetherian, 当且仅当它的每个素理想都是有限生成的.<br><strong>Proof</strong>: 记 $A$ 中所有非有限生成理想构成的集合为 $F$, 取 $F$ 中极大元 $\mathfrak{a}$ (Zorn 引理保证可行性), 那么由条件知道 $\mathfrak{a}$ 不是素理想, 因此存在 $a,b \in A$, 使得 $a, b \notin \mathfrak{a}$ 且 $ab \in \mathfrak{a}$. 又因为 $\mathfrak{a}$ 的极大性知: $\mathfrak{a}+bA$ 和 $\mathfrak{a}:bA$ 有限生成, 所以 $\mathfrak{a}$ 有限生成, 所以 $F = \emptyset$.</p>
+</li>
+<li><p>定义 $Supp(M) = \lbrace p \in Spec(A) | M_p \neq  0 \rbrace$. 若 $M$ 有限生成, 则 $Supp(M) = V(Ann(M))$. 此时 $Supp(M)$ 就是零化 $M$ 的理想的闭包, 没毛病, 完美.</p>
+</li>
+</ol>
+<h2 id="平坦性-Flatness"><a href="#平坦性-Flatness" class="headerlink" title="平坦性(Flatness)"></a>平坦性(Flatness)</h2><p>设 $S: \quad \cdots \to N  \to N’ \to N’’ \to \cdots$ 是任意 $A$-模序列.<br>称 $A$-模 $M$ 是平坦的, 如果 $S$ 正合, 则 $S \otimes M$ 正合.<br>称 $M$ 忠实平坦的(faithful flat), 如果 $S$ 正合当且仅当 $S \otimes M$ 正合.<br>例子: 投射模是平坦的, 自由模是忠实平坦的.</p>
+<h4 id="平坦模的等价刻画"><a href="#平坦模的等价刻画" class="headerlink" title="平坦模的等价刻画"></a>平坦模的等价刻画</h4><ol>
+<li>$M$ 是平坦的.</li>
+<li>若 $0 \to N \to N’$ exact, 则 $0 \to N \otimes M \to N’ \otimes M$ exact.</li>
+<li>对任意(有限生成)理想 $I$, $0 \to I \otimes M \to M$ exact. 即 $I \otimes M \simeq IM$.</li>
+<li>$Tor_1 ^A(M,A/I) = 0$ 对任意(有限生成)理想 $I$ 成立.</li>
+<li>$Tor_1 ^A(M,N) = 0$ 对任意(有限生成)模 $N$ 成立.</li>
+<li>若 $\sum a_i x_i = 0$, 则存在 $b_{ij} \in A, y_j \in M$ 使得 $\sum a_i b_{ij} = 0$ 且 $x_i = \sum b_{ij}y_j$.</li>
+</ol>
+<h4 id="平坦模的基本性质"><a href="#平坦模的基本性质" class="headerlink" title="平坦模的基本性质"></a>平坦模的基本性质</h4><p><strong>Transitivity</strong>: 设 $\phi: A \to B$ 是平坦环同态(即 $B$ 看做 $A$-模是平坦的), 那么平坦 $B$-模 $N$ 也是平坦 $A$-模. (直接用定义证明即可)</p>
+<p><strong>Change of base</strong>: 设 $\phi: A \to B$ 是环同态, 若 $M$ 是平坦 $A$-模, 则 $M \otimes B$ 是平坦 $B$-模.</p>
+<p><strong>Localization</strong>: $S^{-1}A$ 是平坦 $A$-模. (直接用元素定义可证)</p>
+<p><strong>Tor 函子和张量函子交换</strong>: 设 $\phi: A \to B$ 是平坦同态, $M,N$ 是 $A$-模, 则有</p>
+<script type="math/tex; mode=display">
+Tor_i ^A(M,N) \otimes _A B = Tor_i ^B(M \otimes_A B,N \otimes_A B)</script><p>当 $A$ Noetherian 且 $M$ 有限生成, 则</p>
+<script type="math/tex; mode=display">
+Ext_i ^A(M,N) \otimes _A B = Ext_i ^B(M \otimes_A B,N \otimes_A B)</script><p><strong>Proof</strong>: 给定 $M$ 的一个投射(自由)表示: $\cdots \to X_1 \to X_0 \to M \to 0$. 由于 $B_A$ 平坦, 我们得到 $M \otimes_A B$ 的投射表示: $\cdots \to X_1 \otimes_A B  \to X_0 \otimes_A B \to M \otimes_A B \to 0$. 因此我们有:</p>
+<script type="math/tex; mode=display">
+Tor_i ^B(M \otimes_A B,N \otimes_A B) = H_i(X. \otimes_A N \otimes_A B) = H_i(X. \otimes_A N)\otimes_A B = Tor_i ^A(M,N) \otimes _A B</script><p>当 $A$ Noetherian 且 $M$ 有限生成时, 我们可以给 $M$ 的一个有限自由表示, 再由 $B$ 平坦得到了, $M \otimes _A B$的有限自由表示:<br>$\cdots \to X_1 \otimes_A B \to X_0 \otimes_A B \to M \otimes_A B \to 0$ 由此得到复形:</p>
+<script type="math/tex; mode=display">
+0 \to \hom_B(M \otimes _A B, N \otimes _A B) \to  \hom_B(X_0 \otimes _A B, N \otimes _A B) \to \hom_B(X_1 \otimes _A B, N \otimes _A B) \to \cdots</script><p>由于 $X_i$ 是有限自由模, 因此 $\hom_B(X_i \otimes B, N \otimes B) = \hom_A(X_i, N) \otimes _A B$. 所以</p>
+<script type="math/tex; mode=display">
+Ext_i ^B(M \otimes_A B,N \otimes_A B) = H_i(\hom_A(X_i, N) \otimes _A B) = H_i(\hom_A(X_i, N)) \otimes _A B = Ext_i ^A(M,N) \otimes _A B</script><blockquote>
+<p>特别地, 去 $B = S^{-1}A$.</p>
+</blockquote>
+<p>设 $M$ 是平坦 $A$-模, 则 $A$-regular 元都是 $M$-regular 元. 这只因为 $0 \to A \xrightarrow{a} A$ 可推出 $0 \to M \xrightarrow{a}M$.</p>
+<h4 id="局部环上有限生成模是自由模"><a href="#局部环上有限生成模是自由模" class="headerlink" title="局部环上有限生成模是自由模"></a>局部环上有限生成模是自由模</h4><p>$(A,\mathfrak{m},k)$ 是局部环, $M$ 是平坦 $A$-模, 若 $\mathfrak{m}$ 幂零或 $M$ 有限生成, 则 $M$ 是自由模.<br>在<strong>基本概念 21</strong>中, $G$ 生成了 $M$, 如果 $G$ 中元素线性无关, 那么 $G$ 自然就是 $M$ 的一组基(从而是自由模), 也就是说, 我们只需证明 $G =\lbrace x_1 \cdots x_n \rbrace$在 $M/mM = M \otimes k$下的象线性无关, 则由 $G$ 线性无关. 而<strong>$\mathfrak{m}$ 幂零或 $M$ 有限生成</strong>这个条件本质上是保证 $M/mM \neq 0$ (由 NAK lemma). 然后对 $n$ 应用数学归纳, 并利用 <strong>平坦模等价刻画 6</strong> 说明线性无关性. 从而命题得证.</p>
+<blockquote>
+<p>局部环上的投射模都是自由模</p>
+</blockquote>
+<h4 id="平坦模"><a href="#平坦模" class="headerlink" title="平坦模"></a>平坦模</h4><p>设 $A \to B$ 是平坦同态, 设 $I,J$ 是 $A$ 是理想, 则</p>
+<ol>
+<li>$(I \cap J)B = IB \cap JB$ </li>
+<li>$(I : J)B = IB : JB$, 其中$J$是有限生成的.</li>
+</ol>
+<p><strong>Proof</strong>: 由正合列: $0 \to I \cap J \to A \to A/I \otimes A/J$, 张量上 $B$得到 $0 \to (I \cap J)B \to B \to B/IB \otimes B/JB$. 因此 $(I \cap J)B = IB \cap JB$.<br>当 $J$ 有限生成时, 只需证明 $J = aA$ 的形式: 由正合列 $0 \to (I :aA) \to A \xrightarrow{f} \to A/I$. 其中 $f(x) = ax \mod I$. 张量上 $B$ 即可得到结论, 对于一般情况应用</p>
+<script type="math/tex; mode=display">
+(I: \sum_{i=1} ^n a_i A) = \bigcap_{i=1} ^n (I : a_i A)</script><blockquote>
+<p>平坦映射讲一个保持理想的交, 一种反映平坦的地方吧.</p>
+</blockquote>
+<h4 id="平坦的局部整体性"><a href="#平坦的局部整体性" class="headerlink" title="平坦的局部整体性"></a>平坦的局部整体性</h4><p>设 $f: A \to B$ 是环同态(即 $B$ 是交换结合 $A$ 代数), 那么下面条件等价:</p>
+<ol>
+<li>$B$ 作为 $A$-模平坦.</li>
+<li>$B_P$ 作为 $A_p$-模平坦, 其中 $p = P \cap A, \quad P \in Spec(B)$</li>
+<li>$B_P$ 作为 $A_p$-模平坦, 其中 $p = P \cap A, \quad P \in \omega(B)$<br><strong>Proof</strong>: $1 \to 2 \to 3$ 显然, $3 \to 1$, 只需证明 $Tor_1 ^A(B,N)=0$. 由$Tor_1 ^{A_p}(B_P, N_p) = 0, P \in \omega(B)$. 知道结论成立.</li>
+</ol>
+<h3 id="忠实平坦-faithful-flat-f-f"><a href="#忠实平坦-faithful-flat-f-f" class="headerlink" title="忠实平坦 faithful flat (f.f.)"></a>忠实平坦 faithful flat (f.f.)</h3><p>一个自然的问题, 平坦模何时成为忠实平坦模呢?<br>设 $M$ 是 $A$-模, 下面条件等价</p>
+<ol>
+<li>$M$ 是 f.f. $A$-模;</li>
+<li>$M$ 是平坦 $A$-模, 且对任意 $A$-模 $N \neq 0$, $N \otimes M \neq 0$;</li>
+<li>$M$ 是平坦 $A$-模, 且对任意 $A$ 的极大理想 $\mathfrak{m}$, $mM \neq M$.<br><strong>Proof</strong>: $1 \to 2$: 由 $0 \to N \to 0$ 和 $0 \to N \otimes M \to 0$ 同时正合性证毕. $2 \to 3$: 由于 $A/\mathfrak{m} \neq 0$, 所以 $M/\mathfrak{m} M \simeq A/\mathfrak{m} \otimes M \neq 0$. $3 \to 2$: 对任意 $0 \neq x \in N$, 存在 $I$ 使得 $Ax \simeq A/I$, 设 $\mathfrak{m}$ 为包含 $I$ 的一个极大理想, 于是 $IM \subseteq \mathfrak{m}M \subset M$, 从而 $(A/I)\otimes M = M/IM \neq 0$. 又由 $M$ 平坦知: $0 \to (A/I) \otimes M \to N \otimes M$ 正合, 所以 $N \otimes M \neq 0$. $2 \to 1$: 设 $S: N’ \xrightarrow{f} N \xrightarrow{g} N’’$ 为 $A$-模序列. 若 $S \otimes M : N’\otimes M \xrightarrow{\hat{f}} N \otimes M  \xrightarrow{\hat{g}} N’’\otimes M$. 由于 $- \otimes M$ 函子正合. $Im(gf) \otimes M = Im(\hat{f}\hat{g})=0$. 从而$Im(gf)=0$, 即 $S$ 是复形, $H(S) \otimes M = H(S \otimes M) = 0$, 从而 $H(S) = 0$, 证毕.</li>
+</ol>
+<h4 id="局部环中平坦和忠实平坦"><a href="#局部环中平坦和忠实平坦" class="headerlink" title="局部环中平坦和忠实平坦"></a>局部环中平坦和忠实平坦</h4><p>设 $(A,\mathfrak{m}), (B,\mathfrak{n})$ 是局部环, $\phi: A \to B$ 是局部同态, 若 $M \neq 0$ 是有限 $B$-模或 $\mathfrak{n}$ 幂零，则</p>
+<script type="math/tex; mode=display">
+M \text{是平坦模} \Longleftrightarrow M \text{是忠实平坦模}</script><p>由 $\mathfrak{m} M \subseteq \mathfrak{n}M \neq M$ (NAK lemma), 从而由忠实平坦模的等价刻画知结论成立.<br>推论 1: $B$ 在 $A$ 上平坦等价于忠实平坦.(取 $M=B$)<br>推论 2: 若 $M$ 是有限生成 $A$-模或 $\mathfrak{m}$ 幂零, 则 $M$ 平坦等价于忠实平坦(其实本结论可以由 <strong>局部环上有限生成模是自由模</strong> 小节直接推出).</p>
+<h4 id="忠实平坦模的性质"><a href="#忠实平坦模的性质" class="headerlink" title="忠实平坦模的性质"></a>忠实平坦模的性质</h4><p>类似于平坦模, transitive, change of base 都成立. 并且它还满足 descent property: 若 $B$ 是 $A$-代数, $M$ 是忠实平坦 $B$-模, 也是忠实平坦 $A$-模, 那么 $B$也是忠实平坦 $A$-模.<br><strong>忠实平坦在环扩张中起了很重要的作用</strong><br>设 $\phi: A \to B$ 是 f.f. 同态 则:</p>
+<ol>
+<li>对任意 $A$-模 $N$, $N \to N \otimes B, \quad x \mapsto x \otimes 1$ 是单的. 特别地, $\phi$ 是单的, 因此 $A$ 可以看做 $B$ 的子环.</li>
+<li>对任意 $A$ 的理想 $I$, 我们有 $IB \cap A = I$</li>
+<li>$\hat{\phi}: Spec(B) \to Spec(A)$ 是满的.</li>
+</ol>
+<p><strong>Proof</strong>: </p>
+<ol>
+<li><p>$0 \neq x \in N$, 则 $0 \neq Ax \subset N$. 因此 $Ax \otimes B \in N \otimes B$($B$平坦). 又 $Ax \otimes B = (x \otimes 1)(A \otimes B) = (x \otimes 1)B$. 由 $B$ 忠实平坦知 $x \otimes 1 \neq 0$. </p>
+</li>
+<li><p>由于 $B \otimes _A (A/I) = B/IB$ 在 $A/I$上 忠实平坦, 因此 $A/I \subseteq B/IB$. 因此 $IB \cap A \subset I$. 又反方向显然, 证毕. </p>
+</li>
+<li><p>设 $p \in Spec(A)$. $B_p = B \otimes A_p$ 在 $A_p$ 上忠实平坦, 因此  $pB_p \neq B_p$ <strong>(这是关键的一步)</strong>. 取 $B_p$ 中一个包含 $pB_p$ 的极大理想 $\mathfrak{m}$. 则 $pA_p \subseteq \mathfrak{m} \cap A_p$, 因此 $pA_p = \mathfrak{m} \cap A_p$. 设 $P = \mathfrak{m} \cap B$. 则</p>
+<script type="math/tex; mode=display">
+P \cap A = \mathfrak{m} \cap B \cap A = \mathfrak{m} \cap A = \mathfrak{m} \cap A_p \cap A = pA_p \cap A = p</script><p>要理解上面式子关键在于 $0 \to A \to A_p \to B_p = A_p \otimes B$. 最后 $\mathfrak{m}$ 被拉回之后就在 $B$ 中了.</p>
+</li>
+</ol>
+<h4 id="忠实平坦的等价刻画"><a href="#忠实平坦的等价刻画" class="headerlink" title="忠实平坦的等价刻画"></a>忠实平坦的等价刻画</h4><p>之前已经给了一些平坦的等价可以, 都是与张量积有关, 下面给出的都与谱有关. 即与素理想有关.<br>设 $\phi: A \to B$ 是平坦映射, 以下结论等价:</p>
+<ol>
+<li>$\phi$ 是忠实平坦的;</li>
+<li>$\phi$ 是平坦的, 且 $\hat{\phi}: Spec(B) \to Spec(A)$ 是满的;</li>
+<li>$\phi$ 是平坦的, 且对任意 $A$ 中极大理想 $\mathfrak{m}$,存在 $B$ 中极大理想 $\mathfrak{m}’$ 使得 $\mathfrak{m}’ \cap A = \mathfrak{m}$.<blockquote>
+<p>这注定了它和 NAK lemma 之间密切的联系.</p>
+</blockquote>
+</li>
+</ol>
+<p>$1 \to 2$ 已证, $2 \to 3$ 是因为存在 $p’ \in Spec(B)$ 使得 $p’ \cap A = \mathfrak{m}$. 找一个包含 $p’$ 的极大理想 $\mathfrak{m}’$. 则 $\mathfrak{m} \cap A = \mathfrak{m}$ (由于 $\mathfrak{m}$ 极大). $3 \to 1$ 是因为此时 $\mathfrak{m}B \subseteq \mathfrak{m}’B = \mathfrak{m} \subset B$. 因此 $B$ 在 $A$ 上忠实平坦.</p>
+<h4 id="忠实平坦上的平坦"><a href="#忠实平坦上的平坦" class="headerlink" title="忠实平坦上的平坦"></a>忠实平坦上的平坦</h4><p>设 $B$ 是 $A$ 上的忠实平坦 $A$-代数. $M$ 是 $A$-模. 则 $M$ 是 $A$ 上的(忠实)平坦模 $\Longleftrightarrow$ $M$ 是 $B$ 上的(忠实)平坦模。</p>
+<p>$\Longrightarrow$ 就是 change of base 的结果. $\Longleftarrow$ 成立是因为一般地我们有:</p>
+<script type="math/tex; mode=display">
+(S \otimes_A M) \otimes_A B = (S \otimes_A B) \otimes_B (M \otimes_A B)</script><h4 id="整环上的忠实平坦"><a href="#整环上的忠实平坦" class="headerlink" title="整环上的忠实平坦"></a>整环上的忠实平坦</h4><p>设 $A$ 设整环, 整环 $B$ 满足 $A \subseteq B \subseteq Q(A)$, 其中 $Q(A)$ 是 $A$ 的分式域. 则 $B$ 在 $A$ 上忠实平坦当且仅当 $B=A$.<br><strong>Proof</strong>: 若 $B \neq A$, 则对任意 $0 \neq x \in B \backslash A$, $x = y/s,\quad y,s \in A, s \notin U(A)$, 从而 $sB \cap A = A \neq sA$. 因此 $B$ 在 $A$ 上不忠实平坦, 所以 $B = A$.</p>
+<blockquote>
+<p>但是 $A$ 与 $Q(A)$ 之间的任意环都是平坦的(这可以由 <strong>平坦模的等价刻画 6</strong> 得到)</p>
+</blockquote>
+<h3 id="Going-up-and-Going-down"><a href="#Going-up-and-Going-down" class="headerlink" title="Going-up and Going-down"></a>Going-up and Going-down</h3><p>在这里还是重提以下 Going-up 和 Going-down 是什么鬼吧, 这部分之前一直糊里糊涂的过了.</p>
+<p>设 $\phi: A \to B$ 是环同态. 我们说 Going-up 条件成立是指:<br>对任意 $p \subset p’ \in Spec(A)$, 对任意在理想 $p$ 上的 $P \in Spec(B)$(即$P \cap A = p$). 都存在 $P’ \in Spec(B)$, 使得 $P’ \cap A = p’$ 且 $P \subset P’$</p>
+<blockquote>
+<p>上面 $p \subset p’$ 是真包含, 若上述 $P’$ 存在, 包含关系必然也是真包含的.</p>
+</blockquote>
+<p>类似地, 我们说 Going-down 条件成立是指:<br>对任意 $p \subset p’ \in Spec(A)$, 对任意在理想 $p’$ 上的 $P’ \in Spec(B)$(即 $P’ \cap A = p’$). 都存在 $P \in Spec(B)$, 使得 $P \cap A = p$ 且 $P \subset P’$.<br>这等价于:<br>对任意 $p \in Spec(A)$, 对任意包含 $pB$ 的极小素理想 $P$ 都有 $P \cap A = p$.</p>
+<blockquote>
+<p>上面 $p \subset p’$ 是真包含, 若上述 $P$ 存在, 包含关系必然也是真包含的.</p>
+</blockquote>
+<h4 id="平坦-Going-down"><a href="#平坦-Going-down" class="headerlink" title="平坦 Going-down"></a>平坦 Going-down</h4><p>设 $\phi: A \to B$ 是平坦映射, 则 $\phi$ 满足 Going-down 条件.<br><strong>Proof</strong>: 设 $p’ \subset p \in Spec(A)$, $P \in Spec(B)$ 使得 $P \cap A = p$. 则 $B_P = B_p$ 在局部环 $A_p$ 上平坦, 因此忠实平坦, 所以 $Spec(B_P) \to Spec(A_p)$ 是满的, 设 $P^{\star} \ subset B_P$ 满足 $P^{\star} \cap A_p = p’A_p$. 则 $P’ = P^{\star} \cap B$ 即为所求.</p>
+<h4 id="整-Going-up"><a href="#整-Going-up" class="headerlink" title="整 Going-up"></a>整 Going-up</h4><p>设 $A \subset B$ 是环, 且 $B$ 在 $A$ 上整. 则:</p>
+<ol>
+<li>$Spec(B) \to Spec(A)$ 是满的</li>
+<li>$B$ 中在某个 $Spec(A)$ 上的所有素理想互不包含.</li>
+<li>Going-up 条件成立.</li>
+<li>若 $A$ 是局部环, $p$ 是唯一极大理想, 则 $B$ 中在 $p$ 上的素理想都是极大理想.</li>
+</ol>
+<p>先证$4$: 设 $\mathfrak{n}$ 为 $B$ 的一个极大理想, 设 $\mathfrak{m} = \mathfrak{n} \cap A$. $\bar{B} = B / \mathfrak{n}$ 是域, 并且在环 $\bar{A} = A/\mathfrak{m}$ 上整, 对 $A$ 中任意非零元 $x$. $1/x \in \bar{B}$. 因此</p>
+<script type="math/tex; mode=display">
+(1/x)^n + a_1 (1/x)^{n-1} + \cdots a_n = 0</script><p>所以 $\frac{1}{x} = -(a_1 + a_2 x + a_n x^{n-1} \in A$. 即 $\bar{A}$ 是域, $\mathfrak{m} = p$ 为 $A$ 的唯一极大理想. 设 $P \in Spec(B)$ 使得 $P \cap A = p$. 则 $\bar{B} = B/P$ 是整环, 且在域 $\bar{A} = A/p$ 上整, 易知 $\bar{B}$也是域, 即 $P$ 是极大理想.<br>再证 <code>1, 2</code>: 对任意 $p \in Spec(A)$. $B_p = B \otimes _A A_p = (A-p)^{-1}B$ 在 $A_p$ 上整且包含 $A_p$. 又因为 $B$ 中在 $p$ 上的素理想与 $B_p$ 中在 $pA_p$ 的素理想一一对应, 在由 <code>4</code> 知道 它对应于 $B_p$ 中的极大理想, 因此 <code>1, 2</code>得证.<br>最后证明 <code>3</code>: 设 $p \subset p’ \in Spec(A)$, $P \in Spec(B)$ 使得 $P \cap A = p$, $B/P$ 包含 $A/p$ 且在其上整. 由 $1$ 知, 存在 $P’/P$ 使得 $P’/P \cap A/p = p’/p$. 所以 $P’ \in Spec(B)$ 满足 $P’ \cap B = p’$.</p>
+<blockquote>
+<p>一个有用的结论: 整环 $B$ 在 $A$ 上整, 则 $B$ 是域当且仅当 $A$ 是域.</p>
+</blockquote>
+<h3 id="代数几何中的-Constructible-Set"><a href="#代数几何中的-Constructible-Set" class="headerlink" title="代数几何中的 Constructible Set"></a>代数几何中的 Constructible Set</h3><h4 id="Noetherian-空间"><a href="#Noetherian-空间" class="headerlink" title="Noetherian 空间"></a>Noetherian 空间</h4><p>称一个拓扑空间 $X$ 为 Noetherian, 如果它满足闭集的降链条件, 等价于开集的升链条件.<br>显然有限个 Noetherian 空间的并还是 Noetherian 空间, Noetherian 空间的子空间还是 Noetherian 空间. Noetherian 空间是紧的.</p>
+<blockquote>
+<p>由于 Noetherian 环 $A$ 满足素理想的降链条件, 此时 $Spec(A)$ 是 Noetherian 空间.</p>
+</blockquote>
+<h4 id="不可约闭集-irreducible-closed-set"><a href="#不可约闭集-irreducible-closed-set" class="headerlink" title="不可约闭集(irreducible closed set)"></a>不可约闭集(irreducible closed set)</h4><p>一个闭集称为不可约的, 如果它不能写成两个真闭子集的并. </p>
+<blockquote>
+<p>在 Noetherian 空间中, 每个闭集都可以写成有限个不可约闭子集的并. 并且这些不可约子集互不包含, 称每一个都为这个闭集的不可约部分.</p>
+</blockquote>
+<h4 id="局部闭集-locally-closed"><a href="#局部闭集-locally-closed" class="headerlink" title="局部闭集(locally closed)"></a>局部闭集(locally closed)</h4><p>一个集合 $Z$ 称为 locally closed 如果 $\forall z \in Z, \quad \exists U_z$  使得 $U_z \cap Z$ 是开邻域 $U_z$ 中的闭集. 这等价于说 $Z$ 是拓扑空间 $X$ 中某个开集和闭集的交. 特别地, 开集和闭集都是 locally closed.</p>
+<h4 id="Noetherian-空间中-constructible-集"><a href="#Noetherian-空间中-constructible-集" class="headerlink" title="Noetherian 空间中 constructible 集"></a>Noetherian 空间中 constructible 集</h4><p>设 $X$ 是一个 Noetherian 空间, 称集合 $Z \subseteq$ 是一个 constructible 集, 如果它是有限个 locally close 集合的并.<br>(非 Noetherian 空间中也可以定义 constructible 集, 但是很复杂)<br>显然 constructible 集关于交并差都是封闭的.</p>
+<p>设 $X$ 是一个 Noetherian 空间, 称集合 $Z \subseteq$ 是一个 pro-constructible(对应的 ind-constructible)集, 如果它是任意一族 constructible 集的交(对应的并).</p>
+<p><strong>constructible 集</strong> 判定方法, Noetherian 空间 $X$ 的子集 $Z$ 称为 constructible 集的充要条件是:<br>对任意不可约闭子集 $X_0 \subseteq X$, 若 $X_0 \cap Z$ 在 $X_0$ 中稠密, 则 $X_0 \cap Z$ 包含 $X_0$ 中某个非空开集.<br><strong>Proof</strong>: 必要性: 若 $Z$ 是 constructible 集, 则</p>
+<script type="math/tex; mode=display">
+X_0 \cap Z = \bigcup _{i=1} ^m (U_i \cap F_i)</script><p>其中 $U_i$ 是 $X$ 中开集, $F_i$ 是 $X$ 中不可约闭子集(这是可以做到的是因为 Noetherian 空间中闭集都可以写成有限个不可约闭集的并), 且 $U_i \cap F_i$ 是非空的(如果空就直接踢掉了). 则 $\bar{U_i \cap F_i} = F_i$(这是因为否则 $\bar{U_i \cap F_i} \cup (c(U_i) \cap F_i) = F_i$, 但是 $F_i$ 是不可约闭集). 因此</p>
+<script type="math/tex; mode=display">
+X_0 = \bar{X_0 \cap Z} = \bigcup _{i=1} ^m F_i</script><p>因此必有某个 $F_i = X_0$. 从而 $U_i \cap X_0 = U_i \cap F_i$ 是 $X_0$ 中的一个非空开集.<br>充分性: 我们对 $\bar{Z}$ 进行应用所谓的超限数学归纳. 首先, $\emptyset$ 是 constructible 集, 其次假设 $\bar{Z}$ 中所有满足条件且 $\bar{Z’} \subset \bar{Z}$(严格包含)的 $Z’$ 都是 constructible 集. 我们证明此时 $Z$ 也是 constructible 集:<br>设 $\bar{Z} =  F_1 \cup \dots \cup F_r$ 是 $\bar{Z}$ 的不可约分解. 那么 $\bar{F_1 \cap Z} =  F_1$(毕竟不可约闭集). 因此, 由条件存在 $F_1$ 中的真子集 $F_1’$ 使得 $\emptyset \neq F_1 - F_1’ \subseteq Z$. 此时定义 $F^{\star} = F_1’ \cap F_2 \cap cdots \cap F_r$. 那么 $Z = (F_1 - F_1’) \cup (Z \cap F^{\star})$. 由于 $F_1 - F_1’$ 是 locally closed, 又因为 $Z \cap F^{\star}$ 满足条件: 若 $X_0$ 是不可约闭集且 $X_0 = \bar{Z \cap F^{\star} \cap X_0} \subseteq \bar{F^{\star}} = F^{\star}$, 从而 $Z \cap F^{\star} \cap X_0 = Z \cap X_0$ 从而包含 $X_0$ 中的一个非空开集. 并且 $\bar{Z \cap F^{\star}} \subseteq F^{\star} \subset Z$. 由数学归纳知 $Z \cap F^{\star}$ 是 constructible 集. 从而 $Z = (F_1 - F_1’) \cup (Z \cap F^{\star})$ 是 constructible 集.</p>
+<blockquote>
+<p>以上结果对一般地 Noetherian 空间都成立.</p>
+</blockquote>
+<h4 id="考察上述定义在-Spec-A-上的具体表现"><a href="#考察上述定义在-Spec-A-上的具体表现" class="headerlink" title="考察上述定义在 $Spec(A)$ 上的具体表现"></a>考察上述定义在 $Spec(A)$ 上的具体表现</h4><p><strong>$Spec(A)$ 中的不可约闭集</strong>: 设 $F$ 是 $Spec(A)$ 中的闭集, 则 $F$ 不可约当且仅当, $F = V(p)$, 其中 $p \in Spec(A)$, 可以看出此时 $p$ 由 $F$ 唯一决定。<br>充分性由 $p \in V(p)$ 显然.<br>必要性. $F = V(I)$. 若 $I$ 不是素理想, 则存在 $a, b \notin I, ab \in I$, 即$F = (F \cap V(a)) \cup (F \cap V(b))$. 矛盾于 $F$ 不可约.设 $\phi: A \to B$ 是环同态, 设 $X = Spec(A), Y = Spec(B)$, 由自然的 $f: Y \to A$. 那么 $f(Y)$ 在 $X$ 中稠密, 当且仅当 $\ker(\phi) \subseteq nil(A)$. 特别地, 当 $A$ reduce 时, $f(Y)$ 在 $X$ 中稠密, 当且仅当 $\phi$ 是单同态.<br>证明 $\bar{f(Y)} = V(I)$, 其中 $I = \bigcap_{p \in Y} \phi^{-1}(p) = \phi^{-1}(\bigcap_{p \in Y} p) = \phi^{-1}(nil(B))$. 显然 $\ker(\phi) \subseteq I$.<br>若 $f(Y)$ 在 $X$ 中稠密, 则 $V(I) = X$. 因此 $I \subseteq nil(A)$, 从而  $\ker(\phi) \subseteq nil(A)$. 另一方面, 若 $\ker(\phi) \subseteq nil(A)$, 则 $I = \phi^{-1}(nil(B)) \subseteq nil(A)$. 从而 $\bar{f(Y)} = X$.</p>
+<blockquote>
+<p>之前提到了, $Spec$ 是环范畴到拓扑范畴的逆变函子, 现在是说, 这个拓扑空间的一些性质可以与环的一些性质有一个对应关系, 这个函子保持了很好的性质.</p>
+</blockquote>
+<p>之前关于 constructible 集的定义都是在 Noetherian 空间中考虑的, 因此我们下面考虑的环一般是 Noetherian 环:</p>
+<p><strong>(Chevalley)</strong> 设 $A$ 是 Noetherian 环, $B$ 是 $A$ 上的有限生成代数(从而也是 Noetherian 环). 设 $\phi: A \to B$ 是自然映射, 记 $X = Spec(A), Y = Spec(B)$ 则 $f: Y \to X$. 则 $f$ 将 $Y$ 中 constructible 集 映成 $X$ 中的 constructible 集.</p>
+<blockquote>
+<p>先证明 $f(Y)$ 是 constructible 集, 在利用下面的引理.</p>
+</blockquote>
+<p>另一方面设 $A$ 是 Noetherian 环, $X’$ 是 $X = Spec(A)$中的 constructible 集, 那么存在 $A$ 的有限生成代数 $B$ 使得 $Spec(B)$ 在 $Spec(A)$ 中的像恰好是 $X’$.</p>
+<blockquote>
+<p>对于 $X’ = D(a) \cap V(I)$, 然后考虑 $B = \lbrace 1,a,a^2,\cdots \rbrace ^{-1} (A/I)$, 然后考虑 constructible 集.</p>
+</blockquote>
+<p><strong>pro-constructible 集</strong> 设 $A$ 是 Noetherian 环, $\phi: A \to B$, $\bar{\phi}(Spec(B))$ 是 $Spec(A)$ 中的 pro-constructible 集.</p>
+<h4 id="f-spec-B-to-Spec-A-成为-开-闭-连续映射"><a href="#f-spec-B-to-Spec-A-成为-开-闭-连续映射" class="headerlink" title="$f: spec(B) \to Spec(A)$成为(开,闭)连续映射"></a>$f: spec(B) \to Spec(A)$成为(开,闭)连续映射</h4><p>设$A$是 Noetherian 环, $B$ 是 $A$ 上的有限生成代数, 假设它们之间的自然映射 $\phi: A \to B$ 满足 Going-down 条件, 则对应的自然映射 $f: Spec(B) \to Spec(A)$ 是开(连续)映射.</p>
+<blockquote>
+<p>设 $U$ 是 $Spec(B)$ 中开集, 则 $f(U)$ 是 constructible 集, 再由 Going-down 条件知道 $Spec(A) - f(U)$ 是闭集.</p>
+</blockquote>
+<p>设 $\phi: A \to B$ 满足 Going-up 条件, 且 $B$ 是 Noetherian 环, 则 $f: Spec(B) \to Spec(A)$ 是闭映射.</p>
+<h3 id="Noetherian-环上的-Associated-Primes"><a href="#Noetherian-环上的-Associated-Primes" class="headerlink" title="Noetherian 环上的 Associated Primes"></a>Noetherian 环上的 Associated Primes</h3><p>给定一个 Noetherian 环上的模 $M$, 我们称 $A$ 的一个素理想为 $M$ 的 associated prime, 如果它满足下面等价的条件:</p>
+<ol>
+<li>$\exists x \in M$ 使得 $Ann(x) = p$;</li>
+<li>$M$ 包含一个子模同构于 $A/p$.</li>
+</ol>
+<p>我们把 $M$ 中所有的 associated prime ideal 记为 $Ass(M)$. 有时也用 $Ass_A(M)$ 来防止歧义.</p>
+<blockquote>
+<p>由下面三个结论说明, $Ass(M)$ 确实是 $M$ 的一个重要不变量.</p>
+<p>(本节)环默认为 Noetherian 环.</p>
+</blockquote>
+<h4 id="Ann-x-全体中的极大元在-Ass-M-中"><a href="#Ann-x-全体中的极大元在-Ass-M-中" class="headerlink" title="$Ann(x)$ 全体中的极大元在 $Ass(M)$ 中"></a>$Ann(x)$ 全体中的极大元在 $Ass(M)$ 中</h4><p>设 $p$ 是 $\lbrace Ann(X) | 0 \neq x \in M \rbrace$. 则 $p \in Ass(M)$</p>
+<p>由上, 显然可知道 $Ass(M) = \emptyset \Longleftrightarrow M=0$. 即 $Ass(M)$ 是元素是十分丰富的. $M$ 中的零因子是 $Ass(M)$ 中元素的并.</p>
+<h4 id="Ass-M-与局部化可交换"><a href="#Ass-M-与局部化可交换" class="headerlink" title="$Ass(M)$ 与局部化可交换"></a>$Ass(M)$ 与局部化可交换</h4><p>给定一个乘闭子集 $S$, 记 $A’ = S^{-1}A, M’ = S^{-1} B$, 则</p>
+<script type="math/tex; mode=display">
+Ass_A(M’) = f(Ass_{A’}(M’) = Ass_A(M) \cap \lbrace p | p \cap S = \emptyset \rbrace</script><p>其中 $f: Spec(A’) \to Spec(A)$ 为自然映射.</p>
+<h4 id="Supp-M-的极小元全体等于-Ass-M-的极小元全体"><a href="#Supp-M-的极小元全体等于-Ass-M-的极小元全体" class="headerlink" title="$Supp(M)$ 的极小元全体等于 $Ass(M)$ 的极小元全体"></a>$Supp(M)$ 的极小元全体等于 $Ass(M)$ 的极小元全体</h4><p>$Ass(M) \subset Supp(M)$ 且 $Supp(M)$ 中的极小元在 $Ass(M)$ 中(从而 $Supp(M)$ 的极小元全体等于 $Ass(M)$ 的极小元全体).<br><strong>Proof</strong>: 设 $p \in Ass(M)$, 则由正合列 $0 \to A/p \to M$, 从而 $0 \to A_p/pA_p \to M_p$ 正合. 由 $A_p/pA_p \neq 0$, 从而 $M_p \neq 0$, 从而 $p \in Supp(M)$.<br>设 $p \in Supp(M)$, 由于局部化和 $Ass(M)$ 可交换, $p \in Ass_A(M)$ 等价于  $pA_p \in Ass_{A_p}(M_p)$. 因此, 我们不妨设 $(A, p)$ 是局部环, $M \neq 0$. 且对任意 $q \subset p, M_q = 0$, 即 $Supp(M) = \lbrace p \rbrace$. 由于 $Ass(M)$ 非空, 且包含于 $Supp(M)$ 中, 因此 $p \in Ass(M)$.</p>
+<blockquote>
+<p>设 $I$ 是 $A$ 的理想, 则 $Ass(A/I)$ 中的极小元全体为包含 $I$ 的极小素理想全体. 从而 $\bigcap _{p \in Ass(A/I)} p = \sqrt{I}$</p>
+</blockquote>
+<p>若 $0 \to M’ \to M \to M’’$ 是 $A$-模正合列, 则 $Ass(M) \subset Ass(M’) \cup Ass(M’’)$<br><strong>Proof</strong>: 设 $p \in Ass(M)$, 则存在 $N \subseteq M$ 使得 $N \simeq A/p$. 若 $N \cap M’ = 0$(本质上是和 $f(M’)$ 的交). 则 $N$ 同构于 $M’’$ 的一个子模, 因此 $p \in Ass(M’’)$. 若 $N \cap M’ \neq 0$, 则任取 $0 \neq x \in N \cap M’$, 则 $Ann(x) = p$.</p>
+<p>设 $M \neq 0$ 是 Noetherian 环上的有限生成模, 则存在(长为 $n$ 的)子模链 $(0) = M_0 \subset \cdots \subset M_{n-1} \subset M_n = M$ 使得 $M_i / M_{i-1} = A/p_i$, 其中 $p_i \in Spec(A)$. 从而 $Ass(M) \subset \lbrace p_1 \cdots p_n \rbrace$ 是有限集.<br><strong>Proof</strong>: 由 $M \neq 0$ 则 $Ass(M) \neq \emptyset$, 选择 $M_1 \subseteq M$, 使得 $M_1 \simeq A/p_1$, 若 $M_1 \neq M$, 再对 $M/M_1$ 做同样的事情, 由于 $M$ 是 Noetherian 的, 因此次过程在有限步后终止. 又因为</p>
+<script type="math/tex; mode=display">
+Ass(M) \subseteq Ass(M_1) \cup Ass(M_2/M_1) \cup \cdots \cup Ass(M_n /M_{n-1})</script><p>再由 $Ass(M_i/M_{i-1}) = Ass(A/p_i)=p_i$ 知结论成立.</p>
+<h3 id="Primary-Decomposition-准素分解"><a href="#Primary-Decomposition-准素分解" class="headerlink" title="Primary Decomposition(准素分解)"></a>Primary Decomposition(准素分解)</h3><blockquote>
+<p>本节设 $M$ 是 Noetherian 环 $A$ 上的模.</p>
+</blockquote>
+<p>称一个 $A$-模是 <strong>co-primary</strong> 如果它仅有一个 associated prime ideal. $N \subseteq M$ 称为 $M$ 的 primary 子模, 如果 $M/N$ 是 co-primary. 若 $Ass(M/N) = \lbrace p \rbrace$, 则称 $N$ 为 $p$-primary 或称 $N$ 属于 $p$(的 primary submodule).</p>
+<h4 id="co-primary-等价刻画"><a href="#co-primary-等价刻画" class="headerlink" title="co-primary 等价刻画"></a>co-primary 等价刻画</h4><p>$M$ 是 co-primary 的, 当且仅当 $M \neq 0$, 且若 $a \in A$ 是 $M$ 的零因子, 则 $a$ 在 $M$ 上 locally nilpotent($\forall x \in M, \exists n$, such that  $a^n x = 0$).<br><strong>Proof</strong>: 若 $Ass(M) = \lbrace p \rbrace$, 则对任意 $x \in M$, $Ass(Ax) \subseteq Ass(M) = \lbrace p \rbrace$, 若 $Ass(Ax) = \emptyset$(取 $n = 1$ 即可), 若 $Ass(Ax) =  \lbrace p \rbrace$. 因此 $p$ 是 $Supp(Ax) = V(Ann(x))$ 中唯一的极小元素. 即 $p = \sqrt{Ann(x)}$.<br>另一方面, 定义 $p = \lbrace a \in A | a \text{在} M \text{上 locally nilpotent} \rbrace$. 它显然是一个理想. 对任意 $q \in Ass(M)$, 存在 $x \in M$  使得 $q = Ann(x)$. 因此 $p \subseteq \sqrt{q} = q$. 另一方面由于 $p$ 为所有 associated prime 理想的并, 因为 $q \subseteq p$. 从而 $Ass(M) = \lbrace p \rbrace$.</p>
+<blockquote>
+<p>当 $M = A/q$ 时, 上述条件恰好就是 $q$ 为准素理想的定义.</p>
+</blockquote>
+<h4 id="p-primary-的交依然是-p-primary"><a href="#p-primary-的交依然是-p-primary" class="headerlink" title="p-primary 的交依然是 p-primary"></a>p-primary 的交依然是 p-primary</h4><p>设 $p$ 是 $A$ 的素理想, $Q_1, Q_2$ 是 $M$ 的 $p$-primary 子模. 则 $Q_1 \cap Q_2$ 也是 $M$ 的 $p$-primary 子模.</p>
+<blockquote>
+<p>由 $0 \to M / Q_1 \cap Q_2 \to M/Q_1 \oplus M/Q_2$ 显然</p>
+</blockquote>
+<h4 id="准素分解闪亮登场"><a href="#准素分解闪亮登场" class="headerlink" title="准素分解闪亮登场"></a>准素分解闪亮登场</h4><p>设 $N$ 是 $M$ 的一个子模, 我们称 $N = Q_1 \cap \cdots \cap Q_r$ 是 $N$ 的一个准素分解, 如果 $Q_i$ 是 $M$ 中的 primary 子模. 我们称一个准素分解是 irredundant 如果每个准素子模都不能去掉, 并且 $Ass(M/Q_i)$ 各不相同. 对于任意准素分解, 我们都可以通过有限次剔除之后使得它的每一个准素子模都不可去掉, 而如果有两个准素子模属于相同的 associated prime $p$, 则我们可以把它们交起来构成一个新的准素子模, 从而可知</p>
+<blockquote>
+<p>任意准素分解都可以化成 irredundant 准素分解.</p>
+</blockquote>
+<p>设 $N = Q_1 \cap \cdots \cap Q_r$ 是 $N$ 的一个 irredundant 准素分解, 若 $Q_i$ 属于 $p_i$. 则 $Ass(M/N) = \lbrace p_1 \cdots p_r \rbrace$.<br><strong>Proof</strong>: 由自然单同态 $0 \to M/Q_1 \oplus \cdots \oplus M/Q_r$. 因此 $M/N \subseteq \cup Ass(M/Q_i) = \lbrace p_1 \cdots p_r \rbrace$. 另一方面 $(Q_2 \cap \cdots \cap Q_r)/N$ 同构于 $M/Q_1$ 的子模, 从而 $Ass(Q_2 \cap \cdots \cap Q_r)/N) = \lbrace p_1 \rbrace$. 从而 $p_1 \in Ass(M)$. 其它的类似.</p>
+<p>设 $N$ 是 $M$ 的一个 $p$-primary 子模. 设 $q$ 是一个理想. 若 $p \subseteq q$,  则 $N = M \cap N_q$, 反之 $N_q = M_q$.<br><strong>Proof</strong>: 由于 $Ass(M/N) = \lbrace p \rbrace$. 若 $p \subseteq q$, 则 $A-q$ 中无 $M/N$ 的零因子, 即 $M/N \to (M/N)_q = M_q / N_q$ 是单射, 从而 $N = M \cap N_q$. 反之 $Ass(M_q/N_q) = Ass(M/N) \cap \lbrace \text{包含于} p \text{的素理想} \rbrace = \emptyset$. 从而 $M_q/N_q = 0$.</p>
+<blockquote>
+<p>推论 1: 若 $N = Q_1 \cap \cdots \cap Q_r$ 是 $N$ 的一个 irredundant 准素分解, 其中 $p_1$ 是 $Ass(M/N)$ 中的极小素理想. 则 $Q_1 = M \cap N_{p_1}$ 由 $N$ 和 $p_1$ 决定.<br>推论 2: 设 $I$ 是 Noetherian 环 $A$ 的理想 $N = \sqrt{I}$(有限生成). 则存在 $n \in \mathbb{N}$ 使得 $N^n \subseteq I$. 特别地若 $Q$ 是 $R$ 的 $p$ 准素理想, 则存在 $n \in \mathbb{N}$ 使得 $P^n \subseteq Q \subset P$.</p>
+</blockquote>
+<p><strong>准素分解</strong> 设 $M$ 是(Noetherian 环) $A$-模. 对每个 $p \in Ass(M)$, 我们可以选取 $p$-primary 子模 $Q(p)$, 使得</p>
+<script type="math/tex; mode=display">
+(0) = \bigcap_{p \in Ass(M)} Q(p)</script><p><strong>Proof</strong>: 给定一个 $p \in Ass(M)$, 我们考虑 $M$ 的一些子模构成的集合:  $\mathfrak{N} = \lbrace N \subseteq M | p \notin Ass(N) \rbrace \neq \emptyset$( $(0)$ 在其中). 由 Zorn 引理可知其存在极大元 $Q(p) \neq M$. 由 $Q(p)$ 的极大性, 知道 $Ass(M/Q(p) = \lbrace p \rbrace$. 从而</p>
+<script type="math/tex; mode=display">
+Ass(\bigcap_{p \in Ass(M)} Q(p)) = \bigcap_{p \in Ass(M)} Ass(Q(p)) = \emptyset</script><p>由上可知, 若 $M$ 有限生成, 则将上面定理应用于 $M/N$, 再由 $Ass(M/N)$ 是有限集, 从而 $N$ 有 primary decomposition.</p>
+<h3 id="分次环和分次模"><a href="#分次环和分次模" class="headerlink" title="分次环和分次模"></a>分次环和分次模</h3><p><strong>分次环</strong>：称 $A = \bigoplus _{n \geq 0} A_n$ 是分次环, 如果 $A_n$ 是 $A$ 的加法子群, 且 $A_n A_m \subseteq A_{m+n}$. 我们称 $A_n$ 中的非零元素 $x$ 为 $n$ 次齐次元, 并记作 $\deg x = n$.</p>
+<blockquote>
+<p>$A_0$ 是 $A$ 的子环.<br>例子: $A = F[x_1, \cdots x_m]$, 其中 $A_i$ 是 $i$ 次单项式生成的子空间, 此时 $A$ 成为了分次环.</p>
+</blockquote>
+<p><strong>分次模</strong>：称分次环 $A = \bigoplus _{n \geq 0} A_n$ 上的模 $M$ 称为分次 $A$-模, 如果 $M = \bigoplus _{n \geq 0} M_n$ 满足 $M_n$ 是加群直和, 且 $A_n M_m \subseteq M_{m+n}$</p>
+<p>设 $A = \bigoplus _{n \geq 0} A_n$, 则</p>
+<ol>
+<li>环 $A$ 是 Noetherian 当且仅当 $A_0$ 是 Noetherian, 且 $A$ 作为 $A_0$ 代数式有限生成的.</li>
+<li>若环 $A$ 是 Noetherian, $M_A$ 是有限生成分次 $A$-模, 则对任意 $n, M_n$ 是有限生成 $A_0$-模.</li>
+</ol>
+<p><strong>Proof</strong>: </p>
+<ol>
+<li>充分性显然, $A_+ = \bigoplus _{n \geq 1} A_n$ 是 $A$ 的一个理想, 且 $A/A_+ \simeq A_0$ 是环同构, 于是 $A_0$ 是 Noetherian 环. 由 $A_+$ 作为理想是有限生成的. 设 $A_+ = Au_1 + \cdots + Au_m$, 其中每个 $u_i$ 都是齐次元. 下面用数学归纳法证明 $A = A_0[u_1,\cdots,u_m]$, 从而 $A$ 是有限生成 $A$-代数. 显然 $A_0 \subseteq A_0[u_1,\cdots,u_m]$. 设 $n &gt; 0, 0 \neq u \in A_n \subseteq A_+$, 从而可设 $u = \sum_{i=1} ^m a_i u_i$, 通过比较次数, 不妨设 $a_i$ 都是齐次元, 且 $\deg a_i + \deg u_i = n$. 于是 $\deg a_i &lt; n$. 由归纳假设 $a_i \in A_0[u_1, \cdots, u_m]$. 从而 $u \in A_0[u_1, \cdots, u_m]$, 即 $A_n \subseteq A_0[u_1, \cdots, u_m]$, 证毕.</li>
+<li>由于 $A=A_0[u_1, \cdots, u_m]$, 其中 $u_i$ 为齐次元. 设 $M = Ay_1 + \cdots Ay_t$. 其中每个 $y_i$ 都是 $M$ 中的齐次元. 对任意 $0 \neq m \in M_n$, 记 $m = \sum_{i=1}^t a_i y_i$, 其中 $a_i$ 是齐次元. 且 $\deg a_i + \deg y_i = n = \deg m$, 另一方面, 对任意 $i$, $A$ 中阶为 $n-\deg y_i$ 的”单项式”(作为 $u_1, \cdots, u_m$ 的单项式)只有有限个, 又 $M_n$ 是 $\lbrace f_i y_i | f_i \text{是} A \text{阶为} n - \deg y_i \text{单项式} \rbrace$ 的 $A_0$ 线性组合. 所以 $M_n$ 是有限生成 $A_0$-模.</li>
+</ol>
+<h4 id="次模的-Poincare-数"><a href="#次模的-Poincare-数" class="headerlink" title="次模的 Poincare 数"></a>次模的 Poincare 数</h4><p>设 $A$ 是分次 Noetherian 环, 且设 $A_0$ 是 Artinian 环. 如果 $M_A$ 是有限生成分次 $A$-模, 则由上面结论知, 每一个 $M_n$ 都是有限生成 $R_0$-模, 从而是有限长的. 记作 $l(M_n)$. 记 $P(M,t) = \sum_{n=0}^{\infty} l(M_n)t^n \in \mathbb{Z}[[t]]$, 称为 $M$ 的 Poincare 级数.</p>
+<p>引理: 设 $A$ 是 Artin 环, 若 $0 \to M_0 \to M_1 \to \cdots \to M_s \to 0$ 是有限生成 $A$-模正合列. 则 $\sum_{i=1} ^s l(M_i) = 0$<br><strong>Proof</strong>: $s=0,1$ 时显然, $s=2$ 时, 由 $0 \to M_0 \to M_1 \to M_2 \to 0$, 则有 $l(M_1)=l(M_0)+l(M_2)$. 对于 $M_i \to M_{i+1}$ 有分解: $M_i \to \text{Im} M_i \to 0$ 以及 $0 \to \text{Im} M_i \to M_{i+1}$. 于是有: $l(M_k) = l(\text{Im} M_{k-1} + l(\text{Im} M_k)$. 累加可得到结论.</p>
+<p>(Hilbert-Serre) 设 $A$ 是分次 Noetherian 环, $A_0$ 是 Artinian 环, 若 $A = A_0[x_1, \cdots x_m]$, 其 $deg x_i = e_i &gt; 0$, 则对任意有限生成分次 $A$-模 $M$, 存在某个多项式 $f(t) \in \mathbb{Z}[t]$, 使得 $P(M,t)$ 为</p>
+<script type="math/tex; mode=display">
+\frac{f(t)}{\prod_{i=1}^m (1-t^{e_{i}})}</script><p>的有理展开.<br><img src= "/img/loading.gif" data-lazy-src="Hilbert.png" alt="证明过程"></p>
+<p><strong>(Hilbert-Serre)多项式</strong> 设 $A$ 是分次 Noetherian 环, $A_0$ 是 Artinian 环, 若 $A = A_0[x_1, \cdots x_m]$, 其 $deg x_i = 1$, 则对任意有限生成分次 $A$-模 $M$, 存在次数不超过 $m-1$ 的多项式 $\bar{l}(t) \in \mathbb{Q}[t]$, 使得 $n \gg 0$ 时, $\bar{l}(t) = l(M_n)$.<br><strong>Proof</strong>: 应用之前的结果, 以及 $\frac{1}{(1-t)^k}$ 的展开.</p>
+<p>命题: 设 $f(x) \in \mathbb{Q}[x]$ 是一个 $n$ 次多项式. 则 $f(x)$ 在 $n+1$ 个相邻的整数取整数值当且仅当 $f(x)$ 是 $C_x ^0 , C_x ^1, \cdots, C_x ^n$ 的整线性组合.<br><strong>Proof</strong>: 设 $f(x) = a_0 C_x ^0 + a_1 C_x ^1 + \cdots + a_n C_x ^n, a_i \in \mathbb{Q}$. 则 $f(x+1) - f(x) = a_1 C_x ^0 + \cdots + a_n C_x ^{n-1}$ 在 $n$ 个相邻的位置取整值. 由归纳假设可知 $a_1, \cdots a_n \in \mathbb{Z}$, 从而 $a_0 \in \mathbb{Z}$.</p>
+<h4 id="ring-of-filtration"><a href="#ring-of-filtration" class="headerlink" title="ring of filtration"></a>ring of filtration</h4><p>我们定义环$A$的 filtration 为理想降链:</p>
+<script type="math/tex; mode=display">
+A = J_0 \supseteq J_1 \supseteq J_2 \supseteq \cdots</script><p>满足$J_n J_m  \subseteq J_{n+m}$.</p>
+<p>给定一个 filtration, 我们可以定义一个分次环 $A’$(容易验证)</p>
+<script type="math/tex; mode=display">
+A’ = \oplus_{n=0} ^{\infty} J_n / J_{n+1}</script><p>特别地, 给定环 $A$ 的理想 $I$, 它的幂定义了一个 filtration, 称为 $I$-adic filtration, 对应的分次环记作 $gr^I(A)$.</p>
+<p>若 $I$ 是 Noetherian 环 $A$ 的一个理想, 则 $gr^I(A)$ 也是 Noetherian.<br><strong>Proof</strong>: 由于 $I$ 有限生成, $I = a_1 A + \cdots a_r A$, $A/I$ Noetherian, 所以 $gr^I(A) = A/I[\bar{a_1}, \cdots, \bar{a_r}]$ 为 Noetherian.</p>
+<h4 id="module-of-filtration"><a href="#module-of-filtration" class="headerlink" title="module of filtration"></a>module of filtration</h4><p>设 $M$ 是 $A$-模, $I$ 是 $A$ 的理想, 定义 $M$ 的 filtration 为子模降链:</p>
+<script type="math/tex; mode=display">
+M = M_0 \supseteq M_1 \supseteq M_2 \supseteq \cdots \quad (\star)</script><p>我们称 $(\star)$ 为 $I$-admissible 如果对任意 $n$ 成立 $IM_n \subseteq M_{n+1}$. $I$-adic 若 $M_n = I^n M$, essential $I$-adic 若 $(\star)$ 是 $I$-admissible 且存在 $n_0$, 当 $n &gt; n_0$ 时, $M_{n+1} = IM_n$.</p>
+<p><strong>filtration topology</strong> 给定 $M$ 的一个 filtration $(\star)$, 我们可以定义 $M$ 上的拓扑: 对任意 $x \in M$, $x$ 的领域基为 $\lbrace x +M_n | n&gt;0 \rbrace$.</p>
+<blockquote>
+<p>显然上述拓扑是 Hausdorff 的当且仅当 $\bigcap M_n = (0)$.</p>
+</blockquote>
+<p>若上述 filtration $(\star)$ 是 $I$-adic 的, 则称上述拓扑为 $I$-adic 拓扑. 显然一个 essential $I$-adic 拓扑也定义了 $M$ 上的一个 $I$-adic 拓扑.</p>
+<h4 id="Rees-环"><a href="#Rees-环" class="headerlink" title="Rees 环"></a>Rees 环</h4><p>设 $I$ 是 $A$ 的理想. 记 $T(I) =  A + Ix  + I^2x^2 + \cdots \leq A[x]$.<br>称 $T(I)$ 为由理想 $I$ 决定的 Rees 环可看作是 $A[x]$ 的子代数</p>
+<p>引理: 若 $A$ 是 Noetherian. 则 $T(I)$ 是 Noetherian.<br><strong>Proof</strong>: $I = a_1 A + \cdots + a_r A$. 于是作为 $A[x]$ 的 $A$ 子代数. $T(I) = A[a_1 x, \cdots, a_r x]$ 是 $A[x_1, \cdots, x_r]$ 的商代数, 由 Hilbert 基定理, $T(I)$ 是 Noetherian 环。</p>
+<h4 id="Rees-模"><a href="#Rees-模" class="headerlink" title="Rees 模"></a>Rees 模</h4><p>对于 $M_A$, $A[x] \otimes_A M$ 是 $A[x]$-模, 其中元素可以唯一表示 $\sum_i x^i \otimes m_i$(和为有限和). 另一方面 $M[x] = \lbrace \sum_i m_i x^i \text{ (有限和) }| m_i \in M \rbrace$. 于是 $M[x]$ 可自然地看做 $A[x]$-模. 并且作为 $R[x]$-模, 有同构</p>
+<script type="math/tex; mode=display">
+M[x] = R[x] \otimes _R M, \quad \sum_i m_i x^i \mapsto \sum_i x^i \otimes m_i</script><p>记 $T_I(M) = M + MIx + MI^2x^2 \cdots \leq M[x]$. 作为 $T(I)$-模, $T_I(M)$可由 $M$ 生成, $M = \sum_{j=1} ^s m_jA$ 是有限生成 $A$-模, 则 $T_I(M) = \sum_{j=1} ^s m_j T(I)$是有限生成 $T(I)$-模. 从而若 $A$ 是 Noetherian, $M_R$ 是有限生成模, 则 $T_I(M)$ 是 Noetherian $T(I)$-模.</p>
+<h4 id="Artin-Rees-引理"><a href="#Artin-Rees-引理" class="headerlink" title="Artin-Rees 引理"></a>Artin-Rees 引理</h4><p>设 $I$ 是 Noetherian 环 $A$ 的理想, $M$ 是有限生成 $A$-模. $M_1, M_2$ 是 $M$ 的子模. 则存在 $k \in \mathbb{N}$ 使得对任意 $n \geq k$,</p>
+<script type="math/tex; mode=display">
+I^n(M_1 \cap M_2) \subseteq I^nM_1 \cap M_2 = I^{n-k}(I^k M_1 \cap M_2) \subseteq I^{n-k}(M_1 \cap M_2)</script><p><strong>Proof</strong>: 只需证明存在 $k$ 使得对任意 $n \geq k$, $I^nM_1 \cap M_2 \subseteq I^{n-k}(I^k M_1 \cap M_2)$(其它都包含关系显然). 考虑 Rees 环 $T(I)$ 及 Rees 模 $T_I(M)$, 以及 $T_I(M)$ 的子模 $N = M_1 \cap M_2 + (IM_1 \cap M_2)x + \cdots + (I^n M_1 \cap M_2)+ \cdots$. 由 $T_I(M)$ 是 Noetherian 模, $N_{T(I)}$是有限生成模. 不妨设 $N =  T(I)u_0 + T(I)u_1 x + \cdots T(I) u_k x^k$, 其中 $u_j \in I^j M_1 \cap M_2$. 对任意 $n \geq k, u \in I^n M_1 \cap M_2$ 我们有 $ux^n  \in (I^n M_1 \cap M_2)x^n \subseteq N$. 于是存在 $f_j \in T(I)$, 使得 $ux^n = \sum_{j=1} ^k f_j u_j x^j$. 比较 $x^n$ 的系数, 得到 $u = \sum_{j=1} ^k f_j’ u_j$. 其中 $f_j’ \in I^{n-j}$. 由于</p>
+<script type="math/tex; mode=display">
+I^{n-j}(I^jM_1 \cap M_2 = I^{n-k}I^{k-j}(I^jM_1 \cap M_2 \subseteq I^{n-k}(I^k M_1 \cap M_2)</script><p>从而 $u \in I^{n-k}(I^k M_1 \cap M_2)$. 证毕.</p>
+<blockquote>
+<p>取 $M_1 = M, M_2 = N \leq M$ 我们可以得到:<br>设 $I$ 是 Noetherian 环 $A$ 的理想, $N$ 是有限生成模 $M$ 的子模, 则存在 $k$ 使得 $n \geq k$ 时, </p>
+<script type="math/tex; mode=display">
+I^n N \subseteq I^n M \cap N = I^{n-k}(I^k M \cap N) \subset I^{n-k}N</script></blockquote>
+<p><strong>Krull 交定理</strong>：设 $I$ 是 Noetherian 环 $A$ 的理想, $M$ 是有限生成 $A$-模, 记 $I^w M = \cap {n=1} ^{\infty} I^n M$, 则 $I(I^w M) = I^w M$, 从而 $I^w M = \lbrace x \in M | \exists b \in I, x = bx \rbrace$.<br>取 $M_1 = M, M_2 = I^w M$, 则存在 $k$, 使得当 $n \geq k$ 时</p>
+<script type="math/tex; mode=display">
+I^w M =  I^n M \cap I^w M = I^{n-k}(I^k M \cap I^w M) = I^{n-k} (I^w M)</script><p>所以 $I^w M = I(I^w M)$. 显然 $\lbrace x \in M | \exists b \in I, x = bx \rbrace \subseteq I^w M$. 另一方面 $I^w M   = I(I^w M)$ 当且仅当 $I + Ann(I^w M) = A$. 这是存在 $b \in I$, 使得 $1-b \in Ann(I^w M)$. 即对任意 $x \in I^w M , x=bx$.</p>
+<blockquote>
+<p>当 $A$ 是 Noetherian 整环时, $I^w M = \cap {n=1} ^{\infty} I^n M =(0)$<br>当 $I \subseteq J(A)$ 时, $I^w M = \cap {n=1} ^{\infty} I^n M =(0)$<br>特别地, 当 $A$ 是 Noetherian, $\cap {n=1} ^{\infty} J^n = 0$.<br>当 $A$ 不是 Noetherian 环时, 上述结果可能不成立, 例如实数 $\mathbb{R}$ 上在 $0$处无穷次可导的函数全体 $A$. $J$ 是在 $A$ 中在 $0$ 处取值为 $0$ 的函数全体($A$的唯一极大理想), 则 $e^{-\frac{1}{x^2}} \in A$</p>
+<p>非交换环有一个著名的 Jacobson 猜想: $R$ 是左右 Noetherian 环, 则 $\cap_{n=1} ^{\infty} J(R) = 0$.</p>
+</blockquote>
+<h3 id="Dimension-Theroy"><a href="#Dimension-Theroy" class="headerlink" title="Dimension Theroy"></a>Dimension Theroy</h3><p>设 $A$ 是环, $n+1$ 个素理想构成的序列 $p_0 \supset p_1 \supset \cdots \supset p_n$ 称为长为 $n$ 的素理想链. 对任意 $p \in Spec(A)$, 满足 $p = p_0$ 的最长素理想链的称为 $p$ 的高度, 记作 $ht(p)$. 显然 $ht(p) = 0$表 示 $p$ 为 $A$ 的极小素理想.<br><strong>理想的高度</strong>：设 $I$ 为 $A$ 的真理想, 定义 $I$ 的高度为包含 $I$ 的所有素理想高度的最小值.</p>
+<script type="math/tex; mode=display">
+ht(I) = \inf \lbrace ht(p) | p \supset I \rbrace = ht(\sqrt{I})</script><p><strong>环的 Krull 维数</strong>：$A$ 的维数定义为最长的素理想链的长度.即</p>
+<script type="math/tex; mode=display">
+\dim(A) = \sup \lbrace ht(p) | p \in Spec(A) \rbrace</script><p>PID has Dimension $\leq 1$.<br><strong>Proof</strong>: 若 $(p) \supset (q) \supset (0)$. 则存在 $b \neq 0$ 使得$q = pb$, 从而 $(p)(b) \subset (q)$, 所以 $(b) \subseteq (q)$, 所以存在 $c$ 使得 $b = cpb$, 因此 $cp = 1$(domain 中), 从而$(p)=A$. 证毕.</p>
+<p>由上述定义可知: 对任意 $p \in Spec(A), ht(p) = \dim(A_p)$, 对任意理想 $I$,  $\dim(A/I) + ht(I) \leq \dim(A)$.</p>
+<p><strong>模的 Krull 维数</strong>：设 $M \neq 0$ 是 $A$-模. 定义 $M$ 的维数为:</p>
+<script type="math/tex; mode=display">
+\dim(M) = \dim(A/Ann(M))</script><p>当 $M = 0$ 时, 记 $\dim(M) = -1$.</p>
+<p>若 $M \neq 0$ 是 Noetherian 环 $A$ 上的有限生成模, 则下列条件等价:</p>
+<ol>
+<li>$M$ 是有限长的.</li>
+<li>环 $A/Ann(M)$ 是 Artinian.</li>
+<li>$\dim(M) = 0$.</li>
+</ol>
+<p>由 Noetherian 环成为 Artin 环的充要条件知 $2 \leftrightarrow 3$. 再由有限生成 Artinian 模是有限长的可知 $2 \to 1$. 现在证明 $1\to 3$: 我们不妨考虑 $Ann(M) = (0)$ 的情形, 若 $l(M)$ 有限, 若 $\dim(A) &gt; 0$, 则存在极小素理想 $p$ 不是极大素理想. 由于 $M$ 是有限生成的, 且 $Ann(M)=(0)$, $M_p \neq 0$, 即 $p \in Supp(M)$ 是极小素理想, 因此 $p \in Ass(M)$. 即 $M$ 中包含一个同构于 $A/p$ 的子模. 由于 $\dim(A/p) &gt; 0$, 我们有 $l(A/p) = \infty$(这是因为有限长, 则为 Artinian, 从而维数为 0), 从而矛盾于 $l(M)$ 有限长.</p>
+<h4 id="Noetherian-半局部环"><a href="#Noetherian-半局部环" class="headerlink" title="Noetherian 半局部环"></a>Noetherian 半局部环</h4><p>众所周知的几个关于维数的等价刻画本来是在 Noetherian 局部环中考虑的, 这里可以推广到 Noetherian 半局部环.</p>
+<p>设 $A$ 是 Noetherian semi-local 环, $\mathfrak{m} = J(A)$. $A$ 的理想被称为<strong>ideal of definition(IOD)</strong>，如果存在 $k&gt;0$ 使得 $\mathfrak{m}^k \subseteq I \subseteq \mathfrak{m}$.</p>
+<blockquote>
+<p>当 $A$ 是局部环时, IOD 就是 $J$-准素理想.</p>
+</blockquote>
+<p>$I$ 是 IOD 的等价定义</p>
+<ol>
+<li>$I \subseteq \mathfrak{m}$ 且 $A/I$ 是 Artinian.</li>
+<li>$I \subseteq \mathfrak{m}$ 且 $\dim(A/I)=0$.<br><strong>Proof</strong>: $1 \leftrightarrow$ 显然, 若 $I$ 是 IOD, 即存在 $k&gt;0$ 使得 $\mathfrak{m}^k \subseteq I subseteq \mathfrak{m}$. 从而包含 $I$ 的素理想必然是极大理想, 从而 $\dim(A) = 0$. 另一方面, 若 $I \subseteq \mathfrak{m}$ 且 $A/I$ 是 Artinian. 则 $J(A/I) = \mathfrak{m}/I$ 幂零, 从而 $\mathfrak{m}^n \subseteq I$.<blockquote>
+<p>由于此时 $A/I$ 是 Artinian, 所以就可以由 Poincare 数, 以及 Hilbert-Serre 多项式. 完美的一 P.</p>
+</blockquote>
+</li>
+</ol>
+<p>设 $I$ 是 IOD, $M$ 是一个有限生成 $A$-模. 设 $A^{\star} = gr^I(A) = \otimes I^n / I^{n+1}$，$M^{\star} = gr^I(M) = \otimes I^n M / I^{n+1} M$</p>
+<p>设 $I = A x_1 + \cdots Ax_r$. 那么 $A^{\star}$ 是 $B=A/I[X_1, \cdots, X_r]$ 的同态像. 因此 $F_{M^{\star}}(n) = l(I^n M/ I^{n+1} M)$ 是关于 $n$ 的次数不超过 $r-1$ 的多项式(由 Hilbert-Serre 的结果). 从而<br>​</p>
+<script type="math/tex; mode=display">
+\chi(M, I;n) \triangleq l(M/ I^{n+1} M) = \sum_{j=1} ^ {n-1}F_{M^{\star}}(j)</script><p>是一个次数不超过 $r$ 的多项式.<br>对于不同的 IOD $I’$, 存在 $s, s’$ 使得 $(I’)^s \subseteq I, I^{s’} \subseteq I’$. 从而 $deg chi(M, I;n) = chi(M, I’;n)$. 即 $chi(M, I;n)$ 是 $M$ 的一个不变量, 记作 $d(M)$.</p>
+<blockquote>
+<p>若有一个 IOD 被 $r$ 个元素生成, 则 $d(M) \leq r$.</p>
+</blockquote>
+<p>引理 0: 设 $I$ 是 Noetherian 半局部环 $A$ 的一个 IOD, 给定有限生成模的一个短正合列: $0 \to M’ \to M \to M’’ \to 0$. 则 $d(M) = \max(d(M’),d(M’’))$ 更进一步, 当 $n \gg 0$ 时, $\chi(M,I;n) - \chi(M’,I;n) - \chi(M’’,I;n)$ 的次数小于 $d(M’)$</p>
+<p><strong>Proof</strong>: 由于 $l(M’’/I^n M’’) = l(M/M’+I^n M) \leq l(M/I^M)$, 从而 $d(M’’) \leq d(M)$. 更进一步, $\chi(M,I;n)-\chi(M’’,I;n) = l(M’+I^n M/I^n M) = l(M’/M’ \cap I^n M)$. 因此由 Artin-Rees 引理, 存在 $r$ 使得 $M’ \cap I^n M \subseteq I^{n-r} M’$, 从而 $l(M’/I^n M’) \geq l(M’/M’ \cap I^n M) \geq l(M’/I^{n-r} M’)$. 从而 $\chi(M,I;n)-\chi(M’’,I;n)$ 与 $\chi(M’,I;n)$ 有相同的最高次项.</p>
+<p><strong>引理 1</strong>: 设 $A$ 是 Noetherian 半局部环, 则 $d(A) \geq dim(A)$<br>对 $d(A)$ 进行数学归纳. 若 $d(A)=0$, 则存在 $k$ 使得 $\mathfrak{m}^k = \mathfrak{m}^{k+1} \cdots$. 由 <strong>Krull 交定理</strong> 知 $\mathfrak{m}^k=(0)$. 从而 $l(A)$ 是有限长的, $\dim(A)=0$.<br>若 $d(A) &gt; 0$. 不妨设 $r = \dim(A)&gt;0$, 设 $p_0 \supset \cdots p_r = p$ 是长为$r$ 的素理想链. 任取 $x \in p_{r-1} \backslash p$. 则 $\dim(A/xA+p) \geq r-1$. 再由正合序列</p>
+<script type="math/tex; mode=display">
+0 \to A/p \xrightarrow{x} A/p \to A/xA+p \to 0</script><p>我们有 $d(A/xA+p) &lt; d(A/p) \leq d(A)$(这个严格小是因为上面”更进一步”的结论). 因此, 由数学归纳 $r-1 \leq \dim(A/xA+p) \leq d(A/xA+p) &lt; d(A)$, 证毕.</p>
+<blockquote>
+<p>上述引理表明 Noetherian 半局部环的维数有限, 且对于任意 Noetherian 及其素理想 $p, ht(p) = \dim(A_p)$ 有限, 从而 <strong>Noetherian 环满足素理想的降链条件</strong>, 当然 Noetherian 也可以由无限 Krull 维数, 例如: <img src= "/img/loading.gif" data-lazy-src="NagataNoether.png" alt="Nagata example"> <img src= "/img/loading.gif" data-lazy-src="NoetherJudge.png" alt="补充"></p>
+</blockquote>
+<p><strong>引理 2</strong>: 设 $M \neq 0$ 是 Noetherian 半局部环 $A$ 上的有限生成模. $x \in J(A)$. 则</p>
+<script type="math/tex; mode=display">
+d(M) \geq d(M/xM) \geq d(M)-1</script><p>取 IOD $I \ni x$. 则 $\chi(M/xM,I;n) = l(M/xM+I^n M) = l(M/I^nM) - l(xM + I^n M/I^n M)$ 且 $xM + I^n M /I^n M \simeq xM/xM \cap I^n M \simeq M/(I^n M:x)$, 又因为 $I^{n-1} \subseteq (I^n M:x)$ 从而</p>
+<script type="math/tex; mode=display">
+\chi(M/xM,I;n) \geq l(M/I^nM) - l(M/I^{n-1}M) = \chi(M,I;n) - \chi(M,I;n-1)</script><p><strong>引理 3</strong>: 设 $M \neq 0$ 是 Noetherian 半局部环 $A$ 上的有限生成模. 设 $\dim(A) = r$. 那么存在 $r$ 个元素 $x_1, \cdots, x_r \in J(A)$ 使得 $l(M/x_1 M + \cdots x_r M) \leq \infty$.<br><strong>Proof</strong>: 应用数学归纳法, 并说明在 $J(A)$ 不包含在 $Ann(M)$ 的任意极小素理想即可.</p>
+<p><strong>维数等价定理</strong>：设 $M \neq 0$ 是 Noetherian 半局部环 $A$ 上的有限生成模. 则 $d(M) = dim(M)$ 为使得 $l(M/x_1 M + \cdots x_r M) \leq \infty$ 的最小的 $r$. 其中 $x_1, \cdots x_r \in M$.<br>若 $l(M/x_1 M + \cdots x_r M) \leq \infty$ 则由引理 2 知, $d(M) \leq r$. 当 $r$满足条件的最小值, 由引理 3 知, $r \leq \dim(M)$. 从而只需证明 $\dim(M) \leq d(M)$. 取 $M$ 的一个子模链 $M = M_1 \supset M_2 \supset \cdots \supset M_{k+1} = 0$. 使得 $M/M_{i+1} \simeq A/p_i, p_i \in Spec(A)$. 那么 $p_i \supseteq Ann(M)$. 且 $Ass(M) \subseteq \lbrace p_1, \cdots, p_k \rbrace$(这些之前就证明过了). 从而 $Supp(M) = V(Ann(M))$. 包含 $Ann(M)$ 的极小素理想是 $Supp(M)$ 的极小素理想, 从而在 $Ass(M)$ 中, 从而在 $\lbrace p_1, \cdots, p_k \rbrace$. 即 $Ass(M) = \lbrace p_1, \cdots, p_k \rbrace$. 因此(其中第一个等号要对 $M$ 的降链应用引理 0)</p>
+<script type="math/tex; mode=display">
+d(M) = \max d(A/p_i) \geq \max \dim(A/p_i) = \dim(A/Ann(M)) = \dim(M)</script><p><strong>广义 Krull 维数定理</strong>：$I=(a_1, \cdots, a_r)$ 是 Noetherian 环 $A$ 的理想. 则任意包含 $p$ 的极小素理想 $p$ 的高度不超过 $r$. 特别地, $h(I) \leq r$.<br><strong>Proof</strong>: 由于 $pA_p$ 是 $A_p$ 中包含 $IA_p$ 的唯一素理想, 因此 $\dim(A_p/IA_p)=0$. 从而环 $A_p/(a_1 A_p + \cdots a_rA_p)$ 是 Artinian. 因此 $ht(p) = \dim(A_p) \leq r$.</p>
+<h4 id="Noetherian-局部环和-regular-local-ring-正则局部环"><a href="#Noetherian-局部环和-regular-local-ring-正则局部环" class="headerlink" title="Noetherian 局部环和 regular local ring(正则局部环)"></a>Noetherian 局部环和 regular local ring(正则局部环)</h4><p>设 $(A, \mathfrak{m},k)$ 是维数为 $d$ 的 Noetherian 局部环. 此时 IOD 和属于 $\mathfrak{m}$ 的准素理想是一回事. 我们知道 IOD 的生成元个数至少为 $d$ 并且存在 IOD 的生成元个数恰好为 $d$, 若 $\lbrace x_1, \cdots, x_d \rbrace$ 生成了一个 IOD 则称为 <strong>system of parameters</strong>(SOP). 若一个 SOP 生成了唯一极大理想 $\mathfrak{m}$. 则我们称 $A$ 为 <strong>正则局部环</strong></p>
+<p>由于 $\mathfrak{m}$ 的极小基个数等于 $\text{rank}_k \mathfrak{m}/\mathfrak{m}^2$. 因此一般地我们有</p>
+<script type="math/tex; mode=display">
+\dim(A) \leq \text{rank}_k \mathfrak{m}/\mathfrak{m}^2</script><p>等号取得, 当且仅当 $A$ 是 Noetherian 局部环.</p>
+<p>设$(A, \mathfrak{m})$是 Noetherian 局部环, $\lbrace x_1, \cdots, x_d \rbrace$ 是一个 $SOP$. 则</p>
+<script type="math/tex; mode=display">
+\dim(A/(x_1, \cdots, x_i) = d-i = \dim(A) - i</script><p>设 $A$ 是 Noetherian 环, 则 $\dim A[x_1, \cdots, x_n] = \dim A + n$.<br><strong>Proof</strong>: 对 $B = A[x]$ 证明即可. 对任意 $p \in Spec(A)$, 选择 $P$ 为满足 $P \cap A = p$ 中极大元. 则 $ht(P/pB) = 1$. 又 $ht(P) = ht(p) + ht(P/pB) = ht(p)+1$. 再由 $Spec(B) \to Spec(A)$ 是满的. 因此 $\dim(B) = \dim(A) + 1$.</p>
+<p>推论: 设 $k$ 是域, 则 $\dim k[x_1, \cdots, x_n] = n$. 理想 $(x_1, \cdots, x_i)$ 是高度为 $i$ 的素理想.<br><strong>Proof</strong>: 由于 $(0) \supset (x_1) \supset (x_1,x_2) \supset \cdots \supset (x_1, \cdots, x_i)$ 是长为 $n$ 的素理想链. 在由 $\dim k[x_1, \cdots, x_n] = n$ 知结论成立.</p>
+<h2 id="Depth"><a href="#Depth" class="headerlink" title="Depth"></a>Depth</h2><h4 id="M-regular-sequence"><a href="#M-regular-sequence" class="headerlink" title="$M$-regular sequence"></a>$M$-regular sequence</h4><p>我们称 $a_1, \cdots, a_r$ 是一个 <strong>$M$-regular sequence</strong>: 如果它满足:</p>
+<ol>
+<li><p>$\forall 1 \leq i \leq r, a_i$ 不是 $M/(a_1, \cdots, a_{i-1})M$ 的零因子;</p>
+</li>
+<li><p>$(a_1, \cdots, a_r)M \neq M$.</p>
+</li>
+</ol>
+<blockquote>
+<p>上述定义与 $a_1, \cdots, a_r$ 的次序有关, 例如 $k$ 为域, $A=k[x, y,z], a_1 = X(Y-1), a_2 = Y, a_3= Z(Y-1)$ 是 $A$-regular sequence, 但 $a_1, a_3, a_2$不是.</p>
+</blockquote>
+<p>类似地, 可以定义一个理想 $I$ 上的(极大) $M$-regular sequnence.</p>
+<p><strong>引理 1</strong>: 假设 $a_1, \cdots, a_r$ 是 $M$-regular 且</p>
+<script type="math/tex; mode=display">
+a_1 \xi_1 + \cdots a_r \xi_r = 0</script><p>则 $\xi_i \in (a_1, \cdots, a_r)M$.</p>
+<p><strong>引理 2</strong>: 假设 $a_1, \cdots, a_r$ 是 $M$-regular, 则 $a_1 ^{n_1} + \cdots a_r ^{n_r}$ 也是.</p>
+<p>若 $a_1, a_2, \cdots \in A$ 是一个 $M$-regular sequence. 则由严格子模升链 $a_1 M \subset (a_1, a_2)M \subset \cdots$. 因此有理想严格升链 $a_1 \subset (a_1, a_2) \subset \cdots$. 从而若 $A$ 是 Noetherian 环, 则 $M$-regular sequence 的长度总是有限的, 因此每个理想 $I$ 上 $M$-regular sequence 都可以推展为一个极大 $M$-regular sequence.</p>
+<p>定理: 设 $M$ 是 Noetherian 环 $A$ 上的有限生成模. $I$ 是 $A$的理想, 满足 $IM \neq M$. $n$ 为给定正整数. 则下列条件等价:</p>
+<ol>
+<li>$\text{Ext}_A ^i(N, M) = 0 (i&lt;n)$ 对任意满足 $Supp(N) \subseteq V(I)$ 的有限生成 $A$-模成立;</li>
+<li>$\text{Ext} _A ^i(A/I, M) = 0 (i&lt;n)$;</li>
+<li>存在一个满足 $Supp(N) = V(I)$ 的有限生成模 $N$ 使得 $\text{Ext}_A ^i(N, M) = 0 (i&lt;n)$;</li>
+<li>$I$ 中存在长度为 $n$ 的 $M$-regular sequence $a_1, \cdots, a_n$.</li>
+</ol>
+<p><strong>Proof</strong>: $1 \to 2 \to 3$ 显然, $3 \to 4$: 我们有 $Ext_A ^0 (N,M) = \hom_A (N,M) = 0$. 若 $I$ 中无元素是 $M$-regular, 则 $I$ 包含在 $Ass(M)$ 全体的 (Noetherian 所以有限)并中, 从而 $I$ 包含于某个素理想 $P$ 中, 从而由单射 $A/P \to M$. 在 $P$ 处作局部化, 我们有 $\hom_{A_P}(k, M_P) \neq 0$, 其中 $k = A_P / P A_P$. 由于 $P \in V(I) = Supp(N)$. 从而 $N_P \neq 0$, 从而由 <strong>NAK lemma</strong> $N \otimes k = N_P / PN_P \neq 0$. 从而 $\hom(N \otimes k, k) \neq 0$. 从而 $\hom_{A_P}(N_P, M_P) \neq 0$. (三个映射的复合, 第一个满第三个单). 然而它 $\hom_A(N,M)=0$ 在 $P$ 处局部化的结果, 矛盾. 从而 $\exists a_1 \in I$, 若 $n&gt;1$, 取 $M_1 = M/a_1 M$. 由模的短正合列</p>
+<script type="math/tex; mode=display">
+0 \to M \xrightarrow{a_1} M \to M_1 \to 0</script><p>得到同调群的长正合列:</p>
+<script type="math/tex; mode=display">
+\cdots \to Ext_A ^i (N,M) \to Ext_A ^i (N,M_1) \to Ext_A ^{i+1} (N,M) \to \cdots</script><p>这说明 $Ext_A ^i(N,M_1) =0 (i&lt;n-1)$,  因此 $a_1^r$ 也零化 $Ext_A^i(N,M)$. 从而 $Ext_A(N,M) = 0 (i &lt;n)$</p>
+<p>我们将上述 $I$ 中最长的 $M$-regular 序列称为 $I$-depth of $M$. 记作 $depth_I(M)$. 上述定理表明 </p>
+<script type="math/tex; mode=display">
+depth_I(M) = \min \lbrace i | Ext_A ^i(A/I,M) \neq 0 \rbrace</script><p>当 $(A, \mathfrak{m})$ 是(Noetherian 局部环时), 我们用 $depth(M), depth_A(M)$ 来表示 $depth_{\mathfrak{m}}(M)$ 称作 $M$ 的深度.</p>
+<p>对任意 $P \in Spec(A)$, $depth M_P = 0 \Longleftrightarrow PA_P \in Ass_{A_P}(M_P) \Longleftrightarrow P \in Ass(M) \to depth_p(M) = 0$. 一般地, 由于局部化函子正合, 因此 $depth_{A_P} (M_p) \geq depth_P (M)$</p>
+<p>若 $M = 0$, 定义 $depth_I(M) = 0$; 若 $IM = M \neq 0$, 定义 $depth_I(M) = \infty$.</p>
+<h4 id="Grade"><a href="#Grade" class="headerlink" title="Grade"></a>Grade</h4><p>设 $M$ 是 Noetherian 环 $A$ 上的有限生成模. 定义 $M$ 的 garde 为:</p>
+<script type="math/tex; mode=display">
+grade M = \inf \lbrace i | Ext_A ^i (M,A) \neq 0 \rbrace</script><p>由上面定义知:</p>
+<script type="math/tex; mode=display">
+grade M = depth_I(A), \quad I = Ann(M)</script><p>同理, 由定义知: $grade M  \leq proj.dim M$</p>
+<p>对于 $A$ 中任意理想 $I$, $depth_I(A)$ 为 $I$ 中最长的 $A$-sequence 序列 $a_1, \cdots, a_r$ 的长度. 又此时 $ht(a_1, \cdots, a_r) = r$. 从而 $depth_I(A) \leq ht(I)$</p>
+<p><strong>引理 1</strong>: 设 $M \neq 0 ,N$ 是 Noetherian 环 $A$ 上的有限生成模, 若 $grad M = k$, $proj. dim N = l &lt; k$. 则 $Ext_A ^i(M,N) = 0 (i &lt; k-l)$<br><strong>Proof</strong>: 对 $l$ 数学归纳, $l=0$ 时, $N$ 为自由 $A$-模的直和因子, 因此结论成立. $l&gt;0$ 时, 由正合列: $0 \to N’ \to L \to N \to 0$, 其中 $L$ 自由, 于是$\dim N’ = l-1$. 由归纳法得证.</p>
+<p><strong>引理 2</strong>: (<strong>Ischebeck</strong>) 设 $(A, \mathfrak{m})$ 是 Noetherian 局部环, $M \neq 0 \neq N$ 是有限生成 $A$-模. 若 $depth M = k, \dim N = r$. 则</p>
+<script type="math/tex; mode=display">
+Ext _A ^i (N,M) = 0 \quad (i< k-r)</script><p><strong>Proof</strong>: 对 $r$ 归纳法证明.(并不简单, 都是用模的短正合列, (再由投射分解, 得到复形的短正合列, 从而)导出同调群之间的长正合列, 然后应用数学归纳得出结论)</p>
+<p>定理: 设 $(A,\mathfrak{m})$ 是 Noetherian 半局部环, 且 $M \neq 0$ 是有限生成 $A$-模. 那么对任意 $p \in Spec(A), \quad depth M \leq \dim(A/p)$.<br><strong>Proof</strong>: 由于 $\hom(A/p,M) \neq  0$, 上面引理反证即可.</p>
+<p><strong>引理 3</strong>: 设 $M,N$ 是局部环 $(A,\mathfrak{m},k)$ 上的有限生成模, 则</p>
+<script type="math/tex; mode=display">
+M \otimes_A N \neq 0 \Longleftrightarrow M \neq 0 \neq N</script><p>若 $M \neq  0 \neq N$, 则由 <strong>NAK lemma</strong> 知: $M \otimes k =  M/\mathfrak{m}M \neq 0 \neq N \otimes k$. 由于 $k$ 是域. $(M \otimes N) \otimes k = (E \otimes k) \otimes_k  (F \otimes k) \neq  0$. 从而 $M \otimes N \neq 0$.</p>
+<p><strong>引理 4</strong>: 设 $E,F$ 是环 $A$ 上的有限生成模, 则 $Supp(E \otimes F) = Supp(E) \cap Supp(F)$.<br><strong>Proof</strong>: 对任意 $p \in Spec(A,\quad (E \otimes F)_p = (E_p \otimes_{A\p} F_p)$.<br>由引理 3, $(E \otimes F)_p \neq 0 \Longleftrightarrow E_p \neq 0 \neq F_p$.</p>
+<p><strong>引理 5</strong>: 设 $M \neq 0$ 是 Noetherian 局部环 $A$ 上的有限生成模, $a_1, \cdots, a_r$ 是 $M$-regular 序列. 那么</p>
+<script type="math/tex; mode=display">
+\dim M/(a_1, \cdots, a_r)M =  \dim M -r</script><p><strong>Proof</strong>: 首先由于此时 $\dim M = d(M)$, 我们有 $\dim M/(a_1, \cdots, a_r)M \geq \dim M -r$, 另一方面, 若 $x$ 是 $M$-regular 元, 那么由引理 4 $Supp(M/xM) = Supp(M) \cap Supp(A/xA) = Supp(M) \cap V(x)$. 由因为 $x$ 不在 $Supp(M) = V(Ann(M))$ 的极小素理想中. 从而</p>
+<script type="math/tex; mode=display">
+\dim(M/xM) = \dim(A/Ann(M)+xA) < \dim(A/Ann(M)) = \dim(M)</script><p><strong>引理 6</strong>: 设 $M$ 是 Noetherian 环 $A$ 上的有限生成模, $I$ 是 $A$的理想, 则</p>
+<script type="math/tex; mode=display">
+depth_I(M) = \inf \lbrace depth M_p | p \in V(I) \rbrace</script><p><strong>Proof</strong>: 将等式右边记作 $n$. 若 $n=0$. 则存在 $P \supseteq I$ 使得 $M_P = 0$. 从而 $I \subseteq p \in Ass(M)$. 从而 $depth_I(M) = 0$. 若 $0 &lt; n &lt; \infty$. 此时 $I$ 不包含于任何 $M$ 的 associated 素理想中, 因此存在 $M$-regular 元 $a \in I$. 记 $M’ = M/aM$. 则由 depth 和 $M$-regular 的关系(上面定理)知  $depth (M’)_P = depth M_P/aM_P = depth M_P -1, \text{ for } P \supset I$. 且 $depth_I(M’) = depth_I(M)-1$. 从而归纳法知结论成立, 当 $n = \infty$ 时, 对任意 $P \in V(I), \quad PM_P = M_P$. 若 $IM \neq M$, 对任意 $P \in Supp(M/IM) = V(I) \cap Supp(M)$, 我们有 $(M/IM)_P \neq 0$. 若 $P$ 是 $Supp(M/IM)$ 中的极小素理想, 则 $Supp_{A_P}(M/IM)_P = \lbrace PA_P \rbrace$. 因此 $(M/IM)_P = M_P/IM_P$ 在 $M_P$ 中 coprimary. 又因为 $P$ 是 $M_P$ 的零因子且有限生成, 所以存在 $s&gt;0$ 使得 $P^s \subseteq IM_P$. 因此 $PM_P \neq M_P$ 矛盾. 从而 $IM = M, \quad depth_I(M) = \infty$.</p>
+<h3 id="Cohen-Macaulay-Rings"><a href="#Cohen-Macaulay-Rings" class="headerlink" title="Cohen-Macaulay Rings"></a>Cohen-Macaulay Rings</h3><p>设 $M$ 是 Noetherian 环 $A$ 上的有限生成模, 当 $M\neq 0$ 时, $\hom(M,M) \neq 0$, 从而由引理 2(Ischebeck) 知 $depth M \leq \dim M$. 我们称 $M$ 是<strong>Cohen-Macaulay</strong>(C.M.), 如果 $M = 0$ 或 $depth M = \dim M$. 若 $A$ 作为 $A$-模是 $C.M.$, 则称 $A$ 是 $C.M.$环.</p>
+<p>设 $(A,\mathfrak{m})$ 是局部环, $M$ 是有限生成 $A$-模. 则:</p>
+<ol>
+<li>若 $M$ 是 C.M. 模, $p \in Ass(M)$, 则 $depth(M) = \dim(A/P)$. 从而 $Ass(M)$ 中元素没有包含关系.</li>
+<li>若 $a_1, \cdots, a_r$ 是 $\mathfrak{m}$中的 $M$-regular 序列, 取 $M’ = M/(a_1, \cdots, a_r)M$. 则 $M$ 是 C.M. 当且仅当 $M’$ 是 C.M.</li>
+<li>若 $M$ 是 C.M. 模, 则对任意 $P \in Spec(A)$, $A_P$ 模 $M_P$ 是 C.M. 模, 且当 $M_P \neq 0$ 时, $depth_P(M) = depth _{A_P} M_P = \dim M_P$</li>
+</ol>
+<p><strong>Proof</strong>:<br>1) 由于 $Ass(M) \neq 0$, 所以 $M \neq 0$, 因此 $depth(M) = \dim M$. 又因为 $P \in Supp(M)$, 我们有 $\dim M \geq \dim A/P \geq depth M$. 证毕.</p>
+<p>2) 由 <strong>NAK lemma</strong>, 我们有 $M = 0 \Longleftrightarrow M’ = 0$. 若 $M \neq 0$. 则由引理 5 知 $\dim M’=\dim M -r$. 由 $depth$ 的 $M$-regular 序列刻画知, $depth M’ = depth M - r$.</p>
+<p>3) 我们假定 $M_P \neq 0$. 此时 $P \supseteq Ann(M)$. 我们有 $\dim M_P \geq depth_{A_P} M_P \geq depth_P(M)$. 对 $depth_P(M)$ 数学归纳, 若 $depth_P(M) = 0$, 则 $P$ 包含于某个 $P’ \in Ass(M)$. 因为 $Ann(M) \subseteq P \subseteq P’$. 由 1)的结论, 包含 $Ass(M)$ 中的素理想是包含 $Ann(M)$ 的极小素理想, 从而 $P = P’$. 从而 $\dim M_P = 0$. 若 $depth_P(M)&gt;0$, 取一个 $M$-regular 元 $a \in P$, 记 $M_1 = M/aM$. 由于局部化函子是正合的, $a$ 也是 $M_P$-regular. 因此 $\dim (M_1)_P = \dim M_P/aM_P = \dim M_P-1$ 且 $depth_P(M_1) = depth_P(M) - 1$. 由 2) $M_1$ 是 C.M. 从而由归纳法, $\dim (M_1)_P = depth_P(M_1)$, 证毕.</p>
+<p>引理 7: 设 $(A, \mathfrak{m})$ 是 C.M. 局部环, 则对任意序列 $a_1, \cdots, a_r \in \mathfrak{m}$, 下列条件等价:</p>
+<ol>
+<li>$a_1, \cdots, a_r$ 是 $A$-regular 序列</li>
+<li>$ht(a_1, \cdots, a_i) = i (1 \leq i \leq r)$</li>
+<li>$ht(a_1, \cdots, a_r) = r$</li>
+<li>存在 $a_{r+1} \cdots a_n \in \mathfrak{m}, (n = \dim A)$ 使得 $\lbrace a_1, \cdots a_n \rbrace$ 是 SOP.</li>
+</ol>
+<p><strong>Proof</strong>: $1 \to 2$: 由广义 Krull 定理: $ht(a_1, \cdots, a_i) \leq i$, 再由 $a_1, \cdots, a_r$ 是 $A$-regular 序列知 $ht(a_1, \cdots, a_i) \geq i$. $2 \to 3$ 显然, $3 \to 4$: 若 $\dim A = r$ 则结论是平凡的. 若 $\dim A &gt; r$, 则可以找到 $a_{r+1} \in \mathfrak{m}$ 不在包含 $(a_1, \cdots, a_r)$ 的极小素理想中, 从而 $ht(a_1, \cdots, a_{r+1}) = r+1$. 于是一直这样进行下去即可. $4 \to 1$: 只需证明每个 SOP $x_1, \cdots, x_n$ 都是 $A$-regular 序列. 若 $P \in Ass(A)$, 则 $\dim A/P = n$. 因此 $x_1 \notin P$(否则它在 $A/P$ 下的像怎么生成 $\mathfrak{m}/P$). 因此 $x_1$ 是 $A$-regular. 记 $A’ = A/(x_1)$. 则 $A’$ 是 C.M. 维数为 $n-1$ 局部环. 由归纳法结论成立.</p>
+<p>设 $I$ 是 C.M. 局部环 $(A, \mathfrak{m})$ 的真理想, 则</p>
+<ol>
+<li>$ht(I) = depth_I(A) = \dim A - \dim(A/I)$</li>
+<li>对任意素理想 $p \subset q, ht(q) = ht(p) + ht(q/p)$.<br><strong>Proof</strong>: 1. $ht(I) = r$. 我们可以选择 $a_1, \cdots, a_r \in I$ 使得 $ht(a_1, \cdots, a_i) = i \quad 1 \leq i \leq r$. 由引理 7, $a_1, \cdots, a_r$ 是 $I$ 中 $A$-regular 序列. 从而 $ht(I) \leq depth_I(A)$. 另一方面, 若 $b_1, \cdots, b_s$ 是 $I$ 中 $A$-regular 序列, 则 $ht(b_1, \cdots, b_s) = s \leq ht(I)$. 因此 $ht(I) = depth_I(A)$. 由于 $ht(I) = \inf \lbrace ht(P) | P \in V(I) \rbrace$, $\dim(A/I) = \sup \lbrace \dim A/P | P \in V(I) \rbrace$. 若 $ht(P) = \dim(A) - \dim(A/P)$, 对任意 $P \in Spec(A)$ 成立, 那么 $ht(I) = \dim A - \dim(A/I)$ 显然也成立. 由于 $A_P$ 是 C.M. 环, $ht(P) = \dim(A_P) = depth_P(A)$. 从而我们可以找 $P$ 中一个 $A$-regular 序列 $a_1, \cdots, a_r$. $A/(a_1, \cdots, a_r)$ 是维数为 $n-r$ 的 C.M. 环, $P$ 是包含 $a_1, \cdots, a_r$ 的极小素理想. 从而 $\dim(A/P) - n-r$(由上面的性质).</li>
+<li>若 $p supset q$ 是 $A$ 的素理想, 则 $A_q$ 是 C.M. 环, 从而 $\dim A_q = ht pA_q + \dim A_q / pA_q$. 即 $ht(q) = ht(p) + ht(q/p)$.</li>
+</ol>
+<p><strong>Cohen-Macauly Ring</strong> 称一个 Noetherian 环 $A$ 是 Cohen-Macaulay 如果对任意 $A_P \in Spec(A)$, $A_P$ 是 C.M. local ring. 实际上只要在对 $A_P \in \omega(A)$ 成立即可.</p>
+<p>设 $A$ 是 Cohen-Macaulay 环, 则多项式环 $A[x_1, \cdots, x_n]$ 也是 Cohen-Macaulay 环.</p>
+<h2 id="To-be-Continue"><a href="#To-be-Continue" class="headerlink" title="To be Continue"></a>To be Continue</h2></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dna049</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://dna049.com/commutativeAlgebraByMatsumura/">https://dna049.com/commutativeAlgebraByMatsumura/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dna049.com" target="_blank">dna049</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Math/">Math</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/rewardAlipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardAlipay.png" alt="下次"/></a><div class="post-qr-code-desc">下次</div></li><li class="reward-item"><a href="/img/rewardWechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/rewardWechat.png" alt="一定"/></a><div class="post-qr-code-desc">一定</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/xorAndItsApplicationInNimGame/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">异或运算及其在Nim游戏中的应用</div></div></a></div><div class="next-post pull-right"><a href="/maoshanMarathon2017/"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第一次校运动会 + 山地半程马拉松</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/fastPowSumOfNaturalNumber/" title="自然数方幂和快速算法"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2016-05-08</div><div class="relatedPosts_title">自然数方幂和快速算法</div></div></a></div><div class="relatedPosts_item"><a href="/codeforces/" title="Codeforces汇总"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-22</div><div class="relatedPosts_title">Codeforces汇总</div></div></a></div><div class="relatedPosts_item"><a href="/nft/" title="快速数论变换"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-02</div><div class="relatedPosts_title">快速数论变换</div></div></a></div><div class="relatedPosts_item"><a href="/quadraticModEquation/" title="$x^2 \equiv a \mod n$ 何时有解"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="relatedPosts_title">$x^2 \equiv a \mod n$ 何时有解</div></div></a></div><div class="relatedPosts_item"><a href="/dynamicProgramming/" title="动态规划"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-21</div><div class="relatedPosts_title">动态规划</div></div></a></div><div class="relatedPosts_item"><a href="/grossmanConstant/" title="Grossman 常数"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-16</div><div class="relatedPosts_title">Grossman 常数</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2020 By dna049</div><div class="framework-info"><span>框架 </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va',
+      appKey: 'tQiWPCsXLT3YIbUTm3b9bewX',
+      placeholder: '2young2simple, sometimes naive',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

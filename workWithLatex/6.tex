@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\newtheorem{Proof}{\hskip 2em Proof}
+
+
+\author{Chenzhipeng}
+\title{Some results about group}
+
+\begin{document}
+
+\maketitle
+I found some results really interesting about group which listed at the book \textit{Basic Algebra by NATHAN JACOBSON}
+
+\section{Invertiblity in a monoid}
+Let M donates a monoid,any of the following conditions
+\begin{enumerate}
+\item
+$ ab=ca=1 $
+\item
+$aba = a, ab^2a = 1$
+\end{enumerate}
+can conclude that $a$ is invertible with b as inverse.\\
+
+\begin{enumerate}
+\item
+\textit{proof:} 
+if $ ab=ca=1 $ then,
+\[ b = 1 \cdot b = cab = c \cdot 1 = c \]
+thus 
+\[ ab=ba=1 \]
+\item
+if $aba = a, ab^2a = 1$ then,
+\[ 1 = ab^2a = abab^2a = ab \]
+\[ 1 = ab^2a = abba = ba \]
+end the proof.
+\end{enumerate}
+
+\section{Semigroup with some properities}
+
+Let $G$ be a semigroup having following properites 
+\begin{description}
+\item[(a)]
+$G$ contains right unit $1_r$,thus $\forall a \in G, a1_r=a$ \\
+\item[(b)]
+$\forall a \in G$ have a right inverse to $1_r$ $(ab=1_r)$. \\
+\end{description}
+then $G$ is a group.\\
+\textit{proof:} 
+$\forall a \in G$ we have $b \in G$ such thar 
+\[ ab = 1_r \]
+then there exists $c \in G$ that
+\[ bc = 1_r \]
+hence we have
+\[ a = a 1_r = abc = 1_r c = 1_r 1_r c = 1_r a \]
+so we have $\forall a \in G$
+\[ a 1_r = 1_r a = a \]
+thus $1_r$ is the unit in $G$ and G is a monoid.Using conclusion in previous chapter,we know that $a$ is invertible for all $a \in G$.So G is a group.
+
+\section{Semigroup with solvable system}
+$G$ is a monoid,if the equation $ax=b$ and $ya=b$ is solvable for any $a,b \in G$ then $G$ is a group.\\
+\textit{proof:} \\
+we random choose $a_0 \in G$ and we have $x_0$ such that
+\[ a_0x_0=a_0 \]
+$\forall a \in G$ we have
+\[ a = ya_0 = ya_0x_0 = ax_0 \]
+
+and $\forall a \in G$ there exist a $b$ such that
+\[ ab = x_0 \].
+end our prove by foregoing conclusion.
+
+\section{Finite semigroup with cancellation law}
+Let $G$ donate a finite semigroup, is G satisfies
+\[ ax=ay \Rightarrow x=y \]
+and
+\[ xa=ya \Rightarrow x=y \]
+G is a group.\\
+\textit{proof:} 
+$\forall a \in G$ we consider a map $L_a \colon G \to G$
+\[ L_a(g) = ag \text{ for all } g \in G \]
+since $ ax=ay \Rightarrow x=y $
+we know that $L_a$ is injective, $|G|$ is finite,we have $L_a$ is bijective.\\
+Similiarly,we can define a bijective map $R_a$.\\
+Thus $G$ is a Semigroup with solvable system which refer to be a group by previos chapter.
+
+\end{document}

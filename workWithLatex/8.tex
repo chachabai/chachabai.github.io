@@ -1,0 +1,39 @@
+%!TEX program = xelatex
+%!TEX TS-program = xelatex
+\documentclass[12pt]{article}
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage{graphicx} 
+\usepackage{amsmath,amsfonts} 
+
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} %设置中文字体
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+\newfontfamily{\H}{Heiti SC} %设定新的字体快捷命令
+\newfontfamily{\E}{Weibei SC} %设定新的字体快捷命令
+
+\author{ 15110840001 陈智鹏}
+\title{ 仅在一点连续的函数例子 }
+
+\begin{document}
+
+\maketitle
+\E{
+在一元微积分中，有一个广为人知的结论：一元函数在一点可导，必在该点连续，即可导必连续。
+
+自然会有这样一个问题：
+
+	一元函数在一点可导能否推出它在该点的一个小邻域连续呢？
+
+这个想法是很自然的，不严格的思考可能会认为应该是对的,但是它并不成立。下面给出一个反例：
+\[ f(x) = x^2 D(x) = \left\{ \begin{array}{ll} 0 & x \in \mathbb{Q} \\ x^2 & x \notin \mathbb{Q} \end{array} \right. \]
+其中$D(x)$ 为Dirichlet函数。
+
+容易验证函数$f(x)$在$x=0$处可导，但在$x \neq 0$处不连续。即否定了上述问题。
+
+最后，类似地，我们还可以通过Dirichlet函数构造$\mathbb{R}$上一些仅在有限个点连续的函数。也可以通过周期函数构造仅在所有整数点连续的函数。但是由Baire纲定理可以证明，不存在在所有有理数点连续，无理点间断的函数。最后Riemann函数给出了一个在所有有理数点间断，无理点连续的函数。这些反例使得人们对函数连续的概念有了更感性的认识。
+
+}
+\end{document}
