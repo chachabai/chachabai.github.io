@@ -153,7 +153,7 @@ chmod +777 * \\
 
 
 \section{客户端软件安装}
-再次说明，我们不可能每台机器都装一次Ubuntu，一般学校机房都是有装万欣恢复卡的。版本不同操作也不同，如何用万欣恢复卡装系统，以及如何系统备份，如何系统还原，如何发射，这些可以问校内计算中心的老师（一般F10设置各种东西包括发射和系统备份，Ctrl＋r是还原）。安装好Ubuntu之后，默认是带有gcc和python的。连上外网后。\\
+再次说明，我们不可能每台机器都装一次Ubuntu，一般学校机房都是有装万欣恢复卡的。版本不同操作也不同，如何用万欣恢复卡装系统，以及如何系统备份，如何系统还原，如何发射，这些可以问校内计算中心的老师（一般F10设置各种东西包括发射和系统备份，Ctrl＋r是还原）。安装好Ubuntu之后，默认是带有gcc和Python的。连上外网后。\\
 sudo apt-get update 更新源 \\
 sudo apt-get upgrade 更新依赖库 \\
 sudo apt-get intall g++ 安装g++ \\
@@ -194,7 +194,7 @@ team1[TAB]password[TAB]seatno
 
 
 \subsection{榜单设置}
-榜单，在pc2/bin/html下会默认生成一些榜(但无index.html),为此我们可以将pc2-*/samps/web/xsl/wf.index.xsl删掉带png的一行并且更名为index.html放置在pc2-*/data/xsl目录下就可以使用index.html作为队伍们可以看到的榜。在/pc2/bin/html文件下调用python -m SimpleHTTPServer 8060（大于6000且与客户端所配置的一致就行，随意），其它地方用火狐输入榜单ip:8060就可以看到榜了。
+榜单，在pc2/bin/html下会默认生成一些榜(但无index.html),为此我们可以将pc2-*/samps/web/xsl/wf.index.xsl删掉带png的一行并且更名为index.html放置在pc2-*/data/xsl目录下就可以使用index.html作为队伍们可以看到的榜。在/pc2/bin/html文件下调用Python -m SimpleHTTPServer 8060（大于6000且与客户端所配置的一致就行，随意），其它地方用火狐输入榜单ip:8060就可以看到榜了。
 
 比赛时两个榜单，一个是公共榜单scoreboard1（最后一小时关闭）在打印服务器上开启，一个是用于送气球的榜单scoreboard2可放在管理员机器上（节约机器），需要在管理员端进行配置。
 

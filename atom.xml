@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-08-20T10:52:59.878Z</updated>
+  <updated>2020-08-20T12:41:20.910Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -17,11 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>templateOfC</title>
+    <link href="https://dna049.com/templateOfC/"/>
+    <id>https://dna049.com/templateOfC/</id>
+    <published>2020-08-20T12:41:20.910Z</published>
+    <updated>2020-08-20T12:41:20.910Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>butterfly 主题</title>
     <link href="https://dna049.com/butterfly/"/>
     <id>https://dna049.com/butterfly/</id>
     <published>2020-08-20T09:19:44.000Z</published>
-    <updated>2020-08-20T10:52:59.878Z</updated>
+    <updated>2020-08-20T11:57:22.395Z</updated>
     
     <summary type="html">
     
@@ -46,7 +61,7 @@
     <link href="https://dna049.com/pointSetTopology/"/>
     <id>https://dna049.com/pointSetTopology/</id>
     <published>2020-07-29T02:07:20.000Z</published>
-    <updated>2020-08-20T08:53:57.276Z</updated>
+    <updated>2020-08-20T13:25:34.786Z</updated>
     
     <summary type="html">
     
@@ -61,18 +76,18 @@
   </entry>
   
   <entry>
-    <title>dna049 的C++模板</title>
+    <title>dna049 的 C++模板</title>
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:25:02.000Z</published>
-    <updated>2020-08-20T08:53:57.306Z</updated>
+    <updated>2020-08-20T13:23:16.401Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;此处包含C++代码规范，C++模板，C++ STL的使用。&lt;/p&gt;
+      &lt;p&gt;此处包含 C++ 代码规范，C++ 模板，C++ STL 的使用。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;编译器比你想象中的聪明，所以写让&lt;strong&gt;编译器好优化&lt;/strong&gt;并且&lt;strong&gt;易读&lt;/strong&gt;的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;Vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用&lt;code&gt;Vector&lt;/code&gt;结合&lt;code&gt;C++17&lt;/code&gt;可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为0，局部变量要加&lt;code&gt;= {}&lt;/code&gt;才会初始化为0&lt;/p&gt;
+&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;Vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用 &lt;code&gt;Vector&lt;/code&gt; 结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -88,16 +103,16 @@
     <link href="https://dna049.com/nft/"/>
     <id>https://dna049.com/nft/</id>
     <published>2020-06-01T21:45:09.000Z</published>
-    <updated>2020-08-20T08:53:57.266Z</updated>
+    <updated>2020-08-20T13:48:33.324Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;快速Fourier变换，被称为20世纪最伟大的十大算法之一。所以很多软件都有对应的FFT，例如Python的 &lt;code&gt;scipy.fftpack&lt;/code&gt;中就有关于FFT的包。所以个人写FFT就没有那么必要了。但是NFT的包一般都没多少，而且会写NFT必然就会写FFT了。大约在5年前就写过NFT的C++代码，现在一看依然不记得蝶式映射到底是咋想的，&lt;del&gt;所以想独立思考出整个过程&lt;/del&gt;(失败）。&lt;/p&gt;
+      &lt;p&gt;快速 Fourier 变换，被称为 20 世纪最伟大的十大算法之一。所以很多软件都有对应的 FFT，例如 Python 的 &lt;code&gt;scipy.fftpack&lt;/code&gt; 中就有关于 FFT 的包。所以个人写 FFT 就没有那么必要了。但是 NFT 的包一般都没多少，而且会写 NFT 必然就会写 FFT 了。大约在 5 年前就写过 NFT 的 C++ 代码，现在一看依然不记得蝶式映射到底是咋想的，&lt;del&gt;所以想独立思考出整个过程&lt;/del&gt;(失败）。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo 博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;发现NFT一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为$3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
-&lt;p&gt;选择$n$个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底$p_1,\cdots, p_n$ 使得$p_1\cdots p_n$大于ans的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把ans搞出来了。&lt;/p&gt;
+&lt;p&gt;发现 NFT 一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为$3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
+&lt;p&gt;选择 $n$ 个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底$p_1,\cdots, p_n$ 使得$p_1\cdots p_n$大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
     
     </summary>
     
@@ -116,11 +131,11 @@
     <link href="https://dna049.com/quadraticModEquation/"/>
     <id>https://dna049.com/quadraticModEquation/</id>
     <published>2020-05-28T13:21:52.000Z</published>
-    <updated>2020-08-20T08:53:57.296Z</updated>
+    <updated>2020-08-20T13:15:35.771Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;显然，我们只需考虑$0 \leq a &amp;lt; n $ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作&lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和Gauss互反律&quot;&gt;二次剩余和Gauss互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
+      &lt;p&gt;显然，我们只需考虑$0 \leq a &amp;lt; n$ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作&lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和 Gauss 互反律&quot;&gt;二次剩余和 Gauss 互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
     
     </summary>
     
@@ -137,7 +152,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-08-20T10:52:34.278Z</updated>
+    <updated>2020-08-20T12:12:12.431Z</updated>
     
     <summary type="html">
     
@@ -155,9 +170,9 @@
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
       <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
+    
+      <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
     
   </entry>
   
@@ -166,7 +181,7 @@
     <link href="https://dna049.com/dynamicProgramming/"/>
     <id>https://dna049.com/dynamicProgramming/</id>
     <published>2020-05-21T15:36:13.000Z</published>
-    <updated>2020-08-20T08:53:57.146Z</updated>
+    <updated>2020-08-20T11:58:08.738Z</updated>
     
     <summary type="html">
     
@@ -195,17 +210,17 @@
     <link href="https://dna049.com/grossmanConstant/"/>
     <id>https://dna049.com/grossmanConstant/</id>
     <published>2020-05-16T14:17:57.000Z</published>
-    <updated>2020-08-20T08:53:57.156Z</updated>
+    <updated>2020-08-20T11:59:34.667Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-A_{n+2} = \frac{A_n}{1+A_{n+1}}\\
-A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得$\lbrace A_n \rbrace$收敛。这个 $x_0 = 0.7373383…$  被称为Grossman 常数。&lt;/p&gt;
+A_{n+2} = \frac{A_n}{1+A_{n+1}} \\
+A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得 $\lbrace A_n \rbrace$ 收敛。这个 $x_0 = 0.7373383…$  被称为 Grossman 常数。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://mathworld.wolfram.com/GrossmansConstant.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Grossman 常数&lt;/a&gt; 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 &lt;a href=&quot;1987_Article_MathematicalEntertainments.pdf&quot;&gt;Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. &lt;em&gt;Math. Intel.&lt;/em&gt; &lt;strong&gt;9&lt;/strong&gt;, 40-43, 1987.&lt;/a&gt; 折腾终于下下来了。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;吐槽一下 Wolfram 百科提供的所有Reference链接没法访问。。。&lt;/p&gt;
+&lt;p&gt;吐槽一下 Wolfram 百科提供的所有 Reference 链接没法访问。。。&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -221,7 +236,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/vimWithLinuxShell/"/>
     <id>https://dna049.com/vimWithLinuxShell/</id>
     <published>2020-05-13T05:20:20.000Z</published>
-    <updated>2020-08-20T08:53:57.306Z</updated>
+    <updated>2020-08-20T11:58:08.738Z</updated>
     
     <summary type="html">
     
@@ -238,7 +253,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/chineseRemainTheorem/"/>
     <id>https://dna049.com/chineseRemainTheorem/</id>
     <published>2020-05-05T15:45:40.000Z</published>
-    <updated>2020-08-20T08:53:57.056Z</updated>
+    <updated>2020-08-20T11:58:08.738Z</updated>
     
     <summary type="html">
     
@@ -258,15 +273,15 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
   </entry>
   
   <entry>
-    <title>上流开源免费数学软件之SageMath</title>
+    <title>上流开源免费数学软件之 SageMath</title>
     <link href="https://dna049.com/sageMath/"/>
     <id>https://dna049.com/sageMath/</id>
     <published>2020-05-04T03:13:26.000Z</published>
-    <updated>2020-08-20T08:53:57.296Z</updated>
+    <updated>2020-08-20T13:03:21.424Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Sage的是“ 圣”的意思，所以&lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt;懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代MATLAB（20G)，Mathematics(5G）等商业软件。 而SageMath安装包仅1G不到，而且语言基于Python，就很快乐。而且你还能免费注册账号用基于Jupyter Notebook的&lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
+      &lt;p&gt;Sage 的是“ 圣”的意思，所以 &lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt;懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代 MATLAB（20G)，Mathematics(5G）等商业软件。 而 SageMath 安装包仅 1G 不到，而且语言基于 Python，就很快乐。而且你还能免费注册账号用基于 Jupyter Notebook 的&lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath 在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;感谢知乎好友&lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; 的推荐&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -288,7 +303,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/ctypes/"/>
     <id>https://dna049.com/ctypes/</id>
     <published>2020-05-03T03:47:05.000Z</published>
-    <updated>2020-08-20T08:53:57.146Z</updated>
+    <updated>2020-08-20T12:14:24.517Z</updated>
     
     <summary type="html">
     
@@ -311,7 +326,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/juliaLearning/"/>
     <id>https://dna049.com/juliaLearning/</id>
     <published>2020-05-02T01:58:57.000Z</published>
-    <updated>2020-08-20T08:53:57.186Z</updated>
+    <updated>2020-08-20T11:58:08.738Z</updated>
     
     <summary type="html">
     
@@ -339,11 +354,11 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/orderOfGLnZm/"/>
     <id>https://dna049.com/orderOfGLnZm/</id>
     <published>2020-04-25T00:50:58.000Z</published>
-    <updated>2020-08-20T08:53:57.276Z</updated>
+    <updated>2020-08-20T13:42:24.129Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是$|GL_n(\mathbb{Z}_m)|$  却是一个相对复杂的问题，它本质上是在考虑有限Abel群的自同构群的阶数问题。它又跟递推数列模$m$的周期密切相关。&lt;/p&gt;
+      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是$|GL_n(\mathbb{Z}_m)|$  却是一个相对复杂的问题，它本质上是在考虑有限 Abel 群的自同构群的阶数问题。它又跟递推数列模 $m$ 的周期密切相关。&lt;/p&gt;
     
     </summary>
     
@@ -354,20 +369,20 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
   </entry>
   
   <entry>
-    <title>不超过$x$的素数之和</title>
+    <title>不超过 $x$ 的素数之和</title>
     <link href="https://dna049.com/primePowSum/"/>
     <id>https://dna049.com/primePowSum/</id>
     <published>2020-04-17T06:47:43.000Z</published>
-    <updated>2020-08-20T08:53:57.276Z</updated>
+    <updated>2020-08-20T13:24:53.519Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;我们可以在不求出&lt;strong&gt;不超过$x$的所有素数&lt;/strong&gt;的情况下，求出最终结果。&lt;/p&gt;
+      &lt;p&gt;我们可以在不求出 &lt;strong&gt;不超过 $x$ 的所有素数&lt;/strong&gt; 的情况下，求出最终结果。&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
 &lt;li&gt;$f_0(x) = \pi(x)$ 这个在 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;$f_1(x) = \sum_{p \leq x} p$ 这是我们关心的结果&lt;/li&gt;
-&lt;li&gt;对于一般的$k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
+&lt;li&gt;对于一般的 $k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -385,7 +400,7 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/SpecialNumberSequences/"/>
     <id>https://dna049.com/SpecialNumberSequences/</id>
     <published>2020-04-12T06:47:16.000Z</published>
-    <updated>2020-08-20T08:53:57.012Z</updated>
+    <updated>2020-08-20T13:23:16.401Z</updated>
     
     <summary type="html">
     
@@ -408,7 +423,7 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/gaussianElimination/"/>
     <id>https://dna049.com/gaussianElimination/</id>
     <published>2020-04-11T02:45:49.000Z</published>
-    <updated>2020-08-20T08:53:57.156Z</updated>
+    <updated>2020-08-20T11:58:23.446Z</updated>
     
     <summary type="html">
     
@@ -429,7 +444,7 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/imageToChar/"/>
     <id>https://dna049.com/imageToChar/</id>
     <published>2020-04-07T12:26:27.000Z</published>
-    <updated>2020-08-20T08:53:57.176Z</updated>
+    <updated>2020-08-20T11:58:08.738Z</updated>
     
     <summary type="html">
     
@@ -449,13 +464,13 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/nthPrimeNumber/"/>
     <id>https://dna049.com/nthPrimeNumber/</id>
     <published>2020-04-06T03:04:19.000Z</published>
-    <updated>2020-08-20T08:53:57.276Z</updated>
+    <updated>2020-08-20T13:42:51.547Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;很早之前写过 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x) 的计算$&quot;&gt;$\pi(x) 的计算$&lt;/a&gt; ，在知乎上用它回答问题的时候，发现我怎么没有写 &lt;strong&gt;求第$n$ 个素数。&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;很早之前写过 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt; ，在知乎上用它回答问题的时候，发现我怎么没有写 &lt;strong&gt;求第 $n$ 个素数。&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt; 做法依赖于 $\pi(x)$ 的计算，$\pi(x)$ 表示不超过$x$ 的素数个数&lt;/p&gt;
+&lt;p&gt;做法依赖于 $\pi(x)$ 的计算，$\pi(x)$ 表示不超过$x$ 的素数个数&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -463,25 +478,6 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>悄悄话</title>
-    <link href="https://dna049.com/scrite/"/>
-    <id>https://dna049.com/scrite/</id>
-    <published>2020-04-05T14:18:59.000Z</published>
-    <updated>2020-08-20T08:53:57.296Z</updated>
-    
-    <summary type="html">
-    
-      Here&#39;s something encrypted, password is required to continue reading.
-    
-    </summary>
-    
-    
-    
-      <category term="Life" scheme="https://dna049.com/tags/Life/"/>
     
   </entry>
   
