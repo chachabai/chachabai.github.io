@@ -1,4 +1,3 @@
-
 /**
   * 當menu過多時，自動適配，避免UI錯亂
   * @param {*} n
@@ -6,9 +5,9 @@
   * 傳入 2 正常狀態下
   */
 
-const blogNameWidth = $('#site-name').width()
+const blogNameWidth = $('#blog_name').width()
 const menusWidth = $('.menus').width()
-const sidebarWidth = $('#sidebar').width() || 300
+const sidebarWidth = $('#sidebar').width()
 
 const adjustMenu = function (n) {
   const $nav = $('#nav')
@@ -18,9 +17,13 @@ const adjustMenu = function (n) {
   else t = blogNameWidth + menusWidth > $nav.width() - 30
 
   if (t) {
-    $nav.addClass('hide-menu')
+    $nav.find('.toggle-menu').addClass('is-visible-inline')
+    $nav.find('.menus_items').addClass('is-invisible')
+    $nav.find('#search_button span').addClass('is-invisible')
   } else {
-    $nav.removeClass('hide-menu')
+    $nav.find('.toggle-menu').removeClass('is-visible-inline')
+    $nav.find('.menus_items').removeClass('is-invisible')
+    $nav.find('#search_button span').removeClass('is-invisible')
   }
 }
 
@@ -56,17 +59,18 @@ const closeSidebar = () => {
   $('#body-wrap').animate({
     paddingLeft: 0
   }, 400)
-  if ($('#nav').hasClass('hide-menu')) {
-    setTimeout(function () {
-      adjustMenu(2)
-    }, 400)
-  }
+  $('#toggle-sidebar').css({
+    transform: 'rotateZ(0deg)',
+    color: '#1F2D3D',
+    opacity: '1'
+  })
+  setTimeout(function () {
+    adjustMenu(2)
+  }, 400)
 }
 
 const openSidebar = () => {
-  if (!$('#nav').hasClass('hide-menu')) {
-    adjustMenu(1)
-  }
+  adjustMenu(1)
   $('#sidebar').addClass('tocOpenPc').animate({
     left: 0
   }, 400)
@@ -76,6 +80,11 @@ const openSidebar = () => {
   $('#body-wrap').animate({
     paddingLeft: 300
   }, 400)
+  $('#toggle-sidebar').css({
+    transform: 'rotateZ(180deg)',
+    color: '#99a9bf',
+    opacity: '1'
+  })
 }
 
 const toggleSidebar = function () {
@@ -158,7 +167,7 @@ const sidebarFn = () => {
   })
 
   const mql = window.matchMedia('(max-width: 1024px)')
-  mql.addEventListener('change', function (ev) {
+  mql.addListener(function (ev) {
     if (ev.matches) {
       if ($sidebar.hasClass('tocOpenPc')) closeSidebar()
     } else {
@@ -169,10 +178,11 @@ const sidebarFn = () => {
 
   // toc元素點擊
   $sidebar.find('.toc-link').on('click', function (e) {
-    e.preventDefault()
-    scrollToDest(decodeURI($(this).attr('href')))
     if (window.innerWidth <= 1024) {
       closeMobileSidebar('toc')
+    } else {
+      e.preventDefault()
+      scrollToDest(decodeURI($(this).attr('href')))
     }
   })
 }
@@ -191,15 +201,12 @@ const scrollDownInIndex = () => {
  * 只適用於Hexo默認的代碼渲染
  */
 const addHighlightTool = function () {
-  const isHighlightCopy = GLOBAL_CONFIG.highlight.highlightCopy
-  const isHighlightLang = GLOBAL_CONFIG.highlight.highlightLang
+  const $figureHighlight = $('figure.highlight')
+  const isHighlightCopy = GLOBAL_CONFIG.highlightCopy
+  const isHighlightLang = GLOBAL_CONFIG.highlightLang
   const isHighlightShrink = GLOBAL_CONFIG_SITE.isHighlightShrink
-  const isShowTool = isHighlightCopy || isHighlightLang || isHighlightShrink !== undefined
-  const $figureHighlight = GLOBAL_CONFIG.highlight.plugin === 'highlighjs' ? $('figure.highlight') : $('pre[class*="language-"')
 
-  if (isShowTool && $figureHighlight.length) {
-    const isPrismjs = GLOBAL_CONFIG.highlight.plugin === 'prismjs'
-
+  if ($figureHighlight.length && (isHighlightCopy || isHighlightLang || isHighlightShrink !== undefined)) {
     let highlightShrinkEle = ''
     let highlightCopyEle = ''
     const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
@@ -213,26 +220,16 @@ const addHighlightTool = function () {
     }
 
     if (isHighlightLang) {
-      if (isPrismjs) {
-        $figureHighlight.each(function () {
-          const $this = $(this)
-          const langName = $this.attr('data-language') !== undefined ? $this.attr('data-language') : 'Code'
-          const highlightLangEle = `<div class="code-lang">${langName}</div>`
-          $this.wrap('<figure class="highlight"></figure>').before(`<div class="highlight-tools ${highlightShrinkClass}">${highlightShrinkEle + highlightLangEle + highlightCopyEle}</div>`)
-        })
-      } else {
-        $figureHighlight.each(function (i, o) {
-          const $this = $(this)
-          let langName = $this.attr('class').split(' ')[1]
-          if (langName === 'plain' || langName === undefined) langName = 'Code'
-          const highlightLangEle = `<div class="code-lang">${langName}</div>`
-          $this.prepend(`<div class="highlight-tools ${highlightShrinkClass}">${highlightShrinkEle + highlightLangEle + highlightCopyEle}</div>`)
-        })
-      }
+      let langName
+      $figureHighlight.each(function () {
+        const $this = $(this)
+        langName = $this.attr('class').split(' ')[1]
+        if (langName === 'plain' || langName === undefined) langName = 'Code'
+        const highlightLangEle = `<div class="code-lang">${langName}</div>`
+        $this.prepend(`<div class="highlight-tools ${highlightShrinkClass}">${highlightShrinkEle + highlightLangEle + highlightCopyEle}</div>`)
+      })
     } else {
-      const ele = `<div class="highlight-tools ${highlightShrinkClass}">${highlightShrinkEle + highlightCopyEle}</div>`
-      if (isPrismjs) $figureHighlight.wrap('<figure class="highlight"></figure>').before(ele)
-      else $figureHighlight.prepend(ele)
+      $figureHighlight.prepend(`<div class="highlight-tools ${highlightShrinkClass}">${highlightShrinkEle + highlightCopyEle}</div>`)
     }
 
     /**
@@ -240,7 +237,7 @@ const addHighlightTool = function () {
      */
 
     if (isHighlightShrink !== undefined) {
-      $('.highlight-tools >.expand').on('click', function () {
+      $figureHighlight.find('.highlight-tools >.expand').on('click', function () {
         const $this = $(this)
         const $table = $this.parent().nextAll()
         $this.toggleClass('closed')
@@ -280,13 +277,12 @@ const addHighlightTool = function () {
       }
 
       // click events
-      $('.highlight-tools >.copy-button').on('click', function () {
+      $figureHighlight.find('.highlight-tools >.copy-button').on('click', function () {
         const $buttonParent = $(this).parents('figure.highlight')
         $buttonParent.addClass('copy-true')
         const selection = window.getSelection()
         const range = document.createRange()
-        if (isPrismjs) range.selectNodeContents($buttonParent.find('> pre code')[0])
-        else range.selectNodeContents($buttonParent.find('table .code pre')[0])
+        range.selectNodeContents($buttonParent.find('table .code pre')[0])
         selection.removeAllRanges()
         selection.addRange(range)
         const text = selection.toString()
@@ -481,7 +477,7 @@ const tocFn = function () {
     let currentId = ''
     list.each(function () {
       const head = $(this)
-      if (top > head.offset().top - 70) {
+      if (top > head.offset().top - 25) {
         if (versionBiggerFive) currentId = '#' + encodeURI($(this).attr('id'))
         else currentId = '#' + $(this).attr('id')
       }
@@ -541,17 +537,33 @@ $rightsideEle.on('click', '#readmode', function () {
   $('body').toggleClass('read-mode')
 })
 
+// font change
+const originFontSize = $('body').css('font-size')
+$rightsideEle.on('click', '#font_plus', () => {
+  const nowFontSize = parseFloat($('body').css('font-size'))
+  if (nowFontSize < 20) {
+    $('body').css('font-size', nowFontSize + 1)
+  }
+})
+
+$rightsideEle.on('click', '#font_minus', () => {
+  const nowFontSize = parseFloat($('body').css('font-size'))
+  if (nowFontSize > 10) {
+    $('body').css('font-size', nowFontSize - 1)
+  }
+})
+
 // Switch Between Light And Dark Mode
 if ($('#darkmode').length) {
   const switchReadMode = function () {
     const nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
     if (nowMode === 'light') {
       activateDarkMode()
-      saveToLocal.set('theme', 'dark', 2)
+      Cookies.set('theme', 'dark', 2)
       GLOBAL_CONFIG.Snackbar !== undefined && snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
     } else {
       activateLightMode()
-      saveToLocal.set('theme', 'light', 2)
+      Cookies.set('theme', 'light', 2)
       GLOBAL_CONFIG.Snackbar !== undefined && snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
     }
   }
@@ -578,7 +590,7 @@ $rightsideEle.on('click', '#go-up', () => scrollToDest('body'))
 const clickFnOfSubMenu = function () {
   $('#mobile-sidebar-menus .expand').on('click', function () {
     $(this).parents('.menus_item').find('> .menus_item_child').slideToggle()
-    $(this).toggleClass('hide')
+    $(this).toggleClass('closed')
   })
 
   $(window).on('touchmove', function (e) {
@@ -621,23 +633,7 @@ const addRuntime = () => {
   const $runtimeCount = $('#webinfo-runtime-count')
   if ($runtimeCount.length) {
     const publishDate = $runtimeCount.attr('publish_date')
-    $runtimeCount.text(diffDate(publishDate) + ' ' + GLOBAL_CONFIG.runtime)
-  }
-}
-
-/**
- * 最後一次更新時間
- */
-const addLastPushDate = () => {
-  const $lastPushDateItem = $('.webinfo-last-push-date')
-  if ($lastPushDateItem.length) {
-    const lastPushDate = $lastPushDateItem.attr('last-push-date')
-    const diffDay = diffDate(lastPushDate)
-    if (diffDay > 365) {
-      $lastPushDateItem.text(lastPushDate)
-    } else {
-      $lastPushDateItem.text(diffDay + ' ' + GLOBAL_CONFIG.last_push_date)
-    }
+    $runtimeCount.text(diffDate(publishDate) + ' ' + GLOBAL_CONFIG.runtime_unit)
   }
 }
 
@@ -687,33 +683,25 @@ const clickFnOfTagHide = function () {
   }
 }
 
-const tabsFn = {
-  clickFnOfTabs: function () {
-    const $tab = $('#article-container .tabs')
-    $tab.find('.tab > button:not(.tab-to-top)').on('click', function (e) {
-      const $this = $(this)
-      const $tabItem = $this.parent()
+const clickFnOfTabs = function () {
+  const $tab = $('#article-container .tabs')
+  $tab.find('.tab > button').on('click', function (e) {
+    const $this = $(this)
+    const $tabItem = $this.parent()
 
-      if (!$tabItem.hasClass('active')) {
-        const $tabContent = $this.parents('.nav-tabs').next()
-        $tabItem.siblings('.active').removeClass('active')
-        $tabItem.addClass('active')
-        const tabId = $this.attr('data-href')
-        $tabContent.find('> .tab-item-content').removeClass('active')
-        $tabContent.find(`> ${tabId}`).addClass('active')
-        const $isTabJustifiedGallery = $tabContent.find(tabId).find('.justified-gallery')
-        if ($isTabJustifiedGallery.length > 0) {
-          initJustifiedGallery($isTabJustifiedGallery)
-        }
+    if (!$tabItem.hasClass('active')) {
+      const $tabContent = $this.parents('.nav-tabs').next()
+      $tabItem.siblings('.active').removeClass('active')
+      $tabItem.addClass('active')
+      const tabId = $this.attr('data-href')
+      $tabContent.find('> .tab-item-content').removeClass('active')
+      $tabContent.find(`> ${tabId}`).addClass('active')
+      const $isTabJustifiedGallery = $tabContent.find(tabId).find('.justified-gallery')
+      if ($isTabJustifiedGallery.length > 0) {
+        initJustifiedGallery($isTabJustifiedGallery)
       }
-    })
-  },
-  backToTop: () => {
-    const backToTopBtn = $('#article-container .tabs .tab-to-top')
-    backToTopBtn.on('click', function () {
-      scrollToDest($(this).parents('.tabs'))
-    })
-  }
+    }
+  })
 }
 
 const toggleCardCategory = function () {
@@ -802,17 +790,15 @@ const refreshFn = function () {
 
   sidebarFn()
   GLOBAL_CONFIG_SITE.isHome && scrollDownInIndex()
-  GLOBAL_CONFIG.highlight && addHighlightTool()
+  addHighlightTool()
   GLOBAL_CONFIG.isPhotoFigcaption && addPhotoFigcaption()
   runJustifiedGallery()
   addLightBox()
   scrollFn()
   GLOBAL_CONFIG.runtime && addRuntime()
-  GLOBAL_CONFIG.last_push_date && addLastPushDate()
   addTableWrap()
   clickFnOfTagHide()
-  tabsFn.clickFnOfTabs()
-  tabsFn.backToTop()
+  clickFnOfTabs()
   toggleCardCategory()
   switchComments()
 }
