@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia 入门到放弃 | dna049</title><meta name="description" content="和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯  学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C&#x2F;C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着"><meta name="keywords" content="Julia"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/juliaLearning/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Julia 入门到放弃"><meta property="og:url" content="https://dna049.com/juliaLearning/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯  学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C&#x2F;C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2020-05-02T01:58:57.000Z"><meta property="article:modified_time" content="2020-08-20T11:58:08.738Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia 入门到放弃 | dna049</title><meta name="description" content="和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯  学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C&#x2F;C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所"><meta name="keywords" content="Julia"><meta name="author" content="dna049"><meta name="copyright" content="dna049"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/dna049.png"><link rel="canonical" href="https://dna049.com/juliaLearning/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Julia 入门到放弃"><meta property="og:url" content="https://dna049.com/juliaLearning/"><meta property="og:site_name" content="dna049"><meta property="og:description" content="和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯  学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C&#x2F;C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所"><meta property="og:image" content="https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg"><meta property="article:published_time" content="2020-05-02T01:58:57.000Z"><meta property="article:modified_time" content="2020-08-20T17:03:50.695Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -90,7 +90,7 @@ if (autoChangeMode === '1') {
   isHome: false,
   isHighlightShrink: false,
   isSidebar: true,
-  postUpdate: '2020-08-20 19:58:08'
+  postUpdate: '2020-08-21 01:03:50'
 }</script><noscript><style>
 #nav {
   opacity: 1
@@ -99,71 +99,71 @@ if (autoChangeMode === '1') {
   opacity: 1
 }
 </style></noscript><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="dna049" type="application/atom+xml">
-</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我会的语言"><span class="toc-number">1.</span> <span class="toc-text">我会的语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计理念"><span class="toc-number">2.</span> <span class="toc-text">设计理念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Julia-入门"><span class="toc-number">3.</span> <span class="toc-text">Julia 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本运算"><span class="toc-number">3.1.</span> <span class="toc-text">基本运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包的国内镜像"><span class="toc-number">3.2.</span> <span class="toc-text">包的国内镜像</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">dna049</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Julia 入门到放弃</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-02T01:58:57.000Z" title="发表于 2020-05-02 09:58:57">2020-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T11:58:08.738Z" title="更新于 2020-08-20 19:58:08">2020-08-20</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">919</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><blockquote>
-<p>和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯</p>
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/dna049.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">78</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我会的语言"><span class="toc-number">1.</span> <span class="toc-text">我会的语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计理念"><span class="toc-number">2.</span> <span class="toc-text">设计理念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Julia-入门"><span class="toc-number">3.</span> <span class="toc-text">Julia 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本运算"><span class="toc-number">3.1.</span> <span class="toc-text">基本运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包的国内镜像"><span class="toc-number">3.2.</span> <span class="toc-text">包的国内镜像</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/08/07/HdNASqUVpaRDb4c.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">dna049</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/templateOfCpp"><i class="fa-fw fas fa-heart"></i><span> C++模板</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-calendar"></i><span> 工具类网站</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Julia 入门到放弃</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-02T01:58:57.000Z" title="发表于 2020-05-02 09:58:57">2020-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-20T17:03:50.695Z" title="更新于 2020-08-21 01:03:50">2020-08-21</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">927</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><blockquote>
+<p>和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯</p>
 </blockquote>
-<p>学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C/C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了<a href="https://docs.juliacn.com/latest/" target="_blank" rel="noopener">Julia</a> ，已分手，理由：</p>
+<p>学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了<a href="https://docs.juliacn.com/latest/" target="_blank" rel="noopener">Julia</a> ，已分手，理由：</p>
 <blockquote>
-<p>有C快吗？没有！有Python方便吗？没有！安装个包就跟求它借100w一样（国内源安装不了）</p>
-<p>免费是取代MATLAB，Mathematics的理由吗？不是，收费是一件好事！！！</p>
-<p>学术界的高性能计算的人员，它们学校至少买了MATLAB或者Mathematics好吧！</p>
+<p>有 C 快吗？没有！有 Python 方便吗？没有！安装个包就跟求它借 100w 一样（国内源安装不了）</p>
+<p>免费是取代 MATLAB，Mathematics 的理由吗？不是，收费是一件好事！！！</p>
+<p>学术界的高性能计算的人员，它们学校至少买了 MATLAB 或者 Mathematics 好吧！</p>
 <p>非上述人员，真的需要高性能计算吗？？？再说了真的性能高吗？向量化计算竟然还没有循环快，我吐了好吧</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="我会的语言"><a href="#我会的语言" class="headerlink" title="我会的语言"></a>我会的语言</h2><p>我已经会写，C/C++，Matlab，Python了，接触过Java, Swift, Lua(现在全忘了)。又要新学一门语言其实我是抵触的，并且Julia的语法简直就像 <code>没有分号的Matlab</code> ，我是很不喜欢的，依然想着某天我也能设计一个仅用于科学计算和OI/ICPC 的语言! </p>
+<h2 id="我会的语言"><a href="#我会的语言" class="headerlink" title="我会的语言"></a>我会的语言</h2><p>我已经会写，C/C++，Matlab，Python 了，接触过 Java, Swift, Lua(现在全忘了)。又要新学一门语言其实我是抵触的，并且 Julia 的语法简直就像 <code>没有分号的Matlab</code> ，我是很不喜欢的，依然想着某天我也能设计一个仅用于科学计算和 OI/ICPC 的语言! </p>
 <ul>
-<li>用C/C++ 写高效小巧的功能</li>
-<li>用Python处理日常小功能，计算器，模拟鼠标键盘控制，图片处理，视频处理，小游戏开发。</li>
-<li><del>用Julia 写复杂的科学计算用以取代Matlab</del>。VSCode 一定要选择一个工作区文件夹</li>
-<li>用Matlab（学校版）做演示和交互，Wolfram Mathematics（网页版）做验算。</li>
+<li>用 C/C++ 写高效小巧的功能</li>
+<li>用 Python 处理日常小功能，计算器，模拟鼠标键盘控制，图片处理，视频处理，小游戏开发。</li>
+<li>用 ~~Julia ~~ SageMath 写复杂的科学计算用以取代 Matlab。VSCode 一定要选择一个工作区文件夹</li>
+<li>用 Matlab（学校版）做演示和交互，Wolfram Mathematics（网页版）做验算。</li>
 </ul>
-<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><p>Julia 设计理念竟然是传承各种语言的优势，丢弃各个语言的不足的一种动态编程语言，可是这不是既要马儿跑，又要马儿不吃草吗？它借助LLVM和JIT技术。</p>
-<p>Julia有交互界面，现在语言感觉都能像Python，Matlab一样支持交互界面，<em>REPL</em> <em>REPL</em> : Read Eval Print Loop : 交互式解释器。</p>
+<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><p>Julia 设计理念竟然是传承各种语言的优势，丢弃各个语言的不足的一种动态编程语言，可是这不是既要马儿跑，又要马儿不吃草吗？它借助 LLVM 和 JIT 技术。</p>
+<p>Julia 有交互界面，现在语言感觉都能像 Python，Matlab 一样支持交互界面，<em>REPL</em> <em>REPL</em> : Read Eval Print Loop : 交互式解释器。</p>
 <blockquote>
 <p>高精度，支持向量，矩阵，传值而非传引用，速度快是我向往的</p>
 </blockquote>
 <h2 id="Julia-入门"><a href="#Julia-入门" class="headerlink" title="Julia 入门"></a>Julia 入门</h2><h3 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h3><blockquote>
-<p>太接近数学符号了！不亏是MIT出来的。</p>
+<p>太接近数学符号了！不亏是 MIT 出来的。</p>
 </blockquote>
 <ul>
-<li><p>支持非ASCII码当运算符我是接受不了的</p>
+<li><p>支持非 ASCII 码当运算符我是接受不了的</p>
 </li>
 <li><p>typeof 查看类型</p>
 </li>
 <li><p>Bool 类型： <code>true, false</code></p>
 </li>
-<li><p>整数有Int8,16,32,64,128, 和U 版本（越界取模），还有高精度BigInt（都会自动向这个转化）</p>
+<li><p>整数有 Int8,16,32,64,128, 和 U 版本（越界取模），还有高精度 BigInt（都会自动向这个转化）</p>
 </li>
-<li><p>浮点数有Int16，Int32，Int64，有Inf，-Inf，NaN，eps，还有高精度BigFloat（当然了不可能是精确值）</p>
+<li><p>浮点数有 Int16，Int32，Int64，有 Inf，-Inf，NaN，eps，还有高精度 BigFloat（当然了不可能是精确值）</p>
 </li>
-<li><p>有理数和复数自带（<code>//</code>表示有理数，im表示虚数i）</p>
+<li><p>有理数和复数自带（<code>//</code>表示有理数，im 表示虚数 i）</p>
 </li>
-<li><p>从1开头索引，我有点接受不了</p>
+<li><p>从 1 开头索引，我有点接受不了</p>
 </li>
 <li><p>整除: <code>÷</code> (或者用 div)  异或：<code>⊻</code>(或者用 xor)</p>
 <blockquote>
-<p>div 向0近似，fld向 -inf近似，cld 向 +inf 近似</p>
+<p>div 向 0 近似，fld 向 -inf 近似，cld 向 +inf 近似</p>
 </blockquote>
 </li>
 <li><p>Base.operator_precedence 看运算符优先级，Base.operator_associativity 看是左结合还是右结合</p>
 </li>
-<li><p>math包内建</p>
+<li><p>math 包内建</p>
 </li>
 <li><p>养成运算符之间加空格的好习惯</p>
 </li>
 <li><p>短路求值是个好东西</p>
 </li>
-<li><p>dot运算，竟然比for循环慢？？？搞笑？这玩什么</p>
+<li><p>dot 运算，竟然比 for 循环慢？？？搞笑？这玩什么</p>
 </li>
-<li><p>好像要Python一样有Yield 目前没找到</p>
+<li><p>好像要 Python 一样有 Yield 目前没找到</p>
 </li>
 <li><p>!放在函数名后面表示输入参数会被改变（但是不一定要这么做）</p>
 </li>
-<li><p>Copy跟Python一样是浅Copy</p>
+<li><p>Copy 跟 Python 一样是浅 Copy</p>
 </li>
 </ul>
 <h3 id="包的国内镜像"><a href="#包的国内镜像" class="headerlink" title="包的国内镜像"></a>包的国内镜像</h3><p>装个包，人装傻了！</p>
-<p>USTC的用不了，所以用ZJU的了</p>
+<p>USTC 的用不了，所以用 ZJU 的了</p>
 <blockquote>
 <p>先把<a href="https://mirrors.zju.edu.cn/julia/registries/General/Registry.toml" target="_blank" rel="noopener">Registry.toml</a> 文件下载下来，放在 <code>C:\\Users\\Administrator\\.julia\\registries\\General\\</code></p>
 </blockquote>

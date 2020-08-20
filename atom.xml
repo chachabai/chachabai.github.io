@@ -103,7 +103,7 @@
     <link href="https://dna049.com/nft/"/>
     <id>https://dna049.com/nft/</id>
     <published>2020-06-01T21:45:09.000Z</published>
-    <updated>2020-08-20T13:48:33.324Z</updated>
+    <updated>2020-08-20T14:06:39.830Z</updated>
     
     <summary type="html">
     
@@ -264,11 +264,11 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -290,9 +290,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -313,9 +313,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
@@ -326,18 +326,18 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/juliaLearning/"/>
     <id>https://dna049.com/juliaLearning/</id>
     <published>2020-05-02T01:58:57.000Z</published>
-    <updated>2020-08-20T11:58:08.738Z</updated>
+    <updated>2020-08-20T17:03:50.695Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯&lt;/p&gt;
+&lt;p&gt;和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C/C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了&lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
+&lt;p&gt;学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了&lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;有C快吗？没有！有Python方便吗？没有！安装个包就跟求它借100w一样（国内源安装不了）&lt;/p&gt;
-&lt;p&gt;免费是取代MATLAB，Mathematics的理由吗？不是，收费是一件好事！！！&lt;/p&gt;
-&lt;p&gt;学术界的高性能计算的人员，它们学校至少买了MATLAB或者Mathematics好吧！&lt;/p&gt;
+&lt;p&gt;有 C 快吗？没有！有 Python 方便吗？没有！安装个包就跟求它借 100w 一样（国内源安装不了）&lt;/p&gt;
+&lt;p&gt;免费是取代 MATLAB，Mathematics 的理由吗？不是，收费是一件好事！！！&lt;/p&gt;
+&lt;p&gt;学术界的高性能计算的人员，它们学校至少买了 MATLAB 或者 Mathematics 好吧！&lt;/p&gt;
 &lt;p&gt;非上述人员，真的需要高性能计算吗？？？再说了真的性能高吗？向量化计算竟然还没有循环快，我吐了好吧&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -354,7 +354,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/orderOfGLnZm/"/>
     <id>https://dna049.com/orderOfGLnZm/</id>
     <published>2020-04-25T00:50:58.000Z</published>
-    <updated>2020-08-20T13:42:24.129Z</updated>
+    <updated>2020-08-20T16:34:24.605Z</updated>
     
     <summary type="html">
     
@@ -433,23 +433,23 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
   <entry>
-    <title>用Python将图片换成字符</title>
+    <title>用 Python 将图片换成字符</title>
     <link href="https://dna049.com/imageToChar/"/>
     <id>https://dna049.com/imageToChar/</id>
     <published>2020-04-07T12:26:27.000Z</published>
-    <updated>2020-08-20T11:58:08.738Z</updated>
+    <updated>2020-08-20T17:07:12.187Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;我知乎上看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/126669800&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么用 Python 把图片转化为字符？&lt;/a&gt; 挺有趣的，自己也尝试了一下，当然他也是参考&lt;a href=&quot;https://github.com/RameshAditya/asciify/blob/master/asciify.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;原理就是：将图片（位图）转化成灰度图，即 0~255的数值，然后将这些数值换成特殊符号（自定义）&lt;/p&gt;
+&lt;p&gt;原理就是：将图片（位图）转化成灰度图，即 0~255 的数值，然后将这些数值换成特殊符号（自定义）&lt;/p&gt;
     
     </summary>
     

@@ -726,13 +726,13 @@ g^{\frac{p-1}{p_i}} \neq 1(\mod \; p)</script><p>则 $g$ 是 模 $p$ 的原根�
 <li><code>x_4 = 1 + 2^12 * 3</code> 是最小不超过<code>INT16</code>，并且 $c$ 特别小的一个！如果不用<code>LL</code>就很推荐</li>
 <li><code>x_5 = 1 +  2^57 * 29</code> 是不超过 <code>INT64</code> 中最推荐的一个！然后基础运算需要用 GCC 内建的 <code>__int128</code></li>
 </ul>
-<p>总之，$x_1$ 是最为推荐的，$x_2,x_3$ 很常见主要是因为国内第一篇比较完整的介绍 NFT 的是 <a href="http://blog.miskcoo.com/" target="_blank" rel="noopener">大佬 miskcoo</a>，他当时给的常数是$x_2,x_3$，然后就人云亦云了！$x_5$ 很有意思，它敲好比$2^{62}$小一点，然后它又大于$1e9+9$，而$1e9+7,1e9+9$这两个孪生素数又经常的出现在<code>ICPC/IO</code>中！<strong>但是，貌似也没啥用，见NFT模板代码的注释</strong></p>
-<p>用SageMath自带的<code>primtive_root</code>函数分别求对应的原根 $g_1=31,g_2=g_3=g_5=3,g_4=11$。</p>
-<p>所以，在<code>LL</code>的数据范围内，我们可以使用$x_1$，可以处理最长长度为$2^{27}$ 的NFT，最长为$2^{26} \sim 6 \times 10^7$ 项的NFT多项式乘法。 </p>
+<p>总之，$x_1$ 是最为推荐的，$x_2,x_3$ 很常见主要是因为国内第一篇比较完整的介绍 NFT 的是 <a href="http://blog.miskcoo.com/" target="_blank" rel="noopener">大佬 miskcoo</a>，他当时给的常数是$x_2,x_3$，然后就人云亦云了！$x_5$ 很有意思，它敲好比$2^{62}$小一点，然后它又大于$1e9+9$，而$1e9+7,1e9+9$这两个孪生素数又经常的出现在<code>ICPC/IO</code>中！<strong>但是，貌似也没啥用，见 NFT 模板代码的注释</strong></p>
+<p>用 SageMath 自带的<code>primtive_root</code>函数分别求对应的原根 $g_1=31,g_2=g_3=g_5=3,g_4=11$。</p>
+<p>所以，在 <code>LL</code> 的数据范围内，我们可以使用 $x_1$，可以处理最长长度为 $2^{27}$ 的 NFT，最长为 $2^{26} \sim 6 \times 10^7$ 项的 NFT 多项式乘法。 </p>
 <blockquote>
-<p>我们现在存在$w$，有 $w^N = 1,\; w^n \neq 1, 0&lt;n&lt;N $，其中 $N = 2^k, k&lt;27$，有时我们用$w_N$表明$w$和$N$的关系。</p>
+<p>我们现在存在 $w$，有 $w^N = 1,\; w^n \neq 1, 0&lt; n &lt; N$，其中 $N = 2^k, k&lt;27$，有时我们用 $w_N$ 表明 $w$ 和 $N$ 的关系。</p>
 </blockquote>
-<h2 id="离散-Fourier-变换-DFT"><a href="#离散-Fourier-变换-DFT" class="headerlink" title="离散 Fourier 变换 DFT"></a>离散 Fourier 变换 DFT</h2><p>对长度为$N$ 的数列$a_0,\cdots a_{N-1}$ 做离散Fourier 变换得到数列$\hat{a}_0 \cdots \hat{a}_{N-1}$：</p>
+<h2 id="离散-Fourier-变换-DFT"><a href="#离散-Fourier-变换-DFT" class="headerlink" title="离散 Fourier 变换 DFT"></a>离散 Fourier 变换 DFT</h2><p>对长度为 $N$ 的数列 $a_0,\cdots a_{N-1}$ 做离散 Fourier 变换得到数列 $\hat{a}_0 \cdots \hat{a}_{N-1}$：</p>
 <script type="math/tex; mode=display">
 \hat{a}_k = \sum_{n=0} ^{N-1} w^{kn}a_n</script><p>写成矩阵形式：</p>
 <script type="math/tex; mode=display">
@@ -754,27 +754,27 @@ a_0 \\
 a_1 \\
 \vdots \\
 a_{N-1} 
-\end{pmatrix}</script><p>即上述矩阵为$A$，则 $a_{ij} = w^{ij}$, 即$b_{ij}= w^{-ij}$，则$AB = NI$，即$A^{-1} = \frac{1}{N}(w^{-ij})_{N \times N}$。即我们得到了Fourier逆变换公式：</p>
+\end{pmatrix}</script><p>即上述矩阵为 $A$，则 $a_{ij} = w^{ij}$, 即 $b_{ij}= w^{-ij}$，则 $AB = NI$，即 $A^{-1} = \frac{1}{N}(w^{-ij})_{N \times N}$。即我们得到了 Fourier 逆变换公式：</p>
 <script type="math/tex; mode=display">
-a_k = \frac{1}{N} \sum_{n=0} ^{N-1} w^{-kn} \hat{a}_n</script><h2 id="快速Fourier数论变换NFT"><a href="#快速Fourier数论变换NFT" class="headerlink" title="快速Fourier数论变换NFT"></a>快速Fourier数论变换NFT</h2><p>记 $H = \frac{N}{2}$，</p>
+a_k = \frac{1}{N} \sum_{n=0} ^{N-1} w^{-kn} \hat{a}_n</script><h2 id="快速-Fourier-数论变换-NFT"><a href="#快速-Fourier-数论变换-NFT" class="headerlink" title="快速 Fourier 数论变换 NFT"></a>快速 Fourier 数论变换 NFT</h2><p>记 $H = \frac{N}{2}$，</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \hat{a}_{k} &= \sum_{n=0} ^{N-1} w^{kn}a_n \\
 &= (a_0+w^{2k}a_2+\cdots+ w^{2k(H-1)}a_{N-2})+w^k(a_1+w_{2k}a_3+\cdots+w^{2k(H-1)}a_{N-1}) \\
 &= \sum_{n=0}^{H-1} (w^2)^{kn}a_{2n} + w^k  \sum_{n=0}^{H-1} (w^2)^{kn}a_{2n+1} \\
 \hat{a}_{k+H} &= \sum_{n=0}^{H-1} (w^2)^{kn}a_{2n} - w^k  \sum_{n=0}^{H-1} (w^2)^{kn}a_{2n+1} \\
-\end{aligned}</script><p>即长度为$N$的Fourier变换可以其奇数项和偶数项的长度为$\frac{N}{2}$的Fourier变换表出。于是递归的我们可以在$O(n\log n)$ 时间复杂度求出。</p>
+\end{aligned}</script><p>即长度为 $N$ 的 Fourier 变换可以其奇数项和偶数项的长度为 $\frac{N}{2}$ 的 Fourier 变换表出。于是递归的我们可以在 $O(n\log n)$ 时间复杂度求出。</p>
 <blockquote>
 <p>递归太消耗计算时间了。因此我们需要给出非递归的版本</p>
 </blockquote>
-<h3 id="快速NFT图："><a href="#快速NFT图：" class="headerlink" title="快速NFT图："></a>快速NFT图：</h3><p>下图出自 <a href="http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform" target="_blank" rel="noopener">miskcoo从多项式乘法到快速傅里叶变换</a></p>
+<h3 id="快速-NFT-图"><a href="#快速-NFT-图" class="headerlink" title="快速 NFT 图"></a>快速 NFT 图</h3><p>下图出自 <a href="http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform" target="_blank" rel="noopener">miskcoo 从多项式乘法到快速傅里叶变换</a></p>
 <p><img src= "/img/loading.gif" data-lazy-src="bit-reverse-miskcoo.png" alt="bit-reverse-miskcoo"></p>
-<p>从这个图发现，最终的计算顺序，是每个数的位倒序。处理的细节miskcoo博客写的特别清楚了！</p>
+<p>从这个图发现，最终的计算顺序，是每个数的位倒序。处理的细节 miskcoo 博客写的特别清楚了！</p>
 <blockquote>
-<p>当我想要修改miskcoo的代码形式时，发现怎么修改都没他的好！</p>
+<p>当我想要修改 Miskcoo 的代码形式时，发现怎么修改都没他的好！</p>
 </blockquote>
-<p>还有NFT可以用于求多项式的逆！也可见<a href="http://blog.miskcoo.com/2015/05/polynomial-inverse" target="_blank" rel="noopener">miskcoo的博文</a></p>
-<h2 id="NFT-和卷积的关系"><a href="#NFT-和卷积的关系" class="headerlink" title="NFT 和卷积的关系"></a>NFT 和卷积的关系</h2><p>设$a,b$ 是长度为$N$（不必2的幂次，之前这个限制只是为了快速计算）的数列，则</p>
+<p>还有 NFT 可以用于求多项式的逆！也可见<a href="http://blog.miskcoo.com/2015/05/polynomial-inverse" target="_blank" rel="noopener">Miskcoo 的博文</a></p>
+<h2 id="NFT-和卷积的关系"><a href="#NFT-和卷积的关系" class="headerlink" title="NFT 和卷积的关系"></a>NFT 和卷积的关系</h2><p>设 $a,b$ 是长度为 $N$（不必 2 的幂次，之前这个限制只是为了快速计算）的数列，则</p>
 <script type="math/tex; mode=display">
 \hat{ab} = \hat{a} \star \hat{b}</script><p><strong>Proof</strong>：</p>
 <script type="math/tex; mode=display">
@@ -785,8 +785,8 @@ a_k = \frac{1}{N} \sum_{n=0} ^{N-1} w^{-kn} \hat{a}_n</script><h2 id="快速Four
 \end{aligned}</script><blockquote>
 <p>最后一个式子成立是因为若$i \neq j$，则 $\sum_{n=0} ^k w^{ni} a_i w^{(k-n)j}b_j=0$</p>
 </blockquote>
-<p>所以我们有 $a \star b= \hat{\hat{a}\hat{b}}$，而多项式乘法只是卷积的一个例子。有些时候<strong>计算式</strong>一开始不是卷积形式，但是可以转换成卷积形式，再利用FFT或者NFT加速。</p>
-<h2 id="NFT模板"><a href="#NFT模板" class="headerlink" title="NFT模板"></a>NFT模板</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> BI = __int128;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bitreverse</span><span class="params">(BI *x,<span class="keyword">int</span> len)</span></span>&#123; <span class="comment">// note that bitreverse(i)=j</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j) swap(x[i],x[j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=len&gt;&gt;<span class="number">1</span>;(j^=l)&lt;l;l&gt;&gt;=<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// the mod must NFT-friendly or (len+1)*mod^2 &lt; FM</span></span><br><span class="line"><span class="keyword">const</span> BI FM = BI(<span class="number">29</span>)&lt;&lt;<span class="number">57</span>|<span class="number">1</span>, gg=<span class="number">3</span>; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nft</span><span class="params">(BI *x,<span class="keyword">int</span> len,<span class="keyword">bool</span> isInverse=<span class="literal">false</span>)</span></span>&#123;</span><br><span class="line">    g = powmod(gg,(FM<span class="number">-1</span>)/len,FM);</span><br><span class="line">    <span class="keyword">if</span>(isInverse)&#123;</span><br><span class="line">        g = powmod(g,FM<span class="number">-2</span>,FM);</span><br><span class="line">        BI invlen = powmod(BI(len),FM<span class="number">-2</span>,FM);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">            x[i]=x[i]*invlen%FM;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    bitreverse(x,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> half=<span class="number">1</span>,<span class="built_in">step</span>=<span class="number">2</span>;half!=len;half&lt;&lt;=<span class="number">1</span>,<span class="built_in">step</span>&lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        BI wn = powmod(g,len/<span class="built_in">step</span>,FM),w=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i+=<span class="built_in">step</span>,w=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j&lt;i+half;++j)&#123;</span><br><span class="line">                BI t=(w*x[j+half])%FM;</span><br><span class="line">                x[j+half]=(FM-t+x[j])%FM;</span><br><span class="line">                x[j]=(x[j]+t)%FM;</span><br><span class="line">                w = w*wn%FM;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">square</span><span class="params">(BI *a, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(<span class="number">2</span>*n+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        a[i]=a[i]*a[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(a,len,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(BI *a,BI *b,<span class="keyword">int</span> na,<span class="keyword">int</span> nb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(na+nb+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);nft(b,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        a[i] = a[i]*b[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(b,len,<span class="number">1</span>);nft(a,len,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以我们有 $a \star b= \hat{\hat{a}\hat{b}}$，而多项式乘法只是卷积的一个例子。有些时候 <strong>计算式</strong> 一开始不是卷积形式，但是可以转换成卷积形式，再利用 FFT 或者 NFT 加速。</p>
+<h2 id="NFT-模板"><a href="#NFT-模板" class="headerlink" title="NFT 模板"></a>NFT 模板</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> BI = __int128;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bitreverse</span><span class="params">(BI *x,<span class="keyword">int</span> len)</span></span>&#123; <span class="comment">// note that bitreverse(i)=j</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j) swap(x[i],x[j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=len&gt;&gt;<span class="number">1</span>;(j^=l)&lt;l;l&gt;&gt;=<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// the mod must NFT-friendly or (len+1)*mod^2 &lt; FM</span></span><br><span class="line"><span class="keyword">const</span> BI FM = BI(<span class="number">29</span>)&lt;&lt;<span class="number">57</span>|<span class="number">1</span>, gg=<span class="number">3</span>; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nft</span><span class="params">(BI *x,<span class="keyword">int</span> len,<span class="keyword">bool</span> isInverse=<span class="literal">false</span>)</span></span>&#123;</span><br><span class="line">    g = powmod(gg,(FM<span class="number">-1</span>)/len,FM);</span><br><span class="line">    <span class="keyword">if</span>(isInverse)&#123;</span><br><span class="line">        g = powmod(g,FM<span class="number">-2</span>,FM);</span><br><span class="line">        BI invlen = powmod(BI(len),FM<span class="number">-2</span>,FM);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">            x[i]=x[i]*invlen%FM;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    bitreverse(x,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> half=<span class="number">1</span>,<span class="built_in">step</span>=<span class="number">2</span>;half!=len;half&lt;&lt;=<span class="number">1</span>,<span class="built_in">step</span>&lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        BI wn = powmod(g,len/<span class="built_in">step</span>,FM),w=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i+=<span class="built_in">step</span>,w=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i;j&lt;i+half;++j)&#123;</span><br><span class="line">                BI t=(w*x[j+half])%FM;</span><br><span class="line">                x[j+half]=(FM-t+x[j])%FM;</span><br><span class="line">                x[j]=(x[j]+t)%FM;</span><br><span class="line">                w = w*wn%FM;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">square</span><span class="params">(BI *a, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(<span class="number">2</span>*n+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        a[i]=a[i]*a[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(a,len,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(BI *a,BI *b,<span class="keyword">int</span> na,<span class="keyword">int</span> nb)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">1</span>&lt;&lt;(<span class="number">32</span>-__builtin_clz(na+nb+<span class="number">1</span>));</span><br><span class="line">    nft(a,len);nft(b,len);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=len;++i)&#123;</span><br><span class="line">        a[i] = a[i]*b[i]%FM;</span><br><span class="line">    &#125;</span><br><span class="line">    nft(b,len,<span class="number">1</span>);nft(a,len,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="NFT-模板更新（2020-7-9"><a href="#NFT-模板更新（2020-7-9" class="headerlink" title="NFT 模板更新（2020/7/9)"></a>NFT 模板更新（2020/7/9)</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> LL = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">constexpr</span> LL M = <span class="number">998244353</span>,ROOT=<span class="number">3</span>;</span><br><span class="line"><span class="function">LL <span class="title">powmod</span><span class="params">(LL x,LL n)</span></span>&#123;</span><br><span class="line">    <span class="function">LL <span class="title">r</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r=r*x%M;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>; x=x*x%M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bitreverse</span><span class="params">(<span class="built_in">vector</span>&lt;LL&gt; &amp;a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i!=a.<span class="built_in">size</span>();++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;j) swap(a[i],a[j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> l=a.<span class="built_in">size</span>()&gt;&gt;<span class="number">1</span>;(j^=l)&lt;l;l&gt;&gt;=<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">nft</span><span class="params">(<span class="built_in">vector</span>&lt;LL&gt; &amp;a,<span class="keyword">bool</span> isInverse=<span class="literal">false</span>)</span></span>&#123;</span><br><span class="line">    LL g = powmod(ROOT,(M<span class="number">-1</span>)/a.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">if</span>(isInverse)&#123;</span><br><span class="line">        g = powmod(g,M<span class="number">-2</span>);</span><br><span class="line">        LL invLen = powmod(LL(a.<span class="built_in">size</span>()),M<span class="number">-2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;x:a) x=x*invLen%M;</span><br><span class="line">    &#125;</span><br><span class="line">    bitreverse(a);</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;LL&gt; <span class="title">w</span><span class="params">(a.<span class="built_in">size</span>(),<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i!=w.<span class="built_in">size</span>();++i) w[i] = w[i<span class="number">-1</span>]*g%M;</span><br><span class="line">    <span class="keyword">auto</span> addMod = [](LL x,LL y)&#123;<span class="keyword">return</span> (x+=y)&gt;=M?x-=M:x;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> <span class="built_in">step</span>=<span class="number">2</span>,half = <span class="number">1</span>;half!=a.<span class="built_in">size</span>();<span class="built_in">step</span>&lt;&lt;=<span class="number">1</span>,half&lt;&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,wstep=a.<span class="built_in">size</span>()/<span class="built_in">step</span>;i!=a.<span class="built_in">size</span>();i+=<span class="built_in">step</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j!=i+half;++j)&#123;</span><br><span class="line">                LL t = (a[j+half]*w[wstep*(j-i)])%M;</span><br><span class="line">                a[j+half]=addMod(a[j],M-t);</span><br><span class="line">                a[j]=addMod(a[j],t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;LL&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;LL&gt; a,<span class="built_in">vector</span>&lt;LL&gt; b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sz=<span class="number">1</span>,tot = a.<span class="built_in">size</span>()+b.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(sz&lt;tot) sz*=<span class="number">2</span>;</span><br><span class="line">    a.resize(sz);b.resize(sz);</span><br><span class="line">    nft(a);nft(b);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i!=sz;++i) a[i] = a[i]*b[i]%M;</span><br><span class="line">    nft(a,<span class="number">1</span>);</span><br><span class="line">    a.resize(tot);</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>关于多项式乘法，求逆，带余除法的理论基础见下图，取自<a href="https://cp-algorithms.com/algebra/polynomial.html" target="_blank" rel="noopener">cp-algorithm</a></p>
 <p><img src= "/img/loading.gif" data-lazy-src="mulInv.png" alt="mulInv"></p>
@@ -1291,9 +1291,9 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <h2 id="Python-代码"><a href="#Python-代码" class="headerlink" title="Python 代码"></a>Python 代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># input : a,b natural number</span></span><br><span class="line"><span class="comment"># output: [gcd(a,b), x, y]</span></span><br><span class="line"><span class="comment"># ax + by = gcd(a,b)</span></span><br><span class="line"><span class="comment"># Algorithm: b(a//bx+y) + a%bx = gcd(b,a%b) </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exgcd</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>): <span class="keyword">return</span> [a,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">    [d,y,x] = exgcd(b,a%b)</span><br><span class="line">    <span class="keyword">return</span> [d,x,y-a//b*x]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0, i=1,2</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt2</span><span class="params">(a1,m1,a2,m2)</span>:</span></span><br><span class="line">    [d,t1,t2] = exgcd(m1,m2)</span><br><span class="line">    a,m = a2-a1,m1//d*m2</span><br><span class="line">    <span class="keyword">if</span>(a%d):  <span class="keyword">raise</span> ValueError(<span class="string">'No solution to crt problem'</span>)</span><br><span class="line">    <span class="keyword">return</span> [(a1+a//d*t1*m1)%m,m]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt</span><span class="params">(a,m)</span>:</span></span><br><span class="line">    n = len(a)</span><br><span class="line">    <span class="keyword">if</span>(len(m)!=n):  <span class="keyword">raise</span> ValueError(<span class="string">'a and m must have equal length'</span>)</span><br><span class="line">    aa,mm = a[<span class="number">0</span>],m[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n):</span><br><span class="line">        [aa,mm] = crt2(aa,mm,a[i],m[i])</span><br><span class="line">    <span class="keyword">return</span> [aa,mm]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    [a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">5</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">    print(a,m)</span><br><span class="line">    [a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">    print(a,m)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>C++</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1519,8 +1519,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <p>先找对应名字，再找对应模块中的函数，最后看手册用的例子。</p>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -1566,8 +1566,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>C++</tag>
+        <tag>Python</tag>
         <tag>Make</tag>
       </tags>
   </entry>
@@ -1575,70 +1575,70 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
     <title>Julia 入门到放弃</title>
     <url>/juliaLearning/</url>
     <content><![CDATA[<blockquote>
-<p>和Julia的一夜情结束了0.0 ，渣男 dna049 拥抱 SageMath咯</p>
+<p>和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯</p>
 </blockquote>
-<p>学完Python之后，觉得Python更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像Matlab一样的付费巨无霸（我不想再用盗版软件了，学校正版Matlab 2020 20G吃不消！）而C/C++在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了<a href="https://docs.juliacn.com/latest/" target="_blank" rel="noopener">Julia</a> ，已分手，理由：</p>
+<p>学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了<a href="https://docs.juliacn.com/latest/" target="_blank" rel="noopener">Julia</a> ，已分手，理由：</p>
 <blockquote>
-<p>有C快吗？没有！有Python方便吗？没有！安装个包就跟求它借100w一样（国内源安装不了）</p>
-<p>免费是取代MATLAB，Mathematics的理由吗？不是，收费是一件好事！！！</p>
-<p>学术界的高性能计算的人员，它们学校至少买了MATLAB或者Mathematics好吧！</p>
+<p>有 C 快吗？没有！有 Python 方便吗？没有！安装个包就跟求它借 100w 一样（国内源安装不了）</p>
+<p>免费是取代 MATLAB，Mathematics 的理由吗？不是，收费是一件好事！！！</p>
+<p>学术界的高性能计算的人员，它们学校至少买了 MATLAB 或者 Mathematics 好吧！</p>
 <p>非上述人员，真的需要高性能计算吗？？？再说了真的性能高吗？向量化计算竟然还没有循环快，我吐了好吧</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="我会的语言"><a href="#我会的语言" class="headerlink" title="我会的语言"></a>我会的语言</h2><p>我已经会写，C/C++，Matlab，Python了，接触过Java, Swift, Lua(现在全忘了)。又要新学一门语言其实我是抵触的，并且Julia的语法简直就像 <code>没有分号的Matlab</code> ，我是很不喜欢的，依然想着某天我也能设计一个仅用于科学计算和OI/ICPC 的语言! </p>
+<h2 id="我会的语言"><a href="#我会的语言" class="headerlink" title="我会的语言"></a>我会的语言</h2><p>我已经会写，C/C++，Matlab，Python 了，接触过 Java, Swift, Lua(现在全忘了)。又要新学一门语言其实我是抵触的，并且 Julia 的语法简直就像 <code>没有分号的Matlab</code> ，我是很不喜欢的，依然想着某天我也能设计一个仅用于科学计算和 OI/ICPC 的语言! </p>
 <ul>
-<li>用C/C++ 写高效小巧的功能</li>
-<li>用Python处理日常小功能，计算器，模拟鼠标键盘控制，图片处理，视频处理，小游戏开发。</li>
-<li><del>用Julia 写复杂的科学计算用以取代Matlab</del>。VSCode 一定要选择一个工作区文件夹</li>
-<li>用Matlab（学校版）做演示和交互，Wolfram Mathematics（网页版）做验算。</li>
+<li>用 C/C++ 写高效小巧的功能</li>
+<li>用 Python 处理日常小功能，计算器，模拟鼠标键盘控制，图片处理，视频处理，小游戏开发。</li>
+<li>用 ~~Julia ~~ SageMath 写复杂的科学计算用以取代 Matlab。VSCode 一定要选择一个工作区文件夹</li>
+<li>用 Matlab（学校版）做演示和交互，Wolfram Mathematics（网页版）做验算。</li>
 </ul>
-<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><p>Julia 设计理念竟然是传承各种语言的优势，丢弃各个语言的不足的一种动态编程语言，可是这不是既要马儿跑，又要马儿不吃草吗？它借助LLVM和JIT技术。</p>
-<p>Julia有交互界面，现在语言感觉都能像Python，Matlab一样支持交互界面，<em>REPL</em> <em>REPL</em> : Read Eval Print Loop : 交互式解释器。</p>
+<h2 id="设计理念"><a href="#设计理念" class="headerlink" title="设计理念"></a>设计理念</h2><p>Julia 设计理念竟然是传承各种语言的优势，丢弃各个语言的不足的一种动态编程语言，可是这不是既要马儿跑，又要马儿不吃草吗？它借助 LLVM 和 JIT 技术。</p>
+<p>Julia 有交互界面，现在语言感觉都能像 Python，Matlab 一样支持交互界面，<em>REPL</em> <em>REPL</em> : Read Eval Print Loop : 交互式解释器。</p>
 <blockquote>
 <p>高精度，支持向量，矩阵，传值而非传引用，速度快是我向往的</p>
 </blockquote>
 <h2 id="Julia-入门"><a href="#Julia-入门" class="headerlink" title="Julia 入门"></a>Julia 入门</h2><h3 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h3><blockquote>
-<p>太接近数学符号了！不亏是MIT出来的。</p>
+<p>太接近数学符号了！不亏是 MIT 出来的。</p>
 </blockquote>
 <ul>
-<li><p>支持非ASCII码当运算符我是接受不了的</p>
+<li><p>支持非 ASCII 码当运算符我是接受不了的</p>
 </li>
 <li><p>typeof 查看类型</p>
 </li>
 <li><p>Bool 类型： <code>true, false</code></p>
 </li>
-<li><p>整数有Int8,16,32,64,128, 和U 版本（越界取模），还有高精度BigInt（都会自动向这个转化）</p>
+<li><p>整数有 Int8,16,32,64,128, 和 U 版本（越界取模），还有高精度 BigInt（都会自动向这个转化）</p>
 </li>
-<li><p>浮点数有Int16，Int32，Int64，有Inf，-Inf，NaN，eps，还有高精度BigFloat（当然了不可能是精确值）</p>
+<li><p>浮点数有 Int16，Int32，Int64，有 Inf，-Inf，NaN，eps，还有高精度 BigFloat（当然了不可能是精确值）</p>
 </li>
-<li><p>有理数和复数自带（<code>//</code>表示有理数，im表示虚数i）</p>
+<li><p>有理数和复数自带（<code>//</code>表示有理数，im 表示虚数 i）</p>
 </li>
-<li><p>从1开头索引，我有点接受不了</p>
+<li><p>从 1 开头索引，我有点接受不了</p>
 </li>
 <li><p>整除: <code>÷</code> (或者用 div)  异或：<code>⊻</code>(或者用 xor)</p>
 <blockquote>
-<p>div 向0近似，fld向 -inf近似，cld 向 +inf 近似</p>
+<p>div 向 0 近似，fld 向 -inf 近似，cld 向 +inf 近似</p>
 </blockquote>
 </li>
 <li><p>Base.operator_precedence 看运算符优先级，Base.operator_associativity 看是左结合还是右结合</p>
 </li>
-<li><p>math包内建</p>
+<li><p>math 包内建</p>
 </li>
 <li><p>养成运算符之间加空格的好习惯</p>
 </li>
 <li><p>短路求值是个好东西</p>
 </li>
-<li><p>dot运算，竟然比for循环慢？？？搞笑？这玩什么</p>
+<li><p>dot 运算，竟然比 for 循环慢？？？搞笑？这玩什么</p>
 </li>
-<li><p>好像要Python一样有Yield 目前没找到</p>
+<li><p>好像要 Python 一样有 Yield 目前没找到</p>
 </li>
 <li><p>!放在函数名后面表示输入参数会被改变（但是不一定要这么做）</p>
 </li>
-<li><p>Copy跟Python一样是浅Copy</p>
+<li><p>Copy 跟 Python 一样是浅 Copy</p>
 </li>
 </ul>
 <h3 id="包的国内镜像"><a href="#包的国内镜像" class="headerlink" title="包的国内镜像"></a>包的国内镜像</h3><p>装个包，人装傻了！</p>
-<p>USTC的用不了，所以用ZJU的了</p>
+<p>USTC 的用不了，所以用 ZJU 的了</p>
 <blockquote>
 <p>先把<a href="https://mirrors.zju.edu.cn/julia/registries/General/Registry.toml" target="_blank" rel="noopener">Registry.toml</a> 文件下载下来，放在 <code>C:\\Users\\Administrator\\.julia\\registries\\General\\</code></p>
 </blockquote>
@@ -1653,7 +1653,7 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
     <url>/orderOfGLnZm/</url>
     <content><![CDATA[<p>由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是$|GL_n(\mathbb{Z}_m)|$  却是一个相对复杂的问题，它本质上是在考虑有限 Abel 群的自同构群的阶数问题。它又跟递推数列模 $m$ 的周期密切相关。</p>
 <a id="more"></a> 
-<p>2007 年 CHRISTOPHER J. HILLAR AND DARREN L. RHEA 发表一篇论文<a href="automorphismsOfFiniteAblianGroup.pdf">《AUTOMORPHISMS OF FINITE ABELIAN GROUPS》</a> 完美的解决了这个问题。</p>
+<p>2007 年 CHRISTOPHER J. HILLAR AND DARREN L. RHEA 发表一篇论文<a href="automorphismsOfFiniteAblianGroup.pdf">《AUTOMORPHISMS OF FINITE Abelian GROUPS》</a> 完美的解决了这个问题。</p>
 <h2 id="有限生成-Abel-群结构定理"><a href="#有限生成-Abel-群结构定理" class="headerlink" title="有限生成 Abel 群结构定理"></a>有限生成 Abel 群结构定理</h2><p>设$G$是一个有限 Abel 群，那么$G$ 同构于一些</p>
 <script type="math/tex; mode=display">
 H_p = \mathbb{Z}_{p^{e_1}} \times \cdots  \mathbb{Z}_{p^{e_n}}</script><p>的乘积。其中$p$ 是素数（$p$ 一般默认为素数），$1 \leq e_1 \leq \cdots \leq e_n$ 是正整数。</p>
@@ -1996,18 +1996,18 @@ a_{i+1}
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
-    <title>用Python将图片换成字符</title>
+    <title>用 Python 将图片换成字符</title>
     <url>/imageToChar/</url>
     <content><![CDATA[<p>我知乎上看到 <a href="https://zhuanlan.zhihu.com/p/126669800" target="_blank" rel="noopener">怎么用 Python 把图片转化为字符？</a> 挺有趣的，自己也尝试了一下，当然他也是参考<a href="https://github.com/RameshAditya/asciify/blob/master/asciify.py" target="_blank" rel="noopener">这里</a>。</p>
-<p>原理就是：将图片（位图）转化成灰度图，即 0~255的数值，然后将这些数值换成特殊符号（自定义）</p>
+<p>原理就是：将图片（位图）转化成灰度图，即 0~255 的数值，然后将这些数值换成特殊符号（自定义）</p>
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># imageToChar.py 使用说明：</span></span><br><span class="line"><span class="comment"># 把图片(例如xx.png)和这个文件放在同一文件夹中</span></span><br><span class="line"><span class="comment"># 命令行进入上面的文件夹路径输入</span></span><br><span class="line"><span class="comment"># py imageTochar.py xx.png (自选宽度：78，可不填)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">chars = [<span class="string">'z'</span>, <span class="string">'l'</span>, <span class="string">'y'</span>, <span class="string">'#'</span>, <span class="string">'?'</span>, <span class="string">'*'</span>, <span class="string">'+'</span>, <span class="string">';'</span>, <span class="string">':'</span>, <span class="string">','</span>, <span class="string">'.'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span><span class="params">(image, newW)</span>:</span></span><br><span class="line">    (w, h) = image.size</span><br><span class="line">    <span class="comment"># 0.58 大致是单个字符在DOS界面的宽高比</span></span><br><span class="line">    newDim = (newW, int(<span class="number">0.58</span>*h*newW/w))</span><br><span class="line">    newImg = image.resize(newDim)</span><br><span class="line">    <span class="keyword">return</span> newImg</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">garytochar</span><span class="params">(grayImg,newW)</span>:</span></span><br><span class="line">    newPix = [];step=<span class="number">256</span>//len(chars) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i,data <span class="keyword">in</span> enumerate(grayImg.getdata()):</span><br><span class="line">        <span class="keyword">if</span>(i%newW == <span class="number">0</span>): newPix.append(<span class="string">'\n'</span>)</span><br><span class="line">        newPix.append(chars[data//step])  <span class="comment">#也可以用 data%len(chars)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(newPix)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">imagetochar</span><span class="params">(imgPath, newW = <span class="number">78</span>)</span>:</span></span><br><span class="line">    img = Image.open(imgPath)</span><br><span class="line">    newImg = resize(img,newW)</span><br><span class="line">    grayImg = newImg.convert(<span class="string">'L'</span>)</span><br><span class="line">    <span class="keyword">return</span> garytochar(grayImg,newW)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    imgPath, newW, *tmp = sys.argv[<span class="number">1</span>:<span class="number">3</span>]+ [<span class="number">78</span>]</span><br><span class="line">    charPix = imagetochar(imgPath,int(newW))</span><br><span class="line">    print(charPix)</span><br></pre></td></tr></table></figure>
-<h2 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h2><div class="table-container">
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2124,8 +2124,8 @@ a_{i+1}
 </ul>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>C++</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -2230,8 +2230,8 @@ a_{i+1}
 <p>回车 (<code>\r</code>) 本义是光标重新回到本行开头，r 代表 <code>return</code> ，控制字符可以写成 CR，即 <code>Carriage Return</code>；<br>换行 (<code>\n</code>) 本义是光标往下一行（不一定到下一行行首），n 代表 <code>newline</code>，控制字符可以写成 LF，即 <code>Line Feed</code>。<br>在不同的操作系统这几个字符表现不同：<br>比如在 WIN 系统下，这两个字符就是表现的本义，<br>在 UNIX 类系统，换行 <code>\n</code> 就表现为光标下一行并回到行首，<br>在 MAC 上，<code>\r</code>就表现为回到本行开头并往下一行，至于 ENTER 键的定义是与操作系统有关的。</p>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>C++</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -2313,8 +2313,8 @@ a_{i+1}
 </blockquote>
 <h3 id="实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用"><a href="#实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用" class="headerlink" title="实现一个堆还是挺简单的，不过我们没必要再造轮子了。 下面用例子看一下 Python 堆的使用"></a><strong>实现一个堆还是挺简单的，不过我们没必要再造轮子了。</strong> 下面用例子看一下 Python 堆的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># from heapq import *</span></span><br><span class="line">x= list(range(<span class="number">10</span>))</span><br><span class="line">random.shuffle(x)</span><br><span class="line">heapq.heapify(x)</span><br><span class="line">print(x)</span><br><span class="line">heapq.heappop()</span><br><span class="line">heapq.heappush(x,<span class="number">3</span>)</span><br><span class="line">heapq.heapreplace(x,<span class="number">-1</span>)</span><br><span class="line">heapq.heappushpop(x,<span class="number">-2</span>) <span class="comment">#先push后pop，效率自然更快</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>C++</tag>
+        <tag>Python</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -2534,8 +2534,8 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
         <tag>LOL</tag>
       </tags>
   </entry>
@@ -2572,14 +2572,14 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
   <entry>
     <title>图片转化成位数据</title>
     <url>/imageToByte/</url>
-    <content><![CDATA[<h2 id="把图片变成数据"><a href="#把图片变成数据" class="headerlink" title="把图片变成数据"></a>把图片变成数据</h2><p>有时程序需要加载本地图片，然后打包的时候就很不方便，所以wxPython支持img2png.py、img2py.py、img2xpm.py等工具来支持这种操作，但是我调用的时候一直出错，在网上查了很多方式最后找到了解决方案：</p>
+    <content><![CDATA[<h2 id="把图片变成数据"><a href="#把图片变成数据" class="headerlink" title="把图片变成数据"></a>把图片变成数据</h2><p>有时程序需要加载本地图片，然后打包的时候就很不方便，所以 wxPython 支持 img2png.py、img2py.py、img2xpm.py 等工具来支持这种操作，但是我调用的时候一直出错，在网上查了很多方式最后找到了解决方案：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># imageToBite.py</span></span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'dna049.png'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    bData = base64.b64encode(f.read())</span><br><span class="line">    pData = bData.decode()</span><br><span class="line">    print(pData)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>这段代码就是把图片变成数据bite。 相应的修改图片就可以换着用了，如果很多就批处理自己照样写。</p>
+<p>这段代码就是把图片变成数据 bite。 相应的修改图片就可以换着用了，如果很多就批处理自己照样写。</p>
 <p>然后在命令行执行</p>
 <p><code>py imageToBite.py &gt; a.txt</code></p>
-<p>就可以把数据存下来，然后复制到下面程序的data中就行了。</p>
-<p><strong>然后在wxPython框架下</strong></p>
+<p>就可以把数据存下来，然后复制到下面程序的 data 中就行了。</p>
+<p><strong>然后在 wxPython 框架下</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wx.lib.embeddedimage <span class="keyword">import</span> PyEmbeddedImage</span><br><span class="line">bitmap = PyEmbeddedImage(data).GetBitmap()</span><br></pre></td></tr></table></figure>
 <p>就可以咯</p>
 ]]></content>
@@ -2610,7 +2610,7 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 <p><img src= "/img/loading.gif" data-lazy-src="pygamecheatsheet.png" alt="pygame"></p>
 <p>然后还有 <a href="Python_ext pygame.pdf">ppt</a>  以及<a href="pygame_docs.pdf">库查询手册</a> </p>
 <h2 id="拼图游戏开始了"><a href="#拼图游戏开始了" class="headerlink" title="拼图游戏开始了"></a>拼图游戏开始了</h2><p>本来是想用 wxPython 和 pygame 两种方式实现同一个拼图游戏，后来 wxPython 的编写（主要是函数查询）把我搞的生无可恋，就不想写 pygame 版本的实现了。下面是源码:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># JigsawGame.py writed by dna049 at 2020/2/28  last update: 2020/3/14</span></span><br><span class="line"><span class="comment"># 这是个加注释的版本，有些望文生义的我就不注释了</span></span><br><span class="line"><span class="keyword">import</span> wx</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> base64 </span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">import</span> urllib.request <span class="keyword">as</span> urlrequest 	<span class="comment"># 用于从网上加载图片</span></span><br><span class="line"><span class="keyword">import</span> webbrowser <span class="comment">#打开网页</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk 		<span class="comment"># 用于选择文件夹</span></span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> filedialog <span class="comment"># 用于选择文件夹</span></span><br><span class="line"><span class="keyword">from</span> wx.lib.embeddedimage <span class="keyword">import</span> PyEmbeddedImage 	<span class="comment"># 用于把数据变成位图</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JigsawGame</span><span class="params">(wx.Frame)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kw)</span>:</span> <span class="comment">#这个方法只会在最开始调用一次</span></span><br><span class="line">        super(JigsawGame, self).__init__(*args, **kw)</span><br><span class="line">        self.Centre()  	<span class="comment"># 整个窗口出现在屏幕正中心</span></span><br><span class="line">        <span class="comment"># 选择文件</span></span><br><span class="line">        self.fileOpen = <span class="literal">False</span> 	<span class="comment"># 标记是否选择了正确(.png, .jpg, .jpeg, bmp)的文件</span></span><br><span class="line">        self.fileLoad = <span class="literal">False</span> 	<span class="comment"># 标记是否读取了文件(因为只需读取一次)</span></span><br><span class="line">        self.order = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)] 	<span class="comment"># 0-8这9个位置的初始值都是0-8，后面会变动</span></span><br><span class="line">        self.eB = <span class="number">8</span> 	<span class="comment">#标记空白块的位置，8就是右下角</span></span><br><span class="line">        <span class="comment"># 创建面板（面板上可以放按钮，文本框，静态文本，图层等等东西）</span></span><br><span class="line">        <span class="comment"># style 参数设置是让他可以接收到上下左右键！</span></span><br><span class="line">        self.pnl = wx.Panel(parent = self, style = wx.BORDER_NONE)</span><br><span class="line">        <span class="comment"># 这个就是左下角的欢迎界面，还有字体的设置</span></span><br><span class="line">        welcome = wx.StaticText(self.pnl, pos=(<span class="number">20</span>, <span class="number">521</span>), \</span><br><span class="line">            label = <span class="string">'欢迎来到我的博客:'</span>, \</span><br><span class="line">            style = wx.aligned_RIGHT)</span><br><span class="line">        blog = wx.StaticText(self.pnl, pos = (<span class="number">180</span>, <span class="number">521</span>), \</span><br><span class="line">            label = <span class="string">'dna049.com'</span>)</span><br><span class="line">        blog.SetForegroundColour(<span class="string">'pink'</span>)</span><br><span class="line">        font = blog.GetFont()</span><br><span class="line">        font.PointSize += <span class="number">2</span></span><br><span class="line">        font = font.Bold()</span><br><span class="line">        welcome.SetFont(font)</span><br><span class="line">        blog.SetFont(font)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这个是操作提示的静态文本</span></span><br><span class="line">        self.hint = wx.StaticText(self.pnl, pos=(<span class="number">710</span>, <span class="number">20</span>), \</span><br><span class="line">            label = <span class="string">'操作：\n\n↑\n← ↓ →\n\n\nW\nA S D'</span>, \</span><br><span class="line">            style = wx.aligned_CENTER)</span><br><span class="line">        self.hint.SetFont(font)</span><br><span class="line">        self.hint.SetForegroundColour(<span class="string">'red'</span>)</span><br><span class="line">        self.hint.Hide()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 一开始的界面中提示按鼠标的静态文本，贼大的那个</span></span><br><span class="line">        self.st = wx.StaticText(self.pnl, pos =(<span class="number">200</span>, <span class="number">200</span>), \</span><br><span class="line">            label = <span class="string">'鼠标点击空白处\n选择一个照片来玩拼图吧'</span>, \</span><br><span class="line">            style = wx.aligned_CENTER)</span><br><span class="line">        font.PointSize += <span class="number">16</span></span><br><span class="line">        self.font = font.Bold()</span><br><span class="line">        self.st.SetFont(self.font)</span><br><span class="line">        self.st.SetForegroundColour(<span class="string">'red'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 绑定鼠标左键和下面的onleftdown方法</span></span><br><span class="line">        self.pnl.Bind(wx.EVT_LEFT_DOWN, self.onleftdown)</span><br><span class="line">        <span class="comment">#绑定键盘事件和下面的onkeydown方法</span></span><br><span class="line">        self.pnl.Bind(wx.EVT_KEY_DOWN, self.onkeydown)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onleftdown</span><span class="params">(self, event)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">not</span> self.fileOpen):</span><br><span class="line">            self.fileName = self.myfile()</span><br><span class="line">            <span class="keyword">if</span> os.path.basename(self.fileName).split(<span class="string">'.'</span>)[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'png'</span>, <span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'bmp'</span>]:</span><br><span class="line">                self.fileOpen = <span class="literal">True</span></span><br><span class="line">                self.st.Destroy()</span><br><span class="line">                self.run()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#如果已经完成了，那就不让你再玩了，否则就开始按键检测然后还是移动</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onkeydown</span><span class="params">(self, event)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.fileLoad <span class="keyword">and</span> <span class="keyword">not</span> self.isfinish()):</span><br><span class="line">            myKey = [wx.WXK_LEFT, ord(<span class="string">'A'</span>), wx.WXK_RIGHT, ord(<span class="string">'D'</span>), wx.WXK_UP, ord(<span class="string">'W'</span>), wx.WXK_DOWN, ord(<span class="string">'S'</span>)]</span><br><span class="line">            keycode = event.GetKeyCode()</span><br><span class="line">            self.move(myKey.index(keycode)//<span class="number">2</span> <span class="keyword">if</span> (keycode <span class="keyword">in</span> myKey) <span class="keyword">else</span> <span class="number">-1</span>)</span><br><span class="line">        self.pnl.Layout()</span><br><span class="line">        self.isfinish()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 出现让你选择图片的界面，返回文件绝对路径的文件名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myfile</span><span class="params">(self)</span>:</span></span><br><span class="line">        chooseFile = tk.Tk()</span><br><span class="line">        chooseFile.withdraw()</span><br><span class="line">        fileName = filedialog.askopenfilename()</span><br><span class="line">        <span class="keyword">return</span> fileName</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从网上下一个表情包，返回值是位图用来加载</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onlinefile</span><span class="params">(self)</span>:</span></span><br><span class="line">        url = <span class="string">'https://dna049.com/PythonGui/yes.png'</span></span><br><span class="line">        image = urlrequest.urlopen(url).read()</span><br><span class="line">        bData = base64.b64encode(image)</span><br><span class="line">        pData = bData.decode()</span><br><span class="line">        self.urlYes = PyEmbeddedImage(pData).GetBitmap()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 把从本地选择出的图片进行调整大小，调整完之后切成3*3的块，然后在画板上画出来</span></span><br><span class="line">        <span class="comment"># 并且进行标记好更新，逻辑代码很短归功于Python的短小精湛！</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">writefile</span><span class="params">(self)</span>:</span></span><br><span class="line">        tmp = wx.Image(self.fileName)</span><br><span class="line">        im = tmp.ConvertToBitmap()</span><br><span class="line">        (sizeW, sizeH) = im.GetSize()</span><br><span class="line">        t = max(<span class="number">0.2</span>, sizeW/<span class="number">720</span>, sizeH/<span class="number">521</span>)+<span class="number">0.02</span></span><br><span class="line">        im = tmp.Scale(int(sizeW/t), int(sizeH/t)).ConvertToBitmap()</span><br><span class="line">        (sizeW, sizeH) = im.GetSize()</span><br><span class="line">        sizeW //= <span class="number">3</span>;sizeH //= <span class="number">3</span></span><br><span class="line">        self.img = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">            self.img += [im.GetSubBitmap(( (i%<span class="number">3</span>)*sizeW, (i//<span class="number">3</span>)*sizeH, sizeW, sizeH))]</span><br><span class="line">        self.img += [wx.Bitmap.FromRGBA(sizeW, sizeH, <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>)]</span><br><span class="line">        self.lastPart = im.GetSubBitmap(( <span class="number">2</span>*sizeW, <span class="number">2</span>*sizeH, sizeW, sizeH))</span><br><span class="line">        ps = [((x%<span class="number">3</span>)*(sizeW +<span class="number">1</span>), (x//<span class="number">3</span>)*(sizeH+<span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">9</span>)]</span><br><span class="line">        self.sbt = [wx.StaticBitmap(self.pnl, bitmap = self.img[i], \</span><br><span class="line">            pos=ps[i], size=(sizeW, sizeH) ) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)] </span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检测到鼠标左键按下，就开始看文件打开过没有，打开了就无视，没打开就开启文件选择</span></span><br><span class="line">        <span class="comment"># 打开成功之后就把部分提示关闭，然后开始为下一步拼图做准备</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">not</span> self.fileLoad):</span><br><span class="line">            self.fileLoad = <span class="literal">True</span></span><br><span class="line">            self.writefile()</span><br><span class="line">            self.disorder()</span><br><span class="line">            self.pnl.Layout()</span><br><span class="line">            self.hint.Show()</span><br><span class="line">            self.pnl.SetFocus()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disorder</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">111</span>): self.move(randint(<span class="number">0</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, direction)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> direction == <span class="number">0</span>:   self.moveleft()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">1</span>: self.moveright()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">2</span>: self.moveup()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">3</span>: self.movedown()</span><br><span class="line"></span><br><span class="line">        <span class="comment">#判断是否是合理移动，合理就丢给下面函数更新</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span>	<span class="title">checkmove</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(end <span class="keyword">not</span> <span class="keyword">in</span> range(<span class="number">9</span>)):         <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span>(start%<span class="number">3</span> == <span class="number">0</span> <span class="keyword">and</span> end%<span class="number">3</span> == <span class="number">2</span>): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span>(start%<span class="number">3</span> == <span class="number">2</span> <span class="keyword">and</span> end%<span class="number">3</span> == <span class="number">0</span>): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveleft</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB+<span class="number">1</span>)): self.sbtnew(self.eB, self.eB+<span class="number">1</span>);self.eB+=<span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveright</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB<span class="number">-1</span>)): self.sbtnew(self.eB, self.eB<span class="number">-1</span>);self.eB-=<span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveup</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB+<span class="number">3</span>)): self.sbtnew(self.eB, self.eB+<span class="number">3</span>);self.eB+=<span class="number">3</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">movedown</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB<span class="number">-3</span>)): self.sbtnew(self.eB, self.eB<span class="number">-3</span>);self.eB-=<span class="number">3</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果操作合理，那就更新每个格子上的图片，并更新order列表</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sbtnew</span><span class="params">(self, posB, posA)</span>:</span></span><br><span class="line">        (x, y) = self.order[posB],self.order[posA] </span><br><span class="line">        self.order[posB], self.order[posA] = (y, x)</span><br><span class="line">        self.sbt[posB].SetBitmap(self.img[y])</span><br><span class="line">        self.sbt[posA].SetBitmap(self.img[x])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每次有按键的时候检测是否拼好了，拼好了就贴上最后一块并把表情包打印出来</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isfinish</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.order == [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)]:</span><br><span class="line">            self.sbt[<span class="number">8</span>].SetBitmap(self.lastPart)</span><br><span class="line">            self.onlinefile()</span><br><span class="line">            wx.StaticBitmap(parent = self.pnl, bitmap = self.urlYes, pos=(<span class="number">500</span>, <span class="number">300</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="comment"># 程序入口，进入__init__ 函数后，就开始进行鼠标和键盘的监听循环中</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    loveDays = datetime.now() - datetime(<span class="number">2019</span>, <span class="number">10</span>, <span class="number">20</span>) </span><br><span class="line">    app = wx.App()</span><br><span class="line">    <span class="comment"># 创建上面类的对象，标题是喜欢zly妹妹，窗口不允许最大化，也不能调整大小</span></span><br><span class="line">    myGame = JigsawGame(<span class="literal">None</span>, \</span><br><span class="line">        title=<span class="string">'dna049 喜欢zly妹妹的第'</span>+str(loveDays.days)+<span class="string">'天'</span>, \</span><br><span class="line">        size = (<span class="number">800</span>, <span class="number">600</span>), \</span><br><span class="line">        style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)</span><br><span class="line">    myGame.Show()</span><br><span class="line">    app.MainLoop()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># JigsawGame.py writed by dna049 at 2020/2/28  last update: 2020/3/14</span></span><br><span class="line"><span class="comment"># 这是个加注释的版本，有些望文生义的我就不注释了</span></span><br><span class="line"><span class="keyword">import</span> wx</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> base64 </span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"><span class="keyword">import</span> urllib.request <span class="keyword">as</span> urlrequest 	<span class="comment"># 用于从网上加载图片</span></span><br><span class="line"><span class="keyword">import</span> webbrowser <span class="comment">#打开网页</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk 		<span class="comment"># 用于选择文件夹</span></span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> filedialog <span class="comment"># 用于选择文件夹</span></span><br><span class="line"><span class="keyword">from</span> wx.lib.embeddedimage <span class="keyword">import</span> PyEmbeddedImage 	<span class="comment"># 用于把数据变成位图</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JigsawGame</span><span class="params">(wx.Frame)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args, **kw)</span>:</span> <span class="comment">#这个方法只会在最开始调用一次</span></span><br><span class="line">        super(JigsawGame, self).__init__(*args, **kw)</span><br><span class="line">        self.Centre()  	<span class="comment"># 整个窗口出现在屏幕正中心</span></span><br><span class="line">        <span class="comment"># 选择文件</span></span><br><span class="line">        self.fileOpen = <span class="literal">False</span> 	<span class="comment"># 标记是否选择了正确(.png, .jpg, .jpeg, bmp)的文件</span></span><br><span class="line">        self.fileLoad = <span class="literal">False</span> 	<span class="comment"># 标记是否读取了文件(因为只需读取一次)</span></span><br><span class="line">        self.order = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)] 	<span class="comment"># 0-8这9个位置的初始值都是0-8，后面会变动</span></span><br><span class="line">        self.eB = <span class="number">8</span> 	<span class="comment">#标记空白块的位置，8就是右下角</span></span><br><span class="line">        <span class="comment"># 创建面板（面板上可以放按钮，文本框，静态文本，图层等等东西）</span></span><br><span class="line">        <span class="comment"># style 参数设置是让他可以接收到上下左右键！</span></span><br><span class="line">        self.pnl = wx.Panel(parent = self, style = wx.BORDER_NONE)</span><br><span class="line">        <span class="comment"># 这个就是左下角的欢迎界面，还有字体的设置</span></span><br><span class="line">        welcome = wx.StaticText(self.pnl, pos=(<span class="number">20</span>, <span class="number">521</span>), \</span><br><span class="line">            lAbel = <span class="string">'欢迎来到我的博客:'</span>, \</span><br><span class="line">            style = wx.aligned_RIGHT)</span><br><span class="line">        blog = wx.StaticText(self.pnl, pos = (<span class="number">180</span>, <span class="number">521</span>), \</span><br><span class="line">            lAbel = <span class="string">'dna049.com'</span>)</span><br><span class="line">        blog.SetForegroundColour(<span class="string">'pink'</span>)</span><br><span class="line">        font = blog.GetFont()</span><br><span class="line">        font.PointSize += <span class="number">2</span></span><br><span class="line">        font = font.Bold()</span><br><span class="line">        welcome.SetFont(font)</span><br><span class="line">        blog.SetFont(font)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这个是操作提示的静态文本</span></span><br><span class="line">        self.hint = wx.StaticText(self.pnl, pos=(<span class="number">710</span>, <span class="number">20</span>), \</span><br><span class="line">            lAbel = <span class="string">'操作：\n\n↑\n← ↓ →\n\n\nW\nA S D'</span>, \</span><br><span class="line">            style = wx.aligned_CENTER)</span><br><span class="line">        self.hint.SetFont(font)</span><br><span class="line">        self.hint.SetForegroundColour(<span class="string">'red'</span>)</span><br><span class="line">        self.hint.Hide()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 一开始的界面中提示按鼠标的静态文本，贼大的那个</span></span><br><span class="line">        self.st = wx.StaticText(self.pnl, pos =(<span class="number">200</span>, <span class="number">200</span>), \</span><br><span class="line">            lAbel = <span class="string">'鼠标点击空白处\n选择一个照片来玩拼图吧'</span>, \</span><br><span class="line">            style = wx.aligned_CENTER)</span><br><span class="line">        font.PointSize += <span class="number">16</span></span><br><span class="line">        self.font = font.Bold()</span><br><span class="line">        self.st.SetFont(self.font)</span><br><span class="line">        self.st.SetForegroundColour(<span class="string">'red'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 绑定鼠标左键和下面的onleftdown方法</span></span><br><span class="line">        self.pnl.Bind(wx.EVT_LEFT_DOWN, self.onleftdown)</span><br><span class="line">        <span class="comment">#绑定键盘事件和下面的onkeydown方法</span></span><br><span class="line">        self.pnl.Bind(wx.EVT_KEY_DOWN, self.onkeydown)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onleftdown</span><span class="params">(self, event)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">not</span> self.fileOpen):</span><br><span class="line">            self.fileName = self.myfile()</span><br><span class="line">            <span class="keyword">if</span> os.path.basename(self.fileName).split(<span class="string">'.'</span>)[<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'png'</span>, <span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'bmp'</span>]:</span><br><span class="line">                self.fileOpen = <span class="literal">True</span></span><br><span class="line">                self.st.Destroy()</span><br><span class="line">                self.run()</span><br><span class="line"></span><br><span class="line">    <span class="comment">#如果已经完成了，那就不让你再玩了，否则就开始按键检测然后还是移动</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onkeydown</span><span class="params">(self, event)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.fileLoad <span class="keyword">and</span> <span class="keyword">not</span> self.isfinish()):</span><br><span class="line">            myKey = [wx.WXK_LEFT, ord(<span class="string">'A'</span>), wx.WXK_RIGHT, ord(<span class="string">'D'</span>), wx.WXK_UP, ord(<span class="string">'W'</span>), wx.WXK_DOWN, ord(<span class="string">'S'</span>)]</span><br><span class="line">            keycode = event.GetKeyCode()</span><br><span class="line">            self.move(myKey.index(keycode)//<span class="number">2</span> <span class="keyword">if</span> (keycode <span class="keyword">in</span> myKey) <span class="keyword">else</span> <span class="number">-1</span>)</span><br><span class="line">        self.pnl.Layout()</span><br><span class="line">        self.isfinish()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 出现让你选择图片的界面，返回文件绝对路径的文件名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myfile</span><span class="params">(self)</span>:</span></span><br><span class="line">        chooseFile = tk.Tk()</span><br><span class="line">        chooseFile.withdraw()</span><br><span class="line">        fileName = filedialog.askopenfilename()</span><br><span class="line">        <span class="keyword">return</span> fileName</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从网上下一个表情包，返回值是位图用来加载</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">onlinefile</span><span class="params">(self)</span>:</span></span><br><span class="line">        url = <span class="string">'https://dna049.com/PythonGui/yes.png'</span></span><br><span class="line">        image = urlrequest.urlopen(url).read()</span><br><span class="line">        bData = base64.b64encode(image)</span><br><span class="line">        pData = bData.decode()</span><br><span class="line">        self.urlYes = PyEmbeddedImage(pData).GetBitmap()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 把从本地选择出的图片进行调整大小，调整完之后切成3*3的块，然后在画板上画出来</span></span><br><span class="line">        <span class="comment"># 并且进行标记好更新，逻辑代码很短归功于Python的短小精湛！</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">writefile</span><span class="params">(self)</span>:</span></span><br><span class="line">        tmp = wx.Image(self.fileName)</span><br><span class="line">        im = tmp.ConvertToBitmap()</span><br><span class="line">        (sizeW, sizeH) = im.GetSize()</span><br><span class="line">        t = max(<span class="number">0.2</span>, sizeW/<span class="number">720</span>, sizeH/<span class="number">521</span>)+<span class="number">0.02</span></span><br><span class="line">        im = tmp.Scale(int(sizeW/t), int(sizeH/t)).ConvertToBitmap()</span><br><span class="line">        (sizeW, sizeH) = im.GetSize()</span><br><span class="line">        sizeW //= <span class="number">3</span>;sizeH //= <span class="number">3</span></span><br><span class="line">        self.img = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">            self.img += [im.GetSubBitmap(( (i%<span class="number">3</span>)*sizeW, (i//<span class="number">3</span>)*sizeH, sizeW, sizeH))]</span><br><span class="line">        self.img += [wx.Bitmap.FromRGBA(sizeW, sizeH, <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>)]</span><br><span class="line">        self.lastPart = im.GetSubBitmap(( <span class="number">2</span>*sizeW, <span class="number">2</span>*sizeH, sizeW, sizeH))</span><br><span class="line">        ps = [((x%<span class="number">3</span>)*(sizeW +<span class="number">1</span>), (x//<span class="number">3</span>)*(sizeH+<span class="number">1</span>)) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">9</span>)]</span><br><span class="line">        self.sbt = [wx.StaticBitmap(self.pnl, bitmap = self.img[i], \</span><br><span class="line">            pos=ps[i], size=(sizeW, sizeH) ) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)] </span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检测到鼠标左键按下，就开始看文件打开过没有，打开了就无视，没打开就开启文件选择</span></span><br><span class="line">        <span class="comment"># 打开成功之后就把部分提示关闭，然后开始为下一步拼图做准备</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">not</span> self.fileLoad):</span><br><span class="line">            self.fileLoad = <span class="literal">True</span></span><br><span class="line">            self.writefile()</span><br><span class="line">            self.disorder()</span><br><span class="line">            self.pnl.Layout()</span><br><span class="line">            self.hint.Show()</span><br><span class="line">            self.pnl.SetFocus()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disorder</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">111</span>): self.move(randint(<span class="number">0</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, direction)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> direction == <span class="number">0</span>:   self.moveleft()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">1</span>: self.moveright()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">2</span>: self.moveup()</span><br><span class="line">        <span class="keyword">elif</span> direction == <span class="number">3</span>: self.movedown()</span><br><span class="line"></span><br><span class="line">        <span class="comment">#判断是否是合理移动，合理就丢给下面函数更新</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span>	<span class="title">checkmove</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(end <span class="keyword">not</span> <span class="keyword">in</span> range(<span class="number">9</span>)):         <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span>(start%<span class="number">3</span> == <span class="number">0</span> <span class="keyword">and</span> end%<span class="number">3</span> == <span class="number">2</span>): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span>(start%<span class="number">3</span> == <span class="number">2</span> <span class="keyword">and</span> end%<span class="number">3</span> == <span class="number">0</span>): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveleft</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB+<span class="number">1</span>)): self.sbtnew(self.eB, self.eB+<span class="number">1</span>);self.eB+=<span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveright</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB<span class="number">-1</span>)): self.sbtnew(self.eB, self.eB<span class="number">-1</span>);self.eB-=<span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveup</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB+<span class="number">3</span>)): self.sbtnew(self.eB, self.eB+<span class="number">3</span>);self.eB+=<span class="number">3</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">movedown</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(self.checkmove(self.eB, self.eB<span class="number">-3</span>)): self.sbtnew(self.eB, self.eB<span class="number">-3</span>);self.eB-=<span class="number">3</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果操作合理，那就更新每个格子上的图片，并更新order列表</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sbtnew</span><span class="params">(self, posB, posA)</span>:</span></span><br><span class="line">        (x, y) = self.order[posB],self.order[posA] </span><br><span class="line">        self.order[posB], self.order[posA] = (y, x)</span><br><span class="line">        self.sbt[posB].SetBitmap(self.img[y])</span><br><span class="line">        self.sbt[posA].SetBitmap(self.img[x])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每次有按键的时候检测是否拼好了，拼好了就贴上最后一块并把表情包打印出来</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isfinish</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.order == [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">9</span>)]:</span><br><span class="line">            self.sbt[<span class="number">8</span>].SetBitmap(self.lastPart)</span><br><span class="line">            self.onlinefile()</span><br><span class="line">            wx.StaticBitmap(parent = self.pnl, bitmap = self.urlYes, pos=(<span class="number">500</span>, <span class="number">300</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="comment"># 程序入口，进入__init__ 函数后，就开始进行鼠标和键盘的监听循环中</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    loveDays = datetime.now() - datetime(<span class="number">2019</span>, <span class="number">10</span>, <span class="number">20</span>) </span><br><span class="line">    app = wx.App()</span><br><span class="line">    <span class="comment"># 创建上面类的对象，标题是喜欢zly妹妹，窗口不允许最大化，也不能调整大小</span></span><br><span class="line">    myGame = JigsawGame(<span class="literal">None</span>, \</span><br><span class="line">        title=<span class="string">'dna049 喜欢zly妹妹的第'</span>+str(loveDays.days)+<span class="string">'天'</span>, \</span><br><span class="line">        size = (<span class="number">800</span>, <span class="number">600</span>), \</span><br><span class="line">        style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)</span><br><span class="line">    myGame.Show()</span><br><span class="line">    app.MainLoop()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>wx.EVT_KEY_DOWN 不响应 <code>Tab Enter → ↑ ↓ ←</code></p>
 <p>wx.EVT_KEY_UP 响应所有键</p>
@@ -2680,7 +2680,7 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 <blockquote>
 <p>Python 处理字符串的 <code>split</code> 函数强的不行，给爬虫提供了特别便利的条件</p>
 </blockquote>
-<h2 id="机器学习示例"><a href="#机器学习示例" class="headerlink" title="机器学习示例"></a><a href="# http://open.163.com/newview/movie/free?pid=ME9KEIKS7&amp;mid=MEF16V4ED">机器学习示例</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hello ML.py</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree <span class="comment"># https://sklearn.apachecn.org/</span></span><br><span class="line">features = [[<span class="number">140</span>,<span class="number">1</span>], [<span class="number">130</span>,<span class="number">1</span>],[<span class="number">150</span>,<span class="number">0</span>],[<span class="number">170</span>,<span class="number">0</span>]]</span><br><span class="line">labels = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">clf = tree.DecisionTreeClassifier()</span><br><span class="line">clf = clf.fit(features,labels)</span><br><span class="line">print(clf.predict([[<span class="number">160</span>,<span class="number">0</span>]]))</span><br></pre></td></tr></table></figure>
+<h2 id="机器学习示例"><a href="#机器学习示例" class="headerlink" title="机器学习示例"></a><a href="# http://open.163.com/newview/movie/free?pid=ME9KEIKS7&amp;mid=MEF16V4ED">机器学习示例</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hello ML.py</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree <span class="comment"># https://sklearn.apachecn.org/</span></span><br><span class="line">features = [[<span class="number">140</span>,<span class="number">1</span>], [<span class="number">130</span>,<span class="number">1</span>],[<span class="number">150</span>,<span class="number">0</span>],[<span class="number">170</span>,<span class="number">0</span>]]</span><br><span class="line">lAbels = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">clf = tree.DecisionTreeClassifier()</span><br><span class="line">clf = clf.fit(features,lAbels)</span><br><span class="line">print(clf.predict([[<span class="number">160</span>,<span class="number">0</span>]]))</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>有需求再去这里学习吧：<a href="https://www.bilibili.com/video/BV164411S78V?from=search&amp;seid=1436888055285204045" target="_blank" rel="noopener">B 站视频</a>，<a href="http://www.ai-start.com/ml2014/html/" target="_blank" rel="noopener">对应笔记</a></p>
 </blockquote>
@@ -3275,10 +3275,10 @@ depth_I(M) = \inf \lbrace depth M_p | p \in V(I) \rbrace</script><p><strong>Proo
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <div class="hbe-input-container">
   <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">日常表白zly</label>
+    <label for="hbePass">日常表白 zly</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="4e2ff84c1bcd6a594b5041da27b0e64dcd80ec197a870cd6b407074585f90a55">010b98dc5bd6c4293af1e30087aa0bbd64bce6acd19bc08a64a12e80a5d89cb53600a9363fe80f5c68e1832f621997eeaec0633db2c14b263f9b12af04bc67b78841c1805d39cbe1885d6e57142f42eace97a608b1d1165ff4d3274120abceda1a793e4cf7974b324f601e413f2f4a5504bf42d96604cc99cf8a98ced9f7aa6cabb2ca0b508ff37dd92b143d7ed73de67fcbdb0297d5207de9ac5409dc8e9d6080676f5d46e3467634143d7abff7ea38eacc4685092e5a3afcc2dad2efd02d801d1ffd255228201e18a2dc9415038aa29256095409eca540aac731b8c4481288d7f07a27597680142d04ddc4fc2227779f6ddc3982508d3bee5e3c02f3a5fea12fe79fa95a1071e582016c7c52f3d4d22e9eeec9f7b875f4d8eba4a83162d62d691677f71081a12ee0d0b4be31770f123b52ef20014fb40904d10587a25ab3d4fd6d313213fc843d9108f8015fe91a3b45733a1df7d383a4dc48f9a794a8bc13dc1bd9131a412ed349d2cd4e911b201a6515bed5d6d97bc528c71bc4fc4f33e0603602a9fce0499b9982a9c815040dbe6208e9954e15db777be1f9ebd0a5e2dbfa45fce905d84c4296b2e1be75b32032913916773162302d1c9b2e927d7b47d84b3414bedbf58977fd3aa0cf50d131badbeda238fb50ff2b5aef5ad028573beea878c3ce8ccf9d618e5c2b81454005b203fc6309572dd1aa481f69c998ce2c5a6d28662bba99e81c6581d11a2470cc7a0f9ffb2a77afb4779e7678f4728f29bdb35f1883a178a706ff580d83666cc4e62797635fcd6971c6b71ecfc9fae44ac23a51e2d8cf4dce034083280182f083d7a9567e39001e365b29fea5b9c018cf610dfe875d592ecd699c44a285c4c9ba2829e4ab5df2de76b465575169f666973a4d130565e95b5ab6e046dda3699d2b224db44fecd666901c1ee6a24e3bbf23cdd8b33a1a4d6c85d37494fbe256fc8d8a4d05ec7a326d445306fbb9f448af0ce3c14e2ba09464a8f94ff4da501072380bfe404b08213f97c3bc9f8b3df00d11d344318d9dfae810cef88a77d6fe0fc840df141df540c2456795f1cb14218dc67544d6759979a6b590ce2fcc5d9da0fef29e3c3cee33af7e3e44014d28703d8bcff38961071ccf41db8f28af9263aba9ba6244a2b7a8733d2f9dc7483e630477f73609d7e35bbc163de0aafc806380a3bd7c32da12b121bf4ff3558bd5b7f143d67ca90182b35ca52b1eb00f4cffcbc14672a8565fc4a634d05a96c27a911ac5b8f5e71a151877dcaa6ff590a70da1676acab31cd22a11b061eff387786c75a4e6bc13ac8a6fef3e66ad6bf0fe934a1c03898c7e6e86621bfd6ac0c7c2e746f05dbf58e004b937200dbbd2586d4fd2aacde17475bc8a4fcaf6f42bc9b286d383bf70a8e23ec191062e314fdde865e2f8245f9d9f63cc762b4072d0c41cb5729fe7d2412fbdf44be06dc4e4f4b6e4d384881518f7335c15ea6a985e1aa524ce271710b1a034a3fc9980753442a82a005be36c90665264acd092bbf570c0957e293ec0a88548fdbc91781a4fd0cc5e3aa1154314bc6ece49fee64a8b9bba4acf77dc85f6d31d260ee57639505b56b7a91431039be420421aca579d9a57d3c4f615ae572445b95aa254d605595d121847c69b959521418f34326c033d1bf2da67bc39a7b949f95290009e2d901ceff93556618bb26dc5b65c01af06f5ef13847cb0ef2afbadc5d5467ef4f3fa3acda659e5750217cd7bd5618d14deb8f7ddcdac0d2fa9930a2612c276bd7776ad09559849bab6ab8a871c9567c39634f6bc3adc4a8c3046e2c5677ea411bd4fde4f148402013396f85293879e8c91646b5e29a5993e78e56fd01d2521c2ff166b576aef029e694860c9788162149e13b6e9a5671a20e28c1419d8d3a11355657c179936b99d821ebcd2f8f1d05b944b9a15f0b5fe201f31310a6f89297350557029251c0257f18a24a323032db60ed2aaf9d1ffcda0dfdf44bb299d7ff94b264488c76d09711df7eb4da0a88dd17d53032339525a22e4a54261f52ff7f630734efbf3f8a97dc0039ffa7e2b16e7c0617408ae0dec9bbff9d4c76eb9fa88a57b8b0f6a8f3775b32cc1d5569c92df9672845bbec0a941c2060fda276bbefbd1b5e12b88ad4644d4d3949e462a599ccb596b183e15507bf63dbd541991a628499144434ca9513e5c5dcf1dd74f4d77e61e201406c2155e919feae641affa6c9ad37dc152957d3c53f3e16da39cc0a9ac968af162c1ba8449b7f8ba9a231503b4162c6bb3b7db25529d5ce7ee3d71e327a6431b65f91bacff086253bfd5bc56510e1994a520a93621227bf98dcdeef9fa75a1d9560068debfdbf9d584a6cfd1933026a56dd7b2409d270d569cc21bdab399ae509a08abf2b9370e008462a90a2179b302c41b2fe2d4a0002c40c6d984c8fda32304e4b4f83ceeb96893b7d6cb9deba557b999dfd9054d09b1dfc318fb4959c1fcfd999d5154033faf3d513c5301e5bf90821092a05f4228eae298544f42d9d117d2f43d8612c88fc3b4d7ac30d0d0e3ee6f612a16aef414dac52e2d83023cabc4dc8ec677a0477526b5ee7a7e6adedc9c0dcf96c2177464278ddbc3207d31cd447057e95b20955614639497cc21608bd24dbc33034b1c3c6e61fc7bfa4247933042e39a733189903b686b8e3e0408dee18dc44bcb8d03023efe9bd6a3486be7a5fb555ac18c57697fd580bd2b66f3182233a78fa0bb7e8fa53f217f58804326acaa5f450fdf22d03836549987e45052eccd393257a7b9ecfe390d9689e0eb97e562cbc54451d6fbabdf6428c38c2dd10deda9bb57edd60541b1245350a4554cb859ed394c7b9f223b0c0ad630d98d1b786eb146c9185a364ecac15b6b9cfde8420e5275a8b2b75423e95a6d000ba2d4cc4a3c82cfe5b0d835f7b57b071d60aa477a4d3c29307e49f1aa0b60623f1a3bbeac260f6efa20b29a5ea55c06a52d1d25f0577cc790b6a60c8b2c33d364e76ebd7f0234c91774e9d739ce585a4c4dedbcdc2294127aef5f4dcd9e047ffd486103df85cab594af819c0fe2b8f868651e4a473f7226ac473c93bf9690987f8dedc6c9fc30f5b5e5a73e02ced77a60934fe4465d4c54ebfc06a157b3ea3c2ba800dc306056e27649e4a5f62eb0d81e99d8843521139581ea17ced339f4707735e9ebee5d3c6e3afed104c844195a56297a94408a2aa3ba42a1dbb6a9b904f4f04a4106c35ddb21d9acc825b10ef3bd0c2f18a62578cb8058bf7d0092be72f91e691b46c6c90a54f07f3dd40ee26b75cd04eb70476588746b9318165f3f1d941cb227ff2777236a5c6eaf5021e5a1157881153611e8b76474a01e9891800f34b0fefa7875a21e97d145a091def2d821b144e77abf1c46b8b4a91b5212934eb3d88fa175f6181dbe3a6a37c028aa4d59bcc1f9608f657c52ec84a23a7ce6ee2293d84506a07934116d2b6031865624e47991dfe199f2ac273a02bb077df66a1165f2431996d2bc5cee034f238a3f17e0f24dd623ff54b8b94a2346dce416ce7059e877986595de7d8a8f4998ab8f9be9ee3f713f5e3f2cdc762dd43c461909bcb1771c087cac7a57cbc3e568764ca70bcc167834d0f6be29a3e6185838b81a1c3569d1f27fcf80d1939aa96466d0ed80b0ac7fb69a14b77163fd2ab613d719afd3114917a017121f2a8d6a5b84bc97931120867c026449685a2142884ec0f6872b52c6bf0f8d4cedc08470409b4a64f75d5d0186ae5615e5cc330c4fe572d0a335a5e056e358f26def0c8b9d845be229e5739c063404e0d4a8f1e2c9fab6e924eb5c4c9e18ac5b67df7635c391bf77257d66cbb382480bf4a6be5b887e84b2107b295173638a56</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="18bf13e2bec1fd13f57b7ab4cd97f91ecdf1586962894b4aa487517dd480ee6d">010b98dc5bd6c4293af1e30087aa0bbd2c8f23083857701b8012ad7103bda0c7c5cb1b450020ec279a5b5292f15e6295091639c3627acebd29896ea0ca446b3ad0a913d216973768a62825eac708c3bd0e06088135a26e0b0eb55907f3861ce8537c1062f7dc9f0862b3b302b8f5548f50074d24e8d9b292b90ca057b48e29e5ae00f312177967b017c0b4615515b8fcfc942a09eca7fa6957a7a5d6b7a07d008d2a00a5fa22dd84b38bba070a301ad4e3f88a9f2e3157b6900d4052a8ecd17be280870b04d3f471cc8e9f704d55966fe3212474f46b90efcf052ff86ae0a757bb223f5d3eadb197d237b838445b93a072d52b639eab6f616be5e3913ae26ab9240297664ed963f2035f1f28c9c0473259c04b6b8586fb6bc635dcafac5ae0079fcbe901199d9e755cfe771665ccfc02f0b6022e385cc97cdc080be564c32539ea00ae98eb8ac4a61afa9ce5bd2c2926825b083ffe802bb94b41cc8199cb5cddb80c19b4e12bd8796472b15af3535fd0d9e6e74b20ee163db26d91f17891297f0480c0cf287941c926e648f62265f72e04fc0e69c35437f0b0972f88435c7514882305ab8e98ff9dfa532431bb047db47e246093d3c54326949fce3fbbca35b17ecc0907b0562bcaf89bc1cd624ea6c75ab54b61366929615e298fba71f25ebb9129df1059f3db9e7063f0f2013d3176277172d5ec1717aa0d33c16685017c9c78e843afe47cea9477eef4e4028033d21628b6dee0c8926c16303d8c8537468713a67c5e1ca965169c21020ec722cbf0e4dae43bb7eec44c8500ee224cabb3db782cdb30968a420befae390aaef066a1065f6c1e31bd14a6491075501e488be3dd64f0d95c6c4c0addcee02fa818ad34e852243ff08b66fd73a3cd2bf5ad6a9ebdd41968f9c297e59eb06b275cb2d2f4c778ecd346251ce40c3e4128cdaf3b57dbab435f34e9e834a00e9a6a49a99748d3f2b338b5ec67e231d3e4ef57e984143b1c2bc63eb1e91b97df0ad1299c2467eb7f86a9c8d7c07eecbb6fdf8349b4c1729ddc1568beb7dd4ec3731fea76306c464800c06c007c651327b8077c3566c76ce2fff57bf617a67992a89b0cb62e08a8b0b60304796c5e60bd909e23a948ddd9f02af243d545de3878f2230ad8e45df564af31458ed41e15739835e6552edfc056a54d2595aef7e5a696cb9299c10eb26d65e0d3b6b545fc0366ee540f5676e1a17efe18be39f08a4f38f4ee75ed9b6d98aeed8e8ffabafd38d5e16d75bf3de040775fa66dcfe4716964b1b506adbfdfca585ed9f409da9f0d0726fb21fb8388cc49112c9af637d8bf06875ee8b9b2ba64152e7d3b748d6cca6d33dafdf07aab09325c2c13b8a2fb9e4ef4e786847b77b7a5be8bfdb288c17ef4d821fc4739bd0f30203bbefba3cf189e20678704a5a9eab94adceef83f36d299eeedcde4185381cfd2447b5f4f552b1dd2bd6386b430266498c04e813d03388bcd2a9912cd473bc796daa1c177b3f6285d3f82c767ddb7c1793c6579cfbb5ada799d819b387c291a068ad70966e430a30624f227a4cd716d6f483c2c476642b83821a525a006a082959ca256b3a7df07d6a7c77d9ce4b37f07db2d6ccce277aad991d32b6a6edd27a75012ca938bcfd9a1f618c47e6f5224bccd29507f2ec357d95e82ccbf8fd9b81f82aa069a4d54391086e7dc2d994fc1e90de34719907245e1cf504f5f1d8254bd8ca975357dd789dae3d7cf86d4f3d080e3a91005acf3a59c844ad4a8b152461b5933837b7f25ee57bd7a29c14ece6b94d9904db63d0489bf7715d0f513b7b7fc0027895f1394dfde8cb84d0702f8a857f22bd1d75bb1e274fb1de9a607193dcebe6fe7b843e3af900b7c97d24cd02c4721d61e3bd2f45b4e163309551b733323c4f03e57236ee5208fff563553a19b1bc6e9b45cb9f425a8f2a3a67e707b58ee3003e56850074d2694eddc4fba86760c9c85a7c64eabc984cf0b1adb60556df22daedd0435f3d47e2521fd43017a5243fdcec82834d915471e1ed4f80a8828fd90ced230f21e5e5a0db0b094b530a6e0bcdb78abe0e4fa4adb1ca7271460db2670840190a0b5fa2d5840d8f781b0dad21e55744c0af767d71784681e81d4f79fa783e67baebcc32fe6dcdd1d5b61364e8d51f38362483bbf5a72a53e725f85cc9aa2243b0677d1cad9223c2496b3ed82f3917b1f6a248b577de90b51f1c5630d11f5f73f67b201336a43f522bb14921056213bca3dd2644510481b027bf545e6071a64ac613f88d657bb6a4f6d1297a057859383da522c5114977928e9a6415e9611f37e0dbf923d9af0d9d218cfeb69deeae3a8815e9d947e31cefa4b25ce7885d261ae2964fe488f6456b7eeb0d936273c00112122a41908c47f7efcf391b7f8dd063843698b0f4262a2e31e6c3fb651031a0b83eb3d279ca7149250a0c931a40ff4e5afa8a0644ddbe5dd3faa60148bde4684fa8a10928246e4157d686743be905841433c39f7711a8fde4c6c28544f0e898ed04ae7bc67f888689d1d4c4e16b29c7d528f3336bfb52f826e73c275baccdfb25a62b7a2d345cbe943abace97953a3042b424a043021446cafd4ba697b8f98cdcbe35424dde989e54ce5794fbdb6b0eb63a1b070a3a66f12ce43d919ce1640e653b0fd937054de2db48ad12984f200d8e142e184d8d7d1da1e98194358502fc9d98595ba2c90df90df436cc6457abf37e8c3cecdd32d9af58058d9c98c2597f5985780e2f02e6531b6bce94f9e6176c310afeb4cfe6c41a80861a6ff4f0226b39712823cbc57ba983844bc0d6cf3294ec1c7fce34903a4e41fd75d4b06c0ad6bfd7bc3497757dc24e4fa9d1a255c641910fd12be17c3238276d0b2f652dc7d28b605e78160e9b2ebf25363be7c394e24e114887aecc5fab629717dd39b3b446c44e061c7d3765050d17fed96ccf653df097a98f77a014e67081513da4969e7ec2e7bb1527e088dc2f9401bdceae214dea998cce0026a01e0d461a2238d7f629fa2abadb1d8daef26dc7c0edb506f9ac5e7347c916eb1f93e755cf5146c9339df57760ae6338b8344bd18612c0099def5bc68b34b436f85b70a3a3a67d8b1b42ace70a968cc221d9c3faf8542c39544fc683ba6b556014a8b79cdf49acc8cd5e8a616b64ac724c15c1211159979cb0ce8fe16a2cf5cbbc83d1aeb6611e9193779df3af4d0ad559c61b6a0ffdf29707efd73b82fc7ada4f2be537d1830d8dd2ecc0d178d16a5c20877b9ebdac4b99744594d352d2962c5b74584f7e36cede5d84fd65411b832bc87816f9a1d69b1fceddf0af814ae20a8514fbcaeeeebce773b7e6498c9979ba039225c63ff2e22e61e23d50fa88ce1849c45944a7307ce974d613e63cbba0c5a16906b2117c03bd3dbd72d25b91f2ed7c8e820405e3bb04d9c0b74035bad09b62d1a6f1ad9d71756b2232e5a149a5a368c9411753f9959bb6f744b67bbddd390b5b359c7d26540122147acb1cc3e502c2a7129a04491369f94c406d35c34b6ca931d020886712add9b0d215ec636675a7d120885d71cba1a7a989bc61010b84f0ecc08a6080161532d1d578aa99d8a811aea47eb4404be93a254f564157d8ee091422e2d1c1e4e91a3c3f2d6da0cb32fe73a9cde18b50bcb70c2794692bb36f707ed4d5eae6ac37b1fe0dff2e6fe6271969b81f553e1986c05d66437fffcf442445a3a61c5a22538c3e26092e57109b842f25d27abc6b3b772a6c7eb3c723ec2dd97760642edb654e8fe9b9e802e797839e544d3c6dfc68a139ecd9c03c62639908343f353f68375702dd1b01356d0a2b74bd45b3521f718421669c2d93e1c7ba2fe80ebd0c2a29bd250b5dc867e5413f0387d63aa5dcbf76c2f41886c0e33fb0b01</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
@@ -3290,68 +3290,70 @@ depth_I(M) = \inf \lbrace depth M_p | p \in V(I) \rbrace</script><p><strong>Proo
     <url>/LectureOnModuleAndRing/</url>
     <content><![CDATA[<p>为了把看过的知识变成自己的东西，在此理一下思路（导师建议学的东西记录一下，不然以后过不了多久又忘了，花了时间就要有收获）</p>
 <a id="more"></a>
-<h2 id="自由模"><a href="#自由模" class="headerlink" title="自由模"></a>自由模</h2><p>给定一个环$R$，其上(右)自由模</p>
+<h2 id="自由模"><a href="#自由模" class="headerlink" title="自由模"></a>自由模</h2><p>给定一个环 $R$，其上(右)自由模</p>
 <script type="math/tex; mode=display">
 F_R = R^{(I)} = \bigoplus_{i \in I} R_i, \quad R_i = R</script><p>有两种等价刻画：</p>
 <ol>
-<li><p>$F_R$有一组基 $\lbrace e_i : i \in I \rbrace \subset F$ 使得$F_R$上任意元素都可以唯一的写成 $e_i$ 的 $R-$线性组合</p>
+<li><p>$F_R$ 有一组基 $\lbrace e_i : i \in I \rbrace \subset F$ 使得 $F_R$ 上任意元素都可以唯一的写成 $e_i$ 的 $R$-线性组合</p>
 </li>
-<li><p>$F_R$有一组基 $\lbrace e_i : i \in I \rbrace \subset F$ 满足“universal property”: 对$M_R$中任意$\lbrace m_i : i \in I \rbrace$有唯一的$R$模同态 $f: R_R \to M_R$使得$f(e_i) = m_i ,i \in I$</p>
+<li><p>$F_R$ 有一组基 $\lbrace e_i : i \in I \rbrace \subset F$ 满足“universal property”: 对 $M_R$ 中任意 $\lbrace m_i : i \in I \rbrace$ 有唯一的 $R$ 模同态 $f: R_R \to M_R$ 使得 $f(e_i) = m_i ,i \in I$</p>
 <blockquote>
-<p>$R^I$表示$R$的$I$次积, 当指标集$I$有限时, 积与直和(余积)等价,此时 $R^{(I)}$通常写成 $R^n$</p>
+<p>$R^I$ 表示 $R$ 的 $I$ 次积, 当指标集 $I$ 有限时, 积与直和(余积)等价,此时 $R^{(I)}$ 通常写成 $R^n$</p>
 </blockquote>
 </li>
 </ol>
-<h3 id="IBN-Invariant-Basis-Number-性质"><a href="#IBN-Invariant-Basis-Number-性质" class="headerlink" title="IBN (Invariant Basis Number) 性质"></a>IBN (Invariant Basis Number) 性质</h3><p><strong>Generation Lemma</strong> 表明，对任意模，若 ${e_i : i \in I}$是其一族极小生成集，且 $I$是无限集，则$M$不能由基数小于$I$的集合生成。</p>
-<p>由<strong>Generation Lemma</strong>可知，若$R^{(I)} = R^{(J)}$,且 $I$无限，那么 $|I| = |J|$，但是当 $I$有限时，结论并不一定成立，例如 $R = End(_kV)$,其中 $V$ 为可数无穷维空间，则$R \simeq R^2$. 因此提出 <strong>IBN​</strong> 的概念：</p>
-<p><strong>IBN (Invariant Basis Number)</strong> 称环$R$满足<strong>IBN</strong>性质，如果对任意</p>
+<h3 id="IBN-Invariant-Basis-Number-性质"><a href="#IBN-Invariant-Basis-Number-性质" class="headerlink" title="IBN (Invariant Basis Number) 性质"></a>IBN (Invariant Basis Number) 性质</h3><p><strong>Generation Lemma</strong> 表明，对任意模，若 ${e_i : i \in I}$ 是其一族极小生成集，且 $I$ 是无限集，则 $M$ 不能由基数小于 $I$ 的集合生成。</p>
+<p>由 <strong>Generation Lemma</strong> 可知，若 $R^{(I)} = R^{(J)}$,且 $I$ 无限，那么 $|I| = |J|$，但是当 $I$ 有限时，结论并不一定成立，例如 $R = End(_kV)$,其中 $V$ 为可数无穷维空间，则 $R \simeq R^2$. 因此提出 <strong>IBN​</strong> 的概念：</p>
+<p><strong>IBN (Invariant Basis Number)</strong> 称环 $R$ 满足 <strong>IBN</strong> 性质，如果对任意</p>
 <script type="math/tex; mode=display">
-m,n \in \mathbb{N}, R^m \simeq R^n \Longrightarrow m=n</script><p>由定义不难看出，$R$ 不满足 IBN 性质，当且仅当, 存在 $R$ 上 $m×n$矩阵 $A$和$ n×m$ 矩阵 $B$使得</p>
+m,n \in \mathbb{N}, R^m \simeq R^n \Longrightarrow m=n</script><p>由定义不难看出，$R$ 不满足 IBN 性质，当且仅当, 存在 $R$ 上 $m×n$ 矩阵 $A$ 和 $n×m$ 矩阵 $B$ 使得</p>
 <script type="math/tex; mode=display">
 AB = I_n, BA =I_m</script><p>因此 IBN 性质是对称概念.</p>
 <blockquote>
-<p>由IBN上述等价定义知 $f: R \to S \neq 0$ 为环同态，则 $S$满足IBN性质可推出$R$满足IBN性质。</p>
+<p>由 IBN 上述等价定义知 $f: R \to S \neq 0$ 为环同态，则 $S$ 满足 IBN 性质可推出 $R$ 满足 IBN 性质。</p>
 </blockquote>
-<p>由上面的结论又可以给出很多满足IBN性质的例子：<br>Divison rings, local rings, semilocal rings, nonzero commutative rings, finite rings.</p>
-<h3 id="stably-finiteness"><a href="#stably-finiteness" class="headerlink" title="stably finiteness"></a>stably finiteness</h3><p>称环$R$为stably finite,如果对任意 $n$</p>
+<p>由上面的结论又可以给出很多满足 IBN 性质的例子：<br>Divison rings, local rings, semilocal rings, nonzero commutative rings, finite rings.</p>
+<h3 id="stably-finiteness"><a href="#stably-finiteness" class="headerlink" title="stably finiteness"></a>stably finiteness</h3><p>称环 $R$ 为 stably finite，如果对任意 $n$</p>
 <script type="math/tex; mode=display">
 R^n \simeq R^n \oplus N \Longrightarrow N=0</script><p>等价定义: </p>
 <ol>
-<li>对任意$n$, $R^n$是hopfian</li>
-<li>对任意$n$, $M_n(R)$是Dedekind-finite的.</li>
+<li>对任意 $n$, $R^n$ 是 hopfian</li>
+<li>对任意 $n$, $M_n(R)$ 是 Dedekind-finite 的.</li>
 </ol>
-<p>由2可知 stably finite 是对称概念.</p>
+<p>由 2 可知 stably finite 是对称概念.</p>
 <blockquote>
-<p>由 $Mn(R)$) Dedekind-finite 可知:<br>若$g:R→S$是嵌入(单射)同态(不要求幺元映成幺元), 那么若$S$  stable finite, 则$R$也是.</p>
+<p>由 $Mn(R)$ Dedekind-finite 可知:<br>若 $g:R→S$ 是嵌入(单射)同态(不要求幺元映成幺元), 那么若$S$  stable finite, 则 $R$ 也是.</p>
 </blockquote>
 <p>由上可知:</p>
 <script type="math/tex; mode=display">
 \prod _{i \in I} R _i \quad \text{ stably finite } \iff R _i \quad \text{ stably finite for all } i</script><p><strong>例子</strong>: Commutative Rings, Noetherian Rings</p>
-<p><strong>性质</strong>:<br>若环$R$不是 stably finite, 我们可以做一个最大的商环$\bar{R}$使得 $\bar{R}$ stably finite.<br>$\bar{R}$可以如下构造, 并可以说明它确实 stably finite.<br>设 $T$ 为所有形式 $I-YX$ ( 方阵$X$,$Y$满足$XY = I$的中元素生成的理想。可以证明: $\bar{R} = R/T$</p>
-<p>自然地, 我们要问啥时候 $\bar{R} = 0$? 这当且仅当存在$C,D \in M_m(R)$,行向量$x$,列向量$y$ 使得</p>
+<p><strong>性质</strong>:<br>若环 $R$ 不是 stably finite, 我们可以做一个最大的商环 $\bar{R}$ 使得 $\bar{R}$ stably finite.<br>$\bar{R}$可以如下构造, 并可以说明它确实 stably finite.<br>设 $T$ 为所有形式 $I-YX$ ( 方阵$X$,$Y$满足$XY = I$的中元素生成的理想。可以证明: $\bar{R} = R/T$</p>
+<p>自然地, 我们要问啥时候 $\bar{R} = 0$? 这当且仅当存在 $C,D \in M_m(R)$,行向量$x$,列向量$y$ 使得</p>
 <script type="math/tex; mode=display">
-x(I-DC)y = 1</script><h3 id="rank-condition"><a href="#rank-condition" class="headerlink" title="rank condition"></a>rank condition</h3><p>称环 $R$ 满足 rank condition, 如果对任意 $n$, $R_n$ 中生成元的个数都大于$n$.<br>等价定义1: 任意满同态 $f: R^m \to R^n$可推出 $m \geq n$.<br>等价定义2: 环$R$不满足rank condition, 当且仅当, 存在$n&gt;k \geq 1$, 那么存在 $n \times k$ 矩阵$A$和$k×n$ 矩阵$B$使得$AB=I_n$</p>
+x(I-DC)y = 1</script><h3 id="rank-condition"><a href="#rank-condition" class="headerlink" title="rank condition"></a>rank condition</h3><p>称环 $R$ 满足 rank condition, 如果对任意 $n$, $R_n$ 中生成元的个数都大于$n$.<br>等价定义 1: 任意满同态 $f: R^m \to R^n$可推出 $m \geq n$.<br>等价定义 2: 环 $R$ 不满足 rank condition, 当且仅当, 存在 $n&gt;k \geq 1$, 那么存在 $n \times k$ 矩阵 $A$ 和 $k×n$ 矩阵 $B$使得$AB=I_n$</p>
 <blockquote>
-<p>由上面等价定义2知道 rank condition 是个对称的概念.</p>
+<p>由上面等价定义 2 知道 rank condition 是个对称的概念.</p>
 </blockquote>
-<p>若有环同态 $f:R→S$, 其中$S$满足rank condition, 那么$R$也满足.</p>
-<p>rank condition 与 stably finite 以及 IBN 之间的关系$R \neq 0$:<br>stably finite $\Longrightarrow$rank condition $\Longrightarrow$IBN<br>套用一下定义,以及它们各自的等价定义,逆反命题就可以证明.</p>
+<p>若有环同态 $f:R→S$, 其中 $S$ 满足 rank condition, 那么 $R$ 也满足.</p>
+<p>rank condition 与 stably finite 以及 IBN 之间的关系 $R \neq 0$:</p>
+<script type="math/tex; mode=display">
+\text{stably finite} \Longrightarrow \text{rank condition} \Longrightarrow \text{IBN}</script><p>套用一下定义,以及它们各自的等价定义,逆反命题就可以证明.</p>
 <blockquote>
 <p>stably finite 与 rank conditon 的密切联系</p>
 </blockquote>
-<p>对任意环$R$, 下面结果等价:</p>
+<p>对任意环 $R$, 下面结果等价:</p>
 <ol>
-<li>$R$满足 rank condition</li>
+<li>$R$ 满足 rank condition</li>
 <li>$\bar{R} \neq 0$</li>
-<li>$R$有一个非零 stably finite 的同态像 </li>
-<li>对任意$n \in \mathbb{N}, \quad C,D \in M_n(R)$ 若 $CD=I_n$, 则对任意行向量$x$和列向量$y$, $x(I-DC)y \neq 1$</li>
+<li>$R$ 有一个非零 stably finite 的同态像 </li>
+<li>对任意 $n \in \mathbb{N}, \quad C,D \in M_n(R)$，若 $CD=I_n$, 则对任意行向量 $x$ 和列向量 $y$, $x(I-DC)y \neq 1$</li>
 </ol>
 <p>这里难点在于 1 推出 4, 可以用反证法, 用增广矩阵得到</p>
 <script type="math/tex; mode=display">
 \begin{pmatrix} C \\ x(I-DC) \end{pmatrix} \left(D ,(I-DC)y \right) = \begin{pmatrix} CD & 0 \\ 0 & x(I-DC) \end{pmatrix} = I_{m+1}</script><blockquote>
-<p>在simple ring 中 stably finite 等价于 rank condition</p>
+<p>在 simple ring 中 stably finite 等价于 rank condition</p>
 </blockquote>
-<h3 id="strong-rank-condition"><a href="#strong-rank-condition" class="headerlink" title="strong rank condition"></a>strong rank condition</h3><p>称环 $R$ 满足 right strong rank condition, 如果对任意$n$, $R^n$ 中任意线性相关的元素个数不超过 $n$.<br>等价定义1: 任意单同态 $f: R^m \to R^n$ 可推出 $m \leq n$<br>等价定义2: 任意 $m$个未定元 $n &lt; m$ 个方程的线性方程组在 $R$ 中必有非零解.(用线性相关的定义可知)</p>
+<h3 id="strong-rank-condition"><a href="#strong-rank-condition" class="headerlink" title="strong rank condition"></a>strong rank condition</h3><p>称环 $R$ 满足 right strong rank condition, 如果对任意$n$, $R^n$ 中任意线性相关的元素个数不超过 $n$.<br>等价定义 1: 任意单同态 $f: R^m \to R^n$ 可推出 $m \leq n$<br>等价定义 2: 任意 $m$个未定元 $n &lt; m$ 个方程的线性方程组在 $R$ 中必有非零解.(用线性相关的定义可知)</p>
 <blockquote>
 <p>实际上 strong rank condition 不是对称概念, 所以严格上, 我们要指出 left, right.</p>
 </blockquote>
@@ -3359,12 +3361,12 @@ x(I-DC)y = 1</script><h3 id="rank-condition"><a href="#rank-condition" class="he
 <blockquote>
 <p>由于 $R^n$ 是自由$R$- 模,因此,可以推出 right strong rank condition 可推出 rank condition.</p>
 </blockquote>
-<p><strong>注意</strong>right strong rank condition 不像之前的满足 $f: R \to S$, 满足”性质”,则 $R$ 满足”性质”.</p>
+<p><strong>注意</strong> right strong rank condition 不像之前的满足 $f: R \to S$, 满足”性质”, 则 $R$ 满足”性质”.</p>
 <p>$A \times B$ 满足 (right) strong rank condition (RSRC) 当且仅当 $A$ 或者 $B$ 满足 RSRC </p>
 <p>由上面性质知道, stably finite 和 strong rank condition 是两个独立的概念, 彼此不搭嘎. 例如: </p>
 <ol>
-<li>$R = \mathbb{Q}&lt; x,y &gt;$ 是 stably finite, 但不满足 RSRC.</li>
-<li>而由上面性质知道, 我们只要构造一个满足RSRC和一个不满足stably finite的积即可.</li>
+<li>$R = \mathbb{Q}<x, y>$ 是 stably finite, 但不满足 RSRC.</li>
+<li>而由上面性质知道, 我们只要构造一个满足 RSRC 和一个不满足 stably finite 的积即可.</li>
 </ol>
 <p>满足 RSRC 的例子:<br>Noetherian rings, Commutative Rings.</p>
 <blockquote>
@@ -3374,155 +3376,167 @@ x(I-DC)y = 1</script><h3 id="rank-condition"><a href="#rank-condition" class="he
 <script type="math/tex; mode=display">
 0 \neq u_1 \wedge \cdots \wedge u_m \in \bigwedge ^m (M)</script><h3 id="总结图"><a href="#总结图" class="headerlink" title="总结图"></a>总结图</h3><p>自由模下的关系(任意箭头一般都不可逆):</p>
 <p><img src= "/img/loading.gif" data-lazy-src="MRing1.png" alt="MRing1"></p>
-<p>一般地, Dedekind finite + Rank condition 依然无法推出 stably finite. 例如:<br>设 $R$ 为由元素$s,t,u,v;w,x,y,z$ 生成的 $k$ 代数,设 $A = \begin{pmatrix} s &amp; u \\ t &amp; v \end{pmatrix}, B = \begin{pmatrix} x &amp; y \\ z &amp; w \end{pmatrix}$ ,其中生成元满足关系: </p>
+<p>一般地, Dedekind finite + Rank condition 依然无法推出 stably finite. 例如:</p>
+<p>设 $R$ 为由元素$s,t,u,v;w,x,y,z$ 生成的 $k$ 代数,设 $A = \begin{pmatrix} s &amp; u \\ t &amp; v \end{pmatrix}, B = \begin{pmatrix} x &amp; y \\ z &amp; w \end{pmatrix}$ ,其中生成元满足关系: </p>
 <script type="math/tex; mode=display">
-AB=I_2</script><p>由此可知, $R$ 是domain, 但是一般地, $BA \neq I_2$ 因此 $M2(R)$)不是Dedekind finite的. 因此 $R$不满足 stably finite 条件.<br>定义 $f: R \to k$为 $f(s)=f(v) = f(x) = f(w) =f(1) = 1$, $f(u) = f(t) = f(y) = f(z) = 0$. 因此由 $k$ 满足 rank condition, so is $R$.</p>
-<h2 id="投射模"><a href="#投射模" class="headerlink" title="投射模"></a>投射模</h2><h3 id="投射模的定义"><a href="#投射模的定义" class="headerlink" title="投射模的定义"></a>投射模的定义</h3><p>一个右$R$模$P$成为projective module(投射模),如果<br>对任意$R$模满同态$g:B\to C$和任意 $R$模同态 $h:P\to C$,存在$R$模同态 $h’: P \to B$ 使得 $h = gh’$</p>
+AB=I_2</script><p>由此可知, $R$ 是 domain, 但是一般地, $BA \neq I_2$ 因此 $M2(R)$ 不是 Dedekind finite 的. 因此 $R$不满足 stably finite 条件.<br>定义 $f: R \to k$ 为 $f(s)=f(v) = f(x) = f(w) = f(1) = 1$, $f(u) = f(t) = f(y) = f(z) = 0$. 因此由 $k$ 满足 rank condition, so is $R$.</p>
+<h2 id="投射模"><a href="#投射模" class="headerlink" title="投射模"></a>投射模</h2><h3 id="投射模的定义"><a href="#投射模的定义" class="headerlink" title="投射模的定义"></a>投射模的定义</h3><p>称一个右 $R$-模 $P$ 为 projective module（投射模）,如果<br>对任意 $R$ 模满同态 $g:B\to C$ 和任意 $R$ 模同态 $h:P\to C$,存在 $R$ 模同态 $h’: P \to B$ 使得 $h = gh’$</p>
 <blockquote>
 <p>由定义显然自由模都是投射模.</p>
 </blockquote>
-<p>等价定义: 从右模范畴到Abel范畴 $\hom(P,-)$ 的函子是exact functor(正合函子).<br>由定价定义易知:</p>
+<p>等价定义: 从右模范畴到 Abel 范畴 $\hom(P,-)$ 的函子是 exact functor(正合函子).<br>由定价定义易知:</p>
 <script type="math/tex; mode=display">
 \bigoplus_{i \in I} P_i \text{ 投射当且仅当 } P_i, i\in I \text{ 投射 }</script><p>由之前说明的自由模都是投射模可知以下条件等价</p>
 <ol>
 <li>$P_R$ 投射</li>
-<li>$P_R$ 是某个自由$R$模的直和因子</li>
-<li>任意满同态$B_R\to P_Rsplit$.</li>
+<li>$P_R$ 是某个自由 $R$ 模的直和因子</li>
+<li>任意满同态 $B_R\to P_R$ 可裂</li>
 </ol>
-<p>由此可知:(Eilenberg’s Trick) 若$P_R$投射,则存在自由模$F_R$使得$P \oplus F \simeq F$</p>
+<p>由此可知:(Eilenberg’s Trick) 若 $P_R$ 投射,则存在自由模 $F_R$ 使得 $P \oplus F \simeq F$</p>
 <blockquote>
-<p>Proof: 由$P_R$ 投射模,所以存在$Q_R$ 使得$P \oplus F \simeq F$为自由模, 取$F$为 $E$ 的可数直和即可.</p>
+<p>Proof: 由 $P_R$ 投射模,所以存在 $Q_R$ 使得 $P \oplus F \simeq F$ 为自由模, 取 $F$ 为 $E$ 的可数直和即可.</p>
 </blockquote>
-<p>不是投射$\mathbb{Z}$模的例子:</p>
+<p>不是投射 $\mathbb{Z}$ 模的例子:</p>
 <script type="math/tex; mode=display">
-\mathbb{Z} / 2 \mathbb{Z}, \quad M = \mathbb{Z} \times \mathbb{Z} \times \cdots</script><p>一个有趣的结果:<br>设$P = \mathbb{Z} \oplus \mathbb{Z} \oplus \cdots \subset M$, 则 $\hom_{\mathbb{Z}}(M/P,\mathbb{Z}) = 0$<br>证明关键点在于 $M = A_2 + A_3$, 其中 $A_k = \lbrace (k a_1,k^2 a_2,\cdots,k^n a_n,\cdots): a_i \in \mathbb{Z} \rbrace$,<br>然后说明 $A_k\in P$,且$f(M)=f(A_2)+f(A_3) \subset f(P)$即可.    </p>
-<h3 id="Dual-Basis-对偶基"><a href="#Dual-Basis-对偶基" class="headerlink" title="Dual Basis(对偶基)"></a>Dual Basis(对偶基)</h3><p>$P_R$ 是投射模, 当且仅当它有对偶基, 即存在一族元素 $\lbrace a_i: i\in I \rbrace \subset P$ 和线性函数 $\lbrace f_i: i \in I \rbrace \subset P^{\star} = \hom(P,R)$ 使得对任意$a \in P$, 只有有限个 $f(a_i)$非零, 且 $a = \sum a_i f_i (a)$.</p>
-<p>对任意$R$-模$M_R$, $ M^{\star} = \hom(M,R) $ 是左 $R$ 模, $M^{\star \star} = \hom(M^{\star} ,R)$ 是右 $R$模, 我们有自然的右模同态, $\epsilon : M \to M^{\star \star}$定义为: $\epsilon(a) = \hat{a}$, 其中 $\hat{a} (f) = f(a)$ 为求值函数.</p>
+\mathbb{Z} / 2 \mathbb{Z}, \quad M = \mathbb{Z} \times \mathbb{Z} \times \cdots</script><p>一个有趣的结果:<br>设 $P = \mathbb{Z} \oplus \mathbb{Z} \oplus \cdots \subset M$, 则 $\hom_{\mathbb{Z}}(M/P,\mathbb{Z}) = 0$<br>证明关键点在于 $M = A_2 + A_3$, 其中 $A_k = \lbrace (k a_1,k^2 a_2,\cdots,k^n a_n,\cdots): a_i \in \mathbb{Z} \rbrace$,<br>然后说明 $A_k\in P$, 且 $f(M)=f(A_2)+f(A_3) \subset f(P)$ 即可.    </p>
+<h3 id="Dual-Basis-对偶基"><a href="#Dual-Basis-对偶基" class="headerlink" title="Dual Basis(对偶基)"></a>Dual Basis(对偶基)</h3><p>$P_R$ 是投射模, 当且仅当它有对偶基, 即存在一族元素 $\lbrace a_i: i\in I \rbrace \subset P$ 和线性函数 $\lbrace f_i: i \in I \rbrace \subset P^{\star} = \hom(P,R)$ 使得对任意 $a \in P$, 只有有限个 $f(a_i)$ 非零, 且 $a = \sum a_i f_i (a)$.</p>
+<p>对任意 $R$-模 $M_R$, $M^{\star} = \hom(M,R)$ 是左 $R$-模, $M^{\star \star} = \hom(M^{\star} ,R)$ 是右 $R$-模, 我们有自然的右模同态, $\epsilon : M \to M^{\star \star}$ 定义为: $\epsilon(a) = \hat{a}$, 其中 $\hat{a} (f) = f(a)$ 为求值函数.</p>
 <blockquote>
 <p>特别地, 当 $M_R$ 是投射的, $\epsilon$ 是单同态, $M_R$ 是有限生成投射时, $\epsilon$为同构.</p>
 </blockquote>
-<p>例: $e \in R$ 为幂等元, 则$R = eR \oplus (1-e)R$, 所以, $P = eR$ 为有限生成投射模.</p>
+<p>例: $e \in R$ 为幂等元, 则 $R = eR \oplus (1-e)R$, 所以, $P = eR$ 为有限生成投射模.</p>
 <h3 id="Invertible-Modules-and-Fractional-Ideals-可逆模-可逆理想"><a href="#Invertible-Modules-and-Fractional-Ideals-可逆模-可逆理想" class="headerlink" title="Invertible Modules and Fractional Ideals(可逆模,可逆理想)"></a>Invertible Modules and Fractional Ideals(可逆模,可逆理想)</h3><blockquote>
-<p>此小节中默认$R$为交换环</p>
+<p>此小节中默认 $R$ 为交换环</p>
 </blockquote>
-<p>很大一类的交换环上的投射模是由环扩张 $S \supset R$ 得到的.<br>现在, 给定(交换)环扩张$S \supset R$. 考虑模$S$的$R$-子模, 设 $P,Q$ 为模$S$的$R$-子模, 定义:</p>
-<script type="math/tex; mode=display">PQ = \lbrace \sum p_i q_i : p_i \in P, q_i \in Q \rbrace, \quad Q:P = \lbrace s \in S: sP \in Q \rbrace,\quad P^{-1} = \lbrace s \in S : sP \subset R \rbrace = R:P</script><p>注意到 $P^{-1}$依赖于环扩张$S$的选取.</p>
-<p>由上面定义,我们立即有下面引理(条件1,2等价):</p>
+<p>很大一类的交换环上的投射模是由环扩张 $S \supset R$ 得到的.<br>现在, 给定(交换)环扩张 $S \supset R$. 考虑模 $S$ 的 $R$-子模, 设 $P,Q$ 为模 $S$ 的 $R$-子模, 定义:</p>
+<script type="math/tex; mode=display">
+PQ = \lbrace \sum p_i q_i : p_i \in P, q_i \in Q \rbrace, \quad Q:P = \lbrace s \in S: sP \in Q \rbrace,\quad P^{-1} = \lbrace s \in S : sP \subset R \rbrace = R:P</script><p>注意到 $P^{-1}$ 依赖于环扩张 $S$ 的选取.</p>
+<p>由上面定义,我们立即有下面引理(条件 <code>1,2</code> 等价):</p>
 <ol>
-<li>存在$S$的$R$-子模$Q$使得 $PQ = R$</li>
+<li>存在 $S$ 的 $R$-子模 $Q$ 使得 $PQ = R$</li>
 <li>$PP^{-1} = R$</li>
 </ol>
-<p>由于上述定价,我们把满足条件的$P$称为 <strong>Invertible $R$-submodule</strong> of $S$<br>在此条件下,我们有:</p>
+<p>由于上述定价,我们把满足条件的 $P$ 称为 <strong>Invertible  $R$-submodule</strong> of $S$<br>在此条件下,我们有:</p>
 <ol>
-<li>$P$ 是有限生成投射$R$-模.(利用 $\sum p_i q_i = 1$)</li>
-<li>任意$R$-子模$M \in S$,自然映射 $f: P \otimes _R M \to PM$ 是 $R$-模同构</li>
-<li>$P^{\star} \simeq P^{-1}$ (因此$P^{\star}$可以成$S$的子模).</li>
-<li>$P_R$是自由模,当且仅当存在$s \in R$使得$P = sR$(此时$s$必然是$s$中的可逆元).<blockquote>
-<p>结论4经常用于说明一个模是投射模但不是自由模.</p>
+<li>$P$ 是有限生成投射 $R$-模 (利用 $\sum p_i q_i = 1$)</li>
+<li>任意 $R$-子模 $M \in S$, 自然映射 $f: P \otimes _R M \to PM$ 是 $R$-模同构</li>
+<li>$P^{\star} \simeq P^{-1}$ (因此 $P^{\star}$ 可以成 $S$ 的子模)</li>
+<li>$P_R$是自由模,当且仅当存在$s \in R$使得$P = sR$(此时$s$必然是$s$中的可逆元)<blockquote>
+<p>结论 4 经常用于说明一个模是投射模但不是自由模.</p>
 </blockquote>
 </li>
 </ol>
-<p>下面有一个很精彩的例子:<br>设$R \subset S$ 为交换环,$g \in S$满足 $g^2,g^3 \in R$, 即 $g^n \in R$ 对 $n&gt;1$ 成立.定义$P_r = (1+rg, g^2)$, 那么</p>
+<p>下面有一个很精彩的例子:<br>设$R \subset S$ 为交换环, $g \in S$满足 $g^2,g^3 \in R$, 即 $g^n \in R$ 对 $n&gt;1$ 成立. 定义$P_r = (1+rg, g^2)$, 那么</p>
 <script type="math/tex; mode=display">
 P_r P_s = (1+rg,g^2)(1+sg,g^2) = (1+(r+s)g+rsg^2,g^2+sg^3,g^2+rg^3,g^4)</script><p>显然上面集合包含 $g^2(1+(r+s)g+rsg^2)-rsg^4 = g^2 +(r+s)g^3$,<br>因此包含 $rg^3,sg^3,g^2,1+(r+s)g$, 因此</p>
 <script type="math/tex; mode=display">
 P_r P_s = (1+(r+s)g,g^2,rg^3,sg^3)</script><p>再由 $g^3(1+(r+s)g) - (r+s)g^2g^2 = g^3$ 可知: </p>
 <script type="math/tex; mode=display">
- P_r P_s = (1+(r+s)g,g^2) = P_{r+s}</script><p>因此$P_r P_{-r} = P_0 = (1, g^2) = R$, 即 $\lbrace P_r: r \in R \rbrace$ 是一族Invertible $R$-submodule of $S$(因此投射), 且 $P^{\star} = P_r^{-1} = P_{-r}$.<br>$P_r$是$R$-free 当且仅当 $u(1+rg) \in R$ 对所有的 $u \in U(R[g])$</p>
+P_r P_s = (1+(r+s)g,g^2) = P_{r+s}</script><p>因此 $P_r P_{-r} = P_0 = (1, g^2) = R$, 即 $\lbrace P_r: r \in R \rbrace$ 是一族 Invertible $R$-submodule of $S$(因此投射), 且 $P^{\star} = P_r^{-1} = P_{-r}$. $P_r$ 是 $R$-free 当且仅当 $u(1+rg) \in R$ 对所有的 $u \in U(R[g])$</p>
 <blockquote>
-<p>之前说过 $P^{-1}$依赖于$R$的扩张$S$的选取,现在我们在$R$的所有regular element(正则元)这个乘闭子集$C_R$上做局部化得到环$K$,那么自然映射此时是单同态,因此局部化得到的环可以看做$R$的扩张(由$R$唯一决定).且对任意$k \in K$, 都存在regular element $u$ 使得 $u_k \in R$.</p>
+<p>之前说过 $P^{-1}$ 依赖于 $R$ 的扩张 $S$ 的选取,现在我们在 $R$ 的所有 regular element(正则元)这个乘闭子集 $C_R$ 上做局部化得到环 $K$, 那么自然映射此时是单同态, 因此局部化得到的环可以看做 $R$ 的扩张(由 $R$ 唯一决定). 且对任意 $k \in K$, 都存在 regular element $u$ 使得 $u_k \in R$.</p>
 </blockquote>
-<p>称$K$的$R$-子模为 <strong>fractional ideal(分次理想)</strong> 通常记为 $\mathfrak{A}$<br>引理: 对任意fractional ideal $\mathfrak{A} \subset K$且$\mathfrak{A} \cap C_R \neq \emptyset$, 则有 $\hom(\mathfrak{A}, K) \simeq K$.<br>Proof: 作映射$\lambda : K \to \hom_R(\mathfrak{A},K)$为: $\lambda(k)(a) = ka$,证明单满即可.</p>
-<p>对任意fractional ideals $\mathfrak{A},\mathfrak{B} \subset K$, 我们也有类似引理的证明: 当 $\mathfrak{A} \cap C_R \neq \emptyset$</p>
+<p>称 $K$ 的 $R$-子模为 <strong>fractional ideal(分次理想)</strong> 通常记为 $\mathfrak{A}$</p>
+<p>引理: 对任意 fractional ideal $\mathfrak{A} \subset K$ 且 $\mathfrak{A} \cap C_R \neq \emptyset$, 则有 $\hom(\mathfrak{A}, K) \simeq K$.</p>
+<p>Proof: 作映射 $\lambda : K \to \hom_R(\mathfrak{A},K)$ 为: $\lambda(k)(a) = ka$, 证明单满即可.</p>
+<p>对任意 fractional ideals $\mathfrak{A},\mathfrak{B} \subset K$, 我们也有类似引理的证明: 当 $\mathfrak{A} \cap C_R \neq \emptyset$</p>
 <script type="math/tex; mode=display">
 \hom_ R(\mathfrak{A},\mathfrak{B}) \simeq \mathfrak{B}:\mathfrak{A}</script><blockquote>
-<p>特别地, 若$\mathfrak{A} \cap C_R \neq \emptyset$,则$\mathfrak{A}^{\star} = \mathfrak{A} ^{-1} = R:\mathfrak{A}$.</p>
+<p>特别地, 若 $\mathfrak{A} \cap C_R \neq \emptyset$, 则 $\mathfrak{A}^{\star} = \mathfrak{A} ^{-1} = R:\mathfrak{A}$.</p>
 </blockquote>
-<p>对任意fractional ideal $\mathfrak{A} \subset K$, 下面等价:</p>
+<p>对任意 fractional ideal $\mathfrak{A} \subset K$, 下面等价:</p>
 <ol>
 <li>$\mathfrak{A}$ 是 invertible module($\mathfrak{A} \mathfrak{A}^{-1} = R$)</li>
 <li>$\mathfrak{A}$ 是投射模,且 $\mathfrak{A} \cap C_R \neq \emptyset$</li>
-<li>$\mathfrak{A}$ 是有限生成投射模,且 $\mathfrak{A} \cap C_R \neq \emptyset$&gt; 此条件下$\mathfrak{A}$ 自由模当且仅当 存在 $s \in K$ 使得$\mathfrak{A} = sR$(此时$s \in U(K)$)</li>
-</ol>
-<p>由上可知: 若$R \neq K$, 则 $K$ 不是投射模.<br>Proof: 如果是, 那么必然有限生成投射, 因此</p>
-<script type="math/tex; mode=display">
- K= \sum _{i=1} ^n R c _i d _i ^{-1} (c _i \in R, d _i \in C _R)</script><p>那么 $d = d_1 \cdots d_n \subset U(K)$, 我们有 $K = dK \subset R$ 矛盾于条件.</p>
-<blockquote>
-<p>因此 $\mathbb{Q}_{\mathbb{Z}}$ 不是投射模.</p>
-</blockquote>
-<h3 id="交换环上的Picard-Group"><a href="#交换环上的Picard-Group" class="headerlink" title="交换环上的Picard Group"></a>交换环上的Picard Group</h3><p>实际上, 第二小节和第三小节中的Invertible Module 都是”秩为1”的有限生成投射模, 对于交换环, 秩的概念定义如下:<br>由于若$P,Q$为$R$-模, $P \otimes Q$也是$R$-模, 且当$P,Q$投射时, $P \otimes Q$也是投射模.<br>当$P$是有限生成投射$R$-模时, 对于$R$的任意素理想$\mathfrak{p}$, 在其上局部化得到 $P_{\mathfrak{p}} = P \bigotimes_{R} R_{\mathfrak{p}} $ 也是有限生成投射的. 由于 $R_{P}$交换局部环, 因此$P_{\mathfrak{p}}$是自由的(交换局部环上有限生成投射模是自由模).因此就有秩, 也就是说我们有从$R$的素谱到$\mathbb{Z}$(带离散拓扑)的一个连续映射. 当这个映射是常值映射时(这要求$R$中无非平凡幂等元),就称这个常值为投射模$P$的秩.</p>
-<blockquote>
-<p>注意到若$rk(P)=n,rk(Q)=m$ 那么 $rk(P^{\star})=n,rk(P \otimes Q) = mn$</p>
-</blockquote>
-<p><strong>引理</strong> 设$R \subset S$ 为交换环, 那么在任意$S$的可逆$R$-子模都是秩为1的投射模.<br>Proof: 用一个Invertible Module(可逆模)的定义, 以及成为自由模的条件, 即可证明.</p>
-<p>设 $Pic(R)$ 为 $R$ 上所有秩为1的有限生成投射模的同构等价类. 将$P$ 的等价类记作 $[P]$<br>我们定义乘法(满足结合律, 交换律):</p>
-<script type="math/tex; mode=display">
-[P][Q] = [P \otimes Q]</script><p>$[R]$ 成为 $Pic(R)$ 中的幺元, $[P]^{-1} = [P^{\star}]$.<br>即 $Pic(R)$ 关于上述乘法构成abelian group. 称为交换环$R$的Picard group.</p>
-<blockquote>
-<p>实际上 “Pic” 还是交换环范畴到abelian group范畴的函子.</p>
-</blockquote>
-<p>具体到$R \subset K$, $K$中所有invertible fractional ideals是$R$上秩为1的有限生成投射模(记为$I_{R}$)但是一般地$R$上所有秩为1的有限生成投射模并不一定同构与某个invertible fractional ideal.</p>
-<p><strong>定理</strong> 对自然映射$f: R \to K$, 我们有正合列</p>
-<script type="math/tex; mode=display">
- 1 \to U(R) \to U(R) \to I_{R} \to Pic(R) \to Pic(K)</script><h3 id="semi-Hereditary-Rings"><a href="#semi-Hereditary-Rings" class="headerlink" title="(semi)Hereditary Rings."></a>(semi)Hereditary Rings.</h3><p>在交换环中, Dedekind (domain) ring 定义为交换整环$R$, 所有理想都是Invertible Ideal(或者说投射的). 这说明 $R$ 必然是 Noetherian domain. 因此 Dedekind ring 也可以定义为 noetherian domain 中整闭的Krull维数为小于等于1的环, 也可以定义为满足每个理想都是一些素理想的有限积的交换整环.</p>
-<p>把上述 Dedekind ring 推广到非交换的情形, 我们有如下 <strong>Hereditary ring</strong> 的定义:<br>A ring $R$ 称为右(左)Hereditary ring, 如果它的每个右(左)理想都是投射的, 如果它既为左又右,那么就成为 Hereditary ring.</p>
-<p><strong>Kaplansky’s Theorem</strong> 设 $R$ 为right Hereditary ring. 任意$R$-自由模的子模$P$都同构于$R$的一些理想的直和. 特别地, $P$是投射的.</p>
-<p>由于每个模都可以看成自由模的同态像, 投射模是某个自由模的直和因子, 又由Kaplansky定理知:</p>
-<ol>
-<li>在一个 right hereditary $R$ 上, 一个$R$-模 $P_R$投射, 当且仅当它能嵌入到一个自由模中.</li>
-<li>环$R$投射, 当且仅当, 每个投射$R$-模的子模都是投射的.</li>
-<li>若环$R$是PRID(principal right ideal domain), 那么每个自由$R$-模的子模都是自由的.</li>
-</ol>
-<p>类似于 Hereditary ring 的定义, 我们称一个环 $R$ 为 <strong>semihereditary ring</strong>: </p>
-<p>$R$ 称为右(左)semihereditary ring, 如果 $R$的每个f.g.(finitely generate有限生成)右(左)理想都是投射$R$右(左)模. 如果既左又右,称为 semihereditary ring.<br>我们称交换的semihereditary ring为Prufer ring.</p>
-<p>类似于 <strong>Kaplansky’s Theorem</strong> 我们有$R$为 right semihereditary ring. 任意 $R$-自由模的有限生成子模$P$都同构与有限个$R$的理想的直和.</p>
-<blockquote>
-<p>right semihereditary 的等价刻画:</p>
-</blockquote>
-<p>$R$ 为 right semihereditary ring 当且仅当投射右$R$模的有限生成子模都是投射的.</p>
-<p>例子:</p>
-<ol>
-<li>Semisimple ring is hereditary.</li>
-<li>PRID is right hereditary, 例如 $D[x]$, 其中$D$是division ring.</li>
-<li>$M_n(R)$ is semihereditary, 其中$R$为Dedekind ring.</li>
-<li>von Neumann regular ring is semihereditary.</li>
-<li><script type="math/tex">\begin{pmatrix} \mathbb{Z} &amp; \mathbb{Q} \\ 0 &amp; \mathbb{Q} \end{pmatrix}</script> 是 right hereditary, left semihereditary, but not left hereditary. Note that this example is also left artinain but not right noetherian.</li>
-</ol>
-<h3 id="Hereditary-Artinian-Ring"><a href="#Hereditary-Artinian-Ring" class="headerlink" title="Hereditary Artinian Ring"></a>Hereditary Artinian Ring</h3><p>Hereditary artinian ring 十分的重要(因为简单0.0), 一般一个概念加上artinian 条件就会变得特别简单, 例如 Artinian commutative domain is field.</p>
-<p>设$J = rad R$为环$R$的Jacobison radical. 若$R$是artinian ring. 以下结论等价:</p>
-<ol>
-<li>$R$ is right hereditary.</li>
-<li>$J$ 作为右$R$-模是投射的.</li>
-<li>对任意幂等元$e$, $eJ$是投射右$R$-模.</li>
-<li>$R$的任意极大右理想都是投射右$R$-模.<blockquote>
-<p>证明难度还是有的, 要用到任意有限生成artinian模都是有限长的.</p>
+<li>$\mathfrak{A}$ 是有限生成投射模,且 $\mathfrak{A} \cap C_R \neq \emptyset$<blockquote>
+<p>此条件下 $\mathfrak{A}$ 自由模当且仅当 存在 $s \in K$ 使得 $\mathfrak{A} = sR$(此时 $s \in U(K)$)</p>
 </blockquote>
 </li>
 </ol>
-<p>例子:<br>设$R$是divison ring $D$上的$n \times n$上三角矩阵全体, 则$R$是hereditary artinian ring.</p>
-<h3 id="Trace-Ideal"><a href="#Trace-Ideal" class="headerlink" title="Trace Ideal"></a>Trace Ideal</h3><p>Definition: 对任意 $P_R$, 定义$tr(P) = \sum im(f)$ 其中, $f$ 跑遍 $P^{\star}$. 容易看出 $T = tr(P)$ 是 $R$ 的理想, 称为 Trace Ideal. 它满足:<br>若$P_R$ 是投射的, 则 $PT = P, T^2 = T, ann(P) = ann_r(T)$<br>特别的, 若$P_R$ 是有限生成投射的, 那么其对偶基$\lbrace a_i f_i \rbrace_{1\leq i \leq n}$. 那么 $tr(P)$ 可由有限集 $\lbrace f_j(a_i) \rbrace$ 生成.<br>另外,若 $tr(P) = R$, 我们称 $P$ 是生成子.</p>
-<p><strong>引理</strong> 设$T$是交换环$R$的有限生成幂等理想, 则存在幂等元$e \in R$ 使得 $T=eR$.<br>Proof: 关键在于把 $T$ 写成 $T = \sum_{i=1} ^n Tx_i$</p>
-<p>由上述引理和$T = Tr(P)$的性质, 不难证明下面定理:<br><strong>定理</strong> 设$P_R$是交换环$R$有限生成投射模, 那么存在幂等元$e$使得$T=Tr(P)=eR, N = ann(P) = (1-e)R$, 特别地, $R = T \otimes N$, 投射模$P_R$是faithful(忠实的)当且仅当$T = R$.<br>当$R$无非平凡幂等元时, 则$P \neq 0$ 是(有限生成投射)生成子. </p>
+<p>由上可知: 若 $R \neq K$, 则 $K$ 不是投射模.</p>
+<p>Proof: 如果是, 那么必然有限生成投射, 因此</p>
+<script type="math/tex; mode=display">
+K= \sum _{i=1} ^n R c _i d _i ^{-1} (c _i \in R, d _i \in C _R)</script><p>那么 $d = d_1 \cdots d_n \subset U(K)$, 我们有 $K = dK \subset R$ 矛盾于条件.</p>
 <blockquote>
-<p>定理中条件缺一不可, 且幂等元$e$可以根据有限对偶基显式表达出来.</p>
+<p>因此 $\mathbb{Q}_{\mathbb{Z}}$ 不是投射模.</p>
 </blockquote>
-<p>Trace ideal 的应用:<br><strong>引理</strong> 设$R \subset S$ 是环(不要求交换), 则 $R$是$S_R$的直和因子, 当且仅当, $Tr(S_R) = R$.<br>Proof: 若$R$是$S_R$的直和因子, 则 $Tr(S_R) \supset Tr(R_R) = R$, 所以$Tr(S_R) = R$.<br>若$Tr(S_R) = R$, 那么存在 $f_i \in S_R^{\star},s_i \in S, (1 \leq i \leq n) $ 使得 $\sum f_i(s_i) = 1$.<br>定义映射 $\lambda: S \to R$ 为: $\lambda(s) = f(s_i s)$. 为环同态, 且在$R$上限制为恒等映射.(因此$R$是$S_R$的直和因子).</p>
-<p><strong>定理</strong> 设$R \subset S$, 其中$R$是交换环, $S$ 是f.g. 右$R$-模. 则$R$是$S_R$的直和因子.<br>Proof: 由$ann(S_R) = 0$, 在由上面引理即证。</p>
+<h3 id="交换环上的-Picard-Group"><a href="#交换环上的-Picard-Group" class="headerlink" title="交换环上的 Picard Group"></a>交换环上的 Picard Group</h3><p>实际上, 第二小节和第三小节中的 Invertible Module 都是”秩为 1”的有限生成投射模, 对于交换环, 秩的概念定义如下:</p>
+<p>由于若 $P,Q$ 为$R$-模, $P \otimes Q$ 也是 $R$-模, 且当 $P,Q$ 投射时, $P \otimes Q$ 也是投射模.</p>
+<p>当 $P$ 是有限生成投射$R$-模时, 对于 $R$ 的任意素理想 $\mathfrak{p}$, 在其上局部化得到 $P_{\mathfrak{p}} = P \bigotimes_{R} R_{\mathfrak{p}}$ 也是有限生成投射的. 由于 $R_{P}$ 交换局部环, 因此 $P_{\mathfrak{p}}$ 是自由的(交换局部环上有限生成投射模是自由模).因此就有秩, 也就是说我们有从 $R$ 的素谱到 $\mathbb{Z}$(带离散拓扑)的一个连续映射. 当这个映射是常值映射时(这要求 $R$ 中无非平凡幂等元),就称这个常值为投射模 $P$ 的秩.</p>
+<blockquote>
+<p>注意到若 $rk(P)=n,rk(Q)=m$ 那么 $rk(P^{\star})=n, rk(P \otimes Q) = mn$</p>
+</blockquote>
+<p><strong>引理</strong> 设 $R \subset S$ 为交换环, 那么在任意 $S$ 的可逆 $R$-子模都是秩为 1 的投射模.</p>
+<p>Proof: 用一个 Invertible Module(可逆模)的定义, 以及成为自由模的条件, 即可证明.</p>
+<p>设 $Pic(R)$ 为 $R$ 上所有秩为 1 的有限生成投射模的同构等价类. 将 $P$ 的等价类记作 $[P]$<br>我们定义乘法(满足结合律, 交换律):</p>
+<script type="math/tex; mode=display">
+[P][Q] = [P \otimes Q]</script><p>$[R]$ 成为 $Pic(R)$ 中的幺元, $[P]^{-1} = [P^{\star}]$.<br>即 $Pic(R)$ 关于上述乘法构成 Abelian group. 称为交换环 $R$ 的 Picard group.</p>
+<blockquote>
+<p>实际上 “Pic” 还是交换环范畴到 Abelian group 范畴的函子.</p>
+</blockquote>
+<p>具体到 $R \subset K$, $K$ 中所有 invertible fractional ideals 是 $R$ 上秩为 1 的有限生成投射模(记为 $I_{R}$) 但是一般地 $R$ 上所有秩为 1 的有限生成投射模并不一定同构与某个 invertible fractional ideal.</p>
+<p><strong>定理</strong> 对自然映射$f: R \to K$, 我们有正合列</p>
+<script type="math/tex; mode=display">
+ 1 \to U(R) \to U(R) \to I_{R} \to Pic(R) \to Pic(K)</script><h3 id="semi-Hereditary-Rings"><a href="#semi-Hereditary-Rings" class="headerlink" title="(semi)Hereditary Rings"></a>(semi)Hereditary Rings</h3><p>在交换环中, Dedekind (domain) ring 定义为交换整环 $R$, 所有理想都是 Invertible Ideal(或者说投射的). 这说明 $R$ 必然是 Noetherian domain. 因此 Dedekind ring 也可以定义为 Noetherian domain 中整闭的 Krull 维数为小于等于 1 的环, 也可以定义为满足每个理想都是一些素理想的有限积的交换整环.</p>
+<p>把上述 Dedekind ring 推广到非交换的情形, 我们有如下 <strong>Hereditary ring</strong> 的定义:<br>A ring $R$ 称为右(左)Hereditary ring, 如果它的每个右(左)理想都是投射的, 如果它既为左又右,那么就成为 Hereditary ring.</p>
+<p><strong>Kaplansky’s Theorem</strong> 设 $R$ 为 right Hereditary ring. 任意 $R$-自由模的子模 $P$ 都同构于 $R$ 的一些理想的直和. 特别地, $P$ 是投射的.</p>
+<p>由于每个模都可以看成自由模的同态像, 投射模是某个自由模的直和因子, 又由 Kaplansky 定理知:</p>
+<ol>
+<li>在一个 right hereditary $R$ 上, 一个 $R$-模 $P_R$ 投射, 当且仅当它能嵌入到一个自由模中.</li>
+<li>环 $R$ 投射, 当且仅当, 每个投射$R$-模的子模都是投射的.</li>
+<li>若环 $R$ 是 PRID(principal right ideal domain), 那么每个自由 $R$-模的子模都是自由的.</li>
+</ol>
+<p>类似于 Hereditary ring 的定义, 我们称一个环 $R$ 为 <strong>semihereditary ring</strong>: </p>
+<p>$R$ 称为右(左)semihereditary ring, 如果 $R$ 的每个 f.g.(finitely generate 有限生成)右(左)理想都是投射 $R$ 右(左)模. 如果既左又右, 称为 semihereditary ring.<br>我们称交换的 semihereditary ring 为 Prufer ring.</p>
+<p>类似于 <strong>Kaplansky’s Theorem</strong> 我们有 $R$ 为 right semihereditary ring. 任意 $R$-自由模的有限生成子模 $P$ 都同构与有限个 $R$ 的理想的直和.</p>
+<blockquote>
+<p>right semihereditary 的等价刻画:</p>
+</blockquote>
+<p>$R$ 为 right semihereditary ring 当且仅当投射右 $R$ 模的有限生成子模都是投射的.</p>
+<p>例子:</p>
+<ol>
+<li>Semisimple ring is hereditary.</li>
+<li>PRID is right hereditary, 例如 $D[x]$, 其中 $D$ 是 division ring.</li>
+<li>$M_n(R)$ is semihereditary, 其中 $R$ 为 Dedekind ring.</li>
+<li>von Neumann regular ring is semihereditary.</li>
+<li>$\begin{pmatrix} \mathbb{Z} &amp;  \mathbb{Q} \\ 0 &amp; \mathbb{Q} \end{pmatrix}$ 是 right hereditary, left semihereditary, but not left hereditary. Note that this example is also left artinain but not right Noetherian.</li>
+</ol>
+<h3 id="Hereditary-Artinian-Ring"><a href="#Hereditary-Artinian-Ring" class="headerlink" title="Hereditary Artinian Ring"></a>Hereditary Artinian Ring</h3><p>Hereditary Artinian ring 十分的重要(因为简单 0.0), 一般一个概念加上 Artinian 条件就会变得特别简单, 例如 Artinian commutative domain is field.</p>
+<p>设 $J = rad R$ 为环 $R$ 的 Jacobison radical. 若 $R$ 是 Artinian ring. 以下结论等价:</p>
+<ol>
+<li>$R$ is right hereditary.</li>
+<li>$J$ 作为右 $R$-模是投射的.</li>
+<li>对任意幂等元 $e$, $eJ$ 是投射右 $R$-模.</li>
+<li>$R$ 的任意极大右理想都是投射右 $R$-模.<blockquote>
+<p>证明难度还是有的, 要用到任意有限生成 Artinian 模都是有限长的.</p>
+</blockquote>
+</li>
+</ol>
+<p>例子:</p>
+<p>设 $R$ 是 divison ring $D$ 上的 $n \times n$ 上三角矩阵全体, 则 $R$ 是 hereditary Artinian ring.</p>
+<h3 id="Trace-Ideal"><a href="#Trace-Ideal" class="headerlink" title="Trace Ideal"></a>Trace Ideal</h3><p>Definition: 对任意 $P_R$, 定义 $tr(P) = \sum im(f)$ 其中, $f$ 跑遍 $P^{\star}$. 容易看出 $T = tr(P)$ 是 $R$ 的理想, 称为 Trace Ideal. 它满足:<br>若 $P_R$ 是投射的, 则 $PT = P, T^2 = T, ann(P) = ann_r(T)$<br>特别的, 若 $P_R$ 是有限生成投射的, 那么其对偶基 $\lbrace a_i f_i \rbrace_{1\leq i \leq n}$. 那么 $tr(P)$ 可由有限集 $\lbrace f_j(a_i) \rbrace$ 生成.<br>另外,若 $tr(P) = R$, 我们称 $P$ 是生成子.</p>
+<p><strong>引理</strong> 设 $T$ 是交换环 $R$ 的有限生成幂等理想, 则存在幂等元 $e \in R$ 使得 $T=eR$.<br>Proof: 关键在于把 $T$ 写成 $T = \sum_{i=1} ^n Tx_i$</p>
+<p>由上述引理和 $T = Tr(P)$ 的性质, 不难证明下面定理:<br><strong>定理</strong> 设 $P_R$ 是交换环 $R$ 有限生成投射模, 那么存在幂等元 $e$ 使得 $T=Tr(P)=eR, N = ann(P) = (1-e)R$, 特别地, $R = T \otimes N$, 投射模 $P_R$ 是 faithful(忠实的)当且仅当 $T = R$.<br>当 $R$ 无非平凡幂等元时, 则 $P \neq 0$ 是(有限生成投射)生成子. </p>
+<blockquote>
+<p>定理中条件缺一不可, 且幂等元 $e$ 可以根据有限对偶基显式表达出来.</p>
+</blockquote>
+<p>Trace ideal 的应用:<br><strong>引理</strong> 设 $R \subset S$ 是环(不要求交换), 则 $R$ 是 $S_R$ 的直和因子, 当且仅当, $Tr(S_R) = R$.<br>Proof: 若 $R$ 是 $S_R$ 的直和因子, 则 $Tr(S_R) \supset Tr(R_R) = R$, 所以 $Tr(S_R) = R$.<br>若 $Tr(S_R) = R$, 那么存在 $f_i \in S_R^{\star},s_i \in S, (1 \leq i \leq n)$ 使得 $\sum f_i(s_i) = 1$.<br>定义映射 $\lambda: S \to R$ 为: $\lambda(s) = f(s_i s)$. 为环同态, 且在 $R$ 上限制为恒等映射.(因此 $R$ 是 $S_R$ 的直和因子).</p>
+<p><strong>定理</strong> 设 $R \subset S$, 其中 $R$ 是交换环, $S$  是 f.g. 右 $R$-模. 则 $R$ 是 $S_R$ 的直和因子.<br>Proof: 由$ann(S_R) = 0$, 在由上面引理即证。</p>
 ]]></content>
       <tags>
         <tag>Math</tag>
       </tags>
   </entry>
   <entry>
-    <title>2017横店马拉松</title>
+    <title>2017 横店马拉松</title>
     <url>/hengDianMarathon2017/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <div class="hbe-input-container">
   <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">日常表白zly</label>
+    <label for="hbePass">日常表白 zly</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="b6f61ba578a5336ce9f4251fd29298f2550c3832260f5189c8294bc297810611">8093df5e2319a4b0edbf4887dbf55f198143317eba565d360d12319fd48fe09b105828b01059fdaf53ff815585162107a576fb0c7611384858d12486ebb0aa215604f4c91a263662f1318d1d687d7ce03a03e0aaa56f6f87f1771462b6b6422221f24e6450e47b130aa2861a325822a581030a03a4b59cfb266b1a042aed4c9c1093d3aa0ea3e8cfe6b70b0ff73621a7a876d4a769125f9d6378d21b2c96fd6651b00621dbb06bc72865039287dd415f2cff83b82bf531c778fcdad9dd9c0a73c070c4a376ca57a2b1422581da79ca6b7bb92116289a8e955c8e757ee25d185e778b04d38b1133cb8ad97738815b3a42b0faf685e41ea72d53cc7c5eeb472595d096906da2412bb0d7fceb117109973efce38ecd5c9316db5183967194cae548f829e67bbd3efd784ffe14c4e0cc9e19f541b47463eaf040a1c579b0d000db8d6ad1ae460fc34672bcdb6b80a7470e5542d599c69b24fa778f3f7e5d0f4776ea7e0f38d1ca3b062c88b2c2883cc5928a0a43f72bdb6efbdf5de138d173ade52374f90fcc9a7d53674b5f52692800a2b77c884c0a5274ad0a5003d9bdbc0696b08e3ddaaf975abdf886ef6c5735552b6b524ac8a17cf41e1e05ea3a5c6c3a09c0da4b24dad299bda628100172203542d908b765c95255835f84316e3eec64135f62e1d784a9608516c980d94c099375200ba753f067cf91f4eb60ee1806ba0b89336d2ee0596dffe2b4c46f54a6ea3e805850ed9b6da1ac578aeeb5e268289e1071d5b22813e05e9c5af988bb7be3b8f728af694d317f0bfa218e413efd874e3165330e0f6db5d77c88107dd18ccb5fc37a1061719cb614da91a0b44864508e1afe90f5ff58c55d47e9194302dc713bfedb9b3d5b414f6eb918bbcb32c280838cb2535a3a2f570be83e94ba50f933490647d3f2a89c67ab291c4f48ca4a73711e5306c644f3e03ea3891690183c6cdd2d06c2ff703dc0cae2faa71dbe843e725c0486b632b9b7456f88df9107c3176b55ffdf4563dbbf4cf5aae1889b876cea242be79a538afc5fd23e1772c5e713f89299e559a1a376f19b197fa25c3aa5bd04b260f4ab4ee1e0fc58b3d41002b718735f81f5f8537108ecfad63fd2f670be3b88a71c3a77ea85dba7759b4fb073b620aaa07adaee8ff1b210df8eb8cac16bcaf2509e8986b069241bf2b4b0485fb37b8fbdd11740d6ca61a8680215d7c0fcf23f5186b22ed875ecfada9a09378bacbb27c2fb738e2363afdb5b176b4e611ab83f440ad10ae8e7e9ea42cbb06ab2eea9dd2101d5887010a79f457ccbde4fdb1a73664f29102571fe1a2a1a2f4b50fbcc54ce4f2cbcb5a748d81e700e55acdfcdccfa3fa69cdbe2ba3017d73b8e5ea122bbc88d7c17b78eb90a5e8859d613d2bd8d6caea5e4e112dfc1a4446aa494d5356a27254ca1880c7e3c797ffa56ba8aa40bb292cd0574da1aaa5a268341eb75ad318def49f1251e92cd52a69a6660d39052fe084cd6d25cdf734f9f9216ffe488dedb84f210ddc5a6af1545935866d0d98ec83b893ef83b1e879e5f4b01aaffc3f32b80c207e0e11f1468f555a95e597151432f3c8213bb008e2f3c642896a8d0eca19d8ee3293e6375a26068b54084f5b5897320df77974115a642cea5edcaf08822d5513a7be041ef108dde0e14e3195824ad397bfefdcc4a356bddab36711e9de043fd89257b3f6ccfed14ef15e9d0766adc2aa7962d71ea742a9f6b978a988cfc3dd111253b273fe1fadbcd6bc8c09bff5efd2136f23252ff1a905b4a880ffddb7633d81be495fb5c7860fda6b00e83ef88cd17eb1dc994aed40c516f9ffcc5d283151aab3fb569e43e704f9c35b922440d4de6e391f70d54f7b80e819aebde434996a7bea4c94f8cdf0aea313d7805127dab03fbe32f89c32e9e6b862bf6b97b76bb1b87e2c15776ae8692616618af03d7ab4325841b4d2e15f74fa5e74e8705539dd857f67cada8e8e858691f412d6f510618844838c270b53aea14c3803e6c89a91e74ec9333d255fd779f4fcb34e052db0c513f9c79907334f64ca300a53de34941212fa1ec86c67edeaad78c0ed588ae9cd38461bf96e34e35f80b77a0000329323ed441b8089661c6fd16ab0d89f4fc0f33ac95e03fbcdbda86f1659f76602e0bfa1b8d5c1bb246b83d6d8c0304055d40359fa280543bd6852152067d149c2ff3b124151c51360614baafd7394974da01e71c67df49af133fbeb77e72602f610d095bd56b28c2f6929c66236de30808abb599325169c4b2b608ee6b144f47ecc7fa40a2581e38376a7fc3bd626a5497fa5a23ad0023bea3e8f2c73c246f2165ca0082f29fb2e77307ffee011e8d442f38d4a8c4de9c190db00c07f4dd72d04248dcbbe071424ae66e489bab6b83aecf99b87c1ebcdf79469b42d0180f2ad811118268ea92829f56124340564fa59c356b6e0135f52a5b3b5851e35dd8cb7fc19a041814deb342dfd906d6a5e167cfde4a556bfc85e205da17f0d69956fb5af91f902b50d2956f79793719c8906a711b408d8906d89a2a0958edc2caa8ac1749e67935bf1c0c85f93f1a47a423adfa6ddc206725357192196ecdf9e5dd029b30b390a63b7116b4bf9c62ae6ea2f81db06274c1f7c3826ac139cd4a10039b745f11977fbf388bc0a83aadacf2e5b5d53fe026815e1bbf826ef359d3cfc99585ca11658ddf87b971a0662ea3c43ef1f04b3238faa96e63dfdd5067bf1318808b7a3d740de63ee04bcd756f53c95157af6fd878adacae416e20d77ad494f92ba342ebd6694ec6b408cff870edd42aceddd4c544a7acca1f62706ad544679bda8db0df99c3533e48d08fff7e96d4df0d8ad04f274a4b2d38b222751b3c862aa4de8c50a3059b3d19fde5c95c1e9407bba47337e6b224e52a9b7a091a1f45edd1689d2cce5bd8a5b4b95a49378a8211967ee7c26f6c4127281133fa99155a61bc7c24f33d39bce57a14bee1e5926d47f386b0b83b45a92771c462a1f12dbb2fc1b4bd548f4931908a96fb7aae9897005383dfae90ed052dddf916ac1ef5f3a6ef49b30f5d77ff32331605e761964d259a4c4810a80d5d918da0cdb20a5113d95a4e9657591bdde271f100bd16b40d0a65cd0b9337b63395166b4d25bd87dca092cbf9e538744ae048e16f5ea07f760273bba9897e66a54525f62781293120436a7c68189bb023838bd50c63a85c426156cb2bb6b39a321f454c156c1a3f75abdb520dab89c2f46ea50765cbbb841dc910e2d1a108363fe7b8b790addf96636b0f3b972890e6d712c7aa1d6e46607d942e4134fe784b9e656b2b1df469f5bc8808b64e7478e3fd25f435ec6a85ebce4985dcec7972a02b9a32e61fbb15baf5801d835f75b7c4c6964d046cf250f25ac652a5c48ce4f6405daf0146f5ecb89d00833d15ecb85acf7fa718566212119ac036310a1303635f14c81e4b04174fef12990258dccf73425af1ada7afb34fcdff68bfd1cb298589946f73b73c42ac0fa7174451dacab65089557eeec6c300fb72240b73a0049fb71baa63105a9c83a7f393b82cecad3128a969214a9e818a6c27a510cf6d838da75dc4a0a0cef6e66de02393f02811c961dc2a899ec286a79af24db299eedd750471b5793ae01477b826ab09311aaf6660a7572126745bde547f8e290e7fdc8854e2e341d69c34bc0fe863734fce5f32569dabc632c896c6d5940bb9cc344daa8fa4151fdde60a3a0294f07dfca74ee29b83899eaab2213e3b817c53210f01ef714aa6a8d7868a27da63c42c89104084e44bc1ac39b0df12cd110f368edfed62cd372791730e592d92e667e0fc215a113a85a678474bfe3954aff0d9c0a42a948dc7cf98d83766e899f5376c777752504cc870f06411c15b1ce9e7fa6a0871e25543cecba9e4f6fc653f37f6991ec580f3b04bf281d783e67fb0634b9508f11d71cc29450edfd01694e71a4a8dd111759396f0b491c9dfb06ec7c436cbd416af995492588404eee5275520e0e3dc641dcaaa02436f1f6b936db99a572551a89473ee8d2526bec7efb19007bb5ec752ee7ffc6a602bf383247393ccdaa18b3e9e65c71e4b3d8d575776ba781bd9733f1a2540f5e37abcb536f6d0d3f4ca54d0d1c0c70c0b4890933f9b3aee84c7b8763af56eab0cde4ddfa41e655823ab2e73cb0c68630ce9b5842ff0538cb1488e53ee23df4b70fa5bb888cf623314dec4e8b4dbca2c134858daa72bcdc8cf0a01b8a27134d17ea0bb181ddc2220cd6506a6477a737f1080c528404083b402903bb894326de4ddf0a2be7768835f60409d1ab878a319d2f6ff38118f80a630bf823f07b08bc16995a769674bfc0d70face742974a86b83b01b8f500e0524cf60055ba8758719a9fb6317f95309cd9efbeb5b4cbd16c5ea2bbaa25727b3163e1ae83d1c5e07f16adcde65d488b0a0ccd33b24d79dc1f7ad4e810f5050847be928a19325112e79cba8dd2345450e5631bfe2260c96e7161bb9539ab21f</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="f23ac8c1235d88f0476c7a3b36b424664b2bcd8fa71cb253588c1aa9ef98f7c6">f4647356fba07bf28b4b6a3e7b03b38f4628766f98ae0424ccbd481648acbe8d8e1a1a201c2ee8266a97cd27c77d0c7ae8343e85c556bc585af85269b33afbc2a1b9f85c50484bd25d762aa292c3e67a1a1e0d6b0eae21d996a3ba75104199754f52cd4fdb5ea7354b80a3f21b708e4072509d0c0737413c01b3b7e6715bd3bc4b4a938c6354736f246d21daa1e82838e1e3dbf36d43a9b90ceff1eb11e6966db9f3e694537b41fc46555bd4523491be08cb99295c142442ef0982d91f96ce75543494d7ebfade9e020b9284a6ccde05891807db3913bb3442b1f2ad9a5b7271956b0bfd6325db5e4c63348a53203fc6129fb5574cce3061b7ed41c9357582966e615c2f17ba12376ad721c011e9f926906c193fc0fb2bb6fb5e32c923be676ffa83cb51223d88b860c139c4bfec42599c652f1047665dcf11499e0b4f3f5ea75921d73423a7f487fba61ac3ab276da1d532716aa72118646326780caea5d8359342120dddae58da865754729b9d0e39f9dcb568dcf606c224efee88660ac99f53f550fc0257d2b86571dfbafdf8bbd04b2998deb1a67bb0a2394eb60e71a0ba187909c5e7e41cd60239e2dd617174fe2017224c5ef2248f54032175205851693f5ce06232dfc98a6113b2ca128417133883e459c5f02711073345000581f83466fa927bcb54222dda8c569f8ae5916f58374c751dcd17ab303f455ab93bafb69408c9ae6ad3611615ad4b054951eed1352d10614250677d16219fb80823334c10f14238d9bdc2caa52b009be35f496ef1c995b69543c6c4550714e9e30bc357dee92212c874a6812a1160ceb9ca2099e43492bbd212d3c1251b46e2e7ccbbf6128a31c4f040b2c1889ee4aa386b4f14c83f1d6ffa541ca36006b62b354e7acf5d55e84ee8beadd9937316c868d70f6da46509a2c7d7413afea4d614da7a6ba9bf3e30fc5210b67f5395947860d719f48d49061234eaf6ed43f9478f426fedb4a3810b938f189da27b8b76769fb1c7f785275679cde0daabd7b3da613edeba650be3a8b7b01068b7707f009402b92961e94f1529f8766d66416e47000a15482129f16c79d7f5b60b69dc9bbc5384c8364410021f28f9a47630cabf344d2b8bdf30e785cc238565530358b776fd78a329975cfcd9fc5f71c001577b9897c3b05ecd0fb890637b46857682b6b99d83ff16581f003c8603190d1f80292970620b33cbac80a7d80f2f28a4a383e654624ec53ca5e32dcb7b834f152d0ad1d75679ed4e428efee34bf48f85cca17ca680bedde196427f1a1d3abb9793ccbe10e478b7577b2ad0bcd1d166f30491f8764fa9511c4cfe93673f4d5629b31ebc27666024a115ba60deba08cb9d1dd1f79fc168f0011fb4fc9c87e0c22f4bbb9a676ad750c042d22f71714a6cdd8c96a7dcf484657769eac71ba120e560138d8be47f82f0afb4d7b64177136c9cedc3a06642b90ae72f50a0dd004dcb6421305f0963b93670018e2e9c7bacd8e979d8f713603b52722e9680758e0866fcd13a964aef9118525e089e5536af69f96cc31495a1d7b053385b735f2ce2048ce301e414d14b2c2e3183252029620e5d85e3a5a038140b308f20ffc8acae3f9ff03a189bf0f645a261c204ab710ecce3e7e68e7b1970688e04bc9757ec71fcfabe7cb3b9706dbd8145b8f1d68a2cd77d5dcdf8588564709ed5894ff0ed3ab2a5b7d905aa0ddd13840ffb3e807b11125e7d00653339de0d8305b391247847bdfba872609528e2784b4f6283920b650ca0f625d3cbe3a2325e1f31fef03b45d0c6649f3ab2e66a3f91ac4554bfae5ed8847954f3f8728abdf237d1c748ace0cef18bd5ad32eb35430357c8a16be38a4f54b17ceb2eb3a720e3a7d206c5e9ebb7cb1e94444f6e2547fb3082bab2b76fd641f7f4553f730133608c709fb9e5a86322384026c9d381c0f79138f1427cfd773a7782075f64b0eaf7bb11aaa2c29b5544a3746ccf11fa7bc04cf33dc417d6369f8330e27c2248e454abd8efe0067851022d5ce0aeae5a4046132ed033f1bef723c476cb974141a224ebb2556a6d0dbe45d0027b688525d37c48d21859fb5b0275428139d52d0cade210f149fcedca838e20d8c0f7d6633eca25a2052a21d712ef70d9548c08adf0b817346cb22cdd23c27d95170bed2e80a46b2117052b9689780e76d6f865fec29b30f66d2b7fbf771da9ab944c0d772d6c5429305e030cbbb0dc8b613069a16f2e8ded597f88b959134d39bdfc398d4333ed35f3f3fc8326d1a07d5be4610df74ff190ffc32b2dca09bbe262f7b4f0abf788bfa6e001dff1e45d5fd4ab666ffd501b181e3d0791960cd1025d2d174adda1041d1558530c582a17a7b2959b631a383f801e7bd30d1312bbe04b0dd63aead6652725530d9dcbe6f3d41f1a6375e8bc4e86e852082ea73e90063c30587a4cb5ef592714dee050ed8d2fa324eab921c84bf73335bc0da8c3f62e4e02e30e6ae391764fbc4f28f7c3e778caa08c8eada0c51b25724bd452a9729bcf6c562dfa94bab98d0cc4420e5cd0448c637935fbf8eab434e1c767c587c474f7e09bec01458416eb18b3511f917dda8fb4ae8a7a00e2b59af88b9a4412dbaa9b8530ba6140b2f5c527137d3b693f968630493a07f7d9749ade7dea1aa774ccfd1803ec6dea06591b9679b628c5e3431fa3ce612b022a016eacf40837bca0c418758987bc5a8e539087c4c92dc92a14aab72ce3690737a21f67bf63fe9297d954bd1a842cfd038cd7d0d812104ebc49e385848eeb74295181c6e3d39c38f9e80bcb426646e1fe94ad69847a5540a557cea96a6dad7ac62e35dea7dc92db075d0cdbd2139c3653128d66bdd89427cacaa3d0e42ec4bdad83a72bc19a7881e029a3485b6a0f6c2899d800fbf3dc71cabb66857afa887c3a795fe4af2453fc95676d497fe21b5ad205fd4eef5440419294a3a660062dcd962667da541d02fbc2f3fd00468a596972afc00223c5b8bea33a52d8c0db0384b659840883dacd6e5b6f610890d496cc67a357ab966a5e7a62b00c5817f18f4072d897b8363018a35ca7eb07caa826449ae4541550b3502d74c09d8b92075f88c9c9a467ca00e3ecc8a3e5095531a87a7f290a1540d2aa6a4292e2385da8b007bd89e9dac231a53eb03dcaeb863a262067d40b2d34fc1d5a54f0a579dcba1275848c279fcb64f326caa738b16a88afc18d9573c78b92a9a4ddaacf82aef7379e2961e267817fd6673db46d868e406c593d1be830bc80f6a68e512026952609be28d79acd30c768456d66d8d24839ed92b4907dda0516d349f4ddeef8a2250cd192ee948147036a76ac3716a8672cfcb84e84e423300989601377e388a5d5fb2d287c8487d1deff3102ea307ad2e512b946401060c9d44573fe94a5ef1b9f91477ca6952767e6368ca22268f1d7de61c4f318b53310971336040f006f3e01727e54606305cda2bc7dd3be96d536142a07754d1b93099cd23748c33fea09142b48d30b0e1d0e17771ac3a5cd0f84094e7b939b8fcc804bc1cc6761ec2d44c953b37b65126b3a4d4ac7326fd0db6d039f4ce533f515e48fa1ddc624f0e1ce658a890e593fda448281e3adf01690bb3b2b3b50dbcd29346d1b0d4f51ff7544231547631dce7e20508135ce5d6265fc414614c9d875447a2f40e2deb4ac7c8cc23b03db0b6a92a5fa3957be549b86010c01f7b346ddcc0b9fa4495dc67434585d5e6f8589efaad5eb6aae76af76428d95bf6834223c29494fe34514d5c4efab0e0d851f11d5547a34add0b0d56f8bb488ffaa2ba5810b623781609e5d46cf596c0f1dbfbd890778a1b78e921f0e3f002c7e890015805ce662f810687c30f8c743cba22d9ade687ccb356b5e5f5603eed66fc520c5de53cba5e0fe825085570d31b231f64edfd6f7d15ed49a167d1c57401617a9b29d1fca7845d7890e4f12582d4b882932608a6fff54b205421fbc6d66dd1b183cc3ff08baf67831b6f0531f583eb66ceb8a09c0a1eeea55860432f02308bc380076cadde0f4dc15b065cc2da35ac589f54baf4149745e773101eed709a4821fde73453790760841136e72c58f4393a45e88e01f13212578e7a828a3984e4a2b90a56cffb36bb353116b45551bd16f624efb80b0dc3ec6a1a75ed46eecd1a5710046de618751bcaed877fe1d484cbc4a7840194eb884fd555031f3312251c9b6656af0ac2cbd2a96034aa694053ca4c72b8819ccb9881a38100184c22f9f7d7f2de92457430fd32f74c31e16ce969fb571597240d380d39d82ab6f31535f6e4b537a757255b69bf011c99b4a938d4347d11e981e8990db6410a082a52a5fdd38d4e27642d3abead5509b0e6c9543df00f0765425bbf9bf2d44f830e8f0d09bd2442dcaedd0781acebac3e76c2159ed07f7318bfd0948c78fda776bd892a60dc292c31c6e829fe6fef8b1484fbd1117fcf7abeae43dc7f518b97efd6a9b0278b2b703447be1d9f730a421e8da19fc6310030729b38468cfc99ed1b1cb863059c6e846f203b3b1da912ea94a6901af</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
@@ -3590,7 +3604,7 @@ x_1 ^ n + x_2 ^n + \cdots + x_n ^n  = 0
 x_1 ^ 2 t_1  + x_2 ^ 2 t_2 + \cdots + x_r ^2 t_r= 0 \\ 
 \cdots  \\ 
 x_1 ^ r t_1 + x_2 ^r t_2 + \cdots + x_r ^r t_r = 0 
-\end{cases}</script><p>其中 $x_i$ 互不相同，那么，假设$r&gt;1$则由 Vandemode 行列式不为0知，$t_i = 0$ 矛盾，因此$r=1$， 此时$x_i=0$。</p>
+\end{cases}</script><p>其中 $x_i$ 互不相同，那么，假设 $r&gt;1$ 则由 Vandemode 行列式不为 0 知， $t_i = 0$ 矛盾，因此 $r=1$， 此时 $x_i=0$。</p>
 </li>
 <li><p>$C=AB-BA$ 且 $AC=CA$ 则，$C$ 幂零。</p>
 <script type="math/tex; mode=display">
@@ -3610,23 +3624,23 @@ x_1 ^ r t_1 + x_2 ^r t_2 + \cdots + x_r ^r t_r = 0
     <url>/kaplanskyTheorem/</url>
     <content><![CDATA[<p>(非交换)环中有一个有趣的（Kaplansky）定理说：</p>
 <blockquote>
-<p>如果环$R$中元素 $a$ 有不止一个右逆，那么 $a$ 有无数多个右逆。</p>
+<p>如果环 $R$ 中元素 $a$ 有不止一个右逆，那么 $a$ 有无数多个右逆。</p>
 </blockquote>
 <p><strong>像极了出轨只有零次，或者无数次。</strong></p>
 <a id="more"></a>
 <blockquote>
 <p>(Kaplansky) Suppose an element $a$ in a ring $R$ has more than one right inverse. Show that $a$ has infinitely many right inverses.</p>
 </blockquote>
-<h2 id="Kaplansky-若环-R-中元素-a-有不止一个右逆，那么它有无数个右逆。"><a href="#Kaplansky-若环-R-中元素-a-有不止一个右逆，那么它有无数个右逆。" class="headerlink" title="(Kaplansky) 若环 $R$ 中元素 $a$ 有不止一个右逆，那么它有无数个右逆。"></a>(Kaplansky) 若环 $R$ 中元素 $a$ 有不止一个右逆，那么它有无数个右逆。</h2><p>证明：（反证法）设 $a$ 的所有右逆构成的集合为 $A = \lbrace x \in R | ax=1 \rbrace$.</p>
+<h2 id="Kaplansky-若环-R-中元素-a-有不止一个右逆，那么它有无数个右逆"><a href="#Kaplansky-若环-R-中元素-a-有不止一个右逆，那么它有无数个右逆" class="headerlink" title="(Kaplansky) 若环 $R$ 中元素 $a$ 有不止一个右逆，那么它有无数个右逆"></a>(Kaplansky) 若环 $R$ 中元素 $a$ 有不止一个右逆，那么它有无数个右逆</h2><p>证明：（反证法）设 $a$ 的所有右逆构成的集合为 $A = \lbrace x \in R \mid ax=1 \rbrace$.</p>
 <p>若 $A$ 有限，不妨设 $A = \lbrace x_1,x_2,\cdots,x_n \rbrace, (n&gt;1)$ , 则</p>
 <script type="math/tex; mode=display">
-a(1- x_i a + x_1) = a-(a x_i) a + a x_1 = 1</script><p>并且, 若 $1-x_ia+x_1=1-x_ja+x_1,$即$x_i a=x_ja,$ 那么$x_i=x_i(ax_i)=(x_j a)x_j$,也就是说   </p>
+a(1- x_i a + x_1) = a-(a x_i) a + a x_1 = 1</script><p>并且, 若 $1-x_ia+x_1=1-x_ja+x_1$, 即 $x_i a=x_ja,$ 那么 $x_i=x_i(ax_i)=(x_j a)x_j$, 也就是说   </p>
 <script type="math/tex; mode=display">
-A = \lbrace x_1,x_2,\cdots,x_n \rbrace =  \lbrace 1- x_1 a + x_1,1- x_2 a + x_1,\cdots,1- x_n a + x_1 \rbrace</script><p>所以存在 $k$使得 $1- x_k a + x_1 = x_1$，即 $x_ka=1$ 所以对任意$1 \leq i \leq n$,</p>
+A = \lbrace x_1,x_2,\cdots,x_n \rbrace =  \lbrace 1- x_1 a + x_1,1- x_2 a + x_1,\cdots,1- x_n a + x_1 \rbrace</script><p>所以存在 $k$ 使得 $1- x_k a + x_1 = x_1$，即 $x_ka=1$ 所以对任意 $1 \leq i \leq n$,</p>
 <script type="math/tex; mode=display">
-x_i = (x_k a)x_i = x_k(a x_i) = x_k</script><p>即所有 $x_i$都相同，矛盾与 $A$中元素个数大于1，证毕。</p>
-<h2 id="等价叙述：-如果环-R-中元素-a-有右逆而没有左逆，那么-a-有无穷多个右逆。"><a href="#等价叙述：-如果环-R-中元素-a-有右逆而没有左逆，那么-a-有无穷多个右逆。" class="headerlink" title="等价叙述： 如果环$R$中元素$a$有右逆而没有左逆，那么$a$有无穷多个右逆。"></a>等价叙述： 如果环$R$中元素$a$有右逆而没有左逆，那么$a$有无穷多个右逆。</h2><blockquote>
-<p>通俗的讲就是，如果你喜欢一个不喜欢你的人，那你不仅仅喜欢这个人。</p>
+x_i = (x_k a)x_i = x_k(a x_i) = x_k</script><p>即所有 $x_i$ 都相同，矛盾与 $A$ 中元素个数大于 1，证毕。</p>
+<h2 id="等价叙述：-如果环-R-中元素-a-有右逆而没有左逆，那么-a-有无穷多个右逆"><a href="#等价叙述：-如果环-R-中元素-a-有右逆而没有左逆，那么-a-有无穷多个右逆" class="headerlink" title="等价叙述： 如果环$R$中元素$a$有右逆而没有左逆，那么$a$有无穷多个右逆"></a>等价叙述： 如果环$R$中元素$a$有右逆而没有左逆，那么$a$有无穷多个右逆</h2><blockquote>
+<p>通俗的讲就是，如果你喜欢一个不喜欢你的人，那你不仅仅只喜欢这个人。</p>
 </blockquote>
 ]]></content>
       <tags>
@@ -3745,7 +3759,7 @@ V(S)=\lbrace (a_1,a_2,\cdots,a_n) \in k^n | f(a_1,a_2,\cdots,a_n) = 0 , \forall 
 <li>谁无法按照规则取石子，谁就是输家</li>
 </ol>
 <p>首先抛开问题，我们先从一般的入手。</p>
-<p>我们可以用一个 $n$ 元组 $(a_1,a_2,\cdots,a_n)$ 表示一个局面 $S$。显然<strong>改变 $n$ 元组的顺序仍然是一个局面。</strong></p>
+<p>我们可以用一个 $n$ 元组 $(a_1,a_2,\cdots,a_n)$ 表示一个局面 $S$。显然 <strong>改变 $n$ 元组的顺序仍然是一个局面。</strong></p>
 <p>一个局面 $n$ 元局面$(a_1,a_2,\cdots,a_n)$和一个 $m$ 元局面 $(b_1,b_2,\cdots,b_m)$ 之和显然就是一个 $m + n$ 元局面 $(a_1,a_2,\cdots,a_n,b_1,b_2,\cdots,b_m)$。类似的一个局面也可以有多种分解。</p>
 <p>对于局面 $S$，若先行者有必胜策略，则称 “$S$ 胜”；<br>对于局面 $S$，若后行者有必胜策略，则称 “$S$ 负”。</p>
 <p>如果局面 $S$ 胜，则必然存在取子方式 $S \to T$，且 $T$ 负；<br>如果局面 $S$ 负，则对任意取子方式 $S \to T$，有 $T$ 胜。</p>
@@ -4196,44 +4210,44 @@ Y = X_E = \cup_{f \in E} X_f</script><p>是 $Y$ 的一个开覆盖，由于是�
   <entry>
     <title>李代数</title>
     <url>/lieAlgebra/</url>
-    <content><![CDATA[<p>近期在整理 Lie Algebra 课的笔记，还是很喜欢这门课的，主要是本科时候矩阵玩的特别6，然后 Lie Algebra 可以认为是矩阵的推广版本。里面的证明技巧性相当强。我之所以喜欢数学很大程度与数学技巧有关。但是我的导师说，这些虽然很有技巧，但是你花时间都是可以处理的，会技巧没什么了不起，脑袋稍微好一点就能做这种事，长期技巧的训练其实意义并不大，应该更关注数学内部的东西，具体说就是一个代数对象的结构，分类，不变量，对象之间的同构。一个概念有哪些等价形式，与其它概念之间的关系，搞清楚这些更为重要，它们的证明只要大致知道怎么过来的就行。我们并不要把证明的细节放在心中，因为我们已经经过了多年的训练，相信我们通过大致步骤就能给出详细的证明，只是花的时间多少罢了。当然初学一个东西，去抠它的细节是无可厚非的。<br><strong>以上纯属废话 0.0</strong></p>
+    <content><![CDATA[<p>近期在整理 Lie Algebra 课的笔记，还是很喜欢这门课的，主要是本科时候矩阵玩的特别 6，然后 Lie Algebra 可以认为是矩阵的推广版本。里面的证明技巧性相当强。我之所以喜欢数学很大程度与数学技巧有关。但是我的导师说，这些虽然很有技巧，但是你花时间都是可以处理的，会技巧没什么了不起，脑袋稍微好一点就能做这种事，长期技巧的训练其实意义并不大，应该更关注数学内部的东西，具体说就是一个代数对象的结构，分类，不变量，对象之间的同构。一个概念有哪些等价形式，与其它概念之间的关系，搞清楚这些更为重要，它们的证明只要大致知道怎么过来的就行。我们并不要把证明的细节放在心中，因为我们已经经过了多年的训练，相信我们通过大致步骤就能给出详细的证明，只是花的时间多少罢了。当然初学一个东西，去抠它的细节是无可厚非的。<br><strong>以上纯属废话 0.0</strong></p>
 <a id="more"></a>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>交换环 $K$ 上的模 $L$，以及一个运算 $L \times L \to L,(x,y) \mapsto [x,y]$ 称为 $x,y$ 的 Lie 括号，或交换子，并称 $L$ 是 $K$ 上的 Lie Algebra，如果满足如下公理。<br>L1. $[\cdot,\cdot]$ 是双线性的；<br>L2. $[x,x]=0$ 对任意 $x \in L$ 成立；<br>L3. $[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0$ (Jacobi 恒等式)</p>
-<p>若$[L,L]=0$ 则上面结论显然成立，此时称为 Abelian Lie Algebra。</p>
+<p>若 $[L,L]=0$ 则上面结论显然成立，此时称为 Abelian Lie Algebra。</p>
 <blockquote>
-<p>我们通常并不考虑 Abelian Lie Algebra。并且要求交换环 $K$ 是域 $F$，很多时候还要求$F$是特征为0的代数闭域，另外我们大多考虑 $L$ 是 $F$ 上的有限维线性空间。</p>
+<p>我们通常并不考虑 Abelian Lie Algebra。并且要求交换环 $K$ 是域 $F$，很多时候还要求 $F$ 是特征为 0 的代数闭域，另外我们大多考虑 $L$ 是 $F$ 上的有限维线性空间。</p>
 </blockquote>
-<p>子，理想，商，同态，表示等一系列的概念和其它代数结构几乎一致。可以划入范畴中。另外单，半单，Radical等这些概念也于环里面的类似，就不赘述了。</p>
-<h2 id="样板-Lie-Algebra"><a href="#样板-Lie-Algebra" class="headerlink" title="样板 Lie Algebra"></a>样板 Lie Algebra</h2><p>若 $V$ 是 $F$ 上有限维线性空间，$End V$ 表示 $V$ 到 $V$ 的线性变换全体按照元素的复合构成了 $F$ 上的线性空间且$\dim End V = (\dim V)^2$。也构成了 $ End V$ 是一个结合$F$-代数。而任何结合代数都可以诱导一个 Lie 代数： $[x,y]=xy-yx$ 。为了强调Lie结构，我们用 $\mathbb{gl}(V)$ 代替 $End V$，称为 general linear algebra。它在 Lie 代数中充当的角色很类似于置换群在群中的角色。我们知道半单Lie代数同构于$\mathbb{gl}(V)$ 的一个子Lie代数。</p>
-<h2 id="导子和伴随表示"><a href="#导子和伴随表示" class="headerlink" title="导子和伴随表示"></a>导子和伴随表示</h2><p>我们称一个 $F-$代数 $A$（可以非结合）也可以借助导子(derivation)诱导一个Lie代数，称一个导子是指一个线性映射 $\delta: A \to A$ 满足 $\delta(ab)=\delta(a)b+a\delta(b)$。易知导子 $Der A$ 全体构成了 $End A$ 的一个子空间，由于 $[\delta,\delta’] \in Der A$，因此 $Der A$ 构成了 $\mathbb{gl}(V)$的一个子Lie代数。<br>由于Lie代数 $L$ 也是 $F-$代数,因此我们也可以定义 $Der L$。这里的导子本质上就是Jacobi恒等式的变形。<br>定义 $ad_x: L \to L,y \mapsto [x,y]$，实际上 $ad_x \in Der L$。$L \to Der L,x \mapsto ad_x$ 称为 $L$ 的伴随表示(adiont representation)。</p>
-<h2 id="可解和幂零"><a href="#可解和幂零" class="headerlink" title="可解和幂零"></a>可解和幂零</h2><p>对于给定Lie代数 $L$，我们有理想降链<br>$L^{(0)} = L,L^{(1)}=[L^{(0)},L^{(0)}],\cdots,L^{(i)}=[L^{(i-1)},L^{(i-1)}],\cdots$。若存在 $n$ 使得 $L^{(n)} = 0$ 则称 $L$ 可解(slovable)。</p>
+<p>子，理想，商，同态，表示等一系列的概念和其它代数结构几乎一致。可以划入范畴中。另外单，半单，Radical 等这些概念也于环里面的类似，就不赘述了。</p>
+<h2 id="样板-Lie-Algebra"><a href="#样板-Lie-Algebra" class="headerlink" title="样板 Lie Algebra"></a>样板 Lie Algebra</h2><p>若 $V$ 是 $F$ 上有限维线性空间，$End V$ 表示 $V$ 到 $V$ 的线性变换全体按照元素的复合构成了 $F$ 上的线性空间且$\dim End V = (\dim V)^2$。也构成了 $ End V$ 是一个结合$F$-代数。而任何结合代数都可以诱导一个 Lie 代数： $[x,y]=xy-yx$ 。为了强调 Lie 结构，我们用 $\mathbb{gl}(V)$ 代替 $End V$，称为 general linear algebra。它在 Lie 代数中充当的角色很类似于置换群在群中的角色。我们知道半单 Lie 代数同构于 $\mathbb{gl}(V)$ 的一个子 Lie 代数。</p>
+<h2 id="导子和伴随表示"><a href="#导子和伴随表示" class="headerlink" title="导子和伴随表示"></a>导子和伴随表示</h2><p>我们称一个 $F-$代数 $A$（可以非结合）也可以借助导子(derivation)诱导一个 Lie 代数，称一个导子是指一个线性映射 $\delta: A \to A$ 满足 $\delta(ab)=\delta(a)b+a\delta(b)$。易知导子 $Der A$ 全体构成了 $End A$ 的一个子空间，由于 $[\delta,\delta’] \in Der A$，因此 $Der A$ 构成了 $\mathbb{gl}(V)$的一个子 Lie 代数。<br>由于 Lie 代数 $L$ 也是 $F$-代数,因此我们也可以定义 $Der L$。这里的导子本质上就是 Jacobi 恒等式的变形。<br>定义 $ad_x: L \to L,y \mapsto [x,y]$，实际上 $ad_x \in Der L$。$L \to Der L,x \mapsto ad_x$ 称为 $L$ 的伴随表示(adiont representation)。</p>
+<h2 id="可解和幂零"><a href="#可解和幂零" class="headerlink" title="可解和幂零"></a>可解和幂零</h2><p>对于给定 Lie 代数 $L$，我们有理想降链<br>$L^{(0)} = L,L^{(1)}=[L^{(0)},L^{(0)}],\cdots,L^{(i)}=[L^{(i-1)},L^{(i-1)}],\cdots$。若存在 $n$ 使得 $L^{(n)} = 0$ 则称 $L$ 可解(slovable)。</p>
 <ol>
 <li>若$L$ 可解，$L$ 的子代数和同态像可解</li>
 <li>$I$ 是 $L$ 的可解理想，若 $L/I$ 可解，则 $L$ 可解。</li>
 <li>$I,J$ 是 $J$ 的可解理想，则 $I+J$ 也是。</li>
 </ol>
-<p>由上述性质可知，$L$ 有唯一的极大可解理想。即为 $Rad L$,若 $Rad L =0$ 则称之为<strong>半单</strong>的，等价于 $L$ 无非零Abelian理想(充分性显然，必要性是因为 $Rad L$ 可解，考虑最后一个非0项必然是Abelian理想矛盾)。另外 我们称 $x \in End V$ 半单，若 $x$ 的极小多项式无重根。</p>
-<p>对于给定Lie代数 $L$，我们有理想降链<br>$L^0 = L,L^1=[L,L^0],\cdots,L^i=[L,L^{i-1}],\cdots $。若存在 $n$ 使得 $L^{n} = 0$ 则称 $L$ 幂零(nilpotent)。</p>
+<p>由上述性质可知，$L$ 有唯一的极大可解理想。即为 $Rad L$,若 $Rad L =0$ 则称之为<strong>半单</strong>的，等价于 $L$ 无非零 Abelian 理想(充分性显然，必要性是因为 $Rad L$ 可解，考虑最后一个非 0 项必然是 Abelian 理想矛盾)。另外 我们称 $x \in End V$ 半单，若 $x$ 的极小多项式无重根。</p>
+<p>对于给定 Lie 代数 $L$，我们有理想降链<br>$L^0 = L,L^1=[L,L^0],\cdots,L^i=[L,L^{i-1}],\cdots $。若存在 $n$ 使得 $L^{n} = 0$ 则称 $L$ 幂零(nilpotent)。</p>
 <ol>
 <li>若$L$ 幂零，$L$ 的子代数和同态像幂零。</li>
 <li>若 $L/Z(L)$ 幂零。则 $L$ 幂零。</li>
-<li>若 $L$ 幂零且非0，则 $Z(L) \neq 0$。</li>
+<li>若 $L$ 幂零且非 0，则 $Z(L) \neq 0$。</li>
 </ol>
-<p>显然由于 $L^{(i)} \subset L^i$ 因此幂零一定可解，但是反之则不尽然，例如 $\mathbb{gl}(V)$ 中对应的上三角矩阵全体构成的Lie代数。由Lie定理的推论知：</p>
+<p>显然由于 $L^{(i)} \subset L^i$ 因此幂零一定可解，但是反之则不尽然，例如 $\mathbb{gl}(V)$ 中对应的上三角矩阵全体构成的 Lie 代数。由 Lie 定理的推论知：</p>
 <blockquote>
 <p>$L$ 可解的充要条件是 $[L,L]$ 幂零。 </p>
 </blockquote>
-<h3 id="ad-nilpotent"><a href="#ad-nilpotent" class="headerlink" title="ad-nilpotent"></a>ad-nilpotent</h3><p>$L$ 是一个Lie代数，$x \in L$, 称 $x$ ad-nilpotent 是指 $ad_x$ 幂零。<br>易知若 $x$ 幂零，则 $ad_x$ 幂零，但是反之不尽然。然而我们有<strong>Engel 定理</strong>：</p>
-<h4 id="L-幂零当且仅当-ad-L-幂零。"><a href="#L-幂零当且仅当-ad-L-幂零。" class="headerlink" title="$L$幂零当且仅当$ad L$ 幂零。"></a>$L$幂零当且仅当$ad L$ 幂零。</h4><h3 id="一些重要结果"><a href="#一些重要结果" class="headerlink" title="一些重要结果"></a>一些重要结果</h3><p>这里罗列一些定理实际上就是搞清楚 Lie 代数中的一些问题和一些好的性质。</p>
-<p><strong>THM1</strong>. 设 $L$ 是 $\mathbb{gl}(V)$ 的子代数($L$ 中的元素可理解为矩阵)，$V$ 是有限维的，若 $L$ 中元素都幂零，则存在 $v \in V$ 使得 $L(v) = 0$.<br>上面结果是讲，$L$中元素都幂零，则 $L$ 有公共的$0$ 特征向量。证明是很有技巧性的。构造一个 codemension 为1的子代数，并证明它是 $L$ 不变子空间。然后数学归纳法完成证明。上面定理还说明我们可以取定一组基使 $L$ 同时严格上三角。</p>
+<h3 id="ad-nilpotent"><a href="#ad-nilpotent" class="headerlink" title="ad-nilpotent"></a>ad-nilpotent</h3><p>$L$ 是一个 Lie 代数，$x \in L$, 称 $x$ ad-nilpotent 是指 $ad_x$ 幂零。<br>易知若 $x$ 幂零，则 $ad_x$ 幂零，但是反之不尽然。然而我们有 <strong>Engel 定理</strong>：</p>
+<h3 id="L-幂零当且仅当-ad-L-幂零"><a href="#L-幂零当且仅当-ad-L-幂零" class="headerlink" title="$L$幂零当且仅当$ad L$ 幂零"></a>$L$幂零当且仅当$ad L$ 幂零</h3><h2 id="一些重要结果"><a href="#一些重要结果" class="headerlink" title="一些重要结果"></a>一些重要结果</h2><p>这里罗列一些定理实际上就是搞清楚 Lie 代数中的一些问题和一些好的性质。</p>
+<p><strong>THM1</strong>. 设 $L$ 是 $\mathbb{gl}(V)$ 的子代数($L$ 中的元素可理解为矩阵)，$V$ 是有限维的，若 $L$ 中元素都幂零，则存在 $v \in V$ 使得 $L(v) = 0$.<br>上面结果是讲，$L$ 中元素都幂零，则 $L$ 有公共的 $0$ 特征向量。证明是很有技巧性的。构造一个 codemension 为 1 的子代数，并证明它是 $L$ 不变子空间。然后数学归纳法完成证明。上面定理还说明我们可以取定一组基使 $L$ 同时严格上三角。</p>
 <p><strong>THM2</strong>. 若 $L$ 幂零，$K$ 是 $L$ 的非零理想,则 $K \cap Z(L) \neq 0$</p>
 <p><strong>THM3</strong>. 设 $L$ 是 $\mathbb{gl}(V)$ 可解子代数，$V$ 是有限维的，则存在 $L$ 存在公共特征向量。</p>
 <p>上面定理还说明我们可以取定一组基使得 $L$ 同时上三角。</p>
 <p><strong>THM4</strong>. 若 $x \in EndV$，则存在唯一的分解 $x = x_s+x_n$，其中 $x_s$ 是半单的， $x_n$ 是幂零的，且 $x_s,x_n$ 都能表示成 $x$ 的无常数项的多项式。将其称之为 Jordan-Chevally 分解。</p>
-<p><strong>THM5</strong>. 若 $x$ 半单，则 $ad_x$ 半单。若 $x=x_s+x_n$是Jordan-Chevally 分解，则 $ad_x = ad_{x_s} + ad_ {x_n}$  也是。$Der A$ 包含其元素的 半单部分和幂零部分。</p>
+<p><strong>THM5</strong>. 若 $x$ 半单，则 $ad_x$ 半单。若 $x=x_s+x_n$ 是 Jordan-Chevally 分解，则 $ad_x = ad_{x_s} + ad_ {x_n}$  也是。$Der A$ 包含其元素的 半单部分和幂零部分。</p>
 <p><strong>THM6</strong>. $A \subset B \subset End V $，令 $M = \lbrace x \in \mathbb{gl}(V) \mid [x,B] \subset A\rbrace$。若 $x \in M$ 满足，$Tr(xy)=0$ 对任意 $y\in M$ 成立，则 $x$ 幂零。</p>
 <p><strong>THM7</strong> $L \subset \mathbb{gl}(V)$，$V$ 是有限维的, 则 对任意 $x \in [L,L],\;y \in L$ 有 $Tr(xy)=0$ 当且仅当 $L$ 可解。</p>
-<p><strong>THM8</strong> 设 $L$ 是Lie代数，对任意 $x \in [L,L],\;y \in L$ 有 $Tr(ad_x ad_y)=0$ 则 $L$ 可解。</p>
+<p><strong>THM8</strong> 设 $L$ 是 Lie 代数，对任意 $x \in [L,L],\;y \in L$ 有 $Tr(ad_x ad_y)=0$ 则 $L$ 可解。</p>
 <p><strong>THM9</strong> 若 $L$ 是半单的，则 $L$ 可唯一写成单子理想的直和且$L=[L,L],Z(L)=0$ 且 $L$ 的理想和同态像都是半单的。</p>
 <p><strong>THM10</strong> $ad L$ 是 $Der L$ 的理想，且若 $L$ 是半单的，则 $ad L = Der L$。</p>
 <h2 id="To-be-continue"><a href="#To-be-continue" class="headerlink" title="To be continue"></a>To be continue</h2>]]></content>
@@ -4242,9 +4256,9 @@ Y = X_E = \cup_{f \in E} X_f</script><p>是 $Y$ 的一个开覆盖，由于是�
       </tags>
   </entry>
   <entry>
-    <title>矩阵的Jordan分解</title>
+    <title>矩阵的 Jordan 分解</title>
     <url>/jordanDecompositionOfMatrix/</url>
-    <content><![CDATA[<p>最近在整理李代数（Lie Algebra） 内容时，里面提到了Jordan分解，这里就详细介绍并证明几个相关结果。</p>
+    <content><![CDATA[<p>最近在整理李代数（Lie Algebra） 内容时，里面提到了 Jordan 分解，这里就详细介绍并证明几个相关结果。</p>
 <ol>
 <li>若矩阵 $A,B$ 可交换，则它们有公共特征向量。</li>
 <li>若矩阵 $A,B$ 可以对角化，则它们可以同时对角化，当且仅当 $A,B$ 交换</li>
@@ -4252,22 +4266,23 @@ Y = X_E = \cup_{f \in E} X_f</script><p>是 $Y$ 的一个开覆盖，由于是�
 </ol>
 <a id="more"></a>
 <p>下面证明这三个结果并给出说明其意义。</p>
-<h2 id="若矩阵-A-B-可交换，则它们有公共特征向量。"><a href="#若矩阵-A-B-可交换，则它们有公共特征向量。" class="headerlink" title="若矩阵 $A,B$ 可交换，则它们有公共特征向量。"></a>若矩阵 $A,B$ 可交换，则它们有公共特征向量。</h2><p><strong>证明</strong>：我们设 $V$ 为 $n$ 阶列向量全体。设 $\lambda$ 为 $B$ 的一个特征值。设 </p>
+<h2 id="若矩阵-A-B-可交换，则它们有公共特征向量"><a href="#若矩阵-A-B-可交换，则它们有公共特征向量" class="headerlink" title="若矩阵 $A,B$ 可交换，则它们有公共特征向量"></a>若矩阵 $A,B$ 可交换，则它们有公共特征向量</h2><p><strong>证明</strong>：我们设 $V$ 为 $n$ 阶列向量全体。设 $\lambda$ 为 $B$ 的一个特征值。设 </p>
 <script type="math/tex; mode=display">
 W = \lbrace x \in V \mid Bx = \lambda x \rbrace</script><p>则对任意 $x \in W$,</p>
 <script type="math/tex; mode=display">
 B(Ax) = A(Bx)=A(\lambda x)=\lambda(Ax)</script><p>即 $Ax \in W$。即 $W$ 是 $A$ 的不变子空间，因此，$A$ 在 $W$ 中有特征值 $\mu$ 对应的特征向量 $v$ 即为所求。</p>
-<h2 id="若矩阵-A-B-可以对角化，则它们可以同时对角化，当且仅当-A-B-交换"><a href="#若矩阵-A-B-可以对角化，则它们可以同时对角化，当且仅当-A-B-交换" class="headerlink" title="若矩阵 $A,B$ 可以对角化，则它们可以同时对角化，当且仅当 $A,B$ 交换."></a>若矩阵 $A,B$ 可以对角化，则它们可以同时对角化，当且仅当 $A,B$ 交换.</h2><p><strong>证明</strong>：$\rightarrow$ 是显然的。现证 $\leftarrow$ 若 $A,B$ 交换。<br>由条件知，存在可逆矩阵 $P$ 使得 $P^{-1}AP = diag(a_1 E_{n_1},\cdots,a_s E_{n_s})$。由 $A,B$ 交换知，$P^{-1}AP P^{-1}BP = P^{-1}BP P^{-1}AP$。因此</p>
+<h2 id="若矩阵-A-B-可以对角化，则它们可以同时对角化，当且仅当-A-B-交换"><a href="#若矩阵-A-B-可以对角化，则它们可以同时对角化，当且仅当-A-B-交换" class="headerlink" title="若矩阵 $A,B$ 可以对角化，则它们可以同时对角化，当且仅当 $A,B$ 交换"></a>若矩阵 $A,B$ 可以对角化，则它们可以同时对角化，当且仅当 $A,B$ 交换</h2><p><strong>证明</strong>：$\rightarrow$ 是显然的。现证 $\leftarrow$ 若 $A,B$ 交换。<br>由条件知，存在可逆矩阵 $P$ 使得 $P^{-1}AP = diag(a_1 E_{n_1},\cdots,a_s E_{n_s})$。由 $A,B$ 交换知，$P^{-1}AP P^{-1}BP = P^{-1}BP P^{-1}AP$。因此</p>
 <script type="math/tex; mode=display">
 P^{-1}BP = \left(\begin{matrix} 
 B_1 \\  & B_2 \\ & & \ddots \\ & & & B_s 
 \end{matrix}\right)</script><p>因为 $B$ 可对角化，因此 $B$ 的最小多项式无重根。所以 $B_i$ 的最小多项式也无重根。因此 $B_i$ 可对角化，存在可逆矩阵 $Q_i$ 使得 $Q_i^{-1}B_iQ_i$ 为对角阵。令 $Q = diag(Q_1,\cdots,Q_s)$,$T=PQ$，则 $T^{-1}BT$ 为对角阵。$T^{-1}AT = diag(Q_1^{-1},\cdots,Q_s^{-1})diag(a_1 E_{n_1},\cdots,a_s E_{n_s}) diag(Q_1,\cdots,Q_s) = diag(a_1 E_{n_1},\cdots,a_s E_{n_s})$<br>$T$ 即为所求。</p>
-<h2 id="Jodan分解"><a href="#Jodan分解" class="headerlink" title="Jodan分解"></a>Jodan分解</h2><p>每一个矩阵 $A$ 都可以唯一分解成 $A=B+C$, 其中 $B$ 可对角化，$C$ 幂零。且 $B,C$ 都可以写成 $A$ 的无常数项的多项式。<br>证明：首先对任意矩阵，我们有Jordan标准型：对任意矩阵 $A$，存在可逆矩阵 $P$ 使得</p>
+<h2 id="Jodan-分解"><a href="#Jodan-分解" class="headerlink" title="Jodan 分解"></a>Jodan 分解</h2><p>每一个矩阵 $A$ 都可以唯一分解成 $A=B+C$, 其中 $B$ 可对角化，$C$ 幂零。且 $B,C$ 都可以写成 $A$ 的无常数项的多项式。</p>
+<p>证明：首先对任意矩阵，我们有 Jordan 标准型：对任意矩阵 $A$，存在可逆矩阵 $P$ 使得</p>
 <script type="math/tex; mode=display">
 P^{-1} A P = \left(\begin{matrix} J_1(\lambda_1) \\  & J_2(\lambda_2) \\ & & \ddots \\ & & & J_s(\lambda_s) \end{matrix}\right) = \left(\begin{matrix} \lambda_1 E_{n_1} \\  & \lambda_2 E_{n_2} \\ & & \ddots \\ & & & \lambda_s E_{n_s} \end{matrix}\right) + \left(\begin{matrix} J_1(0) \\  & J_2(0) \\ & & \ddots \\ & & & J_s(0) \end{matrix} \right)</script><p>由于 $ J_i(\lambda_i) $ 的化零多项式为 $f_i(\lambda) = |\lambda I_i -  J_i(\lambda_i)|$。由中国剩余定理知。存在多项式 $f(\lambda)$ 满足 $f(\lambda) = \lambda_i (mod \; f_i),i=1,\cdots,s$ 且 $f(\lambda)= 0 (mod \lambda)$。此时</p>
 <script type="math/tex; mode=display">
 P^{-1} f(A) P = \left(\begin{matrix} \lambda_1 E_{n_1} \\  & \lambda_2 E_{n_2} \\ & & \ddots \\ & & & \lambda_s E_{n_s} \end{matrix}\right)</script><p>令$B=f(A)，C=A-B$ 即为所求。上面的$B,C$ 是唯一的，因为，若存在$B_1,C_1$ 也满足上述条件，则 $A,B,C,B_1,C_1$彼此交换，$B-B_1 = C_1 - C$ 是幂零的，因此 $B=B_1,C=C_1$。</p>
-<p>对于Jordan分解，我们可以将一个矩阵分为所谓的半单部分和幂零部分，而由第二条结论知道，如果 $A_1,A_2$ 可交换，那么$A_1+A_2$ 的半单部分即为 $B_1+B_2$。或者说的更明了一点就是，如果 $A,B$ 可交换，且可以对角化，则$A+B$ 也可以对角化。</p>
+<p>对于 Jordan 分解，我们可以将一个矩阵分为所谓的半单部分和幂零部分，而由第二条结论知道，如果 $A_1,A_2$ 可交换，那么$A_1+A_2$ 的半单部分即为 $B_1+B_2$。或者说的更明了一点就是，如果 $A,B$ 可交换，且可以对角化，则$A+B$ 也可以对角化。</p>
 <blockquote>
 <p>想到写这些完全是因为李代数忘掉 Lie 括号本身就是一个线性空间。</p>
 </blockquote>
@@ -4682,8 +4697,8 @@ p-3 \equiv (-1)^3 \mod p \\
 <h2 id="Jacobi-符号-Python-程序"><a href="#Jacobi-符号-Python-程序" class="headerlink" title="Jacobi 符号 Python 程序"></a>Jacobi 符号 Python 程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># a是整数，Q是正奇数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Jacobi</span><span class="params">(a,Q)</span>:</span></span><br><span class="line">    <span class="comment"># print(a,Q)  # 需要看过程就取消本行最前面的注释</span></span><br><span class="line">    a%=Q</span><br><span class="line">    <span class="keyword">if</span> math.gcd(a,Q) &gt; <span class="number">1</span>:  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> a%<span class="number">4</span>==<span class="number">0</span>: a//=<span class="number">4</span></span><br><span class="line">    f = <span class="keyword">lambda</span> n:<span class="number">1</span><span class="number">-2</span>*(n&amp;<span class="number">1</span>)</span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a%<span class="number">2</span>==<span class="number">0</span>: a//=<span class="number">2</span>;ans = f((Q**<span class="number">2</span><span class="number">-1</span>)//<span class="number">8</span>)</span><br><span class="line">    <span class="comment"># 此时a也是正奇数了</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:  <span class="keyword">return</span> ans</span><br><span class="line">    <span class="keyword">return</span> ans*f((a<span class="number">-1</span>)*(Q<span class="number">-1</span>)//<span class="number">4</span>)*Jacobi(Q,a)</span><br><span class="line"></span><br><span class="line">print(Jacobi(<span class="number">888</span>,<span class="number">1999</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -4733,9 +4748,9 @@ b_k = \sum _{j=1} ^k (-1)^{k-j} C _{k} ^j j^p</script><p>因此最终，我们�
     <title>二项式反演公式及其应用</title>
     <url>/inverseFormulaAndItsMatrixForm/</url>
     <content><![CDATA[<p>在<a href="/dirichletProduct/" title="上一篇博文">上一篇博文</a>中，介绍过数论中的 Mobius 反演公式，让我想起了另一个经典的反演公式： <strong>二项式反演公式</strong>。本质上反演公式就是矩阵求逆的过程。</p>
-<p>只是它的逆有很简单的形式，因此才有了二项式反演公式，这个公式帮助我们队伍在2014年ACM－ICPC亚洲区域赛西安站拿银，当时<a href="2014xian.pdf">F题</a>答案直接算需要$n^3$复杂度，而利用二项式反演公式后，可以在$n^2$复杂度内完美解决。1A过题，感觉超爽。</p>
+<p>只是它的逆有很简单的形式，因此才有了二项式反演公式，这个公式帮助我们队伍在 2014 年 ACM－ICPC 亚洲区域赛西安站拿银，当时<a href="2014xian.pdf">F 题</a>答案直接算需要$n^3$复杂度，而利用二项式反演公式后，可以在$n^2$复杂度内完美解决。1A 过题，感觉超爽。</p>
 <blockquote>
-<p>最后简单提一下：Mobius反演公式及其矩阵形式</p>
+<p>最后简单提一下：Mobius 反演公式及其矩阵形式</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="反演公式与其矩阵形式"><a href="#反演公式与其矩阵形式" class="headerlink" title="反演公式与其矩阵形式"></a>反演公式与其矩阵形式</h2><p>由</p>
@@ -4755,7 +4770,7 @@ B = \left( \begin{matrix} b _{11} & &  \\
 b _{21} & b _{22} & \\
 \cdots & \cdots & \ddots & \\
 b _{n1} & b _{n2} & \cdots & b _{nn} \\
-\end{matrix} \right)</script><p>则上述反演公式本质上就是求矩阵$A$的逆$B$.</p>
+\end{matrix} \right)</script><p>则上述反演公式本质上就是求矩阵 $A$ 的逆 $B$.</p>
 <h2 id="二项式反演公式"><a href="#二项式反演公式" class="headerlink" title="二项式反演公式"></a>二项式反演公式</h2><p>若</p>
 <script type="math/tex; mode=display">
 g(n) = \sum _{r = s} ^n \left(\begin{matrix} n \\ r\end{matrix}\right) f(r)</script><p>其中 $s \geq 0$ 则</p>
@@ -4768,19 +4783,19 @@ c _{ij} = \sum _{k=1} ^n a _{ik} b _{kj} & = \sum _{k =j} ^ i \left(\begin{matri
 & = \left(\begin{matrix} i \\ j\end{matrix}\right) \sum _{k=0} ^ {i-j} (-1)^k \left(\begin{matrix} i-j \\ k\end{matrix}\right) = \left\{ \begin{array}{ll} 1,& i=j \\  0,& i>j\end{array} \right.
 \end{aligned}</script><p>证毕。</p>
 <h2 id="二项式反演公式的应用"><a href="#二项式反演公式的应用" class="headerlink" title="二项式反演公式的应用"></a>二项式反演公式的应用</h2><p>二项式反演公式在组合数学和数论中都有诸多应用，这里简单的提两个。</p>
-<h3 id="错排问题-在-n-个数字-1-2-dots-n-形成-n-个排列-a-1a-2-dots-a-n-中满足-a-i-neq-i-的排列有多少个？"><a href="#错排问题-在-n-个数字-1-2-dots-n-形成-n-个排列-a-1a-2-dots-a-n-中满足-a-i-neq-i-的排列有多少个？" class="headerlink" title="(错排问题) 在 $n$ 个数字 $1,2,\dots,n$ 形成 $n!$ 个排列 $a_1a_2 \dots a_n$ 中满足 $a_i \neq i$ 的排列有多少个？"></a>(错排问题) 在 $n$ 个数字 $1,2,\dots,n$ 形成 $n!$ 个排列 $a_1a_2 \dots a_n$ 中满足 $a_i \neq i$ 的排列有多少个？</h3><p>不妨设答案为$D_n$ ,则可以看出恰好有 $r$ 个  $a_i=i$的排列数为$ \left(\begin{matrix} n \\ r\end{matrix}\right) D_{n-r}$ ，因此</p>
+<h3 id="错排问题-在-n-个数字-1-2-dots-n-形成-n-个排列-a-1a-2-dots-a-n-中满足-a-i-neq-i-的排列有多少个"><a href="#错排问题-在-n-个数字-1-2-dots-n-形成-n-个排列-a-1a-2-dots-a-n-中满足-a-i-neq-i-的排列有多少个" class="headerlink" title="(错排问题) 在 $n$ 个数字 $1, 2, \dots, n$ 形成 $n!$ 个排列 $a_1a_2 \dots a_n$ 中满足 $a_i \neq i$ 的排列有多少个"></a>(错排问题) 在 $n$ 个数字 $1, 2, \dots, n$ 形成 $n!$ 个排列 $a_1a_2 \dots a_n$ 中满足 $a_i \neq i$ 的排列有多少个</h3><p>不妨设答案为 $D_n$ ,则可以看出恰好有 $r$ 个  $a_i=i$的排列数为 $\left(\begin{matrix} n \\ r\end{matrix}\right) D_{n-r}$，因此</p>
 <script type="math/tex; mode=display">
 n! = \sum _{r = 0} ^n \left(\begin{matrix} n \\ r\end{matrix}\right) D_{n-r}</script><p>因此</p>
 <script type="math/tex; mode=display">
 D_n ＝ \sum _{r = 0} ^n (-1)^{n-r} \left(\begin{matrix} n \\ r\end{matrix}\right) r! = n! \sum _{r=0} ^n \frac{(-1)^r}{r!}</script><blockquote>
-<p> 当然 $D_n$ 还有递推关系式 $D_1=0,D_2 = 1$</p>
+<p>当然 $D_n$ 还有递推关系式 $D_1=0,D_2 = 1$</p>
 <script type="math/tex; mode=display">
 D_n = (n-1) (D_{n-1} + D_{n-2}),\quad n \geq 2</script></blockquote>
 <h3 id="满射个数-求-m-元集-A-到-n-元集-B-的满身的个数-g-m-n"><a href="#满射个数-求-m-元集-A-到-n-元集-B-的满身的个数-g-m-n" class="headerlink" title="(满射个数) 求$m$元集$A$到$n$元集$B$的满身的个数$g(m,n)$"></a>(满射个数) 求$m$元集$A$到$n$元集$B$的满身的个数$g(m,n)$</h3><p>类似于错排的思路，我们有</p>
 <script type="math/tex; mode=display">
 n^m = \sum _{r = 1} ^n \left(\begin{matrix} n \\ r\end{matrix}\right) g(m,r)</script><p>于是</p>
 <script type="math/tex; mode=display">
-g(m,n) =  \sum _{r = 1} ^n (-1)^{n-r} \left(\begin{matrix} n \\ r\end{matrix}\right) r^m</script><h2 id="Mobius反演公式及其矩阵形式"><a href="#Mobius反演公式及其矩阵形式" class="headerlink" title="Mobius反演公式及其矩阵形式"></a>Mobius反演公式及其矩阵形式</h2><p>由 Mobius 反演公式对应的矩阵我们有,若</p>
+g(m,n) =  \sum _{r = 1} ^n (-1)^{n-r} \left(\begin{matrix} n \\ r\end{matrix}\right) r^m</script><h2 id="Mobius-反演公式及其矩阵形式"><a href="#Mobius-反演公式及其矩阵形式" class="headerlink" title="Mobius 反演公式及其矩阵形式"></a>Mobius 反演公式及其矩阵形式</h2><p>由 Mobius 反演公式对应的矩阵我们有,若</p>
 <script type="math/tex; mode=display">
 a _{ij} = \left\{ \begin{array}{cc} 1, & j|i \\
 0, & else. \end{array} \right.</script><p>则，其逆矩阵为</p>
@@ -4789,7 +4804,7 @@ b _{ij} = \left\{ \begin{array}{cc} \mu (\frac{i}{j}), & j|i \\
 0, & else. \end{array} \right.</script><blockquote>
 <p>本文参考了<a href="http://www.douban.com/note/480023639/?type=like" target="_blank" rel="noopener">豆瓣</a>和<a href="http://wenku.baidu.com/link?url=0m3D-588KfEUvocmKGoW5X4z5SHrEKVOaqfLoTeRtJaJcG6oDEUh2QEbJmNa1p2OTkqFLCqhfhM-RsoOI2fkutlqL9q3xgJhIAic4HumI5W" target="_blank" rel="noopener">百度文库</a>以及 许胤龙，孙淑玲《组合数学引论》。</p>
 </blockquote>
-<h2 id="单位根反演"><a href="#单位根反演" class="headerlink" title="单位根反演"></a>单位根反演</h2><p>DFT的本质就是单位根反演</p>
+<h2 id="单位根反演"><a href="#单位根反演" class="headerlink" title="单位根反演"></a>单位根反演</h2><p>DFT 的本质就是单位根反演</p>
 <script type="math/tex; mode=display">
 \forall k,[n|k]=\frac{1}{n}\sum_{i=0}^{n-1}\omega_n^{ik}</script><p>一个应用的例子</p>
 <script type="math/tex; mode=display">
@@ -4805,7 +4820,7 @@ b _{ij} = \left\{ \begin{array}{cc} \mu (\frac{i}{j}), & j|i \\
 <p>具体的例子求：$\sum_{i \in [0,n],k \mid i} \binom{n}{i}G^i$</p>
 <p>计$f(x) = (G+x)^n$，则由上面公式</p>
 <script type="math/tex; mode=display">
-\sum_{i \in [0,n],k \mid i} \binom{n}{i}G^i = \frac{1}{k}\sum_{j=0}^{k-1} (G+\omega_{k}^j) ^n</script><p>即复杂度$O(k \log n)$，如果要结果模一个NFT friendly的，那就更好了！</p>
+\sum_{i \in [0,n],k \mid i} \binom{n}{i}G^i = \frac{1}{k}\sum_{j=0}^{k-1} (G+\omega_{k}^j) ^n</script><p>即复杂度 $O(k \log n)$，如果要结果模一个 NFT friendly 的，那就更好了！</p>
 ]]></content>
       <tags>
         <tag>Math</tag>
