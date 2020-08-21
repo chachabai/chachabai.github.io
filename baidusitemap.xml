@@ -4,6 +4,15 @@
     <loc>https://dna049.com/butterfly/</loc>
     <lastmod>2020-08-21</lastmod>
   </url>  <url>
+    <loc>https://dna049.com/finiteDomainIsField/</loc>
+    <lastmod>2020-08-21</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/huaIndentity/</loc>
+    <lastmod>2020-08-21</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/fermatSqureSumTheorem/</loc>
+    <lastmod>2020-08-21</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/helloHexo/</loc>
     <lastmod>2020-08-21</lastmod>
   </url>  <url>
@@ -34,19 +43,19 @@
     <loc>https://dna049.com/LectureOnModuleAndRing/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fiveLemma/</loc>
+    <loc>https://dna049.com/xorAndItsApplicationInNimGame/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/pythonGui/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/orderOfGLnZm/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/xorAndItsApplicationInNimGame/</loc>
+    <loc>https://dna049.com/fiveLemma/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/lieAlgebra/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/orderOfGLnZm/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/pythonLearning/</loc>
@@ -91,10 +100,10 @@
     <loc>https://dna049.com/naturalBase/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/computationOfPiX/</loc>
+    <loc>https://dna049.com/heapWithPy/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/heapWithPy/</loc>
+    <loc>https://dna049.com/computationOfPiX/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
@@ -154,19 +163,10 @@
     <loc>https://dna049.com/zhuangbility/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fermatSqureSumTheorem/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/ide/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/huaIndentity/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/formulaOfPowSumOfNaturalNumber/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/finiteDomainIsField/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/fastPowSumOfNaturalNumber/</loc>
@@ -193,16 +193,16 @@
     <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/chineseRemainTheorem/</loc>
+    <loc>https://dna049.com/catWithPy/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/catWithPy/</loc>
+    <loc>https://dna049.com/dynamicProgramming/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/vimWithLinuxShell/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/dynamicProgramming/</loc>
+    <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/fairAssignment/</loc>
@@ -211,13 +211,13 @@
     <loc>https://dna049.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/dirichletProduct/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/classicalCombination/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/treeSegmentTree/</loc>
