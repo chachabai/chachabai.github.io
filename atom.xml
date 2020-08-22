@@ -116,7 +116,7 @@
     <link href="https://dna049.com/quadraticModEquation/"/>
     <id>https://dna049.com/quadraticModEquation/</id>
     <published>2020-05-28T13:21:52.000Z</published>
-    <updated>2020-08-22T11:18:02.683Z</updated>
+    <updated>2020-08-22T11:21:10.828Z</updated>
     
     <summary type="html">
     
@@ -137,7 +137,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-08-22T09:35:40.011Z</updated>
+    <updated>2020-08-22T11:23:42.174Z</updated>
     
     <summary type="html">
     
@@ -166,7 +166,7 @@
     <link href="https://dna049.com/dynamicProgramming/"/>
     <id>https://dna049.com/dynamicProgramming/</id>
     <published>2020-05-21T15:36:13.000Z</published>
-    <updated>2020-08-22T09:35:40.011Z</updated>
+    <updated>2020-08-22T11:26:53.251Z</updated>
     
     <summary type="html">
     
@@ -184,9 +184,9 @@
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
-    
       <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
   </entry>
   
@@ -195,14 +195,16 @@
     <link href="https://dna049.com/grossmanConstant/"/>
     <id>https://dna049.com/grossmanConstant/</id>
     <published>2020-05-16T14:17:57.000Z</published>
-    <updated>2020-08-20T11:59:34.667Z</updated>
+    <updated>2020-08-22T11:29:06.968Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{aligned}
 A_{n+2} = \frac{A_n}{1+A_{n+1}} \\
-A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得 $\lbrace A_n \rbrace$ 收敛。这个 $x_0 = 0.7373383…$  被称为 Grossman 常数。&lt;/p&gt;
+A_0=1,\; A_1=x
+\end{aligned}&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得 $\lbrace A_n \rbrace$ 收敛。这个 $x_0 = 0.7373383…$  被称为 Grossman 常数。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://mathworld.wolfram.com/GrossmansConstant.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Grossman 常数&lt;/a&gt; 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 &lt;a href=&quot;1987_Article_MathematicalEntertainments.pdf&quot;&gt;Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. &lt;em&gt;Math. Intel.&lt;/em&gt; &lt;strong&gt;9&lt;/strong&gt;, 40-43, 1987.&lt;/a&gt; 折腾终于下下来了。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;吐槽一下 Wolfram 百科提供的所有 Reference 链接没法访问。。。&lt;/p&gt;
@@ -221,7 +223,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/vimWithLinuxShell/"/>
     <id>https://dna049.com/vimWithLinuxShell/</id>
     <published>2020-05-13T05:20:20.000Z</published>
-    <updated>2020-08-20T11:58:08.738Z</updated>
+    <updated>2020-08-22T11:33:10.868Z</updated>
     
     <summary type="html">
     
@@ -249,9 +251,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -262,11 +264,11 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/sageMath/"/>
     <id>https://dna049.com/sageMath/</id>
     <published>2020-05-04T03:13:26.000Z</published>
-    <updated>2020-08-20T13:03:21.424Z</updated>
+    <updated>2020-08-22T11:36:46.445Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Sage 的是“ 圣”的意思，所以 &lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt;懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代 MATLAB（20G)，Mathematics(5G）等商业软件。 而 SageMath 安装包仅 1G 不到，而且语言基于 Python，就很快乐。而且你还能免费注册账号用基于 Jupyter Notebook 的&lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath 在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
+      &lt;p&gt;Sage 的是“ 圣”的意思，所以 &lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt; 懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代 MATLAB（20G)，Mathematics(5G）等商业软件。 而 SageMath 安装包仅 1G 不到，而且语言基于 Python，就很快乐。而且你还能免费注册账号用基于 Jupyter Notebook 的 &lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath 在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;感谢知乎好友&lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; 的推荐&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -298,9 +300,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
@@ -311,14 +313,14 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/juliaLearning/"/>
     <id>https://dna049.com/juliaLearning/</id>
     <published>2020-05-02T01:58:57.000Z</published>
-    <updated>2020-08-20T17:03:50.695Z</updated>
+    <updated>2020-08-22T11:42:25.278Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了&lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
+&lt;p&gt;学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了 &lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;有 C 快吗？没有！有 Python 方便吗？没有！安装个包就跟求它借 100w 一样（国内源安装不了）&lt;/p&gt;
 &lt;p&gt;免费是取代 MATLAB，Mathematics 的理由吗？不是，收费是一件好事！！！&lt;/p&gt;
@@ -339,11 +341,11 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/orderOfGLnZm/"/>
     <id>https://dna049.com/orderOfGLnZm/</id>
     <published>2020-04-25T00:50:58.000Z</published>
-    <updated>2020-08-20T16:34:24.605Z</updated>
+    <updated>2020-08-22T11:42:15.752Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是$|GL_n(\mathbb{Z}_m)|$  却是一个相对复杂的问题，它本质上是在考虑有限 Abel 群的自同构群的阶数问题。它又跟递推数列模 $m$ 的周期密切相关。&lt;/p&gt;
+      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是 $|GL_n(\mathbb{Z}_m)|$ 却是一个相对复杂的问题，它本质上是在考虑有限 Abel 群的自同构群的阶数问题。它又跟递推数列模 $m$ 的周期密切相关。&lt;/p&gt;
     
     </summary>
     
@@ -358,7 +360,7 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     <link href="https://dna049.com/primePowSum/"/>
     <id>https://dna049.com/primePowSum/</id>
     <published>2020-04-17T06:47:43.000Z</published>
-    <updated>2020-08-20T13:24:53.519Z</updated>
+    <updated>2020-08-22T11:55:27.394Z</updated>
     
     <summary type="html">
     
@@ -385,14 +387,14 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/SpecialNumberSequences/"/>
     <id>https://dna049.com/SpecialNumberSequences/</id>
     <published>2020-04-12T06:47:16.000Z</published>
-    <updated>2020-08-20T13:23:16.401Z</updated>
+    <updated>2020-08-22T11:55:20.126Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;在知乎上看到一个有趣的问题: &lt;a href=&quot;https://www.zhihu.com/question/383254359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何证明这个数列无界？&lt;/a&gt; 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。&lt;/p&gt;
-&lt;p&gt;证明：当$x$是无理数时，$f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor} $  无界&lt;/p&gt;
+&lt;p&gt;证明：当 $x$ 是无理数时，$f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor}$  无界&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x- \lfloor x \rfloor&amp;lt;1 $ 表示 $x$ 的小数部分&lt;/p&gt;
+&lt;p&gt;$\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x- \lfloor x \rfloor&amp;lt;1$ 表示 $x$ 的小数部分&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -408,11 +410,11 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/gaussianElimination/"/>
     <id>https://dna049.com/gaussianElimination/</id>
     <published>2020-04-11T02:45:49.000Z</published>
-    <updated>2020-08-20T11:58:23.446Z</updated>
+    <updated>2020-08-22T11:57:19.506Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在知乎的 &lt;a href=&quot;https://zhuanlan.zhihu.com/skymath&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&amp;amp;算法&lt;/a&gt;专栏里看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/53646257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点灯游戏的$O(n^3)$算法&lt;/a&gt;，觉得挺有意思，特此记录，并且补充代码&lt;/p&gt;
+      &lt;p&gt;在知乎的 &lt;a href=&quot;https://zhuanlan.zhihu.com/skymath&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&amp;amp;算法&lt;/a&gt; 专栏里看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/53646257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点灯游戏的 $O(n^3)$ 算法&lt;/a&gt;，觉得挺有意思，特此记录，并且补充代码&lt;/p&gt;
     
     </summary>
     
@@ -429,11 +431,11 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/imageToChar/"/>
     <id>https://dna049.com/imageToChar/</id>
     <published>2020-04-07T12:26:27.000Z</published>
-    <updated>2020-08-20T17:07:12.187Z</updated>
+    <updated>2020-08-22T11:57:42.688Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;我知乎上看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/126669800&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么用 Python 把图片转化为字符？&lt;/a&gt; 挺有趣的，自己也尝试了一下，当然他也是参考&lt;a href=&quot;https://github.com/RameshAditya/asciify/blob/master/asciify.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+      &lt;p&gt;我知乎上看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/126669800&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么用 Python 把图片转化为字符？&lt;/a&gt; 挺有趣的，自己也尝试了一下，当然他也是参考 &lt;a href=&quot;https://github.com/RameshAditya/asciify/blob/master/asciify.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;原理就是：将图片（位图）转化成灰度图，即 0~255 的数值，然后将这些数值换成特殊符号（自定义）&lt;/p&gt;
     
     </summary>
@@ -449,13 +451,13 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/nthPrimeNumber/"/>
     <id>https://dna049.com/nthPrimeNumber/</id>
     <published>2020-04-06T03:04:19.000Z</published>
-    <updated>2020-08-20T13:42:51.547Z</updated>
+    <updated>2020-08-22T11:58:24.838Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;很早之前写过 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt; ，在知乎上用它回答问题的时候，发现我怎么没有写 &lt;strong&gt;求第 $n$ 个素数。&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;做法依赖于 $\pi(x)$ 的计算，$\pi(x)$ 表示不超过$x$ 的素数个数&lt;/p&gt;
+&lt;p&gt;做法依赖于 $\pi(x)$ 的计算，$\pi(x)$ 表示不超过 $x$ 的素数个数&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -471,7 +473,7 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     <link href="https://dna049.com/scrite/"/>
     <id>https://dna049.com/scrite/</id>
     <published>2020-04-05T14:18:59.000Z</published>
-    <updated>2020-08-21T06:17:46.617Z</updated>
+    <updated>2020-08-22T12:09:08.477Z</updated>
     
     <summary type="html">
     
