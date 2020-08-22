@@ -65,14 +65,14 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:25:02.000Z</published>
-    <updated>2020-08-22T06:56:00.298Z</updated>
+    <updated>2020-08-22T09:35:40.011Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;此处包含 C++ 代码规范，C++ 模板，C++ STL 的使用。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;Vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用 &lt;code&gt;Vector&lt;/code&gt; 结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
+&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用 &lt;code&gt;vector&lt;/code&gt; 结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -88,7 +88,7 @@
     <link href="https://dna049.com/nft/"/>
     <id>https://dna049.com/nft/</id>
     <published>2020-06-01T21:45:09.000Z</published>
-    <updated>2020-08-20T14:06:39.830Z</updated>
+    <updated>2020-08-22T09:35:40.019Z</updated>
     
     <summary type="html">
     
@@ -137,7 +137,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-08-22T08:31:26.838Z</updated>
+    <updated>2020-08-22T09:35:40.011Z</updated>
     
     <summary type="html">
     
@@ -166,7 +166,7 @@
     <link href="https://dna049.com/dynamicProgramming/"/>
     <id>https://dna049.com/dynamicProgramming/</id>
     <published>2020-05-21T15:36:13.000Z</published>
-    <updated>2020-08-20T11:58:08.738Z</updated>
+    <updated>2020-08-22T09:35:40.011Z</updated>
     
     <summary type="html">
     
@@ -184,9 +184,9 @@
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
-    
       <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
   </entry>
   
@@ -249,9 +249,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -298,9 +298,9 @@ A_0=1,\; A_1=x&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
