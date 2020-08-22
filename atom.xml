@@ -88,7 +88,7 @@
     <link href="https://dna049.com/nft/"/>
     <id>https://dna049.com/nft/</id>
     <published>2020-06-01T21:45:09.000Z</published>
-    <updated>2020-08-22T09:35:40.019Z</updated>
+    <updated>2020-08-22T11:10:06.979Z</updated>
     
     <summary type="html">
     
@@ -96,8 +96,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo 博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;发现 NFT 一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为$3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
-&lt;p&gt;选择 $n$ 个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底$p_1,\cdots, p_n$ 使得$p_1\cdots p_n$大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
+&lt;p&gt;发现 NFT 一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为 $3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
+&lt;p&gt;选择 $n$ 个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底 $p_1,\cdots, p_n$ 使得 $p_1\cdots p_n$ 大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
     
     </summary>
     
@@ -116,11 +116,11 @@
     <link href="https://dna049.com/quadraticModEquation/"/>
     <id>https://dna049.com/quadraticModEquation/</id>
     <published>2020-05-28T13:21:52.000Z</published>
-    <updated>2020-08-22T07:43:31.792Z</updated>
+    <updated>2020-08-22T11:18:02.683Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;显然，我们只需考虑$0 \leq a &amp;lt; n$ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作&lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和 Gauss 互反律&quot;&gt;二次剩余和 Gauss 互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
+      &lt;p&gt;显然，我们只需考虑 $0 \leq a &amp;lt; n$ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作 &lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和 Gauss 互反律&quot;&gt;二次剩余和 Gauss 互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
     
     </summary>
     
