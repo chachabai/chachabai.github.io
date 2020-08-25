@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-08-22T12:57:35.572Z</updated>
+  <updated>2020-08-24T13:02:58.598Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>The Dixmier-Moeglin Equivalence</title>
+    <link href="https://dna049.com/DixmierMoeglinEquivalence/"/>
+    <id>https://dna049.com/DixmierMoeglinEquivalence/</id>
+    <published>2020-08-24T09:56:15.000Z</published>
+    <updated>2020-08-24T13:02:58.598Z</updated>
+    
+    <summary type="html">
+    
+      Here&#39;s something encrypted, password is required to continue reading.
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Encrypt" scheme="https://dna049.com/tags/Encrypt/"/>
+    
+  </entry>
+  
+  <entry>
     <title>butterfly 主题</title>
     <link href="https://dna049.com/butterfly/"/>
     <id>https://dna049.com/butterfly/</id>
     <published>2020-08-20T09:19:44.000Z</published>
-    <updated>2020-08-22T12:57:35.572Z</updated>
+    <updated>2020-08-25T00:02:04.788Z</updated>
     
     <summary type="html">
     
@@ -46,7 +67,7 @@
     <link href="https://dna049.com/pointSetTopology/"/>
     <id>https://dna049.com/pointSetTopology/</id>
     <published>2020-07-29T02:07:20.000Z</published>
-    <updated>2020-08-22T07:03:39.007Z</updated>
+    <updated>2020-08-24T09:00:48.796Z</updated>
     
     <summary type="html">
     
@@ -57,6 +78,8 @@
     
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Encrypt" scheme="https://dna049.com/tags/Encrypt/"/>
     
   </entry>
   
@@ -103,9 +126,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -151,9 +174,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
     
@@ -180,9 +203,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
@@ -251,11 +274,11 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -277,9 +300,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -300,9 +323,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
@@ -376,9 +399,9 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -420,9 +443,9 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -465,25 +488,6 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>悄悄话</title>
-    <link href="https://dna049.com/scrite/"/>
-    <id>https://dna049.com/scrite/</id>
-    <published>2020-04-05T14:18:59.000Z</published>
-    <updated>2020-08-22T12:09:08.477Z</updated>
-    
-    <summary type="html">
-    
-      Here&#39;s something encrypted, password is required to continue reading.
-    
-    </summary>
-    
-    
-    
-      <category term="Life" scheme="https://dna049.com/tags/Life/"/>
     
   </entry>
   
