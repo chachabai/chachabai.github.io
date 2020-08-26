@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-08-25T13:59:24.256Z</updated>
+  <updated>2020-08-26T13:03:04.807Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/DixmierMoeglinEquivalence/"/>
     <id>https://dna049.com/DixmierMoeglinEquivalence/</id>
     <published>2020-08-24T09:56:15.000Z</published>
-    <updated>2020-08-25T13:59:24.256Z</updated>
+    <updated>2020-08-26T13:03:04.807Z</updated>
     
     <summary type="html">
     
@@ -276,9 +276,9 @@ A_0=1,\; A_1=x
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -323,9 +323,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
