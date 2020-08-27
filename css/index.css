@@ -3242,7 +3242,7 @@ _:future,
   margin: 0 0.2rem 0 0;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta-label {
-  padding-right: 0.2rem;
+  display: none;
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap .article-meta__separator {
   margin: 0 0.3rem;
