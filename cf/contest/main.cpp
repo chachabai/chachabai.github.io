@@ -8,7 +8,7 @@ struct Node {
         id = _id, val = _val, par = _par, ch[0] = ch[1] = 0;
     }
 };
-int cartesian_build(std::vector<Node>& tree, int n) {
+int cartesian_build(Node *tree, int n) {
     for (int i = 1; i <= n; ++i) {
         int k = i - 1;
         while (tree[k].val < tree[i].val) k = tree[k].par;
@@ -26,7 +26,7 @@ int main() {
     int n;
     while (std::cin >> n) {
         if (n == 0) break;
-        std::vector<Node> tree(n + 1);;
+        Node tree[n + 1];
         tree[0].init(0, 1e9 + 2, 0);
         for (int i = 1, x; i <= n; ++i) {
             std::cin >> x;
@@ -44,30 +44,41 @@ int main() {
         };
         dfs(root);
         std::cout << ans << std::endl;
-		
-		// 下面是求以 a[i] 为最小值且包含 i 的最大区间
-		int l[n + 1], r[n + 1];
-		std::function<void(int)> getinterval = [&](int x) {
-			if (x == 0) return;
-			if (tree[tree[x].par].ch[0] == x) {
-				//r[x] = tree[x].par - (tree[x].val != tree[tree[x].par].val);
-				r[x] = tree[x].val == tree[tree[x].par].val ? r[tree[x].par] : tree[x].par - 1;
-				l[x] = [tree[x].par];
-			} else {
-				//l[x] = tree[x].par + (tree[x].val != tree[tree[x].par].val);
-				l[x] = tree[x].val == tree[tree[x].par].val ? l[tree[x].par] : tree[x].par + 1;
-				r[x] = r[tree[x].par];
-			}
-			getinterval(tree[x].ch[0]);
-			getinterval(tree[x].ch[1]);
-		};
-		l[root] = 1;
-		r[root] = n;
-		getinterval(tree[root].ch[0]);
-		getinterval(tree[root].ch[1]);
-		for (int i = 1; i <= n; ++i) {
-			std::cout << l[i] << " " << r[i] << std::endl;
-		}
+        
+        // 下面是求以 a[i] 为最小值且包含 i 的最大区间
+        int l[n + 1], r[n + 1];
+        std::function<void(int)> getinterval = [&](int x) {
+            if (x == 0) return;
+            if (tree[tree[x].par].ch[0] == x) {
+                r[x] = tree[x].par - 1;
+                l[x] = l[tree[x].par];
+            } else {
+                l[x] = tree[x].par + 1;
+                r[x] = r[tree[x].par];
+            }
+            getinterval(tree[x].ch[0]);
+            getinterval(tree[x].ch[1]);
+        };
+        l[root] = 1;
+        r[root] = n;
+        getinterval(tree[root].ch[0]);
+        getinterval(tree[root].ch[1]);
+
+		std::function<void(int)> updateinterval = [&](int x) {
+            if (x == 0) return;
+            if (tree[tree[x].par].ch[0] == x) {
+                if (tree[x].val == tree[tree[x].par].val) r[x] = r[tree[x].par];
+            } else {
+				if (tree[x].val == tree[tree[x].par].val) l[x] = l[tree[x].par];
+            }
+            updateinterval(tree[x].ch[0]);
+            updateinterval(tree[x].ch[1]);
+        };
+		updateinterval(tree[root].ch[0]);
+        updateinterval(tree[root].ch[1]);
+        for (int i = 1; i <= n; ++i) {
+            std::cout << l[i] << " " << r[i] << std::endl;
+        }
     }
     return 0;
 }
