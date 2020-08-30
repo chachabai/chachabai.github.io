@@ -11,19 +11,24 @@ int main() {
 	std::vector<LL> a(n);
 	for (auto &x : a) std::cin >> x;
 	if (n == 1) {
-		std::cout << "1 1\n";
-		std::cout << -a[0];
-		std::cout << "\n1 1\n0\n1 1\n0\n"; 
+		std::cout << "1 1" << std::endl;
+		std::cout << -a[0] << std::endl;
+		std::cout << "1 1" << std::endl;
+		std::cout << 0 << std::endl;
+		std::cout << "1 1" << std::endl;
+		std::cout << 0 << std::endl;
 		return 0;
 	}
-	std::cout << "1 " << n << "\n0 ";
+	std::cout << "1 " << n << std::endl;
+	std::cout << "0 ";
 	for (int i = 1; i < n; ++i) {
-		LL tmp = LL(-a[i]) * n % (n - 1) * n;
+		LL tmp = -a[i] * n % (n - 1) * n;
 		std::cout << tmp << " \n"[i == n - 1];
 		a[i] += tmp;
 	}
-	std::cout << "1\n" << -a[0];
-	std::cout << "\n2 " << n << std::endl;
+	std::cout << "1 1\n";
+	std::cout << -a[0] << std::endl;
+	std::cout << "2 " << n << std::endl;
 	for (int i = 1; i < n; ++i) {
 		std::cout << -a[i] << " \n"[i == n - 1];
 	}

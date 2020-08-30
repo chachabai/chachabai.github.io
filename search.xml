@@ -62,6 +62,15 @@
 <p><strong>不要急着写代码，不要急着写代码，不要急着写代码，重要的事情说三遍！！！</strong></p>
 </blockquote>
 <a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>提前 6 分钟，准备以下事情：</p>
+<ol>
+<li>如果没注册，赶紧注册</li>
+<li>闹钟（每个题不要长期思考）</li>
+<li>纸和笔（ipad + pencil 亦可）</li>
+<li>SageMath，用于一些数据测试</li>
+<li>打开自己的网站用于模板</li>
+<li>打开 VScode，查看 CF 比赛号，开始 <code>cf race CF 比赛号</code></li>
+</ol>
 <p>Codeforces 比赛规则：每题有基础分数，每题的分数根据时间线性递减到一半（所以有些大佬先做 CD，再做 AB），在最后一次提交前每次提交减 50 分，然后按照分数排名，有 hack，但是只有你过了初例并且 <strong>锁定题目</strong> 才能 hack。<br>Eductional 比赛规则：与 ICPC 一致，不过一次非 AC 提交罚时为 10 分钟（ICPC 20 分钟）</p>
 <p>Codeforces Gobal Round：<del>目前实力不支持做这个，容易掉分！</del> 正常发挥都是能加分的！</p>
 <p><a href="https://codeforces.com/problemset/standings?friendsEnabled=on" target="_blank" rel="noopener">查看 Codeforces 上的过题数</a>，<a href="https://codeforces.com/contests/with/dna049" target="_blank" rel="noopener">查看比赛 rating 折线</a>，开始使用 <a href="https://github.com/xalanq/cf-tool/blob/master/README_zh_CN.md" target="_blank" rel="noopener">cf-tool</a> + WSL 打比赛（真香）。</p>
@@ -1347,8 +1356,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 ]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -1574,8 +1583,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <p>先找对应名字，再找对应模块中的函数，最后看手册用的例子。</p>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -2060,8 +2069,8 @@ a_{i+1}
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -2601,8 +2610,8 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>LOL</tag>
       </tags>
   </entry>
@@ -4781,8 +4790,8 @@ p-3 \equiv (-1)^3 \mod p \\
 <h2 id="Jacobi-符号-Python-程序"><a href="#Jacobi-符号-Python-程序" class="headerlink" title="Jacobi 符号 Python 程序"></a>Jacobi 符号 Python 程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># a是整数，Q是正奇数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Jacobi</span><span class="params">(a,Q)</span>:</span></span><br><span class="line">    <span class="comment"># print(a,Q)  # 需要看过程就取消本行最前面的注释</span></span><br><span class="line">    a%=Q</span><br><span class="line">    <span class="keyword">if</span> math.gcd(a,Q) &gt; <span class="number">1</span>:  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> a%<span class="number">4</span>==<span class="number">0</span>: a//=<span class="number">4</span></span><br><span class="line">    f = <span class="keyword">lambda</span> n:<span class="number">1</span><span class="number">-2</span>*(n&amp;<span class="number">1</span>)</span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a%<span class="number">2</span>==<span class="number">0</span>: a//=<span class="number">2</span>;ans = f((Q**<span class="number">2</span><span class="number">-1</span>)//<span class="number">8</span>)</span><br><span class="line">    <span class="comment"># 此时a也是正奇数了</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:  <span class="keyword">return</span> ans</span><br><span class="line">    <span class="keyword">return</span> ans*f((a<span class="number">-1</span>)*(Q<span class="number">-1</span>)//<span class="number">4</span>)*Jacobi(Q,a)</span><br><span class="line"></span><br><span class="line">print(Jacobi(<span class="number">888</span>,<span class="number">1999</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
