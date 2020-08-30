@@ -18,6 +18,10 @@
 <li><a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a> 并配置 Valine 和 Gitalk 双评论系统，<a href="https://blog.csdn.net/qq_33384402/article/details/107200465" target="_blank" rel="noopener">Gitalk 配置</a>， <a href="https://www.louxiaohui.com/2018/05/15/get-file-from-git-server-automatically/" target="_blank" rel="noopener">注意事项</a>，每一篇都要初始化一次。</li>
 <li>添加文章加密功能，增加 <a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">RSS 功能</a>，<a href="https://zhuanlan.zhihu.com/p/64457116" target="_blank" rel="noopener">RSS 使用说明</a>，文章置顶功能，<a href="https://cndrew.cn/2019/10/19/plugin/" target="_blank" rel="noopener">随机文章</a></li>
 </ol>
+<h2 id="Butterfly-主题修改记录"><a href="#Butterfly-主题修改记录" class="headerlink" title="Butterfly 主题修改记录"></a>Butterfly 主题修改记录</h2><h3 id="添加首页加载-mathjax"><a href="#添加首页加载-mathjax" class="headerlink" title="添加首页加载 mathjax"></a>添加首页加载 mathjax</h3><p>修改 <code>themes/butterfly/layout/includes/third-party/math/index.pug</code>，进去了就知道该怎么改啦。</p>
+<h3 id="增加了底部小鱼游泳"><a href="#增加了底部小鱼游泳" class="headerlink" title="增加了底部小鱼游泳"></a>增加了底部小鱼游泳</h3><p>在 <code>themes/butterfly/layout/includes/footer.pug</code> 下面添加</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">style</span>.</span><br><span class="line">  <span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">767px</span>)&#123;</span><br><span class="line">    <span class="selector-id">#sidebar_search_box</span> <span class="selector-tag">input</span><span class="selector-attr">[type=text]</span>&#123;<span class="attribute">width</span>:<span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">24px</span>)&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>并且在 <code>themes/butterfly/source/css/_layout/footer.styl</code> 中修改对应的 <code>footer-warp</code><br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#footer-wrap</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 1<span class="selector-class">.2rem</span> 1<span class="selector-tag">rem</span> 1<span class="selector-class">.4rem</span></span><br><span class="line">  color: $light-grey</span><br><span class="line">  <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span></span><br><span class="line">  <span class="selector-tag">left</span>: 0</span><br><span class="line">  <span class="selector-tag">right</span>: 0</span><br><span class="line">  <span class="selector-tag">top</span><span class="selector-pseudo">:0</span></span><br><span class="line">  <span class="selector-tag">bottom</span>: 0</span><br></pre></td></tr></table></figure></p>
 <h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>登录 <a href="https://github.com" target="_blank" rel="noopener">github</a> ，创建 yourname/yourname.github.io 仓库， 进入该仓库 setting，下拉到 Github Page</p>
 <p>设置 master branch，Custom domain（可选），Enforce HTTPS</p>
 <p>git 命令行进入 blog 目录，执行下面操作：</p>
@@ -1356,8 +1360,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 ]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -1583,8 +1587,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <p>先找对应名字，再找对应模块中的函数，最后看手册用的例子。</p>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -2069,8 +2073,8 @@ a_{i+1}
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -2610,8 +2614,8 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>LOL</tag>
       </tags>
   </entry>
@@ -4790,8 +4794,8 @@ p-3 \equiv (-1)^3 \mod p \\
 <h2 id="Jacobi-符号-Python-程序"><a href="#Jacobi-符号-Python-程序" class="headerlink" title="Jacobi 符号 Python 程序"></a>Jacobi 符号 Python 程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># a是整数，Q是正奇数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Jacobi</span><span class="params">(a,Q)</span>:</span></span><br><span class="line">    <span class="comment"># print(a,Q)  # 需要看过程就取消本行最前面的注释</span></span><br><span class="line">    a%=Q</span><br><span class="line">    <span class="keyword">if</span> math.gcd(a,Q) &gt; <span class="number">1</span>:  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> a%<span class="number">4</span>==<span class="number">0</span>: a//=<span class="number">4</span></span><br><span class="line">    f = <span class="keyword">lambda</span> n:<span class="number">1</span><span class="number">-2</span>*(n&amp;<span class="number">1</span>)</span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a%<span class="number">2</span>==<span class="number">0</span>: a//=<span class="number">2</span>;ans = f((Q**<span class="number">2</span><span class="number">-1</span>)//<span class="number">8</span>)</span><br><span class="line">    <span class="comment"># 此时a也是正奇数了</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:  <span class="keyword">return</span> ans</span><br><span class="line">    <span class="keyword">return</span> ans*f((a<span class="number">-1</span>)*(Q<span class="number">-1</span>)//<span class="number">4</span>)*Jacobi(Q,a)</span><br><span class="line"></span><br><span class="line">print(Jacobi(<span class="number">888</span>,<span class="number">1999</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>

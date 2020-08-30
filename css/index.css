@@ -3749,9 +3749,9 @@ img {
   margin: 0 auto;
   padding: 2rem 15px;
   max-width: 1000px;
-  opacity: 0.77;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=77)";
-  filter: alpha(opacity=77);
+  opacity: 0.66;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
+  filter: alpha(opacity=66);
 }
 .layout_post img {
   display: block;
