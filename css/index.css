@@ -5006,7 +5006,7 @@ blockquote.pullquote.right {
   --tab-botton-color: rgba(255,255,255,0.6);
   --tab-button-hover-bg: #383838;
   --tab-button-active-bg: #121212;
-  --card-bg: #ad8bab;
+  --card-bg: #555054;
   --sidebar-bg: #121212;
   --btn-hover-color: #787878;
   --btn-color: rgba(255,255,255,0.6);
@@ -5032,7 +5032,7 @@ blockquote.pullquote.right {
   content: '';
 }
 [data-theme='dark'] #page-header {
-  background-color: rgba(248,243,243,0);
+  background-color: rgba(13,13,13,0);
 }
 [data-theme='dark'] #article-container code {
   background: #2c2c2c;
