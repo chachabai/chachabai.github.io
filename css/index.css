@@ -2600,6 +2600,7 @@ blockquote footer cite:before {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  background-color: rgba(73,177,245,0.3);
 }
 #footer:before {
   position: absolute;
@@ -4984,7 +4985,7 @@ blockquote.pullquote.right {
 }
 [data-theme='dark'] #web_bg[data-type=color],
 [data-theme='dark'] #footer[data-type=color] {
-  background: #0d0d0d;
+  background: rgba(13,13,13,0.3);
 }
 [data-theme='dark'] #web_bg[data-type=photo]:before,
 [data-theme='dark'] #footer[data-type=photo]:before {
