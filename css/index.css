@@ -2600,7 +2600,7 @@ blockquote footer cite:before {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  background-color: rgba(73,177,245,0.3);
+  background-color: rgba(73,177,245,0.5);
 }
 #footer:before {
   position: absolute;
@@ -2649,7 +2649,7 @@ blockquote footer cite:before {
   transition: all 0.5s;
 }
 #page-header.full_page {
-  height: 100vh;
+  height: 400px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
@@ -4985,7 +4985,7 @@ blockquote.pullquote.right {
 }
 [data-theme='dark'] #web_bg[data-type=color],
 [data-theme='dark'] #footer[data-type=color] {
-  background: rgba(13,13,13,0.3);
+  background: rgba(13,13,13,0.5);
 }
 [data-theme='dark'] #web_bg[data-type=photo]:before,
 [data-theme='dark'] #footer[data-type=photo]:before {
