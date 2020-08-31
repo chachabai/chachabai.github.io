@@ -34,6 +34,9 @@
 </ul>
 <p>然后设置</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 透明度</span></span><br><span class="line"><span class="attr">content_opacity:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="number">0.66</span></span><br><span class="line">  <span class="attr">page:</span> <span class="number">0.77</span></span><br><span class="line"><span class="attr">footer_transparent:</span> <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要参考 <a href="https://yunist.cn/hexo/butterfly_modify/" target="_blank" rel="noopener">云玩家</a> 和 <a href="https://www.paddylin.top/" target="_blank" rel="noopener">Paddy</a></p>
+</blockquote>
 <h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>登录 <a href="https://github.com" target="_blank" rel="noopener">github</a> ，创建 yourname/yourname.github.io 仓库， 进入该仓库 setting，下拉到 Github Page</p>
 <p>设置 master branch，Custom domain（可选），Enforce HTTPS</p>
 <p>git 命令行进入 blog 目录，执行下面操作：</p>
@@ -509,8 +512,8 @@ f(x) = \frac{4}{3} \sum_{n=0} ^ \infty (\frac{2^{n \% 3 +1} (8^{n/3}-1)}{8-1} + 
 </ul>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
         <tag>Codeforces</tag>
         <tag>图论</tag>
       </tags>
@@ -867,8 +870,8 @@ a_k = \frac{1}{N} \sum_{n=0} ^{N-1} w^{-kn} \hat{a}_n</script><h2 id="快速-Fou
 <p><img src= "/img/loading.gif" data-lazy-src="divRem.png" alt="divRem"></p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -1039,8 +1042,8 @@ r[j] = \min_{0 \leq k \leq j} r[k] - s[k] + s[j]</script><figure class="highligh
 </blockquote>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
         <tag>运筹学</tag>
         <tag>动态规划</tag>
       </tags>
@@ -1372,9 +1375,9 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <h2 id="Python-代码"><a href="#Python-代码" class="headerlink" title="Python 代码"></a>Python 代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># input : a,b natural number</span></span><br><span class="line"><span class="comment"># output: [gcd(a,b), x, y]</span></span><br><span class="line"><span class="comment"># ax + by = gcd(a,b)</span></span><br><span class="line"><span class="comment"># Algorithm: b(a//bx+y) + a%bx = gcd(b,a%b) </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exgcd</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>): <span class="keyword">return</span> [a,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">    [d,y,x] = exgcd(b,a%b)</span><br><span class="line">    <span class="keyword">return</span> [d,x,y-a//b*x]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0, i=1,2</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt2</span><span class="params">(a1,m1,a2,m2)</span>:</span></span><br><span class="line">    [d,t1,t2] = exgcd(m1,m2)</span><br><span class="line">    a,m = a2-a1,m1//d*m2</span><br><span class="line">    <span class="keyword">if</span>(a%d):  <span class="keyword">raise</span> ValueError(<span class="string">'No solution to crt problem'</span>)</span><br><span class="line">    <span class="keyword">return</span> [(a1+a//d*t1*m1)%m,m]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt</span><span class="params">(a,m)</span>:</span></span><br><span class="line">    n = len(a)</span><br><span class="line">    <span class="keyword">if</span>(len(m)!=n):  <span class="keyword">raise</span> ValueError(<span class="string">'a and m must have equal length'</span>)</span><br><span class="line">    aa,mm = a[<span class="number">0</span>],m[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n):</span><br><span class="line">        [aa,mm] = crt2(aa,mm,a[i],m[i])</span><br><span class="line">    <span class="keyword">return</span> [aa,mm]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    [a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">5</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">    print(a,m)</span><br><span class="line">    [a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">    print(a,m)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1647,8 +1650,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 </blockquote>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
         <tag>Make</tag>
       </tags>
   </entry>
@@ -1866,8 +1869,8 @@ f_k(x) = f_k(x,s) - 1  + f_k(p_s)</script><h3 id="只对-k-1-写代码（一般�
 f_k(x) = f_k(x,s) - 1  + f_k(p_s) - \sum_{i=s+1} ^ {\pi(\sqrt{x})} (f(\frac{x}{p_i})-f(p_{i-1})) p_i ^k</script><h3 id="只对-k-1-写代码（一般的-k-同理）-1"><a href="#只对-k-1-写代码（一般的-k-同理）-1" class="headerlink" title="只对 $k=1$ 写代码（一般的 $k$ 同理）"></a>只对 $k=1$ 写代码（一般的 $k$ 同理）</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e7</span>+<span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> p[N],pi[N];</span><br><span class="line"><span class="keyword">bool</span> isp[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">initprime</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">1</span>;p[<span class="number">1</span>]=<span class="number">2</span>;isp[<span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;N;i+=<span class="number">2</span>)   isp[i]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;N;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(isp[i])  p[++cnt] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">2</span>,t=(N<span class="number">-1</span>)/i + <span class="number">1</span>;j &lt;= cnt &amp;&amp; p[j] &lt; t; ++j)&#123;</span><br><span class="line">            isp[i * p[j]] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%p[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line">LL spi[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    initprime();</span><br><span class="line">    pi[<span class="number">2</span>] = <span class="number">1</span>;spi[<span class="number">2</span>]=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;N;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(isp[i])&#123;</span><br><span class="line">            pi[i]=pi[i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">            spi[i] = spi[i<span class="number">-1</span>]+i;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            pi[i]=pi[i<span class="number">-1</span>];</span><br><span class="line">            spi[i] = spi[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">sump</span><span class="params">(LL x)</span></span>;</span><br><span class="line"><span class="function">LL <span class="title">sumphi</span><span class="params">(LL x, <span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s == <span class="number">0</span>)  <span class="keyword">return</span> (x+<span class="number">1</span>)*x/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x/p[s] &lt;= p[s])  <span class="keyword">return</span> sump(x)+<span class="number">1</span>-sump(p[s]);</span><br><span class="line">    <span class="keyword">if</span>(x&lt;N &amp;&amp; x/p[s]/p[s] &lt;= p[s])&#123;</span><br><span class="line">        <span class="keyword">int</span> s2x = pi[(<span class="keyword">int</span>)(<span class="built_in">sqrt</span>(x+<span class="number">0.2</span>))];</span><br><span class="line">        LL ans = spi[x]+<span class="number">1</span>-spi[p[s]];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=s+<span class="number">1</span>;i&lt;=s2x;++i)&#123;</span><br><span class="line">            ans+=p[i]*(spi[x/p[i]]-spi[p[i<span class="number">-1</span>]]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sumphi(x,s<span class="number">-1</span>)-p[s]*sumphi(x/p[s],s<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">sump</span><span class="params">(LL x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;N) <span class="keyword">return</span> spi[x];</span><br><span class="line">    <span class="keyword">int</span> ps2x = pi[<span class="keyword">int</span>(<span class="built_in">sqrt</span>(x+<span class="number">0.2</span>))];</span><br><span class="line">    <span class="keyword">int</span> ps3x = pi[<span class="keyword">int</span>(cbrt(x+<span class="number">0.2</span>))];</span><br><span class="line">    LL ans = sumphi(x,ps3x) <span class="number">-1</span> + spi[p[ps3x]];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =ps3x+<span class="number">1</span>;i&lt;=ps2x;++i)&#123;</span><br><span class="line">        ans -= p[i]*(sump(x/p[i])-sump(p[i<span class="number">-1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    LL n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123; <span class="comment">// n = 10^10 就超过int64了,此时用Int128 n &lt; N*N</span></span><br><span class="line">        <span class="keyword">time_t</span> now = time(<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;sump(n)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Time used: "</span>&lt;&lt;difftime(time(<span class="number">0</span>),now)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2216,8 +2219,8 @@ a_{i+1}
 </ul>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2323,8 +2326,8 @@ a_{i+1}
 <p>在不同的操作系统这几个字符表现不同：<br>比如在 WIN 系统下，这两个字符就是表现的本义，<br>在 UNIX 类系统，换行 <code>\n</code> 就表现为光标下一行并回到行首，<br>在 MAC 上，<code>\r</code> 就表现为回到本行开头并往下一行，至于 ENTER 键的定义是与操作系统有关的。</p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2406,8 +2409,8 @@ a_{i+1}
 </blockquote>
 <h3 id="实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用"><a href="#实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用" class="headerlink" title="实现一个堆还是挺简单的，不过我们没必要再造轮子了。 下面用例子看一下 Python 堆的使用"></a><strong>实现一个堆还是挺简单的，不过我们没必要再造轮子了。</strong> 下面用例子看一下 Python 堆的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># from heapq import *</span></span><br><span class="line">x= list(range(<span class="number">10</span>))</span><br><span class="line">random.shuffle(x)</span><br><span class="line">heapq.heapify(x)</span><br><span class="line">print(x)</span><br><span class="line">heapq.heappop()</span><br><span class="line">heapq.heappush(x,<span class="number">3</span>)</span><br><span class="line">heapq.heapreplace(x,<span class="number">-1</span>)</span><br><span class="line">heapq.heappushpop(x,<span class="number">-2</span>) <span class="comment">#先push后pop，效率自然更快</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -3942,8 +3945,8 @@ d(n_1 \cdots n_m) &= \sum_{i \mid n_1 \cdots n_m} 1 =  \sum_{d \mid n_m} \sum_{i
 \sum_{i=1}^a \sum_{j=1}^b \sum_{k=1}^c d(ijk) = \sum_{t} \mu(t) \lfloor \frac{a}{it} \rfloor \lfloor \frac{b}{it} \rfloor g(ijt^2)</script><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2002</span>;</span><br><span class="line"><span class="keyword">int</span> f[N],g[N*N];</span><br><span class="line"><span class="keyword">bool</span> ip[N];</span><br><span class="line"><span class="keyword">int</span> mu[N],p[N],nt[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_mu</span><span class="params">()</span></span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>]=<span class="number">1</span>;ip[<span class="number">2</span>]=<span class="literal">true</span>;p[<span class="number">0</span>]=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i+=<span class="number">2</span>)   ip[i]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">3</span>,cnt = <span class="number">1</span>;i&lt;N;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ip[i])&#123;</span><br><span class="line">            p[cnt++] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>,t;j&lt;cnt&amp;&amp;(t= i * p[j])&lt;N;++j)&#123;</span><br><span class="line">            ip[t] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % p[j] == <span class="number">0</span>)   <span class="keyword">break</span>;</span><br><span class="line">            mu[t] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;N;i+=<span class="number">4</span>)  mu[i]=-mu[i&gt;&gt;<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getsum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,j;i&lt;=n;i=j+<span class="number">1</span>)&#123;</span><br><span class="line">        j = n/(n/i);</span><br><span class="line">        sum += (j-i+<span class="number">1</span>)*(n/i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;++i)       f[i]=getsum(i);    init_mu();</span><br><span class="line">    <span class="keyword">int</span> last = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;N;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(mu[i]==<span class="number">0</span>)    <span class="keyword">continue</span>;</span><br><span class="line">        nt[last]=i;</span><br><span class="line">        last = i;</span><br><span class="line">    &#125;</span><br><span class="line">    nt[last]=N;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getg</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = a*b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;++i)   g[i]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n&amp;&amp;i&lt;=c;i=nt[i])&#123; <span class="comment">// n^2 \log n</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i,t=mu[i]*f[c/i];j&lt;=n;j+=i)   g[j]+=t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">getf</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=a;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=b;++j)&#123;</span><br><span class="line">            res+=(a/i)*(b/j)*g[i*j*d];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c))&#123;</span><br><span class="line">        getg(a,b,c);</span><br><span class="line">        <span class="keyword">int</span> ab = <span class="built_in">min</span>(a,b);</span><br><span class="line">        LL res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=ab;i=nt[i])&#123;</span><br><span class="line">            res+=mu[i]*getf(a/i,b/i,i*i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="keyword">int</span>(res%(<span class="number">1</span>&lt;&lt;<span class="number">30</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -4034,8 +4037,8 @@ f(n) = \sum_{i=0} ^m (-1)^{m-i} f(x_i) {n \choose i}  {n-i-1 \choose m-i }</scri
 <h3 id="该方法可以推广成求-sum-i-1-n-f-i-k-，其中-f-x-是多项式。具体分析即可"><a href="#该方法可以推广成求-sum-i-1-n-f-i-k-，其中-f-x-是多项式。具体分析即可" class="headerlink" title="该方法可以推广成求 $\sum_{i=1}^n f(i)^k$，其中 $f(x)$ 是多项式。具体分析即可"></a>该方法可以推广成求 $\sum_{i=1}^n f(i)^k$，其中 $f(x)$ 是多项式。具体分析即可</h3><p>这种情况一般很难再做到 $O(k)$ 时间复杂度，而变成了 $O(k \log k) \deg f$ 复杂度。</p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -4056,8 +4059,8 @@ f(n) = \sum_{i=0} ^m (-1)^{m-i} f(x_i) {n \choose i}  {n-i-1 \choose m-i }</scri
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MSCS</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123; <span class="comment">// maximal sum of continue subsquence,mind overflow</span></span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">0</span>)    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> r=a[<span class="number">0</span>],s=a[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i!=n;++i)&#123;</span><br><span class="line">        s = <span class="built_in">max</span>(s,<span class="number">0</span>);</span><br><span class="line">        s += a[i];</span><br><span class="line">        r = <span class="built_in">max</span>(r,s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
         <tag>动态规划</tag>
       </tags>
   </entry>
@@ -4244,8 +4247,8 @@ S_3 &= - \sum_{\sqrt{y} < p \leq \sqrt{z}} \sum_{p < q \leq y} \mu(q) \psi(\frac
 </blockquote>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Math</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
