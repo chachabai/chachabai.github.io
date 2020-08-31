@@ -5032,7 +5032,7 @@ blockquote.pullquote.right {
   content: '';
 }
 [data-theme='dark'] #page-header {
-  background-color: #121212;
+  background-color: rgba(248,243,243,0);
 }
 [data-theme='dark'] #article-container code {
   background: #2c2c2c;
