@@ -6,17 +6,17 @@ const LL M = 1e9 + 7;
 
 class LinkStar {
 public:
-    std::vector<int> head, nxt, to;
-    LinkStar(int n) {
-        nxt.clear();
-        to.clear();
-        head = std::vector<int>(n + 1, -1);
-    }
-    void addedge(int u, int v) {
-        nxt.emplace_back(head[u]);
-        head[u] = to.size();
-        to.emplace_back(v);
-    }
+	std::vector<int> head, nxt, to;
+	LinkStar(int n) {
+		nxt.clear();
+		to.clear();
+		head = std::vector<int>(n + 1, -1);
+	}
+	void addedge(int u, int v) {
+		nxt.emplace_back(head[u]);
+		head[u] = to.size();
+		to.emplace_back(v);
+	}
 };
 
 int main() {

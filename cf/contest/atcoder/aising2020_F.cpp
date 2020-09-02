@@ -3,7 +3,7 @@ using namespace std;
 using LL = long long;
 constexpr LL M = 1e9+7;
 LL inv(LL a,LL p){
-    return a==1?1:(p-p/a)*inv(p%a,p)%p;
+	return a==1?1:(p-p/a)*inv(p%a,p)%p;
 }
 LL C(LL n, int k){
 	if(n<k) return 0;

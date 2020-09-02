@@ -6,27 +6,27 @@ const int N = 1e6;
 
 struct TreeArray {
 	std::vector<LL> s;
-    TreeArray() {}
-    TreeArray(int n) {
+	TreeArray() {}
+	TreeArray(int n) {
 		s.resize(n);
-    }
-    int lowbit(int n) {
-        return n & (-n);
-    }
-    void add(int id, int p) {
-        while (id < s.size()) {
-            s[id] += p;
-            id += lowbit(id);
-        }
-    }
-    LL sum(int id) {
-        LL r = 0;
-        while (id) {
-            r += s[id];
-            id -= lowbit(id);
-        }
-        return r;
-    }
+	}
+	int lowbit(int n) {
+		return n & (-n);
+	}
+	void add(int id, int p) {
+		while (id < s.size()) {
+			s[id] += p;
+			id += lowbit(id);
+		}
+	}
+	LL sum(int id) {
+		LL r = 0;
+		while (id) {
+			r += s[id];
+			id -= lowbit(id);
+		}
+		return r;
+	}
 };
 
 int main() {
