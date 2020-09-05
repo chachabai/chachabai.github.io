@@ -240,7 +240,7 @@ hr:before,
   --btn-color: #fff;
   --btn-bg: #49b1f5;
   --text-bg-hover: #49b1f5;
-  --light-grey: #eee;
+  --light-grey: #aaa;
   --white: #fff;
   --text-highlight-color: #1f2d3d;
   --blockquote-color: #6a737d;
@@ -2648,7 +2648,7 @@ blockquote footer cite:before {
 #footer-wrap {
   position: absolute;
   padding: 1.2rem 1rem 1.4rem;
-  color: #eee;
+  color: #aaa;
   text-align: center;
   left: 0;
   right: 0;
@@ -5021,7 +5021,7 @@ blockquote.pullquote.right {
 }
 [data-theme='dark'] #web_bg[data-type=color],
 [data-theme='dark'] #footer[data-type=color] {
-  background: rgba(13,13,13,0.5);
+  background: rgba(4,39,122,0.5);
 }
 [data-theme='dark'] #web_bg[data-type=photo]:before,
 [data-theme='dark'] #footer[data-type=photo]:before {
