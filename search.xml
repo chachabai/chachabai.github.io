@@ -1397,8 +1397,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <h2 id="Python-代码"><a href="#Python-代码" class="headerlink" title="Python 代码"></a>Python 代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># input : a,b natural number</span></span><br><span class="line"><span class="comment"># output: [gcd(a,b), x, y]</span></span><br><span class="line"><span class="comment"># ax + by = gcd(a,b)</span></span><br><span class="line"><span class="comment"># Algorithm: b(a//bx+y) + a%bx = gcd(b,a%b) </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exgcd</span><span class="params">(a,b)</span>:</span></span><br><span class="line">	<span class="keyword">if</span>(b == <span class="number">0</span>): <span class="keyword">return</span> [a,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">	[d,y,x] = exgcd(b,a%b)</span><br><span class="line">	<span class="keyword">return</span> [d,x,y-a//b*x]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0, i=1,2</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt2</span><span class="params">(a1,m1,a2,m2)</span>:</span></span><br><span class="line">	[d,t1,t2] = exgcd(m1,m2)</span><br><span class="line">	a,m = a2-a1,m1//d*m2</span><br><span class="line">	<span class="keyword">if</span>(a%d):  <span class="keyword">raise</span> ValueError(<span class="string">'No solution to crt problem'</span>)</span><br><span class="line">	<span class="keyword">return</span> [(a1+a//d*t1*m1)%m,m]</span><br><span class="line"></span><br><span class="line"><span class="comment"># input:  x = ai mod m_i, mi&gt;0</span></span><br><span class="line"><span class="comment"># output: x = a mod m</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crt</span><span class="params">(a,m)</span>:</span></span><br><span class="line">	n = len(a)</span><br><span class="line">	<span class="keyword">if</span>(len(m)!=n):  <span class="keyword">raise</span> ValueError(<span class="string">'a and m must have equal length'</span>)</span><br><span class="line">	aa,mm = a[<span class="number">0</span>],m[<span class="number">0</span>]</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n):</span><br><span class="line">		[aa,mm] = crt2(aa,mm,a[i],m[i])</span><br><span class="line">	<span class="keyword">return</span> [aa,mm]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">	[a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">5</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">	print(a,m)</span><br><span class="line">	[a,m]=crt([<span class="number">2</span>,<span class="number">-4</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">5</span>,<span class="number">12</span>])</span><br><span class="line">	print(a,m)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1672,8 +1672,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 </blockquote>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
         <tag>Make</tag>
       </tags>
   </entry>
@@ -2241,8 +2241,8 @@ a_{i+1}
 </ul>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2348,8 +2348,8 @@ a_{i+1}
 <p>在不同的操作系统这几个字符表现不同：<br>比如在 WIN 系统下，这两个字符就是表现的本义，<br>在 UNIX 类系统，换行 <code>\n</code> 就表现为光标下一行并回到行首，<br>在 MAC 上，<code>\r</code> 就表现为回到本行开头并往下一行，至于 ENTER 键的定义是与操作系统有关的。</p>
 ]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2431,8 +2431,8 @@ a_{i+1}
 </blockquote>
 <h3 id="实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用"><a href="#实现一个堆还是挺简单的，不过我们没必要再造轮子了。-下面用例子看一下-Python-堆的使用" class="headerlink" title="实现一个堆还是挺简单的，不过我们没必要再造轮子了。 下面用例子看一下 Python 堆的使用"></a><strong>实现一个堆还是挺简单的，不过我们没必要再造轮子了。</strong> 下面用例子看一下 Python 堆的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="comment"># from heapq import *</span></span><br><span class="line">x= list(range(<span class="number">10</span>))</span><br><span class="line">random.shuffle(x)</span><br><span class="line">heapq.heapify(x)</span><br><span class="line">print(x)</span><br><span class="line">heapq.heappop()</span><br><span class="line">heapq.heappush(x,<span class="number">3</span>)</span><br><span class="line">heapq.heapreplace(x,<span class="number">-1</span>)</span><br><span class="line">heapq.heappushpop(x,<span class="number">-2</span>) <span class="comment">#先push后pop，效率自然更快</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>C++</tag>
         <tag>Python</tag>
+        <tag>C++</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
