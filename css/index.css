@@ -5052,76 +5052,94 @@ blockquote.pullquote.right {
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
 }
-[data-theme='dark'] #article-container pre,
-[data-theme='dark'] #article-container .highlight:not(.js-file-line-container) {
+.post-bg {
+  height: 20rem;
+}
+@media screen and (max-width: 768px) {
+  .post-bg {
+    height: 18rem;
+  }
+}
+.post-bg:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  content: '';
+}
+.post-bg #article-container pre,
+.post-bg #article-container .highlight:not(.js-file-line-container) {
   background-color: #171717 !important;
   color: rgba(255,255,255,0.6) !important;
 }
-[data-theme='dark'] #article-container figure.highlight {
+.post-bg #article-container figure.highlight {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-[data-theme='dark'] #article-container figure.highlight table::-webkit-scrollbar-thumb {
+.post-bg #article-container figure.highlight table::-webkit-scrollbar-thumb {
   background: #1f1f1f;
 }
-[data-theme='dark'] #article-container figure.highlight .line:before {
+.post-bg #article-container figure.highlight .line:before {
   color: rgba(255,255,255,0.6) !important;
 }
-[data-theme='dark'] #article-container figure.highlight .hljs {
+.post-bg #article-container figure.highlight .hljs {
   background-color: #171717 !important;
 }
-[data-theme='dark'] #article-container figure.highlight .highlight-tools {
+.post-bg #article-container figure.highlight .highlight-tools {
   background: #1a1a1a !important;
   color: #90a4ae !important;
 }
-[data-theme='dark'] #post-comment .comment-switch {
+.post-bg #post-comment .comment-switch {
   background: #2c2c2c !important;
 }
-[data-theme='dark'] #post-comment .comment-switch label {
+.post-bg #post-comment .comment-switch label {
   filter: brightness(0.7);
 }
-[data-theme='dark'] .note {
+.post-bg .note {
   filter: brightness(0.7);
 }
-[data-theme='dark'] .hide-button,
-[data-theme='dark'] .btn-beautify,
-[data-theme='dark'] .mermaid,
-[data-theme='dark'] .post-outdate-notice,
-[data-theme='dark'] .error-img,
-[data-theme='dark'] #article-container iframe,
-[data-theme='dark'] img,
-[data-theme='dark'] .gist,
-[data-theme='dark'] .aplayer {
+.post-bg .hide-button,
+.post-bg .btn-beautify,
+.post-bg .mermaid,
+.post-bg .post-outdate-notice,
+.post-bg .error-img,
+.post-bg #article-container iframe,
+.post-bg img,
+.post-bg .gist,
+.post-bg .aplayer {
   filter: brightness(0.7);
 }
-[data-theme='dark'] #hexo-blog-encrypt label,
-[data-theme='dark'] #hexo-blog-encrypt input {
+.post-bg #hexo-blog-encrypt label,
+.post-bg #hexo-blog-encrypt input {
   color: rgba(255,255,255,0.6) !important;
 }
-[data-theme='dark'] #hexo-blog-encrypt input {
+.post-bg #hexo-blog-encrypt input {
   background-color: #121212;
 }
-[data-theme='dark'] #gitalk-container {
+.post-bg #gitalk-container {
   filter: brightness(0.8);
 }
-[data-theme='dark'] #gitalk-container svg {
+.post-bg #gitalk-container svg {
   fill: rgba(255,255,255,0.8) !important;
 }
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-tab-active,
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-no-comment {
+.post-bg #disqus_thread #dsqjs .dsqjs-tab-active,
+.post-bg #disqus_thread #dsqjs .dsqjs-no-comment {
   color: rgba(255,255,255,0.6);
 }
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-order-label {
+.post-bg #disqus_thread #dsqjs .dsqjs-order-label {
   background-color: #1f1f1f;
 }
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body {
+.post-bg #disqus_thread #dsqjs .dsqjs-post-body {
   color: rgba(255,255,255,0.6);
 }
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body code,
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body pre {
+.post-bg #disqus_thread #dsqjs .dsqjs-post-body code,
+.post-bg #disqus_thread #dsqjs .dsqjs-post-body pre {
   background: #2c2c2c;
 }
-[data-theme='dark'] #disqus_thread #dsqjs .dsqjs-post-body blockquote {
+.post-bg #disqus_thread #dsqjs .dsqjs-post-body blockquote {
   color: rgba(255,255,255,0.6);
 }
 .search-dialog {
