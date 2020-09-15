@@ -3327,11 +3327,11 @@ _:future,
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-.tag-cloud__title {
+__title {
   text-align: center;
   font-size: 1.8rem;
 }
-.tag-cloud-tags {
+-tags {
   text-align: center;
 }
 .layout_post > #post,
