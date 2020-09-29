@@ -105,19 +105,100 @@
   </entry>
   
   <entry>
-    <title>dna049 的 C++模板</title>
-    <link href="https://dna049.com/templateOfCpp/"/>
-    <id>https://dna049.com/templateOfCpp/</id>
+    <title>C++ 代码规范</title>
+    <link href="https://dna049.com/codeStyle/"/>
+    <id>https://dna049.com/codeStyle/</id>
     <published>2020-07-17T17:25:02.000Z</published>
-    <updated>2020-09-29T02:54:00.200Z</updated>
+    <updated>2020-09-29T04:40:59.928Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;此处包含 C++ 代码规范，C++ 模板，C++ STL 的使用。&lt;/p&gt;
+      
+      
+        
+        
+          &lt;p&gt;此规范参考：Codeforces 上 &lt;a href=&quot;http://codeforces.com/profile/jiangly&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jiangly&lt;/a&gt; 的码风，&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dna049 的 C++ 模板</title>
+    <link href="https://dna049.com/templateOfCpp/"/>
+    <id>https://dna049.com/templateOfCpp/</id>
+    <published>2020-07-17T17:20:02.000Z</published>
+    <updated>2020-09-29T04:58:47.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此处只包含通用代码块，以下为其它内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/codeStyle/&quot; title=&quot;C++ 代码规范&quot;&gt;C++ 代码规范&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/allTemplate/&quot; title=&quot;C++ 万能模板&quot;&gt;C++ 万能模板&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/stl/&quot; title=&quot;STL 和 C++17 学习记录&quot;&gt;STL 和 C++17 学习记录&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;vector&lt;/code&gt; 而非数组，虽然数组长度现在不用一开始给定，但是用 &lt;code&gt;vector&lt;/code&gt; 结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
+&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;vector&lt;/code&gt; 而非数组，结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
 &lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>万能通用模板 + STL 学习</title>
+    <link href="https://dna049.com/allTemplate/"/>
+    <id>https://dna049.com/allTemplate/</id>
+    <published>2020-07-17T17:10:02.000Z</published>
+    <updated>2020-09-29T04:57:27.430Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;比赛版&quot;&gt;&lt;a href=&quot;#比赛版&quot; class=&quot;headerlink&quot; title=&quot;比赛版&quot;&gt;&lt;/a&gt;比赛版&lt;/h2&gt;&lt;h3 id=&quot;Case&quot;&gt;&lt;a href=&quot;#Case&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL 和 C++17 学习记录</title>
+    <link href="https://dna049.com/stl/"/>
+    <id>https://dna049.com/stl/</id>
+    <published>2020-07-17T17:00:02.000Z</published>
+    <updated>2020-09-29T04:50:12.875Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;综述&quot;&gt;&lt;a href=&quot;#综述&quot; class=&quot;headerlink&quot; title=&quot;综述&quot;&gt;&lt;/a&gt;综述&lt;/h2&gt;&lt;p&gt;为了更加 &lt;strong&gt;优雅&lt;/strong&gt; 的写 C++，在学了一点 C++17 皮毛之后，重新探索了一下 C++
+        
+      
     
     </summary>
     
@@ -423,70 +504,6 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>特殊数列</title>
-    <link href="https://dna049.com/SpecialNumberSequences/"/>
-    <id>https://dna049.com/SpecialNumberSequences/</id>
-    <published>2020-04-12T06:47:16.000Z</published>
-    <updated>2020-08-22T12:57:35.581Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在知乎上看到一个有趣的问题: &lt;a href=&quot;https://www.zhihu.com/question/383254359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何证明这个数列无界？&lt;/a&gt; 在此记录一下简单的做法，然后把这篇博客记录以后遇到的一些特殊数列。&lt;/p&gt;
-&lt;p&gt;证明：当 $x$ 是无理数时，$f_n(x) = \sum_{i=1}^n (-1)^{\lfloor ix \rfloor}$  无界&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$\lfloor x \rfloor$ 表示 $x$ 的整数部分， $0 \leq \lbrace x \rbrace \doteq x- \lfloor x \rfloor&amp;lt;1$ 表示 $x$ 的小数部分&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>点灯问题之高斯消元法</title>
-    <link href="https://dna049.com/gaussianElimination/"/>
-    <id>https://dna049.com/gaussianElimination/</id>
-    <published>2020-04-11T02:45:49.000Z</published>
-    <updated>2020-08-22T11:57:19.506Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在知乎的 &lt;a href=&quot;https://zhuanlan.zhihu.com/skymath&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数学&amp;amp;算法&lt;/a&gt; 专栏里看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/53646257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点灯游戏的 $O(n^3)$ 算法&lt;/a&gt;，觉得挺有意思，特此记录，并且补充代码&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用 Python 将图片换成字符</title>
-    <link href="https://dna049.com/imageToChar/"/>
-    <id>https://dna049.com/imageToChar/</id>
-    <published>2020-04-07T12:26:27.000Z</published>
-    <updated>2020-08-22T12:57:35.572Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我知乎上看到 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/126669800&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么用 Python 把图片转化为字符？&lt;/a&gt; 挺有趣的，自己也尝试了一下，当然他也是参考 &lt;a href=&quot;https://github.com/RameshAditya/asciify/blob/master/asciify.py&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;原理就是：将图片（位图）转化成灰度图，即 0~255 的数值，然后将这些数值换成特殊符号（自定义）&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
