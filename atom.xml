@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-09-30T06:19:14.134Z</updated>
+  <updated>2020-09-30T07:49:08.537Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/primeInPolyRing/"/>
     <id>https://dna049.com/primeInPolyRing/</id>
     <published>2020-09-30T04:38:02.000Z</published>
-    <updated>2020-09-30T06:19:14.134Z</updated>
+    <updated>2020-09-30T07:49:08.537Z</updated>
     
     <summary type="html">
     
@@ -32,7 +32,7 @@
           &lt;blockquote&gt;
 &lt;p&gt;该内容来自 《Noncommutative Noetherian Ring》 P392 - P400&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;约定记号，$\simga$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T =
+&lt;p&gt;约定记号，$\sigma$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T =
         
       
     
@@ -406,9 +406,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
   </entry>
   
@@ -430,9 +430,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
