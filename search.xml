@@ -77,7 +77,7 @@ a_0 I = \mathbf{0}</script><p>上述定理优美在于从形式上，$\phi(\lamb
 <li>安装 Hexo 并上传到 git 上 <a href="https://blog.csdn.net/grave2015/article/details/79961843" target="_blank" rel="noopener">这里超详细</a></li>
 <li>拉取源代码</li>
 <li><code>npm install</code> 更新依赖（配置国内镜像：<code>npm config set registry https://registry.npm.taobao.org</code>）</li>
-<li>使用<a href="https://www.dazhuanlan.com/2020/01/30/5e322259a87e5/" target="_blank" rel="noopener">方案 2</a> 修改 <code>node_modules/nunjucks</code>，并且 搜索、RSS 插件，hexo-generator-random 插件同步修改。</li>
+<li>使用<a href="https://www.dazhuanlan.com/2020/01/30/5e322259a87e5/" target="_blank" rel="noopener">方案 2</a> 修改 <code>node_modules/nunjucks</code>，并且 搜索、RSS 插件，hexo-generator-random 插件同步修改, <code>scaffolds/</code> 也要修改！。</li>
 <li><a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">mathjax 和 Hexo 的完美冲突解决方案</a> (目前任然不建议使用 Katex)</li>
 <li>拉取自己 fork 的主题 <a href="https://github.com/chachabai/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a>，并复制 <code>_config.yml</code> 到 <code>source/_data/</code> 进行主题配置：<a href="https://demo.jerryc.me/posts/ceeb73f/" target="_blank" rel="noopener">官方配置方法</a></li>
 </ol>
@@ -2466,7 +2466,7 @@ A = U \left( \begin{matrix}
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">std</span>::sort(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>()); <span class="comment">// 默认从小到大排序</span></span><br><span class="line"><span class="built_in">std</span>::sort(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), <span class="built_in">std</span>::less&lt;<span class="keyword">int</span>&gt;()); <span class="comment">// 手动从小到大排序（不一定是int，具体问题具体修改）</span></span><br><span class="line"><span class="built_in">std</span>::sort(a.rbegin(), a.<span class="built_in">end</span>()); <span class="comment">// 从大到小排序</span></span><br><span class="line"><span class="built_in">std</span>::sort(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), <span class="built_in">std</span>::greater&lt;<span class="keyword">int</span>&gt;()); <span class="comment">// 从大到小排序</span></span><br><span class="line"><span class="comment">//对于 tuple 和 pair 大小关系都是从按照字典序比较的</span></span><br><span class="line"><span class="built_in">std</span>::sort(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>(), [](<span class="keyword">int</span> &amp; x, <span class="keyword">int</span> &amp; y) &#123;</span><br><span class="line">	<span class="keyword">return</span> (x ^ <span class="number">4</span>) &lt; (y ^ <span class="number">4</span>); <span class="comment">// 位运算的优先级好低呀</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp; x: a) <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">" "</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="集合交并运算"><a href="#集合交并运算" class="headerlink" title="集合交并运算"></a>集合交并运算</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">std</span>::et&lt;<span class="keyword">int</span>&gt; x&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; y&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; t;</span><br><span class="line"><span class="built_in">std</span>::set_intersection(x.<span class="built_in">begin</span>(), x.<span class="built_in">end</span>(), y.<span class="built_in">begin</span>(), y.<span class="built_in">end</span>(), <span class="built_in">std</span>::inserter(t, t.<span class="built_in">begin</span>()));</span><br><span class="line"><span class="comment">// 若x,y,t是vector等有push_back 的容器，就可以使用</span></span><br><span class="line"><span class="comment">// set_intersection(x.begin(),x.end(),y.begin(),y.end(),back_inserter(t));</span></span><br><span class="line"><span class="comment">// set_union,set_difference,set_symmetric_difference 等同理</span></span><br></pre></td></tr></table></figure>
 <h3 id="lambda-表达式递归写法"><a href="#lambda-表达式递归写法" class="headerlink" title="lambda 表达式递归写法"></a>lambda 表达式递归写法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">function&lt;<span class="keyword">int</span>(<span class="keyword">int</span>, <span class="keyword">int</span>)&gt; gcd = [ &amp; ](<span class="keyword">int</span> a, <span class="keyword">int</span> b) -&gt; <span class="keyword">int</span> &#123; <span class="comment">// 注意最前面不能用auto</span></span><br><span class="line">	<span class="keyword">return</span> b ? gcd(b, a % b) : a;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; gcd(<span class="number">102</span>, <span class="number">210</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::__gcd(<span class="number">102</span>, <span class="number">210</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="C-STL-内建的一些好用的函数"><a href="#C-STL-内建的一些好用的函数" class="headerlink" title="C++ STL 内建的一些好用的函数"></a>C++ STL 内建的一些好用的函数</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">std</span>::__builtin_parity(uint n):   返回n的二进制<span class="number">1</span>的个数奇偶性</span><br><span class="line"><span class="built_in">std</span>::__builtin_clz(uint n)：     返回n的二进制前置<span class="number">0</span>的个数</span><br><span class="line"><span class="built_in">std</span>::__builtin_ctz(uint n):      返回n的二进制后置<span class="number">0</span>的个数</span><br><span class="line"><span class="built_in">std</span>::__builtin_ffs(<span class="keyword">int</span> n)：      返回n的二进制从后往前第一次出现<span class="number">1</span>的位置</span><br><span class="line"><span class="built_in">std</span>::__lg(<span class="keyword">int</span> n):                返回log2(n)的整数部分</span><br><span class="line">= <span class="built_in">std</span>::__builtin_ctz(uint n)+<span class="number">1</span></span><br><span class="line"><span class="built_in">std</span>::__builtin_popcount(uint n): 返回n的二进制<span class="number">1</span>的个数，以上函数仅在GCC中有</span><br><span class="line">lowbit(uint n): n&amp;(-n)      返回使得最大的<span class="number">2</span>^i|n <span class="comment">// 这个不是内建的</span></span><br><span class="line"><span class="comment">//产生大的随机数</span></span><br><span class="line"><span class="built_in">std</span>::mt19937 rnd(<span class="built_in">std</span>::chrono::steady_clock::now().time_since_epoch().count());</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="C-STL-内建的一些好用的函数"><a href="#C-STL-内建的一些好用的函数" class="headerlink" title="C++ STL 内建的一些好用的函数"></a>C++ STL 内建的一些好用的函数</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">__builtin_parity(uint n):   返回n的二进制<span class="number">1</span>的个数奇偶性</span><br><span class="line">__builtin_clz(uint n)：     返回n的二进制前置<span class="number">0</span>的个数</span><br><span class="line">__builtin_ctz(uint n):      返回n的二进制后置<span class="number">0</span>的个数</span><br><span class="line">__builtin_ffs(<span class="keyword">int</span> n)：      返回n的二进制从后往前第一次出现<span class="number">1</span>的位置</span><br><span class="line">__lg(<span class="keyword">int</span> n):                返回log2(n)的整数部分</span><br><span class="line">= __builtin_ctz(uint n)+<span class="number">1</span></span><br><span class="line">__builtin_popcount(uint n): 返回n的二进制<span class="number">1</span>的个数，以上函数仅在GCC中有</span><br><span class="line">lowbit(uint n): n&amp;(-n)      返回使得最大的<span class="number">2</span>^i|n <span class="comment">// 这个不是内建的</span></span><br><span class="line"><span class="comment">//产生大的随机数</span></span><br><span class="line"><span class="built_in">std</span>::mt19937 rnd(<span class="built_in">std</span>::chrono::steady_clock::now().time_since_epoch().count());</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>C++</tag>
       </tags>
@@ -5801,6 +5801,39 @@ f(x) = \frac{4}{3} \sum_{n=0} ^ \infty (\frac{2^{n \% 3 +1} (8^{n/3}-1)}{8-1} + 
         <tag>Math</tag>
         <tag>Codeforces</tag>
         <tag>图论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>primeInPolyRing</title>
+    <url>/primeInPolyRing/</url>
+    <content><![CDATA[<blockquote>
+<p>该内容来自 《Noncommutative Noetherian Ring》 P392 - P400</p>
+</blockquote>
+<p>约定记号，$\simga$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T = R[x, x^{-1}; \sigma]$，注意 $\sigma$ 可以拓展到 $S, T$ 上。本篇考虑这三个环之间的素理想的关系。用 $\triangleleft$ 表示理想， $\triangleleft_l, \triangleleft_r$ 分别表示左理想，右理想。</p>
+<h2 id="lemma-1"><a href="#lemma-1" class="headerlink" title="lemma 1"></a>lemma 1</h2><ol>
+<li><p>若 $A \triangleleft T$，则 $A$ 是 $\sigma$-不变的，$A = (A \cap S) T$ 且 $A \cap S$ 是 $S$ 中的 $\sigma$-不变理想。</p>
+<p><strong>Proof</strong>：$\sigma(a) = x a x^{-1} \in A$，$A$ 中任意元都可以通分一下就有 $A = (A \cap S) T$，显然 $A \cap S$ 是 $S$ 中 $\sigma$-不变理想。</p>
+</li>
+<li><p>若 $B$ 是 $S$ 的一个 $\sigma$-不变理想，那么 $BT \triangleleft T$，且 $B \cap R$ 是 $R$ 的一个 $\sigma$-不变理想。（注意到 $BT = TB$，证明显然）</p>
+</li>
+<li><p>若 $C$ 是 $R$ 的一个 $\sigma$-不变理想，那么 $CS, CT$ 分别是 $S, T$ 的 $\sigma$-不变理想。并且 $S/CS \simeq (R/C)[x; \sigma]$, $T/CT \simeq (R/C)[x, x^{-1}; \sigma]$</p>
+<p><strong>Proof</strong>：注意到 $SC = CS$，从而知道 $TC = CT$。同构根据 $S \to (R/C)[x; \sigma]$ 和 $T \to (R/C)[x; \sigma]$ 的 kernel 也是显然的。</p>
+</li>
+</ol>
+<h2 id="lemma-2"><a href="#lemma-2" class="headerlink" title="lemma 2"></a>lemma 2</h2><ol>
+<li><p>$\sigma-Spec(T) = Spec(T)$（其中 $\sigma-Spec(T)$ 为在所有 $\sigma$ 理想意义下素的 $\sigma$ 理想），若 $A \in Spec(T)$，则 $A \cap S \in \sigma-Spec(T)$，且 $x \in A \cap S$.</p>
+<p> <strong>Proof</strong>：首先 $\sigma-Spec(T) = Spec(T)$ 是上一个引理的结论，$x \notin A \cap S$ 是显然的，否则 $A = T$，$A \cap S \triangleleft S$ 是 $\sigma$-不变的。 若 $I, J$ 是 $S$ 中 $\sigma$-不变的理想满足 $I J \subseteq A \cap S$，那么 $(IT)(JT) = IJ T \subseteq (A \cap S) T \subseteq A$，从而 $IT \subseteq A$ 或 $JT \subseteq A$，从而 $I \subseteq A \cap S$，或者 $J \subseteq A$。</p>
+</li>
+<li><p>若 $x \notin B \in Spec(S)$，则 $B \in \sigma-Spec(S)$</p>
+<p><strong>Proof</strong>：$B \supseteq Bx = x \sigma(B) = x S \sigma B$, 从而 $\sigma(B) \subseteq B$，从而证毕。</p>
+</li>
+<li><p>若 $x \neq B \in \sigma-Spec(S)$ 且 $x \notin B$，则 $BT \in Spec(T)$，$B = BT \cap S \not \subseteq x S$ 且 $B \cap R \in \sigma-Spec(R)$.</p>
+<p><strong>Proof</strong>：定义 $B’ = \{ b \in S \mid x S b \in B \}$，显然是 $S$ 的一个理想，所以 $B’ \subseteq B$，若 $B \subseteq xS$，则 $B’ = B$，$B = xSB$，比较 $B$ 中最低次数可知矛盾，因此 $B \notin xS$</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Math</tag>
       </tags>
   </entry>
 </search>

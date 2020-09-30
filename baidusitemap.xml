@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dna049.com/stl/</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/primeInPolyRing/</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/butterfly/</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/DixmierMoeglinEquivalence/</loc>
     <lastmod>2020-09-30</lastmod>
   </url>  <url>
@@ -16,9 +25,6 @@
     <loc>https://dna049.com/allTemplate/</loc>
     <lastmod>2020-09-29</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/stl/</loc>
-    <lastmod>2020-09-29</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/codeStyle/</loc>
     <lastmod>2020-09-29</lastmod>
   </url>  <url>
@@ -26,9 +32,6 @@
     <lastmod>2020-09-18</lastmod>
   </url>  <url>
     <loc>https://dna049.com/helloHexo/</loc>
-    <lastmod>2020-09-16</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/butterfly/</loc>
     <lastmod>2020-09-16</lastmod>
   </url>  <url>
     <loc>https://dna049.com/discuss2020/</loc>
@@ -142,10 +145,10 @@
     <loc>https://dna049.com/imageToChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <loc>https://dna049.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToByte/</loc>
+    <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/calculatorWithC/</loc>
@@ -226,9 +229,6 @@
     <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fairAssignment/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
@@ -238,10 +238,13 @@
     <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
+    <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/treeSegmentTree/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/graphOfNoncommutativeRing/</loc>

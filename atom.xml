@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-09-11T10:45:31.014Z</updated>
+  <updated>2020-09-30T06:19:14.134Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>primeInPolyRing</title>
+    <link href="https://dna049.com/primeInPolyRing/"/>
+    <id>https://dna049.com/primeInPolyRing/</id>
+    <published>2020-09-30T04:38:02.000Z</published>
+    <updated>2020-09-30T06:19:14.134Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;该内容来自 《Noncommutative Noetherian Ring》 P392 - P400&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;约定记号，$\simga$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T =
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
   
   <entry>
     <title>讨论班笔记 2020</title>
@@ -63,7 +91,7 @@
     <link href="https://dna049.com/butterfly/"/>
     <id>https://dna049.com/butterfly/</id>
     <published>2020-08-20T09:19:44.000Z</published>
-    <updated>2020-09-16T06:20:41.077Z</updated>
+    <updated>2020-09-30T04:37:20.359Z</updated>
     
     <summary type="html">
     
@@ -188,7 +216,7 @@
     <link href="https://dna049.com/stl/"/>
     <id>https://dna049.com/stl/</id>
     <published>2020-07-17T17:00:02.000Z</published>
-    <updated>2020-09-29T04:50:12.875Z</updated>
+    <updated>2020-09-30T06:47:03.486Z</updated>
     
     <summary type="html">
     
@@ -475,33 +503,6 @@ A_0=1,\; A_1=x
     </summary>
     
     
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不超过 $x$ 的素数之和</title>
-    <link href="https://dna049.com/primePowSum/"/>
-    <id>https://dna049.com/primePowSum/</id>
-    <published>2020-04-17T06:47:43.000Z</published>
-    <updated>2020-08-22T12:57:25.224Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我们可以在不求出 &lt;strong&gt;不超过 $x$ 的所有素数&lt;/strong&gt; 的情况下，求出最终结果。&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
-&lt;li&gt;$f_0(x) = \pi(x)$ 这个在 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;$f_1(x) = \sum_{p \leq x} p$ 这是我们关心的结果&lt;/li&gt;
-&lt;li&gt;对于一般的 $k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
