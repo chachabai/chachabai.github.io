@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dna049.com/DixmierMoeglinEquivalence/</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
     <lastmod>2020-09-29</lastmod>
   </url>  <url>
@@ -18,9 +21,6 @@
   </url>  <url>
     <loc>https://dna049.com/codeStyle/</loc>
     <lastmod>2020-09-29</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/DixmierMoeglinEquivalence/</loc>
-    <lastmod>2020-09-27</lastmod>
   </url>  <url>
     <loc>https://dna049.com/scrite/</loc>
     <lastmod>2020-09-18</lastmod>
@@ -133,28 +133,28 @@
     <loc>https://dna049.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/syntacticSugar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToByte/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/imageToChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/printSelfWithPy/</loc>
+    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/imageToByte/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/nthPrimeNumber/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
@@ -226,16 +226,16 @@
     <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
+    <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fairAssignment/</loc>
+    <loc>https://dna049.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
