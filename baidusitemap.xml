@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dna049.com/codeforces/</loc>
-    <lastmod>2020-10-07</lastmod>
+    <lastmod>2020-10-08</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/inverseFormulaAndItsMatrixForm/</loc>
+    <lastmod>2020-10-08</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
-    <lastmod>2020-10-07</lastmod>
+    <lastmod>2020-10-08</lastmod>
   </url>  <url>
     <loc>https://dna049.com/scrite/</loc>
     <lastmod>2020-10-05</lastmod>
@@ -56,9 +59,6 @@
     <lastmod>2020-08-24</lastmod>
   </url>  <url>
     <loc>https://dna049.com/algorithmsOfRootComplex/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/inverseFormulaAndItsMatrixForm/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/quadraticResidueAndGaussReciprocity/</loc>
@@ -136,6 +136,9 @@
     <loc>https://dna049.com/SpecialNumberSequences/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
+    <loc>https://dna049.com/syntacticSugar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
@@ -145,19 +148,16 @@
     <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/syntacticSugar/</loc>
+    <loc>https://dna049.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToByte/</loc>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
@@ -229,6 +229,9 @@
     <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
+    <loc>https://dna049.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
+    <lastmod>2020-08-20</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
@@ -236,9 +239,6 @@
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/treeSegmentTree/</loc>

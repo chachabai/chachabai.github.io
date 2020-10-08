@@ -162,7 +162,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-10-07T12:25:54.182Z</updated>
+    <updated>2020-10-08T05:17:57.953Z</updated>
     
     <summary type="html">
     
@@ -290,14 +290,14 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-10-07T14:32:14.212Z</updated>
+    <updated>2020-10-08T05:40:02.280Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;最近感觉自己又行了。就很想重新开始打 &lt;a href=&quot;https://codeforces.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Codeforces&lt;/a&gt;，这里罗列一下从 2020/05/16 开始提交的(不是特别水的）AC 代码。想有生之年上一次黄，先定个小目标上个 1900！菜鸡 dna049 加油！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;不再打除了 codeforces, atcoder, 洛谷之外的日常比赛。有空整理一下比赛，好的题目或比赛记得 star。&lt;br&gt;&lt;strong&gt;优雅的代码极大的避免了低级错误&lt;/strong&gt;，边界处理至少占三分之一的工作量！&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;不要急着写代码，不要急着写代码，不要急着写代码，重要的事情说三遍！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要急着写代码，不要急着写代码，不要急着写代码，重要的事情说三遍！！！&lt;/strong&gt;&lt;br&gt;优先做 Codeforces, Atcoder, 其它平台的题目可以在 vjudge 中提交（洛谷和 UOJ 除外)，POJ 和 HDU 不在搞了。&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
