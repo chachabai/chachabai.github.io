@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-10-04T12:00:36.437Z</updated>
+  <updated>2020-10-11T15:31:36.519Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>多项式环的素理想</title>
+    <title>$R, R[x; \sigma], R[x^{\pm}; \sigma]$ 的素理想关系</title>
     <link href="https://dna049.com/primeInPolyRing/"/>
     <id>https://dna049.com/primeInPolyRing/</id>
     <published>2020-09-30T04:38:02.000Z</published>
-    <updated>2020-10-04T12:00:36.437Z</updated>
+    <updated>2020-10-11T15:31:36.519Z</updated>
     
     <summary type="html">
     
@@ -385,9 +385,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -409,9 +409,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
