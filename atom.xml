@@ -45,27 +45,6 @@
   </entry>
   
   <entry>
-    <title>讨论班笔记 2020</title>
-    <link href="https://dna049.com/discuss2020/"/>
-    <id>https://dna049.com/discuss2020/</id>
-    <published>2020-09-11T05:30:00.000Z</published>
-    <updated>2020-09-11T10:45:31.014Z</updated>
-    
-    <summary type="html">
-    
-      Here&#39;s something encrypted, password is required to continue reading.
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-      <category term="Encrypt" scheme="https://dna049.com/tags/Encrypt/"/>
-    
-  </entry>
-  
-  <entry>
     <title>The Dixmier-Moeglin Equivalence</title>
     <link href="https://dna049.com/DixmierMoeglinEquivalence/"/>
     <id>https://dna049.com/DixmierMoeglinEquivalence/</id>
@@ -162,7 +141,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-10-08T14:12:54.487Z</updated>
+    <updated>2020-10-11T08:51:20.044Z</updated>
     
     <summary type="html">
     
@@ -406,9 +385,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -430,9 +409,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -503,6 +482,33 @@ A_0=1,\; A_1=x
     </summary>
     
     
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不超过 $x$ 的素数之和</title>
+    <link href="https://dna049.com/primePowSum/"/>
+    <id>https://dna049.com/primePowSum/</id>
+    <published>2020-04-17T06:47:43.000Z</published>
+    <updated>2020-08-22T12:57:25.224Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们可以在不求出 &lt;strong&gt;不超过 $x$ 的所有素数&lt;/strong&gt; 的情况下，求出最终结果。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
+&lt;li&gt;$f_0(x) = \pi(x)$ 这个在 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;$f_1(x) = \sum_{p \leq x} p$ 这是我们关心的结果&lt;/li&gt;
+&lt;li&gt;对于一般的 $k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
