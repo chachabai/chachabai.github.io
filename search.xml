@@ -8,7 +8,7 @@
       <link href="/primeInPolyRing/"/>
       <url>/primeInPolyRing/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>该内容来自 《Noncommutative Noetherian Ring》 P392 - P400</p></blockquote><p>约定记号，$\sigma$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T = R[x, x^{-1}; \sigma]$，注意 $\sigma$ 可以拓展到 $S, T$ 上。本篇考虑这三个环之间的素理想的关系。用 $\triangleleft$ 表示理想， $\triangleleft_l, \triangleleft_r$ 分别表示左理想，右理想。</p><h2 id="lemma-1"><a href="#lemma-1" class="headerlink" title="lemma 1"></a>lemma 1</h2><ol><li><p>若 $A \triangleleft T$，则 $A$ 是 $\sigma$-不变的，$A = (A \cap S) T$ 且 $A \cap S$ 是 $S$ 中的 $\sigma$-不变理想。</p><p><strong>Proof</strong>：$\sigma(a) = x a x^{-1} \in A$，$A$ 中任意元都可以通分一下就有 $A = (A \cap S) T$，显然 $A \cap S$ 是 $S$ 中 $\sigma$-不变理想。</p></li><li><p>若 $B$ 是 $S$ 的一个 $\sigma$-不变理想，那么 $BT \triangleleft T$，且 $B \cap R$ 是 $R$ 的一个 $\sigma$-不变理想。（注意到 $BT = TB$，证明显然）</p></li><li><p>若 $C$ 是 $R$ 的一个 $\sigma$-不变理想，那么 $CS, CT$ 分别是 $S, T$ 的 $\sigma$-不变理想。并且 $S/CS \simeq (R/C)[x; \sigma]$, $T/CT \simeq (R/C)[x, x^{-1}; \sigma]$</p><p><strong>Proof</strong>：注意到 $SC = CS$，从而知道 $TC = CT$。同构根据 $S \to (R/C)[x; \sigma]$ 和 $T \to (R/C)[x; \sigma]$ 的 kernel 也是显然的。</p></li></ol><h2 id="lemma-2"><a href="#lemma-2" class="headerlink" title="lemma 2"></a>lemma 2</h2><ol><li><p>$\sigma-Spec(T) = Spec(T)$（其中 $\sigma-Spec(T)$ 为在所有 $\sigma$ 理想意义下素的 $\sigma$ 理想），若 $A \in Spec(T)$，则 $A \cap S \in \sigma-Spec(S)$，且 $x \in A \cap S$.</p><p> <strong>Proof</strong>：首先 $\sigma-Spec(T) = Spec(T)$ 是上一个引理的结论，$x \notin A \cap S$ 是显然的，否则 $A = T$，$A \cap S \triangleleft S$ 是 $\sigma$-不变的。 若 $I, J$ 是 $S$ 中 $\sigma$-不变的理想满足 $I J \subseteq A \cap S$，那么 $(IT)(JT) = IJ T \subseteq (A \cap S) T \subseteq A$，从而 $IT \subseteq A$ 或 $JT \subseteq A$，从而 $I \subseteq A \cap S$，或者 $J \subseteq A$。</p></li><li><p>若 $x \notin B \in Spec(S)$，则 $B \in \sigma-Spec(S)$</p><p><strong>Proof</strong>：$B \supseteq Bx = x \sigma(B) = x S \sigma B$, 从而 $\sigma(B) \subseteq B$，从而证毕。</p></li><li><p>若 $x \neq B \in \sigma-Spec(S)$，则 $BT \in Spec(T)$，$B = BT \cap S \not \subseteq x S$ 且 $B \cap R \in \sigma-Spec(R)$.</p><p><strong>Proof</strong>：首先注意到 $x \notin S$，则 $x^n \notin S$（这是因为 $(SxS)(Sx^{n-1}S) = S x^n$，并且这两个理想都是 $\sigma$-不变的定义 $B’ = \{ b \in S \mid x S b \in B \}$，显然是 $S$ 的一个理想，所以 $B’ \subseteq B$，若 $B \subseteq xS$，则 $B’ = B$，$B = xSB$，比较 $B$ 中最低次数可知矛盾，因此 $B \notin xS$。因此对任意 $c \in BT$，存在 $n \in \mathbb{N}$ 使得 $c x^{n} \in B$，所以 $\sigma^m(c) \in BT$，若 $c \in BT \cap S$，则 $\sum (S \sigma^m(c) S) S x^n S \subseteq B$。这两个理想都是 $\sigma$ 不变的，所以 $c \in B$，所以 $B = BT \cap S$。从而后面 $BT \in Spec(T)$ 也是显然的。</p></li><li><p>若 $C \in \sigma-Spec(R)$，那么 $CS \in \sigma-Spec(S)$，$x \notin CS$, 且 $CT \in Spec(T)$。</p><p> <strong>Proof</strong>：根据上个引理的 3，只需考虑 $C = 0$ 的情况，若 $IJ = 0, I, J \triangleleft T$，考虑它们的首项系数构成的理想$I’, J’$，从而 $I’ J’ = 0$，从而 $I’ = 0$ 或 $J’ = 0$。所以 $I = 0$ 或 $J = 0$。从而 $T$ 是 $\sigma$-素环。考虑 $S$ 的理想 $I$ 对应的 $T$ 中的理想 $IT$ 则容易看出 $S$ 也是 $\sigma$-素环。 </p></li><li>若 $A \in Spec(T)$，那么 $A \cap R \in \sigma-Spec(R)$ 且 $(A \cap R) T \in Spec(T)$。（前面的结论自然可推出）</li></ol><h2 id="lemma-3"><a href="#lemma-3" class="headerlink" title="lemma 3"></a>lemma 3</h2><p>若 $R$ 是（单边） Noetherian 环 且 $\sigma$-素环，那么它是半素的。（不要 Noetherian 条件不对）</p><p><strong>Proof</strong>：$N(R)$ 是 $\sigma$-不变且幂零的，所以 $N(R)T$ 是幂零的，但是 $T$ 是素环，从而 $N(R) = 0$，证毕。</p><h2 id="定理-4"><a href="#定理-4" class="headerlink" title="定理 4"></a>定理 4</h2><p>设 $R$ 是 Noetherian 环，若 $P_0 \subseteq P_1 \subseteq P_2 \triangleleft T$ 满足 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$。<br>首先不妨设 $P_0 = 0$，假设 $P_2 \cap R = 0$，所以 $R$ 是 $\sigma$-素的，因此是半素的。所以 $R$ 有商环 $Q$ 是 Artinian 半单环，将 $\sigma$ 拓展到 $Q$ 上，则 $T \subseteq Q[x, x^{-1}; \sigma] = T’$，从而 $P_1 T’ = P_2 T’$ 是 $T’$ 的素理想，且（$P_i \cap R = 0$） $P_i T’ \cap T = P’$，但由于 Krull $\dim T’ = \dim Q + 1 = 1$，所以 $P_1 T’ = P_2 T’$，所以 $P_1 = P_2$</p><blockquote><p>下面证明定理 4 不需要 Noetherian 条件</p></blockquote><h2 id="引理-5"><a href="#引理-5" class="headerlink" title="引理 5"></a>引理 5</h2><p>对任意 $t \in T$，我们定义 $\hat{t}$ 为它的最高次数项，$length(t)$ 定义为它最高次数和最低次数的差，特别地，齐次项的长度为 0。</p><p>设 $0 \neq I \triangleleft T$ 且 $a \in I$ 是 $I$ 长度最小的非零元素，$0 \neq b \in I$. 则</p><ul><li>对任意齐次元 $t_o \in T$, $length(\hat{a} t_0 b - at_0\hat{b} &lt; length(b)$ （这是由于这两项最高次数相同且系数一致）</li><li>对任意 $t \in T$，$\hat{a} t a = a t \hat{a}$ （由上一个结论可知）</li><li>对任意 $t_1, \cdots, t_{n-m} \in T$, 则存在 $c \in T$ 使得，对任意 $t \in T$，<script type="math/tex; mode=display">\hat{a} t \hat{a} t_{n-m} \cdots \hat{a} t_1 b = atc</script>  <strong>Proof</strong>：对$n$用数学归纳法，当 $n = m$ 时，$b$ 也是次数最小的，因此，次数类似上一个结论，我们也有 $\hat{a} t b = a t \hat{b}$，考虑 $b’ = \hat{a} t b - a t_1 \hat{b}$，应用归纳法显然。</li></ul><h2 id="定理-6"><a href="#定理-6" class="headerlink" title="定理 6"></a>定理 6</h2><ul><li><p>若 $P_0 \subseteq P_1 \subseteq P_2$ 是 $T$ 的素理想，且 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$.</p><p>  <strong>Proof</strong>：显然将 $R, T$ 分别替换成 $R /(P_0 \cap R), T / ((R_0 \cap R) T)$，我们不妨设 $T$ 是素的且 $P_0 = 0$， 设 $a \in P_2, b \in P_1$ 的长度 $m, n$ 分别是 $P_1, P_2$ 中的最小长度。显然 $n \geq m \geq 1$，由于 $T$ 是素的，因此存在 $t \in T$ 使得 $\hat{a} t b \neq 0$，从而存在齐次元 $t_1$ 使得 $\hat{a} t_1 b \neq 0$，由归纳法，我们可以找到 $t_2, \cdots, t_{n - m}$ 使得 $d = \hat{a} t_{n - m} \cdots \hat{a} t_1 b \neq 0$，由 <strong>引理 5</strong> 知，存在 $c \in T$ 使得 $\hat{a}td = atc$ 对任意 $t \in T$，我们可以选择两对齐次元 $t_1, t_2$ 使得分别使得 $\hat{a} t_1 d$ 的最高项和 $\hat{a} t_2$ 的最低项不为 0，我们可以将 $t_1$ 乘以 $x$ 的一个幂次使得 $t_1$ 的次数等于 $t_2$ 的次数，从而 </p><script type="math/tex; mode=display">  length(d) = length(\hat{a} (t_1 + t_2) d  = length(a (t_1 + t_2) c) \leq length(a) + length(c)</script><p>  另一个方向同理，即</p><script type="math/tex; mode=display">  length(\hat{a}) + length(d) = length(a) + length(c)</script><p>  从而 $length(c) &lt; n$，即 $c \notin P$，然而 $a T c \subseteq Tb \subseteq P_1$，所以 $a \in P_1$. 然后用归纳法证明，$P_2$ 中每一个元素都属于 $P_1$，注意到对于任意齐次元 $t_0 \in T$</p><script type="math/tex; mode=display">  length(\hat{a} t_0 e - at_0 \hat{e}) < length(e)</script><p>  其中 $\hat{a} t_0 e - at_0 \hat{e} \in P_2$，由归纳法 $\hat{a} t_0 e - at_0 \hat{e} \in P_1$，并且 $at_0 \hat{e} \in P_1$，从而 $\hat{a} t_0 e \in P_1$，即 $\hat{a} T e \subseteq P_1$，但是 $\hat{a} \notin P$，从而 $e \in P_1$，从而 $P_1 = P_2$.</p></li><li><p>若 $P_0 \subseteq P_1 \subseteq P_2$ 是 $S$ 的 $\sigma$-素理想，且满足 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$</p><p>  <strong>Proof</strong>：同样的我们不妨设 $T$ 是素的，$P_2 \cap R = 0$，若 $x \in P_2$, 那么 $P_2 = (x)$，这是由于 $P_2 \cap R = 0$（所以无常数项），若 $x \notin P_1$，则由 <strong>引理 2</strong> $P_1 = P_1T \cap S \not \subseteq (x)S = P_2$，矛盾，所以 $x \in P_1$，所以 $P_1 = (x) = P_2$，所以不妨设 $x \notin P_2$，那么 同样由 <strong>引理 2</strong> 知 $0 \subseteq P_1T \subseteq P_2T$ 是 $T$ 的素理想，根据 1 知 $P_1 T = P_2 T$，所以 $P_1 = P_1 T \cap S = P_2 T \cap S = P_2$</p></li></ul><h2 id="引理-7"><a href="#引理-7" class="headerlink" title="引理 7"></a>引理 7</h2><p>若 $B \triangleright S$ 且 $A = lann B$，那么 $\sigma(A) \subseteq A$，更进一步，若 $B$ 是 $\sigma$-稳定（即$\sigma(B) = B$ 的，那么 $A$ 也是。</p><p><strong>Proof</strong>：由于 $x \sigma(A) B = A x B \subseteq AB = 0$，因此 $\sigma(A) B = 0$，因此 $\sigma(A) \subseteq A$，若 $B$ 是 $\sigma$-稳定的，那么 $AB = 0$ 当且仅当 $\sigma(A) \sigma(B) = 0$ 当且仅当 $\sigma(A) B = 0$。</p><blockquote><p>注意 $\sigma(I) \subseteq I$，并不能推出 $\sigma(I) = I$，即使 $\sigma$ 是 $R$ 上的自同构。例如 $R = \sum_{i \geq 0} k_i$, 其中 $k_i = k$ 为域，并且 $R$ 上的乘法满足对任意 $i, j &gt; 0$, $R_i R_j = 0$，$1_R = 1_{k_0}$，我们定义 $\sigma R \to R$ 为 $k_0 \to k_0$，$k_{2n} \to k_{2n + 2}, k_{2n + 1} \to k_{2n - 1}, k_1 \to k_2$，然后取 $I$ 为 $\sum_{i = 1} k_{2i}$。</p></blockquote><h2 id="引理-8"><a href="#引理-8" class="headerlink" title="引理 8"></a>引理 8</h2><p>我们称 $P \in Spec(R)$ 是 $\sigma$-半稳定的，若存在 $n$ 使得 $\sigma^n(P) = P$，对任意素理想，显然 $P^0 \doteq \cap \sigma^k(P)$ 是 $P$ 中最大的 $\sigma$-稳定的理想，被称为 $\sigma$-cyclic 的。</p><p>每一个 $\sigma$-cyclic 的理想都是 $\sigma$-素的。</p><p><strong>Proof</strong>：若 $I, J$ 是 $\sigma$-不变的理想满足 $I J \subseteq P^0$， 则 $I J \subseteq P$，从而 $I \subseteq P$ or $J \subseteq P$，从而 $I \ subseteq P^0$ or $J \subseteq P^0$。</p><p>对于 Noetherian 情况，反过来也对。</p><h2 id="命题-9"><a href="#命题-9" class="headerlink" title="命题 9"></a>命题 9</h2><p>若 $R$ 是（单边）Noetherian 的，且 $A \in \sigma-Spec(R)$，那么 $A \in \sigma-Spec(R)$，那么 $A$ 是 $\sigma$-cyclic 且 $AS \in Spec(S), AT \in Spec(T)$</p><blockquote><p>首先仅需证明 $A = 0$ 的情形</p></blockquote><p>由 <strong>引理 3</strong>，$R$ 是半素的，设 $P_1, \cdots, P_n$ 是 $R$ 的全部极小素理想，$P_1 \cap \cdot \cap P_n = 0$， 且显然 $\sigma(P_i)$ 也是极小素理想，因此 $\sigma$ 是 $\{P_1, \cdots, P_n\}$ 上的一个置换， 设 $P_1, \cdots, P_r$ 是一个置换圈，记 $C = P_1 \cdots, P_r$，$D = P_{r+1}, \cdots, P_n$，那么 $CD = 0$，由 <strong>引理 7</strong> 知 $D$ 也是 $\sigma$-不变的，从而 $C = 0$ 即 $0$ 是 $\sigma$-cyclic 的。</p><p>假设 $B,C \triangleleft S$ 满足 $BC = 0$，不妨设 $B = lann_S(C), C = rann_S(B)$，那么 $\sigma(B) \subseteq B$，从而等到一个上升链， $B \subseteq \sigma^{-1} (B) \subseteq \cdots \subseteq \sigma^{-n}(B) \subseteq \cdots$，从而 $B = \sigma(B)$, 同理 $C = \sigma(C)$，同样它们的首项系数 $B’, C’$ 也是 $\sigma$-稳定的，从而其中有一个为 0，因此 $S$ 是素的。</p><h2 id="定理-10"><a href="#定理-10" class="headerlink" title="定理 10"></a>定理 10</h2><p>下列等价（证明略）</p><ul><li>存在 $m \in \mathbb{Z}$ 使得 $\sigma^m$ 是 $R$ 的某个 $\sigma$-不变的商上的内自同构</li><li>存在 $P_0, P_1 \in \sigma-Spec(S)$ 满足 $P_0 \subseteq P_1$ 且 $x \notin P_1$</li><li>存在 $I_0, I_1 \in Spec(T)$ 满足 $I_0 \subseteq I_1$ 且 $I_0 \cap R = I_1 \cap R$</li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>该内容来自 《Noncommutative Noetherian Ring》 P392 - P400</p></blockquote><p>约定记号，$\sigma$ 是环 $R$ 的一个自同构，$S = R[x; \sigma], T = R[x, x^{-1}; \sigma]$，注意 $\sigma$ 可以拓展到 $S, T$ 上。本篇考虑这三个环之间的素理想的关系。用 $\triangleleft$ 表示理想， $\triangleleft_l, \triangleleft_r$ 分别表示左理想，右理想。</p><h2 id="lemma-1"><a href="#lemma-1" class="headerlink" title="lemma 1"></a>lemma 1</h2><ol><li><p>若 $A \triangleleft T$，则 $A$ 是 $\sigma$-不变的，$A = (A \cap S) T$ 且 $A \cap S$ 是 $S$ 中的 $\sigma$-不变理想。</p><p><strong>Proof</strong>：$\sigma(a) = x a x^{-1} \in A$，$A$ 中任意元都可以通分一下就有 $A = (A \cap S) T$，显然 $A \cap S$ 是 $S$ 中 $\sigma$-不变理想。</p></li><li><p>若 $B$ 是 $S$ 的一个 $\sigma$-不变理想，那么 $BT \triangleleft T$，且 $B \cap R$ 是 $R$ 的一个 $\sigma$-不变理想。（注意到 $BT = TB$，证明显然）</p></li><li><p>若 $C$ 是 $R$ 的一个 $\sigma$-不变理想，那么 $CS, CT$ 分别是 $S, T$ 的 $\sigma$-不变理想。并且 $S/CS \simeq (R/C)[x; \sigma]$, $T/CT \simeq (R/C)[x, x^{-1}; \sigma]$</p><p><strong>Proof</strong>：注意到 $SC = CS$，从而知道 $TC = CT$。同构根据 $S \to (R/C)[x; \sigma]$ 和 $T \to (R/C)[x; \sigma]$ 的 kernel 也是显然的。</p></li></ol><h2 id="lemma-2"><a href="#lemma-2" class="headerlink" title="lemma 2"></a>lemma 2</h2><ol><li><p>$\sigma-Spec(T) = Spec(T)$（其中 $\sigma-Spec(T)$ 为在所有 $\sigma$ 理想意义下素的 $\sigma$ 理想），若 $A \in Spec(T)$，则 $A \cap S \in \sigma-Spec(S)$，且 $x \in A \cap S$.</p><p> <strong>Proof</strong>：首先 $\sigma-Spec(T) = Spec(T)$ 是上一个引理的结论，$x \notin A \cap S$ 是显然的，否则 $A = T$，$A \cap S \triangleleft S$ 是 $\sigma$-不变的。 若 $I, J$ 是 $S$ 中 $\sigma$-不变的理想满足 $I J \subseteq A \cap S$，那么 $(IT)(JT) = IJ T \subseteq (A \cap S) T \subseteq A$，从而 $IT \subseteq A$ 或 $JT \subseteq A$，从而 $I \subseteq A \cap S$，或者 $J \subseteq A$。</p></li><li><p>若 $x \notin B \in Spec(S)$，则 $B \in \sigma-Spec(S)$</p><p><strong>Proof</strong>：$B \supseteq Bx = x \sigma(B) = x S \sigma B$, 从而 $\sigma(B) \subseteq B$，从而证毕。</p></li><li><p>若 $x \neq B \in \sigma-Spec(S)$，则 $BT \in Spec(T)$，$B = BT \cap S \not \subseteq x S$ 且 $B \cap R \in \sigma-Spec(R)$.</p><p><strong>Proof</strong>：首先注意到 $x \notin S$，则 $x^n \notin S$（这是因为 $(SxS)(Sx^{n-1}S) = S x^n$，并且这两个理想都是 $\sigma$-不变的定义 $B’ = \{ b \in S \mid x S b \in B \}$，显然是 $S$ 的一个理想，所以 $B’ \subseteq B$，若 $B \subseteq xS$，则 $B’ = B$，$B = xSB$，比较 $B$ 中最低次数可知矛盾，因此 $B \notin xS$。因此对任意 $c \in BT$，存在 $n \in \mathbb{N}$ 使得 $c x^{n} \in B$，所以 $\sigma^m(c) \in BT$，若 $c \in BT \cap S$，则 $\sum (S \sigma^m(c) S) S x^n S \subseteq B$。这两个理想都是 $\sigma$ 不变的，所以 $c \in B$，所以 $B = BT \cap S$。从而后面 $BT \in Spec(T)$ 也是显然的。</p></li><li><p>若 $C \in \sigma-Spec(R)$，那么 $CS \in \sigma-Spec(S)$，$x \notin CS$, 且 $CT \in Spec(T)$。</p><p> <strong>Proof</strong>：根据上个引理的 3，只需考虑 $C = 0$ 的情况，若 $IJ = 0, I, J \triangleleft T$，考虑它们的首项系数构成的理想$I’, J’$，从而 $I’ J’ = 0$，从而 $I’ = 0$ 或 $J’ = 0$。所以 $I = 0$ 或 $J = 0$。从而 $T$ 是 $\sigma$-素环。考虑 $S$ 的理想 $I$ 对应的 $T$ 中的理想 $IT$ 则容易看出 $S$ 也是 $\sigma$-素环。 </p></li><li>若 $A \in Spec(T)$，那么 $A \cap R \in \sigma-Spec(R)$ 且 $(A \cap R) T \in Spec(T)$。（前面的结论自然可推出）</li></ol><h2 id="lemma-3"><a href="#lemma-3" class="headerlink" title="lemma 3"></a>lemma 3</h2><p>若 $R$ 是（单边） Noetherian 环 且 $\sigma$-素环，那么它是半素的。（不要 Noetherian 条件不对）</p><p><strong>Proof</strong>：$N(R)$ 是 $\sigma$-不变且幂零的，所以 $N(R)T$ 是幂零的，但是 $T$ 是素环，从而 $N(R) = 0$，证毕。</p><h2 id="定理-4"><a href="#定理-4" class="headerlink" title="定理 4"></a>定理 4</h2><p>设 $R$ 是 Noetherian 环，若 $P_0 \subseteq P_1 \subseteq P_2 \triangleleft T$ 满足 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$。<br>首先不妨设 $P_0 = 0$，假设 $P_2 \cap R = 0$，所以 $R$ 是 $\sigma$-素的，因此是半素的。所以 $R$ 有商环 $Q$ 是 Artinian 半单环，将 $\sigma$ 拓展到 $Q$ 上，则 $T \subseteq Q[x, x^{-1}; \sigma] = T’$，从而 $P_1 T’ = P_2 T’$ 是 $T’$ 的素理想，且（$P_i \cap R = 0$） $P_i T’ \cap T = P’$，但由于 Krull $\dim T’ = \dim Q + 1 = 1$，所以 $P_1 T’ = P_2 T’$，所以 $P_1 = P_2$</p><blockquote><p>下面证明定理 4 不需要 Noetherian 条件</p></blockquote><h2 id="引理-5"><a href="#引理-5" class="headerlink" title="引理 5"></a>引理 5</h2><p>对任意 $t \in T$，我们定义 $\hat{t}$ 为它的最高次数项，$length(t)$ 定义为它最高次数和最低次数的差，特别地，齐次项的长度为 0。</p><p>设 $0 \neq I \triangleleft T$ 且 $a \in I$ 是 $I$ 长度最小的非零元素，$0 \neq b \in I$. 则</p><ul><li>对任意齐次元 $t_o \in T$, $length(\hat{a} t_0 b - at_0\hat{b} &lt; length(b)$ （这是由于这两项最高次数相同且系数一致）</li><li>对任意 $t \in T$，$\hat{a} t a = a t \hat{a}$ （由上一个结论可知）</li><li>对任意 $t_1, \cdots, t_{n-m} \in T$, 则存在 $c \in T$ 使得，对任意 $t \in T$，<script type="math/tex; mode=display">\hat{a} t \hat{a} t_{n-m} \cdots \hat{a} t_1 b = atc</script>  <strong>Proof</strong>：对$n$用数学归纳法，当 $n = m$ 时，$b$ 也是次数最小的，因此，次数类似上一个结论，我们也有 $\hat{a} t b = a t \hat{b}$，考虑 $b’ = \hat{a} t b - a t_1 \hat{b}$，应用归纳法显然。</li></ul><h2 id="定理-6"><a href="#定理-6" class="headerlink" title="定理 6"></a>定理 6</h2><ul><li><p>若 $P_0 \subseteq P_1 \subseteq P_2$ 是 $T$ 的素理想，且 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$.</p><p>  <strong>Proof</strong>：显然将 $R, T$ 分别替换成 $R /(P_0 \cap R), T / ((R_0 \cap R) T)$，我们不妨设 $T$ 是素的且 $P_0 = 0$， 设 $a \in P_2, b \in P_1$ 的长度 $m, n$ 分别是 $P_1, P_2$ 中的最小长度。显然 $n \geq m \geq 1$，由于 $T$ 是素的，因此存在 $t \in T$ 使得 $\hat{a} t b \neq 0$，从而存在齐次元 $t_1$ 使得 $\hat{a} t_1 b \neq 0$，由归纳法，我们可以找到 $t_2, \cdots, t_{n - m}$ 使得 $d = \hat{a} t_{n - m} \cdots \hat{a} t_1 b \neq 0$，由 <strong>引理 5</strong> 知，存在 $c \in T$ 使得 $\hat{a}td = atc$ 对任意 $t \in T$，我们可以选择两对齐次元 $t_1, t_2$ 使得分别使得 $\hat{a} t_1 d$ 的最高项和 $\hat{a} t_2$ 的最低项不为 0，我们可以将 $t_1$ 乘以 $x$ 的一个幂次使得 $t_1$ 的次数等于 $t_2$ 的次数，从而 </p><script type="math/tex; mode=display">  length(d) = length(\hat{a} (t_1 + t_2) d  = length(a (t_1 + t_2) c) \leq length(a) + length(c)</script><p>  另一个方向同理，即</p><script type="math/tex; mode=display">  length(\hat{a}) + length(d) = length(a) + length(c)</script><p>  从而 $length(c) &lt; n$，即 $c \notin P$，然而 $a T c \subseteq Tb \subseteq P_1$，所以 $a \in P_1$. 然后用归纳法证明，$P_2$ 中每一个元素都属于 $P_1$，注意到对于任意齐次元 $t_0 \in T$</p><script type="math/tex; mode=display">  length(\hat{a} t_0 e - at_0 \hat{e}) < length(e)</script><p>  其中 $\hat{a} t_0 e - at_0 \hat{e} \in P_2$，由归纳法 $\hat{a} t_0 e - at_0 \hat{e} \in P_1$，并且 $at_0 \hat{e} \in P_1$，从而 $\hat{a} t_0 e \in P_1$，即 $\hat{a} T e \subseteq P_1$，但是 $\hat{a} \notin P$，从而 $e \in P_1$，从而 $P_1 = P_2$.</p></li><li><p>若 $P_0 \subseteq P_1 \subseteq P_2$ 是 $S$ 的 $\sigma$-素理想，且满足 $P_0 \cap R = P_2 \cap R$，那么 $P_1 = P_2$</p><p>  <strong>Proof</strong>：同样的我们不妨设 $T$ 是素的，$P_2 \cap R = 0$，若 $x \in P_2$, 那么 $P_2 = (x)$，这是由于 $P_2 \cap R = 0$（所以无常数项），若 $x \notin P_1$，则由 <strong>引理 2</strong> $P_1 = P_1T \cap S \not \subseteq (x)S = P_2$，矛盾，所以 $x \in P_1$，所以 $P_1 = (x) = P_2$，所以不妨设 $x \notin P_2$，那么 同样由 <strong>引理 2</strong> 知 $0 \subseteq P_1T \subseteq P_2T$ 是 $T$ 的素理想，根据 1 知 $P_1 T = P_2 T$，所以 $P_1 = P_1 T \cap S = P_2 T \cap S = P_2$</p></li></ul><h2 id="引理-7"><a href="#引理-7" class="headerlink" title="引理 7"></a>引理 7</h2><p>若 $B \triangleright S$ 且 $A = lann B$，那么 $\sigma(A) \subseteq A$，更进一步，若 $B$ 是 $\sigma$-稳定（即$\sigma(B) = B$ 的，那么 $A$ 也是。</p><p><strong>Proof</strong>：由于 $x \sigma(A) B = A x B \subseteq AB = 0$，因此 $\sigma(A) B = 0$，因此 $\sigma(A) \subseteq A$，若 $B$ 是 $\sigma$-稳定的，那么 $AB = 0$ 当且仅当 $\sigma(A) \sigma(B) = 0$ 当且仅当 $\sigma(A) B = 0$。</p><blockquote><p>注意 $\sigma(I) \subseteq I$，并不能推出 $\sigma(I) = I$，即使 $\sigma$ 是 $R$ 上的自同构。例如 $R = \sum_{i \geq 0} k_i$, 其中 $k_i = k$ 为域，并且 $R$ 上的乘法满足对任意 $i, j &gt; 0$, $R_i R_j = 0$，$1_R = 1_{k_0}$，我们定义 $\sigma R \to R$ 为 $k_0 \to k_0$，$k_{2n} \to k_{2n + 2}, k_{2n + 1} \to k_{2n - 1}, k_1 \to k_2$，然后取 $I$ 为 $\sum_{i = 1} k_{2i}$。</p></blockquote><h2 id="引理-8"><a href="#引理-8" class="headerlink" title="引理 8"></a>引理 8</h2><p>我们称 $P \in Spec(R)$ 是 $\sigma$-半稳定的，若存在 $n$ 使得 $\sigma^n(P) = P$，对任意素理想，显然 $P^0 \doteq \cap \sigma^k(P)$ 是 $P$ 中最大的 $\sigma$-稳定的理想，被称为 $\sigma$-cyclic 的。</p><p>每一个 $\sigma$-cyclic 的理想都是 $\sigma$-素的。</p><p><strong>Proof</strong>：若 $I, J$ 是 $\sigma$-不变的理想满足 $I J \subseteq P^0$， 则 $I J \subseteq P$，从而 $I \subseteq P$ or $J \subseteq P$，从而 $I \subseteq P^0$ or $J \subseteq P^0$。</p><p>对于 Noetherian 情况，反过来也对。</p><h2 id="命题-9"><a href="#命题-9" class="headerlink" title="命题 9"></a>命题 9</h2><p>若 $R$ 是（单边）Noetherian 的，且 $A \in \sigma-Spec(R)$，那么 $A \in \sigma-Spec(R)$，那么 $A$ 是 $\sigma$-cyclic 且 $AS \in Spec(S), AT \in Spec(T)$</p><blockquote><p>首先仅需证明 $A = 0$ 的情形</p></blockquote><p>由 <strong>引理 3</strong>，$R$ 是半素的，设 $P_1, \cdots, P_n$ 是 $R$ 的全部极小素理想，$P_1 \cap \cdot \cap P_n = 0$， 且显然 $\sigma(P_i)$ 也是极小素理想，因此 $\sigma$ 是 $\{P_1, \cdots, P_n\}$ 上的一个置换， 设 $P_1, \cdots, P_r$ 是一个置换圈，记 $C = P_1 \cdots, P_r$，$D = P_{r+1}, \cdots, P_n$，那么 $CD = 0$，由 <strong>引理 7</strong> 知 $D$ 也是 $\sigma$-不变的，从而 $C = 0$ 即 $0$ 是 $\sigma$-cyclic 的。</p><p>假设 $B,C \triangleleft S$ 满足 $BC = 0$，不妨设 $B = lann_S(C), C = rann_S(B)$，那么 $\sigma(B) \subseteq B$，从而等到一个上升链， $B \subseteq \sigma^{-1} (B) \subseteq \cdots \subseteq \sigma^{-n}(B) \subseteq \cdots$，从而 $B = \sigma(B)$, 同理 $C = \sigma(C)$，同样它们的首项系数 $B’, C’$ 也是 $\sigma$-稳定的，从而其中有一个为 0，因此 $S$ 是素的。</p><h2 id="定理-10"><a href="#定理-10" class="headerlink" title="定理 10"></a>定理 10</h2><p>下列等价（证明略）</p><ul><li>存在 $m \in \mathbb{Z}$ 使得 $\sigma^m$ 是 $R$ 的某个 $\sigma$-不变的商上的内自同构</li><li>存在 $P_0, P_1 \in \sigma-Spec(S)$ 满足 $P_0 \subseteq P_1$ 且 $x \notin P_1$</li><li>存在 $I_0, I_1 \in Spec(T)$ 满足 $I_0 \subseteq I_1$ 且 $I_0 \cap R = I_1 \cap R$</li></ul>]]></content>
       
       
       
@@ -170,9 +170,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
             <tag> SageMath </tag>
             
@@ -214,9 +214,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
             <tag> Codeforces </tag>
             
@@ -239,9 +239,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
             <tag> 运筹学 </tag>
             
@@ -296,11 +296,11 @@
       
         <tags>
             
+            <tag> C++ </tag>
+            
             <tag> Python </tag>
             
             <tag> Math </tag>
-            
-            <tag> C++ </tag>
             
         </tags>
       
@@ -342,9 +342,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Python </tag>
             
             <tag> Make </tag>
             
@@ -403,9 +403,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
         </tags>
       
@@ -523,9 +523,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -544,9 +544,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -584,9 +584,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Python </tag>
             
             <tag> 数据结构 </tag>
             
@@ -1043,9 +1043,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
         </tags>
       
@@ -1102,9 +1102,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
         </tags>
       
@@ -1123,9 +1123,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
             <tag> 动态规划 </tag>
             
@@ -1165,9 +1165,9 @@
       
         <tags>
             
-            <tag> Math </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Math </tag>
             
         </tags>
       
