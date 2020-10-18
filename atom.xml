@@ -70,7 +70,7 @@
     <link href="https://dna049.com/butterfly/"/>
     <id>https://dna049.com/butterfly/</id>
     <published>2020-08-20T09:19:44.000Z</published>
-    <updated>2020-09-30T04:37:20.359Z</updated>
+    <updated>2020-10-18T11:44:10.767Z</updated>
     
     <summary type="html">
     
@@ -235,9 +235,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -269,7 +269,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-10-18T00:38:01.176Z</updated>
+    <updated>2020-10-18T13:21:17.064Z</updated>
     
     <summary type="html">
     
@@ -283,9 +283,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
     
@@ -312,9 +312,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
@@ -383,11 +383,11 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -409,9 +409,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -432,9 +432,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
@@ -508,9 +508,9 @@ f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
