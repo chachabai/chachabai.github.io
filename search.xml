@@ -1610,30 +1610,29 @@ f_n = (1+\frac{1}{n})^{n+c},\quad g_n = (1+\frac{1}{n})^{n+d}</script><p>那么�
 <ol>
 <li>若 $A,B$ 一胜一负，则 $S$ 胜</li>
 <li>若 $A,B$ 全为负，则 $S$ 负</li>
-<li>若 $A,B$ 全为胜，则 $S$ 无法判断</li>
+<li>若 $A,B$ 全为胜，则 $S$ 无法判断（还需要进一步信息才能确定）</li>
 <li>若 $A=B$，则 $S$ 负</li>
 <li>空局面是负局面</li>
 </ol>
 <p>因此根据上面的分解理论，可以将一个局面进行化简。例如 $(2,2,2,7,9,9)$ 可以化简成 $(2,7)$</p>
 <p>而局面分解的关系，很容易让人联想到整数的位运算－异或。</p>
 <p>对于上面取石子问题，每一个局面都可以分解成只有一堆石子的局面。<br>对一个局面，定义一个函数 $f$，然后把它们异或是不是，然后判断是非为 0，作为是否胜的充要条件.这样做是否可行呢？先对原始例子进行实验。</p>
-<p>函数 $f$：若局面 $S$ 只有一个石子，设 $S={a}$，则定义 $f(a) = a$。<br>设局面 $S = (a_1,a_2,\cdots,a_n)=(a_1)+(a_2)+\cdots (a_n)$，则 $f(S) = f(a_1) \oplus f(a_2) \oplus \cdots \oplus f(a_n)$<br>对于一个局面 $S$，若 $f(S) = 0$，则 $S$ 负，否则，$S$ 胜。</p>
-<p>下面证明上面的结论。<br>引理：$a_1 \oplus a_2 \oplus a_n = p \neq 0$，则必存在 $1 \leq k \leq n$，使得 $a_k \oplus p &lt; a_k$。这是因为我们看 $p$ 的最高位即知存在 $a_k$ 其最高位也为 $1$, 那么与 $p$ 异或后，这一位就从 $1$ 变为 $0$，证毕。</p>
-<p>若 $f(S) = 0$，则无论先行者如何取子 $S \to T$，都有 $f(T) \neq 0$。<br>若 $f(S) \neq 0$，则先行者存在一种取法 $S \to T$, 使得 $f(T) = 0$。这是因为由引理 $a_1 \oplus a_2 \oplus a_n = p \neq 0$，存在 $1 \leq k \leq n$，使得 $x = a_k \oplus p &lt; a_k$。那么我们在第 $k$ 堆取走 $a_k - x$ 个石子，那么 $a_1 \oplus a_2 \oplus a_n \oplus p = 0$，证毕。</p>
-<p>这说明了上述想法的可行性。下面把这种思想推广成一般的 SG 函数的情形</p>
+<p>函数 $f$：若局面 $S$ 只有一堆石子，设 $S={a}$，则定义 $f(a) = a$。<br>设局面 $S = (a_1,a_2,\cdots,a_n)=(a_1)+(a_2)+\cdots (a_n)$，则 $f(S) = f(a_1) \oplus f(a_2) \oplus \cdots \oplus f(a_n)$<br><strong>我们断言</strong>：对于一个局面 $S$，若 $f(S) = 0$，则 $S$ 负，否则，$S$ 胜。</p>
+<p>下面证明上面的结论。<br>引理：$a_1 \oplus a_2 \oplus \cdots \oplus a_n = p \neq 0$，则必存在 $1 \leq k \leq n$，使得 $a_k \oplus p &lt; a_k$。这是因为我们看 $p$ 的最高位，有奇数个$a_k$在此位置非零, 那么与 $p$ 异或后，这一位就从 $1$ 变为 $0$，证毕。</p>
+<p>若 $f(S) = 0$，则无论先行者如何取子 $S \to T$，都有 $f(T) \neq 0$。<br>若 $f(S) \neq 0$，则先行者存在一种取法 $S \to T$, 使得 $f(T) = 0$。这是因为由引理 $a_1 \oplus a_2 \oplus a_n = p \neq 0$，存在 $1 \leq k \leq n$，使得 $x = a_k \oplus p &lt; a_k$。那么我们在第 $k$ 堆取走 $a_k - x$ 个石子，那么 $a_1 \oplus \cdots a_{k - 1} \oplus x \oplus a_{k + 1} \cdots \oplus a_n = p \oplus p = 0$，证毕。</p>
+<p>这说明了上述想法的可行性。下面把这种思想推广成一般的 SG（Sprague-Grundy）函数的情形</p>
 <h2 id="SG-函数"><a href="#SG-函数" class="headerlink" title="SG 函数"></a>SG 函数</h2><p>当对石子的取法进行限制时，例如每次最多能去 $m$ 个，或每次最少取 $l$ 个等，此时再令 $f(x) = x$ 就不合适了。那么应该选择怎样的 $f$ 呢。显然 $f$ 必须满足：</p>
 <ol>
 <li>若 $f(S) = 0$, 则无论先行者如何取子 $S \to T$，都有 $f(T) \neq 0$</li>
 <li>若 $f(S) \neq 0$, 则先行者存在一种取子 $S \to T$，使得 $f(T) = 0$。</li>
 </ol>
-<p>我们用 $(S) = \lbrace S_1,S_2, \cdots S_k \rbrace$ 表示 $S$ 的下一个可能的局面，定义 $g(S) = \lbrace f(S_1),f(S_2), \cdots f(S_k) \rbrace $</p>
-<p>由 $f$ 满足条件 1 知</p>
-<script type="math/tex; mode=display">
-\lbrace f(S) \rbrace \cap g(S) = \emptyset</script><p>由条件 2 知</p>
-<script type="math/tex; mode=display">
-\max g(S) < f(S)</script><p>因此我们定义函数 $f(S)$ 为 $f(S) \doteq \min g(S)$</p>
+<p>我们用 $(S) = \lbrace S_1, S_2, \cdots S_k \rbrace$ 表示 $S$ 的下一个可能的局面，定义 $g(S) = \lbrace f(S_1),f(S_2), \cdots f(S_k) \rbrace$，则它必然满足 $f(S) \doteq \text{ MEX } g(S)$</p>
 <blockquote>
-<p>写的这么乱，估计只有自己看的懂 0.0</p>
+<p>注意上述 $f$ 的值域是整数，$g(S)$ 是整数集的子集。其中 $MEX(A \subseteq \mathbb{N})$ 为不在 $A$ 中最小正整数。</p>
+</blockquote>
+<p>若最多取 $m$ 个没有其它的限制条件，可以取 $f(x) = x \mod m + 1, S = (a_1, \cdots, a_n), f(S) = f(a_1) \oplus \cdots \oplus f(a_n)$</p>
+<blockquote>
+<p>可以参考 <a href="https://codeforces.com/gym/102538/problem/E" target="_blank" rel="noopener">300iq Contest 3E Easy Win</a> 测试。</p>
 </blockquote>
 ]]></content>
       <tags>
@@ -6086,6 +6085,33 @@ f(x) = \frac{4}{3} \sum_{n=0} ^ \infty (\frac{2^{n \% 3 +1} (8^{n/3}-1)}{8-1} + 
         <tag>Math</tag>
         <tag>Codeforces</tag>
         <tag>图论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>300iq Contest 3, 2, 1</title>
+    <url>/300iqContest/</url>
+    <content><![CDATA[<p>准备做一下 <a href="https://codeforces.com/profile/300iq" target="_blank" rel="noopener">300iq</a> 的 Contest，倒过来做。</p>
+<h2 id="300iq-Contest-3"><a href="#300iq-Contest-3" class="headerlink" title="300iq Contest 3"></a><a href="https://codeforces.com/gym/102538/" target="_blank" rel="noopener">300iq Contest 3</a></h2><blockquote>
+<p>罗列一下自己有兴趣的题目，<a href="300iqContest3.pdf">官方题解</a></p>
+</blockquote>
+<h3 id="A-Airplane-Cliques"><a href="#A-Airplane-Cliques" class="headerlink" title="A. Airplane Cliques"></a>A. Airplane Cliques</h3><p>题意：给定 $n$ 个节点的树，称两个节点是友好的，如果它们相连的边数不超过 $x$，问对任意 $1 \leq k \leq n$，有多少个元素个数为 $k$ 的集合，它们的点之间两两友好。其中 $1 \leq n \leq 300,000, 0 \leq x &lt; n$，最终答案对 998244353 取模</p>
+<blockquote>
+<p>看别人代码 200 多行，下次吧。</p>
+</blockquote>
+<h3 id="C-Cells-Blocking"><a href="#C-Cells-Blocking" class="headerlink" title="C. Cells Blocking"></a>C. Cells Blocking</h3><p>题意：从 <code>(1, 1)</code> 到 <code>(n, m)</code> 只能往右或往下走格子，然后有些格子是不能走的，让你将 2 个能走的格子变得不能走，最后使得格子 <code>(1, 1)</code> 无法到达 <code>(n, m)</code>，问有多少种变的方式。 $1 \leq m, n \leq 3000$</p>
+<h3 id="E-Easy-Win"><a href="#E-Easy-Win" class="headerlink" title="E. Easy Win"></a>E. Easy Win</h3><blockquote>
+<p>SG 函数-博弈问题</p>
+</blockquote>
+<p>题意：有 $n$ 堆石子 $(a_1, \cdots, a_n)$（$a_i \leq n$），每次最少选 1 个，最多选 $x$ 个，最后谁没法选谁输，问对于所有的 $1 \leq x \leq n$，先手赢还是先手输。其中 $1 \leq $</p>
+<p>首先，对每一个具体的 $x$ 答案是 $(a_1 \mod x + 1) \oplus \cdots \oplus (a_n \mod x + 1)$. </p>
+<h3 id="I-Ignore-Submasks"><a href="#I-Ignore-Submasks" class="headerlink" title="I. Ignore Submasks"></a>I. Ignore Submasks</h3><blockquote>
+<p>本场最简单的一题</p>
+</blockquote>
+<p>题意：给定序列 $a_1, \cdots, a_n$ （$0 \leq a_i &lt; 2^k$），记 $f(x)$ 为使得 $a_i \And x \neq a_i$ 的最小的 $i$，如果没有就为 0，求 $\sum_{i = 0}^{2^k - 1} f(i)$，对答案取模 998244353，其中 $1 \leq n \leq 100, 1 \leq k \leq 60$</p>
+<p>做法：相当于一开始有 $k$ 个位是自由的，假设当前还有 $r$ 个位是自由的，$a_i$ 占有其中 c 个自由位，然后其它的自由位随便取，所以它对结果的贡献就是 $(2^r - 1) \cdot 2^{k - r} \cdot i$，注意 $k \leq 60$，很多地方记得加 <code>ll</code>。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> watch(x) std::cout &lt;&lt; (#x) &lt;&lt; <span class="meta-string">" is "</span> &lt;&lt; (x) &lt;&lt; std::endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> print(x) std::cout &lt;&lt; (x) &lt;&lt; std::endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> println std::cout &lt;&lt; std::endl</span></span><br><span class="line"><span class="keyword">using</span> LL = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">using</span> pii = <span class="built_in">std</span>::pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;;</span><br><span class="line"><span class="keyword">using</span> pll = <span class="built_in">std</span>::pair&lt;LL, LL&gt;;</span><br><span class="line"><span class="keyword">const</span> LL M = <span class="number">998244353</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//freopen("in","r",stdin);</span></span><br><span class="line">	<span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="keyword">int</span> n, k;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;LL&gt; <span class="title">a</span><span class="params">(n)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : a) <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; <span class="title">v</span><span class="params">(k, <span class="literal">true</span>)</span></span>;</span><br><span class="line">	LL r = <span class="number">0</span>, id = <span class="number">0</span>, rest = k;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> x : a) &#123;</span><br><span class="line">		<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> ((x &amp; (<span class="number">1l</span>l &lt;&lt; i)) &amp;&amp; v[i]) &#123;</span><br><span class="line">				v[i] = <span class="literal">false</span>;</span><br><span class="line">				++cnt;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		r += ((<span class="number">1l</span>l &lt;&lt; cnt) - <span class="number">1</span>) % M * ((<span class="number">1l</span>l &lt;&lt; (rest -= cnt)) % M) % M * (++id) % M;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">print</span>(r % M);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
 </search>
