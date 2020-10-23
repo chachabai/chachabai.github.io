@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-10-22T21:57:16.174Z</updated>
+  <updated>2020-10-23T23:26:31.802Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/300iqContest/"/>
     <id>https://dna049.com/300iqContest/</id>
     <published>2020-10-22T21:10:12.000Z</published>
-    <updated>2020-10-22T21:57:16.174Z</updated>
+    <updated>2020-10-23T23:26:31.802Z</updated>
     
     <summary type="html">
     
@@ -221,7 +221,7 @@
     <link href="https://dna049.com/stl/"/>
     <id>https://dna049.com/stl/</id>
     <published>2020-07-17T17:00:02.000Z</published>
-    <updated>2020-10-22T14:36:24.691Z</updated>
+    <updated>2020-10-23T21:57:59.778Z</updated>
     
     <summary type="html">
     
@@ -409,9 +409,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -458,9 +458,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
