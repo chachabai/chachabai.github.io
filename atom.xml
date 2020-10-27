@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-10-24T09:20:35.307Z</updated>
+  <updated>2020-10-12T05:23:14.672Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>300iq Contest 3, 2, 1</title>
-    <link href="https://dna049.com/300iqContest/"/>
-    <id>https://dna049.com/300iqContest/</id>
-    <published>2020-10-22T21:10:12.000Z</published>
-    <updated>2020-10-24T09:20:35.307Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;准备做一下 &lt;a href=&quot;https://codeforces.com/profile/300iq&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;300iq&lt;/a&gt; 的 Contest，倒过来做。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
-  </entry>
   
   <entry>
     <title>$R, R[x; \sigma], R[x^{\pm}; \sigma]$ 的素理想关系</title>
@@ -295,7 +269,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-10-25T15:09:27.722Z</updated>
+    <updated>2020-10-27T08:10:17.666Z</updated>
     
     <summary type="html">
     
@@ -411,9 +385,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -435,9 +409,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -508,6 +482,33 @@ A_0=1,\; A_1=x
     </summary>
     
     
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不超过 $x$ 的素数之和</title>
+    <link href="https://dna049.com/primePowSum/"/>
+    <id>https://dna049.com/primePowSum/</id>
+    <published>2020-04-17T06:47:43.000Z</published>
+    <updated>2020-08-22T12:57:25.224Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们可以在不求出 &lt;strong&gt;不超过 $x$ 的所有素数&lt;/strong&gt; 的情况下，求出最终结果。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+f_k(x) \doteq \sum_{p \leq x} p^k&lt;/script&gt;&lt;ul&gt;
+&lt;li&gt;$f_0(x) = \pi(x)$ 这个在 &lt;a href=&quot;/computationOfPiX/&quot; title=&quot;$\pi(x)$ 的计算&quot;&gt;$\pi(x)$ 的计算&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;$f_1(x) = \sum_{p \leq x} p$ 这是我们关心的结果&lt;/li&gt;
+&lt;li&gt;对于一般的 $k$ 借助 &lt;a href=&quot;/fastPowSumOfNaturalNumber/&quot; title=&quot;自然数方幂和快速算法&quot;&gt;自然数方幂和快速算法&lt;/a&gt; 也可以求&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
