@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dna049.com/classicalCombination/</loc>
+    <loc>https://dna049.com/codeforces/</loc>
     <lastmod>2020-11-01</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
-    <lastmod>2020-10-31</lastmod>
+    <lastmod>2020-11-01</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/classicalCombination/</loc>
+    <lastmod>2020-11-01</lastmod>
   </url>  <url>
     <loc>https://dna049.com/codeStyle/</loc>
     <lastmod>2020-10-31</lastmod>
@@ -21,9 +24,6 @@
   </url>  <url>
     <loc>https://dna049.com/stl/</loc>
     <lastmod>2020-10-28</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/codeforces/</loc>
-    <lastmod>2020-10-27</lastmod>
   </url>  <url>
     <loc>https://dna049.com/nondecraseSubsequence/</loc>
     <lastmod>2020-10-27</lastmod>
