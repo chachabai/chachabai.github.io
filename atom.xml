@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-11-06T15:21:27.027Z</updated>
+  <updated>2020-11-07T12:15:25.717Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>单纯形</title>
+    <title>线性规划的单纯形法</title>
     <link href="https://dna049.com/simplex/"/>
     <id>https://dna049.com/simplex/</id>
     <published>2020-11-06T12:40:58.000Z</published>
-    <updated>2020-11-06T15:21:27.027Z</updated>
+    <updated>2020-11-07T12:15:25.717Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;在 Codeforces 有人问了我两个优化问题，一个是线性规划，一个是非线性规划（具体说是凸优化问题）。一般来说非线性规划没有什么具体的算法，但是凸优化，可以转化成凸包，然后转换成线段（如果是二维的）上的最值问题就搞定了。线性规划有著名的单纯形算法，7
+          &lt;p&gt;在 Codeforces
         
       
     
@@ -168,7 +168,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-11-06T13:35:02.631Z</updated>
+    <updated>2020-11-07T12:06:19.186Z</updated>
     
     <summary type="html">
     
@@ -296,7 +296,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-11-05T08:31:35.895Z</updated>
+    <updated>2020-11-07T05:39:51.538Z</updated>
     
     <summary type="html">
     
@@ -410,9 +410,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -459,9 +459,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     

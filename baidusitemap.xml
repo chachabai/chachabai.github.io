@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dna049.com/simplex/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
-    <lastmod>2020-11-06</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/allTemplate/</loc>
-    <lastmod>2020-11-05</lastmod>
+    <lastmod>2020-11-07</lastmod>
   </url>  <url>
     <loc>https://dna049.com/codeforces/</loc>
+    <lastmod>2020-11-07</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/allTemplate/</loc>
     <lastmod>2020-11-05</lastmod>
   </url>  <url>
     <loc>https://dna049.com/DixmierMoeglinEquivalence/</loc>
@@ -145,10 +145,7 @@
     <loc>https://dna049.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToByte/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <loc>https://dna049.com/imageToChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/syntacticSugar/</loc>
@@ -157,16 +154,19 @@
     <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToChar/</loc>
+    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/calculatorWithC/</loc>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
