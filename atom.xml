@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-11-09T10:23:28.106Z</updated>
+  <updated>2020-11-09T13:14:06.517Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/simplex/"/>
     <id>https://dna049.com/simplex/</id>
     <published>2020-11-06T12:40:58.000Z</published>
-    <updated>2020-11-09T10:23:28.106Z</updated>
+    <updated>2020-11-09T13:14:06.517Z</updated>
     
     <summary type="html">
     
@@ -168,7 +168,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-11-09T12:18:10.332Z</updated>
+    <updated>2020-11-09T13:15:26.238Z</updated>
     
     <summary type="html">
     
@@ -412,9 +412,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -436,9 +436,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
