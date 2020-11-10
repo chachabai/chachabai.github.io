@@ -15,7 +15,7 @@
 </ol>
 <p>以下内容仅需配置一次（与主题无关，最多是在主题配置文件中填写一点数值）：</p>
 <ol>
-<li><a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a> 并配置 Valine 和 Utterances（也是基于 Github Issue 的，但是很好用，虽然不能在回复下回复，但是可以 <code>@</code>） <del>Gitalk 双评论系统，<a href="https://blog.csdn.net/qq_33384402/article/details/107200465" target="_blank" rel="noopener">Gitalk 配置</a>， <a href="https://www.louxiaohui.com/2018/05/15/get-file-from-git-server-automatically/" target="_blank" rel="noopener">注意事项</a>，每一篇都要初始化一次</del>。</li>
+<li><a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a> 并配置 Valine（已关闭） 和 Utterances（也是基于 Github Issue 的，但是很好用，虽然不能在回复下回复，但是可以 <code>@</code>） <del>Gitalk 双评论系统，<a href="https://blog.csdn.net/qq_33384402/article/details/107200465" target="_blank" rel="noopener">Gitalk 配置</a>， <a href="https://www.louxiaohui.com/2018/05/15/get-file-from-git-server-automatically/" target="_blank" rel="noopener">注意事项</a>，每一篇都要初始化一次</del>。</li>
 <li>添加文章加密功能，增加 <a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">RSS 功能</a>，<a href="https://zhuanlan.zhihu.com/p/64457116" target="_blank" rel="noopener">RSS 使用说明</a>，文章置顶功能，<a href="https://cndrew.cn/2019/10/19/plugin/" target="_blank" rel="noopener">随机文章</a></li>
 <li><a href="https://blog.csdn.net/u010820857/article/details/82356974" target="_blank" rel="noopener">支持 pdf</a>，<a href="https://www.paddylin.top/post/f609.html" target="_blank" rel="noopener">支持 B 站视频</a></li>
 </ol>
@@ -1949,8 +1949,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 ]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -2176,8 +2176,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <p>先找对应名字，再找对应模块中的函数，最后看手册用的例子。</p>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -2662,8 +2662,8 @@ a_{i+1}
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3214,8 +3214,8 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
         <tag>LOL</tag>
       </tags>
   </entry>
@@ -5396,8 +5396,8 @@ p-3 \equiv (-1)^3 \mod p \\
 <h2 id="Jacobi-符号-Python-程序"><a href="#Jacobi-符号-Python-程序" class="headerlink" title="Jacobi 符号 Python 程序"></a>Jacobi 符号 Python 程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># a是整数，Q是正奇数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Jacobi</span><span class="params">(a,Q)</span>:</span></span><br><span class="line">	<span class="comment"># print(a,Q)  # 需要看过程就取消本行最前面的注释</span></span><br><span class="line">	a%=Q</span><br><span class="line">	<span class="keyword">if</span> math.gcd(a,Q) &gt; <span class="number">1</span>:  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	<span class="keyword">while</span> a%<span class="number">4</span>==<span class="number">0</span>: a//=<span class="number">4</span></span><br><span class="line">	f = <span class="keyword">lambda</span> n:<span class="number">1</span><span class="number">-2</span>*(n&amp;<span class="number">1</span>)</span><br><span class="line">	ans = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> a%<span class="number">2</span>==<span class="number">0</span>: a//=<span class="number">2</span>;ans = f((Q**<span class="number">2</span><span class="number">-1</span>)//<span class="number">8</span>)</span><br><span class="line">	<span class="comment"># 此时a也是正奇数了</span></span><br><span class="line">	<span class="keyword">if</span> a == <span class="number">1</span>:  <span class="keyword">return</span> ans</span><br><span class="line">	<span class="keyword">return</span> ans*f((a<span class="number">-1</span>)*(Q<span class="number">-1</span>)//<span class="number">4</span>)*Jacobi(Q,a)</span><br><span class="line"></span><br><span class="line">print(Jacobi(<span class="number">888</span>,<span class="number">1999</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Math</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -6164,7 +6164,6 @@ x^2 & x \in \mathbb{Q} \\
 <li>Windows 下安装 markdown IDE: sublime3 + <a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a> </li>
 <li>Typora 写公式快捷键 <code>ctrl + shift + m</code></li>
 <li>hexo文章加密 <a href="https://blog.csdn.net/qq_24495287/article/details/89025371" target="_blank" rel="noopener">方式1</a> 和 <a href="https://blog.csdn.net/cungudafa/article/details/104346521" target="_blank" rel="noopener">方式2</a></li>
-<li><a href="https://www.jianshu.com/p/728a9594bb6c" target="_blank" rel="noopener">添加 Valine 评论系统</a>，<a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a></li>
 <li><a href="https://www.itrhx.com/2019/09/16/A47-hexo-deployed-to-github-and-coding/" target="_blank" rel="noopener">部署代码到 Coding</a> 并把源代码提交到Coding（账号是手机号）</li>
 </ol>
 <h3 id="这次大更新的说明-（2020-3-12）"><a href="#这次大更新的说明-（2020-3-12）" class="headerlink" title="这次大更新的说明 （2020/3/12）"></a>这次大更新的说明 （2020/3/12）</h3><p>因为我之前的失误，导致 markdown 源文件丢失，又因为备份更新的时间比较久，导致了我两年没有更新博客，所以这次我配置 hexo 的时候，有讲源码提交到 github 上去。可是最后我还是选择了 next5.1.4 主题，而没有更新到 next7.7.2</p>
@@ -6175,7 +6174,6 @@ x^2 & x \in \mathbb{Q} \\
 <li>我把博文中个人生活部分加密了</li>
 <li>http 升级到 https（超级简单）</li>
 <li>域名 dna049.com 到 2022 年过期，记得到时候续费</li>
-<li>加评论系统：<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a> 真香 0.0</li>
 <li>加了百度统计，<del>leanCould 文章数量统计</del>，打赏，不蒜子统计博客访问量</li>
 <li>加了 <a href="https://tding.top/archives/761b6f4d.html" target="_blank" rel="noopener">背景</a>， <a href="https://tding.top/archives/2bd6d82.html" target="_blank" rel="noopener">圆角设置</a>(<del>sidebar不是圆角很难受</del>，被 <a href="https://blog.maplesugar.space/" target="_blank" rel="noopener">枫糖</a>帮助解决)，<a href="https://github.com/MikeCoder/hexo-tag-cloud" target="_blank" rel="noopener">标签云</a>，<a href="https://www.liaofuzhan.com/posts/2114475547.html" target="_blank" rel="noopener">彩色 Tags 和 logo</a></li>
 <li>加了 <a href="https://tding.top/archives/73ce4e7.html" target="_blank" rel="noopener">友链</a> 方式一（方式二容易出问题）</li>
