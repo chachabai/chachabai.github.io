@@ -1,88 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>butterfly 主题</title>
-    <url>/butterfly/</url>
-    <content><![CDATA[<p>再次换主题，一个月前（2020/7/20）看到了 Butterfly 主题，十分心动，知道前两天才开始换从 next 换到 Butterfly。Butterfly 主题真的太美了，现在看唯一的缺点就是不支持 <code>&lt;!-- more --&gt;</code> 标签。</p>
-<p>一不小心又把 blog 文件夹删了，我吐了，正好写一下重新步骤</p>
-<ol>
-<li>安装 Hexo 并上传到 git 上 <a href="https://blog.csdn.net/grave2015/article/details/79961843" target="_blank" rel="noopener">这里超详细</a></li>
-<li>拉取源代码</li>
-<li><code>npm install</code> 更新依赖（配置国内镜像：<code>npm config set registry https://registry.npm.taobao.org</code>）</li>
-<li>使用<a href="https://www.dazhuanlan.com/2020/01/30/5e322259a87e5/" target="_blank" rel="noopener">方案 2</a> 修改 <code>node_modules/nunjucks</code>，并且 搜索、RSS 插件，hexo-generator-random 插件同步修改, <code>scaffolds/</code> 也要修改！。</li>
-<li><a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">mathjax 和 Hexo 的完美冲突解决方案</a> (目前任然不建议使用 Katex)</li>
-<li>拉取自己 fork 的主题 <a href="https://github.com/chachabai/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a>，并复制 <code>_config.yml</code> 到 <code>source/_data/</code> 进行主题配置：<a href="https://demo.jerryc.me/posts/ceeb73f/" target="_blank" rel="noopener">官方配置方法</a></li>
-</ol>
-<p>以下内容仅需配置一次（与主题无关，最多是在主题配置文件中填写一点数值）：</p>
-<ol>
-<li><a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a> 并配置 Valine（已关闭） 和 Utterances（也是基于 Github Issue 的，但是很好用，虽然不能在回复下回复，但是可以 <code>@</code>） <del>Gitalk 双评论系统，<a href="https://blog.csdn.net/qq_33384402/article/details/107200465" target="_blank" rel="noopener">Gitalk 配置</a>， <a href="https://www.louxiaohui.com/2018/05/15/get-file-from-git-server-automatically/" target="_blank" rel="noopener">注意事项</a>，每一篇都要初始化一次</del>。</li>
-<li>添加文章加密功能，增加 <a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">RSS 功能</a>，<a href="https://zhuanlan.zhihu.com/p/64457116" target="_blank" rel="noopener">RSS 使用说明</a>，文章置顶功能，<a href="https://cndrew.cn/2019/10/19/plugin/" target="_blank" rel="noopener">随机文章</a></li>
-<li><a href="https://blog.csdn.net/u010820857/article/details/82356974" target="_blank" rel="noopener">支持 pdf</a>，<a href="https://www.paddylin.top/post/f609.html" target="_blank" rel="noopener">支持 B 站视频</a></li>
-</ol>
-<h2 id="Butterfly-主题修改记录"><a href="#Butterfly-主题修改记录" class="headerlink" title="Butterfly 主题修改记录"></a>Butterfly 主题修改记录</h2><blockquote>
-<p>其实直接去 <a href="https://github.com/jerryc127/hexo-theme-butterfly/compare/master...chachabai:master" target="_blank" rel="noopener">github</a> 看就行了</p>
-</blockquote>
-<h3 id="添加首页加载-mathjax"><a href="#添加首页加载-mathjax" class="headerlink" title="添加首页加载 mathjax"></a>添加首页加载 mathjax</h3><p>修改 <code>themes/butterfly/layout/includes/third-party/math/index.pug</code>，进去了就知道该怎么改啦。</p>
-<h3 id="增加了底部小鱼游泳"><a href="#增加了底部小鱼游泳" class="headerlink" title="增加了底部小鱼游泳"></a>增加了底部小鱼游泳</h3><p>在 <code>themes/butterfly/layout/includes/footer.pug</code> 下面添加</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">style</span>.</span><br><span class="line">  <span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">767px</span>)&#123;</span><br><span class="line">    <span class="selector-id">#sidebar_search_box</span> <span class="selector-tag">input</span><span class="selector-attr">[type=text]</span>&#123;<span class="attribute">width</span>:<span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">24px</span>)&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>并且在 <code>themes/butterfly/source/css/_layout/footer.styl</code> 中修改对应的 <code>footer-warp</code><br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#footer-wrap</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 1<span class="selector-class">.2rem</span> 1<span class="selector-tag">rem</span> 1<span class="selector-class">.4rem</span></span><br><span class="line">  color: $light-grey</span><br><span class="line">  <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span></span><br><span class="line">  <span class="selector-tag">left</span>: 0</span><br><span class="line">  <span class="selector-tag">right</span>: 0</span><br><span class="line">  <span class="selector-tag">top</span><span class="selector-pseudo">:0</span></span><br><span class="line">  <span class="selector-tag">bottom</span>: 0</span><br></pre></td></tr></table></figure></p>
-<h3 id="添加透明度功能"><a href="#添加透明度功能" class="headerlink" title="添加透明度功能"></a>添加透明度功能</h3><ul>
-<li>在 <code>source/css/_layout/post.styl</code> 的 <code>.layout_post</code> 下添加一行 <code>opacity: hexo-config(&#39;content_opacity.post&#39;)</code></li>
-<li>在 <code>source/css/_layout/page.styl</code> 的 <code>.layout_page</code> 下添加一行 <code>opacity: hexo-config(&#39;content_opacity.page&#39;)</code></li>
-<li>在 <code>source/css/_layout/footer.styl</code> 的 <code>footer</code> 下添加一行 <code>background-color: rgba(73,177,245,hexo-config(&#39;footer_transparent&#39;))</code></li>
-<li>在 <code>source/css/_mode/darkmode.styl</code> 的 <code>#footer[data-type=color]</code> 下的内容替换为 <code>background: rgba(13,13,13,hexo-config(&#39;footer_transparent&#39;))</code></li>
-</ul>
-<p>然后设置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 透明度</span></span><br><span class="line"><span class="attr">content_opacity:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="number">0.66</span></span><br><span class="line">  <span class="attr">page:</span> <span class="number">0.77</span></span><br><span class="line"><span class="attr">footer_transparent:</span> <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
-<h3 id="将横幅-banner-设为透明"><a href="#将横幅-banner-设为透明" class="headerlink" title="将横幅 banner 设为透明"></a>将横幅 banner 设为透明</h3><p><code>source/css/_layout/head.styl</code> 中 <code>#page-header</code> 下的 <code>background-color:</code> 改成 <code>transparent</code></p>
-<h3 id="修改-footer"><a href="#修改-footer" class="headerlink" title="修改 footer"></a>修改 footer</h3><p><code>source/css/_layout/head.styl</code> 中 <code>background-color:</code> 改成 <code>transparent</code><br>直接看<a href="https://www.paddylin.top/post/708f.html" target="_blank" rel="noopener">这里</a></p>
-<blockquote>
-<p>主要参考 <a href="https://yunist.cn/hexo/butterfly_modify/" target="_blank" rel="noopener">云玩家</a> 和 <a href="https://www.paddylin.top/" target="_blank" rel="noopener">Paddy</a></p>
-</blockquote>
-<h2 id="git-回档操作"><a href="#git-回档操作" class="headerlink" title="git 回档操作"></a>git 回档操作</h2><p>查看 github 上需要回档的版本号，三种方式</p>
-<ol>
-<li>直接记录下版本号，然后执行 <code>git reset --hard &lt;版本号&gt;</code></li>
-<li><code>git reflog</code> 查看回档编号，<code>git reflog git reset --hard HEAD@{编号}</code></li>
-<li><code>git reset –-hard HEAD ^</code> ( <code>^</code> 表示回到上一个版本，<code>^^</code> 表示回到上上个版本）</li>
-</ol>
-<p>最后要 <code>git push -f -u origin master</code> 提交。</p>
-<p>VSCode 规范化提交插件：<a href="https://github.com/RedJue/git-commit-plugin" target="_blank" rel="noopener">git-commit-plugin</a></p>
-<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>登录 <a href="https://github.com" target="_blank" rel="noopener">github</a> ，创建 yourname/yourname.github.io 仓库， 进入该仓库 setting，下拉到 Github Page</p>
-<p>设置 master branch，Custom domain（可选），Enforce HTTPS</p>
-<p>git 命令行进入 blog 目录，执行下面操作：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C yourmail@example.com <span class="comment">#建议不设置密码，按回车</span></span><br><span class="line">clip &lt; ~/.ssh/id_rsa.pub <span class="comment"># 复制公钥到系统粘贴板</span></span><br></pre></td></tr></table></figure>
-<p>去 github 账号的 setting 中添加 ssh key（复制到 key 就可以了）</p>
-<p>检测是否成功： <code>ssh -T git@github.com</code></p>
-<p>设置全局用户信息：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> user.name yourname</span><br><span class="line">git config --<span class="keyword">global</span> user.email  yourmail@example.com</span><br></pre></td></tr></table></figure>
-<p>在 <code>_config.yml</code> （最后一行）设置：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
-<p>执行：<code>npm install hexo-deployer-git --save</code></p>
-<p>然后执行： <code>hexo g -d</code> 就可以去 <code>http(s)://yourname.github.io</code> 看到自己的博客了。</p>
-<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 _config.yml"></a>配置 <code>_config.yml</code></h3><p>填写 site 信息， 设置 url ， 建议 permalink 改为 ：<code>title/</code>，设置 <code># Pagination</code> 下的 <code>per_page: 0</code>。</p>
-<h3 id="配置主题，配好了修改-config-yml-的-theme-为当前主题"><a href="#配置主题，配好了修改-config-yml-的-theme-为当前主题" class="headerlink" title="配置主题，配好了修改 _config.yml 的 theme 为当前主题"></a>配置主题，配好了修改 <code>_config.yml</code> 的 theme 为当前主题</h3><h2 id="以下内容被作为源代码保存"><a href="#以下内容被作为源代码保存" class="headerlink" title="以下内容被作为源代码保存"></a>以下内容被作为源代码保存</h2><ul>
-<li>源码：<code>./source</code></li>
-<li>环境配置文件：<code>_config.yml</code>, <code>.gitignore</code>, <code>package.json</code>, <code>package-lock.json</code>, <code>README.md</code></li>
-<li>更新源码脚本：<code>updateSourceCode.py</code></li>
-</ul>
-<h2 id="云盘白嫖优雅解决方案"><a href="#云盘白嫖优雅解决方案" class="headerlink" title="云盘白嫖优雅解决方案"></a>云盘白嫖优雅解决方案</h2><ul>
-<li>iCloud 放 pdf 和 goodnote 和一些杂七杂八但不占空间的东西</li>
-<li>坚果云配分 ipad 的照片</li>
-<li>各种途径的照片分类整理到 OneDrive</li>
-<li>OneDrive 存照片和 Windows 默认的设置</li>
-<li>用 Coding 存个人文档（2000 文件，300G）</li>
-<li>百度网盘其实是最强的</li>
-</ul>
-<blockquote>
-<p>白嫖取之有道，一定要嫖大厂的！有信誉的！<br>二级域名和虚拟主机（虚拟服务器不可能）就别想着一直白嫖了！</p>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>考虑代码的可迁移性，代码规范，多平台是一个好习惯。自己 fork 主题自己用，不把主题当作源码保存也是个好习惯。</p>
-]]></content>
-      <tags>
-        <tag>Theme</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Codeforces 汇总</title>
     <url>/codeforces/</url>
     <content><![CDATA[<p>最近感觉自己又行了。就很想重新开始打 <a href="https://codeforces.com" target="_blank" rel="noopener">Codeforces</a>，这里罗列一下从 2020/05/16 开始提交的(不是特别水的）AC 代码。想有生之年上一次黄，先定个小目标上个 1900（最高 1854，当前 1829，换号了！）菜鸡 dna049 <del>加油</del> 下班了！</p>
@@ -917,6 +835,88 @@ f_{i, j} = f_{i + 2^{j + 1}} + \sum_{t = i + 2^{j}}^{i + 2 ^{j + 1} - 1} c_t</sc
       <tags>
         <tag>Math</tag>
         <tag>Encrypt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly 主题</title>
+    <url>/butterfly/</url>
+    <content><![CDATA[<p>再次换主题，一个月前（2020/7/20）看到了 Butterfly 主题，十分心动，知道前两天才开始换从 next 换到 Butterfly。Butterfly 主题真的太美了，现在看唯一的缺点就是不支持 <code>&lt;!-- more --&gt;</code> 标签。</p>
+<p>一不小心又把 blog 文件夹删了，我吐了，正好写一下重新步骤</p>
+<ol>
+<li>安装 Hexo 并上传到 git 上 <a href="https://blog.csdn.net/grave2015/article/details/79961843" target="_blank" rel="noopener">这里超详细</a></li>
+<li>拉取源代码</li>
+<li><code>npm install</code> 更新依赖（配置国内镜像：<code>npm config set registry https://registry.npm.taobao.org</code>）</li>
+<li>使用<a href="https://www.dazhuanlan.com/2020/01/30/5e322259a87e5/" target="_blank" rel="noopener">方案 2</a> 修改 <code>node_modules/nunjucks</code>，并且 搜索、RSS 插件，hexo-generator-random 插件同步修改, <code>scaffolds/</code> 也要修改！。</li>
+<li><a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">mathjax 和 Hexo 的完美冲突解决方案</a> (目前任然不建议使用 Katex)</li>
+<li>拉取自己 fork 的主题 <a href="https://github.com/chachabai/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a>，并复制 <code>_config.yml</code> 到 <code>source/_data/</code> 进行主题配置：<a href="https://demo.jerryc.me/posts/ceeb73f/" target="_blank" rel="noopener">官方配置方法</a></li>
+</ol>
+<p>以下内容仅需配置一次（与主题无关，最多是在主题配置文件中填写一点数值）：</p>
+<ol>
+<li><a href="https://tab.leancloud.cn/data.html?appid=TkSRiW6UjDGmsxqmjPiPRjHV-9Nh9j0Va#/" target="_blank" rel="noopener">LeanCloud 管理数据</a> 并配置 Valine（已关闭） 和 Utterances（也是基于 Github Issue 的，但是很好用，虽然不能在回复下回复，但是可以 <code>@</code>） <del>Gitalk 双评论系统，<a href="https://blog.csdn.net/qq_33384402/article/details/107200465" target="_blank" rel="noopener">Gitalk 配置</a>， <a href="https://www.louxiaohui.com/2018/05/15/get-file-from-git-server-automatically/" target="_blank" rel="noopener">注意事项</a>，每一篇都要初始化一次</del>。</li>
+<li>添加文章加密功能，增加 <a href="https://tding.top/archives/567debe0.html" target="_blank" rel="noopener">RSS 功能</a>，<a href="https://zhuanlan.zhihu.com/p/64457116" target="_blank" rel="noopener">RSS 使用说明</a>，文章置顶功能，<a href="https://cndrew.cn/2019/10/19/plugin/" target="_blank" rel="noopener">随机文章</a></li>
+<li><a href="https://blog.csdn.net/u010820857/article/details/82356974" target="_blank" rel="noopener">支持 pdf</a>，<a href="https://www.paddylin.top/post/f609.html" target="_blank" rel="noopener">支持 B 站视频</a></li>
+</ol>
+<h2 id="Butterfly-主题修改记录"><a href="#Butterfly-主题修改记录" class="headerlink" title="Butterfly 主题修改记录"></a>Butterfly 主题修改记录</h2><blockquote>
+<p>其实直接去 <a href="https://github.com/jerryc127/hexo-theme-butterfly/compare/master...chachabai:master" target="_blank" rel="noopener">github</a> 看就行了</p>
+</blockquote>
+<h3 id="添加首页加载-mathjax"><a href="#添加首页加载-mathjax" class="headerlink" title="添加首页加载 mathjax"></a>添加首页加载 mathjax</h3><p>修改 <code>themes/butterfly/layout/includes/third-party/math/index.pug</code>，进去了就知道该怎么改啦。</p>
+<h3 id="增加了底部小鱼游泳"><a href="#增加了底部小鱼游泳" class="headerlink" title="增加了底部小鱼游泳"></a>增加了底部小鱼游泳</h3><p>在 <code>themes/butterfly/layout/includes/footer.pug</code> 下面添加</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">style</span>.</span><br><span class="line">  <span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">767px</span>)&#123;</span><br><span class="line">    <span class="selector-id">#sidebar_search_box</span> <span class="selector-tag">input</span><span class="selector-attr">[type=text]</span>&#123;<span class="attribute">width</span>:<span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">24px</span>)&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>并且在 <code>themes/butterfly/source/css/_layout/footer.styl</code> 中修改对应的 <code>footer-warp</code><br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#footer-wrap</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 1<span class="selector-class">.2rem</span> 1<span class="selector-tag">rem</span> 1<span class="selector-class">.4rem</span></span><br><span class="line">  color: $light-grey</span><br><span class="line">  <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span></span><br><span class="line">  <span class="selector-tag">left</span>: 0</span><br><span class="line">  <span class="selector-tag">right</span>: 0</span><br><span class="line">  <span class="selector-tag">top</span><span class="selector-pseudo">:0</span></span><br><span class="line">  <span class="selector-tag">bottom</span>: 0</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加透明度功能"><a href="#添加透明度功能" class="headerlink" title="添加透明度功能"></a>添加透明度功能</h3><ul>
+<li>在 <code>source/css/_layout/post.styl</code> 的 <code>.layout_post</code> 下添加一行 <code>opacity: hexo-config(&#39;content_opacity.post&#39;)</code></li>
+<li>在 <code>source/css/_layout/page.styl</code> 的 <code>.layout_page</code> 下添加一行 <code>opacity: hexo-config(&#39;content_opacity.page&#39;)</code></li>
+<li>在 <code>source/css/_layout/footer.styl</code> 的 <code>footer</code> 下添加一行 <code>background-color: rgba(73,177,245,hexo-config(&#39;footer_transparent&#39;))</code></li>
+<li>在 <code>source/css/_mode/darkmode.styl</code> 的 <code>#footer[data-type=color]</code> 下的内容替换为 <code>background: rgba(13,13,13,hexo-config(&#39;footer_transparent&#39;))</code></li>
+</ul>
+<p>然后设置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 透明度</span></span><br><span class="line"><span class="attr">content_opacity:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="number">0.66</span></span><br><span class="line">  <span class="attr">page:</span> <span class="number">0.77</span></span><br><span class="line"><span class="attr">footer_transparent:</span> <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+<h3 id="将横幅-banner-设为透明"><a href="#将横幅-banner-设为透明" class="headerlink" title="将横幅 banner 设为透明"></a>将横幅 banner 设为透明</h3><p><code>source/css/_layout/head.styl</code> 中 <code>#page-header</code> 下的 <code>background-color:</code> 改成 <code>transparent</code></p>
+<h3 id="修改-footer"><a href="#修改-footer" class="headerlink" title="修改 footer"></a>修改 footer</h3><p><code>source/css/_layout/head.styl</code> 中 <code>background-color:</code> 改成 <code>transparent</code><br>直接看<a href="https://www.paddylin.top/post/708f.html" target="_blank" rel="noopener">这里</a></p>
+<blockquote>
+<p>主要参考 <a href="https://yunist.cn/hexo/butterfly_modify/" target="_blank" rel="noopener">云玩家</a> 和 <a href="https://www.paddylin.top/" target="_blank" rel="noopener">Paddy</a></p>
+</blockquote>
+<h2 id="git-回档操作"><a href="#git-回档操作" class="headerlink" title="git 回档操作"></a>git 回档操作</h2><p>查看 github 上需要回档的版本号，三种方式</p>
+<ol>
+<li>直接记录下版本号，然后执行 <code>git reset --hard &lt;版本号&gt;</code></li>
+<li><code>git reflog</code> 查看回档编号，<code>git reflog git reset --hard HEAD@{编号}</code></li>
+<li><code>git reset –-hard HEAD ^</code> ( <code>^</code> 表示回到上一个版本，<code>^^</code> 表示回到上上个版本）</li>
+</ol>
+<p>最后要 <code>git push -f -u origin master</code> 提交。</p>
+<p>VSCode 规范化提交插件：<a href="https://github.com/RedJue/git-commit-plugin" target="_blank" rel="noopener">git-commit-plugin</a></p>
+<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>登录 <a href="https://github.com" target="_blank" rel="noopener">github</a> ，创建 yourname/yourname.github.io 仓库， 进入该仓库 setting，下拉到 Github Page</p>
+<p>设置 master branch，Custom domain（可选），Enforce HTTPS</p>
+<p>git 命令行进入 blog 目录，执行下面操作：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C yourmail@example.com <span class="comment">#建议不设置密码，按回车</span></span><br><span class="line">clip &lt; ~/.ssh/id_rsa.pub <span class="comment"># 复制公钥到系统粘贴板</span></span><br></pre></td></tr></table></figure>
+<p>去 github 账号的 setting 中添加 ssh key（复制到 key 就可以了）</p>
+<p>检测是否成功： <code>ssh -T git@github.com</code></p>
+<p>设置全局用户信息：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> user.name yourname</span><br><span class="line">git config --<span class="keyword">global</span> user.email  yourmail@example.com</span><br></pre></td></tr></table></figure>
+<p>在 <code>_config.yml</code> （最后一行）设置：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
+<p>执行：<code>npm install hexo-deployer-git --save</code></p>
+<p>然后执行： <code>hexo g -d</code> 就可以去 <code>http(s)://yourname.github.io</code> 看到自己的博客了。</p>
+<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 _config.yml"></a>配置 <code>_config.yml</code></h3><p>填写 site 信息， 设置 url ， 建议 permalink 改为 ：<code>title/</code>，设置 <code># Pagination</code> 下的 <code>per_page: 0</code>。</p>
+<h3 id="配置主题，配好了修改-config-yml-的-theme-为当前主题"><a href="#配置主题，配好了修改-config-yml-的-theme-为当前主题" class="headerlink" title="配置主题，配好了修改 _config.yml 的 theme 为当前主题"></a>配置主题，配好了修改 <code>_config.yml</code> 的 theme 为当前主题</h3><h2 id="以下内容被作为源代码保存"><a href="#以下内容被作为源代码保存" class="headerlink" title="以下内容被作为源代码保存"></a>以下内容被作为源代码保存</h2><ul>
+<li>源码：<code>./source</code></li>
+<li>环境配置文件：<code>_config.yml</code>, <code>.gitignore</code>, <code>package.json</code>, <code>package-lock.json</code>, <code>README.md</code></li>
+<li>更新源码脚本：<code>updateSourceCode.py</code></li>
+</ul>
+<h2 id="云盘白嫖优雅解决方案"><a href="#云盘白嫖优雅解决方案" class="headerlink" title="云盘白嫖优雅解决方案"></a>云盘白嫖优雅解决方案</h2><ul>
+<li>iCloud 放 pdf 和 goodnote 和一些杂七杂八但不占空间的东西</li>
+<li>坚果云配分 ipad 的照片</li>
+<li>各种途径的照片分类整理到 OneDrive</li>
+<li>OneDrive 存照片和 Windows 默认的设置</li>
+<li>用 Coding 存个人文档（2000 文件，300G）</li>
+<li>百度网盘其实是最强的</li>
+</ul>
+<blockquote>
+<p>白嫖取之有道，一定要嫖大厂的！有信誉的！<br>二级域名和虚拟主机（虚拟服务器不可能）就别想着一直白嫖了！</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>考虑代码的可迁移性，代码规范，多平台是一个好习惯。自己 fork 主题自己用，不把主题当作源码保存也是个好习惯。</p>
+]]></content>
+      <tags>
+        <tag>Theme</tag>
       </tags>
   </entry>
   <entry>
@@ -1949,8 +1949,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 ]]></content>
       <tags>
         <tag>C++</tag>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -2176,8 +2176,8 @@ x-a_1 \equiv \frac{a_2-a_1}{d} (m_1t_1 + m_2t_2) \equiv \frac{a_2-a_1}{d} t_1 m_
 <p>先找对应名字，再找对应模块中的函数，最后看手册用的例子。</p>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>SageMath</tag>
       </tags>
   </entry>
@@ -2662,8 +2662,8 @@ a_{i+1}
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -3214,8 +3214,8 @@ b_n = \sum _{r = 1} ^ n \sum _{\begin{array}{c} x_1 p_1 + \cdots + x_r p_r = n \
 </blockquote>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
         <tag>LOL</tag>
       </tags>
   </entry>
@@ -5396,8 +5396,8 @@ p-3 \equiv (-1)^3 \mod p \\
 <h2 id="Jacobi-符号-Python-程序"><a href="#Jacobi-符号-Python-程序" class="headerlink" title="Jacobi 符号 Python 程序"></a>Jacobi 符号 Python 程序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># a是整数，Q是正奇数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Jacobi</span><span class="params">(a,Q)</span>:</span></span><br><span class="line">	<span class="comment"># print(a,Q)  # 需要看过程就取消本行最前面的注释</span></span><br><span class="line">	a%=Q</span><br><span class="line">	<span class="keyword">if</span> math.gcd(a,Q) &gt; <span class="number">1</span>:  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	<span class="keyword">while</span> a%<span class="number">4</span>==<span class="number">0</span>: a//=<span class="number">4</span></span><br><span class="line">	f = <span class="keyword">lambda</span> n:<span class="number">1</span><span class="number">-2</span>*(n&amp;<span class="number">1</span>)</span><br><span class="line">	ans = <span class="number">1</span></span><br><span class="line">	<span class="keyword">if</span> a%<span class="number">2</span>==<span class="number">0</span>: a//=<span class="number">2</span>;ans = f((Q**<span class="number">2</span><span class="number">-1</span>)//<span class="number">8</span>)</span><br><span class="line">	<span class="comment"># 此时a也是正奇数了</span></span><br><span class="line">	<span class="keyword">if</span> a == <span class="number">1</span>:  <span class="keyword">return</span> ans</span><br><span class="line">	<span class="keyword">return</span> ans*f((a<span class="number">-1</span>)*(Q<span class="number">-1</span>)//<span class="number">4</span>)*Jacobi(Q,a)</span><br><span class="line"></span><br><span class="line">print(Jacobi(<span class="number">888</span>,<span class="number">1999</span>))</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Math</tag>
         <tag>Python</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
