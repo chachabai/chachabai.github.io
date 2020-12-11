@@ -44,6 +44,27 @@
   </entry>
   
   <entry>
+    <title>primeInOperatorRing</title>
+    <link href="https://dna049.com/primeInOperatorRing/"/>
+    <id>https://dna049.com/primeInOperatorRing/</id>
+    <published>2020-10-10T11:01:24.000Z</published>
+    <updated>2020-12-11T11:59:11.345Z</updated>
+    
+    <summary type="html">
+    
+      Here&#39;s something encrypted, password is required to continue reading.
+    
+    </summary>
+    
+    
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Encrypt" scheme="https://dna049.com/tags/Encrypt/"/>
+    
+  </entry>
+  
+  <entry>
     <title>$R, R[x; \sigma], R[x^{\pm}; \sigma]$ 的素理想关系</title>
     <link href="https://dna049.com/primeInPolyRing/"/>
     <id>https://dna049.com/primeInPolyRing/</id>
@@ -168,7 +189,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-12-08T11:10:03.387Z</updated>
+    <updated>2020-12-11T18:24:06.466Z</updated>
     
     <summary type="html">
     
@@ -296,7 +317,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2020-12-08T10:24:36.272Z</updated>
+    <updated>2020-12-11T18:01:15.977Z</updated>
     
     <summary type="html">
     
@@ -492,25 +513,6 @@ A_0=1,\; A_1=x
     
     
       <category term="Julia" scheme="https://dna049.com/tags/Julia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>$GL_n(\mathbb{Z}_m)$ 的阶数</title>
-    <link href="https://dna049.com/orderOfGLnZm/"/>
-    <id>https://dna049.com/orderOfGLnZm/</id>
-    <published>2020-04-25T00:50:58.000Z</published>
-    <updated>2020-08-22T11:42:15.752Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由线性无关性，我们不难知道 $|GL_n(\mathbb{Z}_p)| = \prod_{i=0} ^{n-1} (p^n-p^i)$，但是 $|GL_n(\mathbb{Z}_m)|$ 却是一个相对复杂的问题，它本质上是在考虑有限 Abel 群的自同构群的阶数问题。它又跟递推数列模 $m$ 的周期密切相关。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
   </entry>
   
