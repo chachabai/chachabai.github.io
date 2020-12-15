@@ -48,7 +48,7 @@
     <link href="https://dna049.com/primeInOperatorRing/"/>
     <id>https://dna049.com/primeInOperatorRing/</id>
     <published>2020-10-10T11:01:24.000Z</published>
-    <updated>2020-12-15T00:17:27.363Z</updated>
+    <updated>2020-12-15T02:15:28.111Z</updated>
     
     <summary type="html">
     
@@ -97,7 +97,7 @@
     <link href="https://dna049.com/DixmierMoeglinEquivalence/"/>
     <id>https://dna049.com/DixmierMoeglinEquivalence/</id>
     <published>2020-08-24T09:56:15.000Z</published>
-    <updated>2020-11-16T06:52:35.765Z</updated>
+    <updated>2020-12-15T02:42:03.393Z</updated>
     
     <summary type="html">
     
@@ -189,7 +189,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2020-12-11T18:24:06.466Z</updated>
+    <updated>2020-12-15T01:49:23.671Z</updated>
     
     <summary type="html">
     
@@ -202,7 +202,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;编译器比你想象中的聪明，所以写让 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;vector&lt;/code&gt; 而非数组，结合 &lt;code&gt;C++17&lt;/code&gt; 可以简化代码！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/RabbitHu/p/bitset.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bitset 高端压位卡常&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;编译器比你想象中的聪明，所以尽量写 &lt;strong&gt;编译器好优化&lt;/strong&gt; 并且 &lt;strong&gt;易读&lt;/strong&gt; 的代码，很多位运算，除法都是可以被优化的！&lt;br&gt;优质的代码本身就是一种解释，添加完全不必要的注释只会让人恶心&lt;br&gt;以后尽量使用 &lt;code&gt;vector&lt;/code&gt; 而非数组，结合 &lt;code&gt;C++17&lt;/code&gt; 特征，可以简化代码且便于编译器优化！&lt;br&gt;以前觉得 &lt;code&gt;main&lt;/code&gt; 函数 &lt;code&gt;return 0&lt;/code&gt; 只是标准写法，现在(2020/5/22)才知道能返回就能提前优雅的结束，并且可以判断是否正常结束！&lt;br&gt;全局变量数组元素自动默认初始化为 0，局部变量要加 &lt;code&gt;= {}&lt;/code&gt; 才会初始化为 0&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -433,9 +433,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -457,9 +457,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
