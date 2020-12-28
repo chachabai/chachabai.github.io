@@ -1,0 +1,163 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amssymb,amsbsy,amsthm}
+\usepackage[hmargin=1.4in,vmargin=1.4in]{geometry}
+\usepackage{url}
+
+\usepackage{tikz}
+%\usetikzlibrary{matrix}
+% hyperlinks
+\usepackage[linktocpage]{hyperref}
+%\usepackage[linktocpage]{hyperref}
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=red,         % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+%Chapter/heading format
+% \usepackage{titlesec}
+% \titleformat{\section}[block]
+%   {\filcenter}{\thesection .}{0.5em}{}
+% \titleformat{\subsection}[runin]
+%   {\normalfont}{\bfseries \thesubsection}{0.5em}{\bfseries}
+% \titlespacing*{\subsection}{0pt}{22pt}{0.5em}
+
+% This removes subsections from tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+% Changing \mathcal{C}
+\usepackage{eucal}
+
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+
+% some useful commands
+\newcommand{\C}{ \mathbb{C} }
+\newcommand{\R}{ \mathbb{R} }
+\newcommand{\Q}{ \mathbb{Q} }
+\newcommand{\Z}{ \mathbb{Z} }
+\newcommand{\N}{ \mathbb{N} }
+\newcommand{\F}{ \mathbb{F} }
+\newcommand{\A}{ \mathbb{A} }
+\DeclareMathOperator{\GL}{GL}
+\newcommand{\ngr}{\trianglerighteq}
+\newcommand{\ngl}{\trianglelefteq}
+\newcommand{\ngrneq}{\triangleright}
+\newcommand{\nglneq}{\triangleleft}
+\newcommand{\cl}[1]{ \overline{#1} }
+
+\newcommand{\aA}{ \mathcal{A} }
+\newcommand{\bB}{ \mathcal{B} }
+\newcommand{\cC}{ \mathcal{C} }
+\newcommand{\dD}{ \mathcal{D} }
+\newcommand{\fF}{ \mathcal{F} }
+
+\newcommand{\Prim}{ \text{Prim } }
+
+% theorem/proof environments, numbering, etc
+%\newtheoremstyle{slstyle}% name of the style to be used
+%  {}% measure of space to leave above the theorem. E.g.: 3pt
+%  {}% measure of space to leave below the theorem. E.g.: 3pt
+%  {\slshape}% name of font to use in the body of the theorem
+%  {0pt}% measure of space to indent
+%  {\bfseries}% name of head font
+%  {. }% punctuation between head and body
+%  {1pt}% space after theorem head; " " = normal interword space
+%  {}% Manually specify head
+
+%\swapnumbers
+
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}
+	\newtheorem{notn}[thm]{Notation}
+		\numberwithin{thm}{section}
+	\newtheorem{lemma}[thm]{Lemma}
+	\newtheorem{prop}[thm]{Proposition}
+	\newtheorem{cor}[thm]{Corollary}
+	\newtheorem{conj}[thm]{Conjecture}
+    \newtheorem{prob}[thm]{Problem} 
+
+	\newtheorem*{thm*}{Theorem}
+	\newtheorem*{lemma*}{Lemma}
+	\newtheorem*{prop*}{Proposition}
+	\newtheorem*{cor*}{Corollary}
+	\newtheorem*{conj*}{Conjecture}
+
+\theoremstyle{definition}
+	\newtheorem{example}[thm]{Example}
+	\newtheorem*{example*}{Example}
+	\newtheorem{defn}[thm]{Definition}
+	\newtheorem{remark}[thm]{Remark}
+
+\title{Primitive Ideal}
+\author{Chen Zhipeng}
+\usepackage{amsfonts}
+\begin{document}
+\maketitle
+
+\section*{Baire Space}
+
+\defn A topology space is called Baire if $\cap_{i \in I} O_i$ is dense, where $O_i$ is dense open set, and $|I| < |k|$.
+
+\remark If $R$ is countable generated, we may repalce all $ < |k|$ by countable.
+
+\lemma Let $R$ be a prime semiprimitive ring. $I$ is a prime ideal in $R$, $I = 0$ if and only if $V(I) = Prim R$.
+
+If $V(I) = Prim R$, $I = \cap_{Q \text{ is primitive}} Q = 0$.
+
+\lemma Let $R$ be a prime semiprimitive ring. Then every non-empty open set is dense.
+
+\begin{proof}
+Suppose $U$ is a non-empty open set, $V$ is open and $U \cap V = \emptyset$. Let $I = \cap_{P \notin U} P$, $J = \cap_{P \notin V} P$, then $IJ \subseteq I \cap J = 0$, but $U \neq \emptyset$, so $I \neq 0$, so $J = 0$. So $V = \emptyset$. 
+\end{proof} 
+
+\section*{Kaplansky Ring}
+\defn $R$ is said to be Kaplansky ring provided the primtive ideal space of every homomorphic image of $R$ is a Baire space.
+
+\lemma Suppose $R$ is Jacobson ring which is (one-side) noetherian, Then $R$ is Kaplansky if and only if $\Prim R/P$ is Baire for every prime ideal $P$ in $R$.
+
+Note that $\Prim R/I = (\Prim R/P_1) \cup \cdots \cup (\Prim R/P_n)$, where $\{P_1,\cdots, P_n\}$ is the set of prime ideal mininal over $I$. and the proof is clear.
+
+\section*{Primitive Spectrum}
+
+$\Prim R$ is sub-topological space of $Spec(R)$ consist of (left) primitive ideal.
+
+\lemma Let $R$ be a prime semiprimitive ring. $\Prim R$ is Baire if and only if $\cap_{i \in I} U_i \neq \emptyset$ for every $|I| < |k|$ and $U_i, i \in I$ are non-empty open set in $\Prim R$.
+
+\begin{proof}
+$U \doteq \cap_{i \in I} U_i$, for every non-empty open set $V$, $U \cap V = \cap_{i \in I}  {U_i} \cap V$ is non-empty by assumption. So $U$ is dense.
+\end{proof}
+
+We may write above lemma as:
+
+\lemma Let $R$ be a prime semiprimitive ring. $\Prim R$ is Baire if and only if $\cup_{i \in I} W_i$ is proper for every $|I| < |k|$ and $W_i, i \in I$ are proper closed set in $\Prim R$.
+
+thus we may sate:
+
+\lemma Let $R$ be a prime semiprimitive ring. $\Prim R$ is Baire if and only if for every set of ideal ${J_i}_{i \in I}$ with $|I| < |k|$, there exist an (left) primitive ideal don't contain any $J_i$.
+
+If $R$ is (left) noetherian, $R$ has only finitely many prime ideal minimal over $J_i$. So we have
+
+\lemma Let $R$ be a noetherian prime semiprimitive ring. $\Prim R$ is Baire if and only if for every set of prime ideal ${P_i}_{i \in I}$ with $|I| < |k|$, there exist an (left) primitive ideal don't contain any $P_i$.
+
+Assume that $k$ is a field, $R$ is a Noetherian $k$-algebra, with $\dim_k(R) < |k|$, so $R$ is a Jacobson ring, satisfies Nullstellensatz, thus if $P$ is a primitive, then it is rational, if $P$ is locally closed, then $P$ is primitive.
+
+In this case, J.P.Bell have $0$ is Rational if and only if there is a set $X$ of cardinality less than $|k|$ and a set of nonzero prime ideals $\{P_x: x \in X\}$ such that every nonzero prime ideal $P$ of $R$ contains $P_x$ for some $x \in X$.
+
+So If $R$ is prime ring satisfies above assumption. Then $0$ is primitive if and only if $0$ is rational and $\Prim R$ is Baire.
+
+If $P$ is a Prime ideal in $R$, Then $P$ is primitive if and only if $P$ is rational and $\Prim R/P$ is Baire.
+
+\remark $\Prim R$ is Baire in above case has easy version.
+
+
+\begin{thebibliography}{2}  
+\bibitem{ref1} The Dixmier-Moeglin equivalence, Morita equivalence, and homeomorphism of spectra. (English summary)
+J. Algebra 534 (2019), 228–244.
+\bibitem{ref2} Baire category and Laurent extensions.
+Canadian J. Math. 31 (1979), no. 4, 824–830.
+\end{thebibliography}
+\
+\end{document}

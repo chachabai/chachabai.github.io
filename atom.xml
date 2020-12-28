@@ -48,7 +48,7 @@
     <link href="https://dna049.com/primeInOperatorRing/"/>
     <id>https://dna049.com/primeInOperatorRing/</id>
     <published>2020-10-10T11:01:24.000Z</published>
-    <updated>2020-12-23T13:11:41.231Z</updated>
+    <updated>2020-12-24T12:30:34.511Z</updated>
     
     <summary type="html">
     
@@ -69,7 +69,7 @@
     <link href="https://dna049.com/primeInPolyRing/"/>
     <id>https://dna049.com/primeInPolyRing/</id>
     <published>2020-09-30T04:38:02.000Z</published>
-    <updated>2020-12-22T09:04:13.738Z</updated>
+    <updated>2020-12-28T05:01:47.489Z</updated>
     
     <summary type="html">
     
@@ -433,9 +433,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
   </entry>
   
@@ -457,9 +457,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
