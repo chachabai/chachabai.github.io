@@ -243,7 +243,7 @@
     <link href="https://dna049.com/stl/"/>
     <id>https://dna049.com/stl/</id>
     <published>2020-07-17T17:00:02.000Z</published>
-    <updated>2020-11-23T11:03:03.515Z</updated>
+    <updated>2021-01-11T09:31:42.046Z</updated>
     
     <summary type="html">
     
@@ -317,7 +317,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-01-08T18:23:08.527Z</updated>
+    <updated>2021-01-11T09:37:00.044Z</updated>
     
     <summary type="html">
     
@@ -364,9 +364,9 @@
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
+    
+      <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
