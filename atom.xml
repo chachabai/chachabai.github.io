@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2020-11-10T15:46:08.074Z</updated>
+  <updated>2021-01-26T08:33:42.799Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ 图论模板</title>
+    <link href="https://dna049.com/graph/"/>
+    <id>https://dna049.com/graph/</id>
+    <published>2021-01-26T08:13:41.000Z</published>
+    <updated>2021-01-26T08:33:42.799Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;图论还是一个特别强的工具。 为什么没有图论的 STL？&lt;/p&gt;
+&lt;h2 id=&quot;其他人的图论模板可做参考（其实我自己的够用了目前看）&quot;&gt;&lt;a href=&quot;#其他人的图论模板可做参考（其实我自己的够用了目前看）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>线性规划的单纯形法</title>
@@ -189,7 +217,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-01-25T12:53:05.737Z</updated>
+    <updated>2021-01-26T08:30:19.795Z</updated>
     
     <summary type="html">
     
@@ -197,6 +225,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/codeStyle/&quot; title=&quot;C++ 代码规范&quot;&gt;C++ 代码规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/allTemplate/&quot; title=&quot;C++ 万能模板&quot;&gt;C++ 万能模板&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/graph/&quot; title=&quot;C++ 图论模板&quot;&gt;C++ 图论模板&lt;/a&gt;（因为图论内容实在太多，就单独分割出来了）&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/stl/&quot; title=&quot;STL 和 C++17 学习记录&quot;&gt;STL 和 C++17 学习记录&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -317,7 +346,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-01-25T08:23:55.915Z</updated>
+    <updated>2021-01-26T08:33:23.382Z</updated>
     
     <summary type="html">
     
@@ -335,9 +364,9 @@
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
-    
       <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="Codeforces" scheme="https://dna049.com/tags/Codeforces/"/>
     
   </entry>
   
@@ -485,34 +514,6 @@ A_0=1,\; A_1=x
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Julia 入门到放弃</title>
-    <link href="https://dna049.com/juliaLearning/"/>
-    <id>https://dna049.com/juliaLearning/</id>
-    <published>2020-05-02T01:58:57.000Z</published>
-    <updated>2020-08-22T11:42:25.278Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;和 Julia 的一夜情结束了 0.0 ，渣男 dna049 拥抱 SageMath 咯&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;学完 Python 之后，觉得 Python 更像一个工具箱，啥都能干，但是我真的需要一个（轻量级）科学计算的工具，而不是像 Matlab 一样的付费巨无霸（我不想再用盗版软件了，学校正版 Matlab 2020 20G 吃不消！）而 C/C++ 在科学计算中因为原生精度问题，又没有特别权威的高精度包，所以也不太行。我甚至有自己学着去开发一种新型语言来打破当前尴尬的局面，直到我知道了 &lt;a href=&quot;https://docs.juliacn.com/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Julia&lt;/a&gt; ，已分手，理由：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有 C 快吗？没有！有 Python 方便吗？没有！安装个包就跟求它借 100w 一样（国内源安装不了）&lt;/p&gt;
-&lt;p&gt;免费是取代 MATLAB，Mathematics 的理由吗？不是，收费是一件好事！！！&lt;/p&gt;
-&lt;p&gt;学术界的高性能计算的人员，它们学校至少买了 MATLAB 或者 Mathematics 好吧！&lt;/p&gt;
-&lt;p&gt;非上述人员，真的需要高性能计算吗？？？再说了真的性能高吗？向量化计算竟然还没有循环快，我吐了好吧&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Julia" scheme="https://dna049.com/tags/Julia/"/>
     
   </entry>
   
