@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dna049.com/dynamicProgramming/</loc>
+    <loc>https://dna049.com/graph/</loc>
     <lastmod>2021-02-05</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
-    <lastmod>2021-02-03</lastmod>
+    <lastmod>2021-02-05</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/dynamicProgramming/</loc>
+    <lastmod>2021-02-05</lastmod>
   </url>  <url>
     <loc>https://dna049.com/codeforces/</loc>
     <lastmod>2021-02-03</lastmod>
@@ -15,9 +18,6 @@
   </url>  <url>
     <loc>https://dna049.com/nimSgFunction/</loc>
     <lastmod>2021-01-27</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/graph/</loc>
-    <lastmod>2021-01-26</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primeInOperatorRing/</loc>
     <lastmod>2021-01-16</lastmod>
