@@ -217,7 +217,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-02-05T20:22:15.931Z</updated>
+    <updated>2021-02-06T22:20:56.993Z</updated>
     
     <summary type="html">
     
@@ -375,7 +375,7 @@
     <link href="https://dna049.com/dynamicProgramming/"/>
     <id>https://dna049.com/dynamicProgramming/</id>
     <published>2020-05-21T15:36:13.000Z</published>
-    <updated>2021-02-06T00:52:20.501Z</updated>
+    <updated>2021-02-06T11:07:07.502Z</updated>
     
     <summary type="html">
     
@@ -460,9 +460,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -509,9 +509,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
