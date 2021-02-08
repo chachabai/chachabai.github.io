@@ -217,7 +217,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-02-06T22:20:56.993Z</updated>
+    <updated>2021-02-07T12:55:53.087Z</updated>
     
     <summary type="html">
     
@@ -272,7 +272,7 @@
     <link href="https://dna049.com/stl/"/>
     <id>https://dna049.com/stl/</id>
     <published>2020-07-17T17:00:02.000Z</published>
-    <updated>2021-01-28T14:17:50.094Z</updated>
+    <updated>2021-02-07T00:40:47.282Z</updated>
     
     <summary type="html">
     
@@ -346,7 +346,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-02-05T20:21:39.059Z</updated>
+    <updated>2021-02-07T19:29:59.199Z</updated>
     
     <summary type="html">
     
@@ -375,7 +375,7 @@
     <link href="https://dna049.com/dynamicProgramming/"/>
     <id>https://dna049.com/dynamicProgramming/</id>
     <published>2020-05-21T15:36:13.000Z</published>
-    <updated>2021-02-06T11:07:07.502Z</updated>
+    <updated>2021-02-07T02:45:07.739Z</updated>
     
     <summary type="html">
     
@@ -460,9 +460,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
@@ -509,9 +509,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
