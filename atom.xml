@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-02-05T19:03:26.029Z</updated>
+  <updated>2021-02-11T00:30:21.640Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ 字符串模板</title>
+    <link href="https://dna049.com/string/"/>
+    <id>https://dna049.com/string/</id>
+    <published>2021-02-10T01:47:12.000Z</published>
+    <updated>2021-02-11T00:30:21.640Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本篇内容为 &lt;a href=&quot;https://oi-wiki.org/string&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;oi-wiki 字符串篇&lt;/a&gt; 的学习笔记。&lt;/p&gt;
+&lt;h2 id=&quot;字典树（Trie）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ 图论模板</title>
@@ -192,7 +218,7 @@
     <link href="https://dna049.com/codeStyle/"/>
     <id>https://dna049.com/codeStyle/</id>
     <published>2020-07-17T17:25:02.000Z</published>
-    <updated>2020-12-06T18:36:17.475Z</updated>
+    <updated>2021-02-10T04:51:39.694Z</updated>
     
     <summary type="html">
     
@@ -217,7 +243,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-02-08T15:41:43.863Z</updated>
+    <updated>2021-02-10T01:45:55.585Z</updated>
     
     <summary type="html">
     
@@ -225,7 +251,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/codeStyle/&quot; title=&quot;C++ 代码规范&quot;&gt;C++ 代码规范&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/allTemplate/&quot; title=&quot;C++ 万能模板&quot;&gt;C++ 万能模板&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/graph/&quot; title=&quot;C++ 图论模板&quot;&gt;C++ 图论模板&lt;/a&gt;（因为图论内容实在太多，就单独分割出来了）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/graph/&quot; title=&quot;C++ 图论模板&quot;&gt;C++ 图论模板&lt;/a&gt;（因为图论内容实在太多）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/string/&quot; title=&quot;C++ 字符串模板&quot;&gt;C++ 字符串模板&lt;/a&gt;（内容相对独立）&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/stl/&quot; title=&quot;STL 和 C++17 学习记录&quot;&gt;STL 和 C++17 学习记录&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -491,29 +518,6 @@ A_0=1,\; A_1=x
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 调用 C/C++ 之 ctypes</title>
-    <link href="https://dna049.com/ctypes/"/>
-    <id>https://dna049.com/ctypes/</id>
-    <published>2020-05-03T03:47:05.000Z</published>
-    <updated>2020-08-22T12:59:24.473Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;放弃 Julia 之后，我开始想要用 Python + ctypes 满足自己的需求。由于 Windows 搞这个很麻烦，就在 Ubuntu 上搞了，不过我是在 WSL 上做的哈哈。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
-      <category term="Make" scheme="https://dna049.com/tags/Make/"/>
     
   </entry>
   
