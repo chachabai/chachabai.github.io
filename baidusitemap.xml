@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dna049.com/string/</loc>
-    <lastmod>2021-02-11</lastmod>
+    <lastmod>2021-02-12</lastmod>
   </url>  <url>
     <loc>https://dna049.com/codeStyle/</loc>
     <lastmod>2021-02-10</lastmod>
@@ -154,6 +154,9 @@
     <loc>https://dna049.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
+    <loc>https://dna049.com/syntacticSugar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/imageToChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
@@ -166,16 +169,13 @@
     <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/syntacticSugar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/calculatorWithC/</loc>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
@@ -244,10 +244,10 @@
     <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fairAssignment/</loc>
+    <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/dirichletProduct/</loc>
+    <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
