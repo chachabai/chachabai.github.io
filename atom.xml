@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-02-16T11:40:33.659Z</updated>
+  <updated>2021-02-16T12:30:18.318Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/string/"/>
     <id>https://dna049.com/string/</id>
     <published>2021-02-10T01:47:12.000Z</published>
-    <updated>2021-02-16T11:40:33.659Z</updated>
+    <updated>2021-02-16T12:30:18.318Z</updated>
     
     <summary type="html">
     
@@ -91,9 +91,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -339,9 +339,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -387,9 +387,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
     
@@ -416,9 +416,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
@@ -487,11 +487,11 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -513,9 +513,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
