@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dna049.com/string/</loc>
-    <lastmod>2021-02-16</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/codeforces/</loc>
-    <lastmod>2021-02-16</lastmod>
+    <lastmod>2021-02-17</lastmod>
   </url>  <url>
     <loc>https://dna049.com/templateOfCpp/</loc>
-    <lastmod>2021-02-14</lastmod>
+    <lastmod>2021-02-16</lastmod>
   </url>  <url>
     <loc>https://dna049.com/algorithmsOfRootComplex/</loc>
-    <lastmod>2021-02-13</lastmod>
+    <lastmod>2021-02-16</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/string/</loc>
+    <lastmod>2021-02-16</lastmod>
   </url>  <url>
     <loc>https://dna049.com/formulaOfPowSumOfNaturalNumber/</loc>
     <lastmod>2021-02-12</lastmod>
@@ -157,7 +157,13 @@
     <loc>https://dna049.com/SpecialNumberSequences/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
+    <loc>https://dna049.com/syntacticSugar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/imageToChar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/imageToByte/</loc>
@@ -166,19 +172,13 @@
     <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/syntacticSugar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/printSelfWithPy/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/calculatorWithC/</loc>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
