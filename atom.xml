@@ -243,7 +243,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-02-16T19:05:14.339Z</updated>
+    <updated>2021-02-19T10:35:38.400Z</updated>
     
     <summary type="html">
     
@@ -299,7 +299,7 @@
     <link href="https://dna049.com/stl/"/>
     <id>https://dna049.com/stl/</id>
     <published>2020-07-17T17:00:02.000Z</published>
-    <updated>2021-02-07T00:40:47.282Z</updated>
+    <updated>2021-02-18T04:56:49.773Z</updated>
     
     <summary type="html">
     
@@ -373,7 +373,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-02-17T11:17:30.881Z</updated>
+    <updated>2021-02-19T10:31:40.704Z</updated>
     
     <summary type="html">
     
@@ -489,9 +489,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -513,9 +513,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
