@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-02-16T18:50:12.965Z</updated>
+  <updated>2021-02-19T10:44:36.576Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/string/"/>
     <id>https://dna049.com/string/</id>
     <published>2021-02-10T01:47:12.000Z</published>
-    <updated>2021-02-16T18:50:12.965Z</updated>
+    <updated>2021-02-19T10:44:36.576Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;p&gt;本篇内容为 &lt;a href=&quot;https://oi-wiki.org/string&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;oi-wiki 字符串篇&lt;/a&gt; 的学习笔记。&lt;/p&gt;
-&lt;h2 id=&quot;字典树（Trie）&quot;&gt;&lt;a
+          &lt;p&gt;本篇内容为 &lt;a href=&quot;https://oi-wiki.org/string&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;oi-wiki 字符串篇&lt;/a&gt; 的学习笔记，&lt;a
         
       
     
@@ -47,7 +46,7 @@
     <link href="https://dna049.com/graph/"/>
     <id>https://dna049.com/graph/</id>
     <published>2021-01-26T08:13:41.000Z</published>
-    <updated>2021-02-05T19:03:26.029Z</updated>
+    <updated>2021-02-19T11:51:50.104Z</updated>
     
     <summary type="html">
     
@@ -55,8 +54,7 @@
       
         
         
-          &lt;p&gt;图论还是一个特别强的工具。 为什么没有图论的 STL？&lt;/p&gt;
-&lt;h2 id=&quot;其他人的图论模板可做参考（其实我自己的够用了目前看）&quot;&gt;&lt;a href=&quot;#其他人的图论模板可做参考（其实我自己的够用了目前看）&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;图论还是一个特别强的工具。 为什么没有图论的 STL？&lt;a href=&quot;https://github.com/izlyforever/cf/blob/master/include/graph.hpp&quot; target=&quot;_blank&quot;
         
       
     
@@ -489,9 +487,9 @@ A_0=1,\; A_1=x
     
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
   </entry>
   
@@ -513,9 +511,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
