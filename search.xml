@@ -1795,7 +1795,8 @@ g^{\frac{p-1}{p_i}} \neq 1(\mod \; p)</script><p>则 $g$ 是 模 $p$ 的原根�
 <blockquote>
 <p>需要下载<a href="https://www.boost.org/" target="_blank" rel="noopener">boost 包</a> 类似的包还有 NTL，GMP</p>
 </blockquote>
-<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><p>在 codeforces 上 <code>zscoder</code> 大佬给了一个 <a href="https://codeforces.com/blog/entry/77468" target="_blank" rel="noopener">入门教程</a> 和 <a href="https://codeforces.com/blog/entry/77551" target="_blank" rel="noopener">进阶教程</a> 还有 <code>MiFaFaOvO</code> 的 <a href="https://codeforces.com/blog/entry/76447" target="_blank" rel="noopener">终极教程</a></p>
+<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><p>有位伟人说过：生成函数就像袋子，把一个个零碎的小部件放在一个袋子里，就可以优雅高效的只关注袋子了。</p>
+<p>在 codeforces 上 <code>zscoder</code> 大佬给了一个 <a href="https://codeforces.com/blog/entry/77468" target="_blank" rel="noopener">入门教程</a> 和 <a href="https://codeforces.com/blog/entry/77551" target="_blank" rel="noopener">进阶教程</a> 还有 <code>MiFaFaOvO</code> 的 <a href="https://codeforces.com/blog/entry/76447" target="_blank" rel="noopener">终极教程</a></p>
 <p>生成函数分两种：Original generating function，Expentional generating function，选择哪一种是看问题中是否牵扯组合数。无论哪一种都能保存原数列的全部信息，并且由于级数可以使用微积分和常微分方程的技术，所以会变得更好处理。然后大概率可以优化算法复杂度 $O(n^2) \to O(n \log n)$ </p>
 <p>关于生成函数多项式的处理：<a href="https://cp-algorithms.com/algebra/polynomial.html" target="_blank" rel="noopener">https://cp-algorithms.com/algebra/polynomial.html</a></p>
 <p>多项式高效运算模板：<a href="https://github.com/e-maxx-eng/e-maxx-eng-aux/blob/master/src/polynomial.cpp" target="_blank" rel="noopener">https://github.com/e-maxx-eng/e-maxx-eng-aux/blob/master/src/polynomial.cpp</a></p>
