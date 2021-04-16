@@ -241,7 +241,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-04-13T07:01:41.458Z</updated>
+    <updated>2021-04-16T05:23:22.613Z</updated>
     
     <summary type="html">
     
@@ -485,11 +485,11 @@ A_0=1,\; A_1=x
     
     
     
+      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
       <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   
@@ -511,9 +511,9 @@ A_0=1,\; A_1=x
     
     
     
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
+    
+      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
