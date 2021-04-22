@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-02-19T10:44:36.576Z</updated>
+  <updated>2021-04-22T14:23:50.261Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>莫队</title>
+    <link href="https://dna049.com/MoAlgorithm/"/>
+    <id>https://dna049.com/MoAlgorithm/</id>
+    <published>2021-04-22T04:59:42.000Z</published>
+    <updated>2021-04-22T14:23:50.261Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;首先莫队算法是一个离散算法，复杂度 $O(n \sqrt{n})$ 一般用于多次区间问题。&lt;/p&gt;
+&lt;h2 id=&quot;学习资料&quot;&gt;&lt;a href=&quot;#学习资料&quot; class=&quot;headerlink&quot; title=&quot;学习资料&quot;&gt;&lt;/a&gt;学习资料&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ 字符串模板</title>
@@ -241,7 +268,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-04-20T05:53:47.306Z</updated>
+    <updated>2021-04-22T04:57:41.824Z</updated>
     
     <summary type="html">
     
@@ -371,11 +398,14 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-04-19T11:16:29.637Z</updated>
+    <updated>2021-04-22T13:10:39.523Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近感觉自己又行了。就很想重新开始打 &lt;a href=&quot;https://codeforces.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Codeforces&lt;/a&gt;，这里罗列一下从 2020/05/16 开始提交的(不是特别水的）AC 代码。想有生之年上一次黄，先定个小目标上个 1900（最高 1854，当前 1829，换号了！新账号于 2020/11/18 达成 1900+ 成就，紫名:)也太好看了吧）菜鸡 dna049 &lt;del&gt;加油&lt;/del&gt; 下班了！&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;主线任务：上 2100，支线任务：成为一名优秀的代码攻击者。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近感觉自己又行了。就很想重新开始打 &lt;a href=&quot;https://codeforces.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Codeforces&lt;/a&gt;，这里罗列一下从 2020/05/16 开始提交的(不是特别水的）AC 代码。想有生之年上一次黄，先定个小目标上个 1900（最高 1854，当前 1829，换号了！新账号于 2020/11/18 达成 1900+ 成就，紫名:)也太好看了吧）菜鸡 dna049 &lt;del&gt;加油&lt;/del&gt; 下班了！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;不再打除了 codeforces, atcoder, 洛谷之外的日常比赛。有空整理一下比赛，好的题目或比赛记得 star。&lt;br&gt;&lt;strong&gt;优雅的代码极大的避免了低级错误&lt;/strong&gt;，边界处理至少占三分之一的工作量！&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;不要急着写代码，不要急着写代码，不要急着写代码，重要的事情说三遍！！！&lt;/strong&gt;&lt;br&gt;优先做 Codeforces, Atcoder, 其它平台的题目可以在 vjudge 中提交（洛谷和 UOJ 除外)，POJ 和 HDU 不在搞了。&lt;br&gt;不要为了补题，Rating，浪费太多的时间&lt;br&gt;把一个问题写成简洁清晰的代码，才算是真的理解了问题！代码能力是快速综合规划的能力。&lt;br&gt;至少先上 2100，再去写博客，分低会影响博客的质量！&lt;/p&gt;
@@ -490,32 +520,6 @@ A_0=1,\; A_1=x
       <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>上流开源免费数学软件之 SageMath</title>
-    <link href="https://dna049.com/sageMath/"/>
-    <id>https://dna049.com/sageMath/</id>
-    <published>2020-05-04T03:13:26.000Z</published>
-    <updated>2020-08-22T11:36:46.445Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Sage 的是“ 圣”的意思，所以 &lt;a href=&quot;http://www.sagemath.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath&lt;/a&gt; 懂啥意思了吧，上流！哈哈。SageMath 整合了当前开源的所有高效包，用来取代 MATLAB（20G)，Mathematics(5G）等商业软件。 而 SageMath 安装包仅 1G 不到，而且语言基于 Python，就很快乐。而且你还能免费注册账号用基于 Jupyter Notebook 的 &lt;a href=&quot;https://cocalc.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SageMath 在线版: Cocalc&lt;/a&gt; &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;感谢知乎好友&lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; 的推荐&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-      <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
   </entry>
   
