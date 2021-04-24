@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-04-22T14:23:50.261Z</updated>
+  <updated>2021-04-24T16:30:52.622Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dna049.com/MoAlgorithm/"/>
     <id>https://dna049.com/MoAlgorithm/</id>
     <published>2021-04-22T04:59:42.000Z</published>
-    <updated>2021-04-22T14:23:50.261Z</updated>
+    <updated>2021-04-24T16:30:52.622Z</updated>
     
     <summary type="html">
     
@@ -29,9 +29,8 @@
       
         
         
-          &lt;p&gt;首先莫队算法是一个离散算法，复杂度 $O(n \sqrt{n})$ 一般用于多次区间问题。&lt;/p&gt;
-&lt;h2 id=&quot;学习资料&quot;&gt;&lt;a href=&quot;#学习资料&quot; class=&quot;headerlink&quot; title=&quot;学习资料&quot;&gt;&lt;/a&gt;学习资料&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a
+          &lt;p&gt;首先莫队算法是一个离散算法，复杂度 $O(n \sqrt{m})$ 一般用于 $m$ 次长为 $n$ 的区间问题。&lt;/p&gt;
+&lt;h2 id=&quot;普通莫队&quot;&gt;&lt;a href=&quot;#普通莫队&quot; class=&quot;headerlink&quot; title=&quot;普通莫队&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
@@ -398,7 +397,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-04-22T13:10:39.523Z</updated>
+    <updated>2021-04-23T20:08:06.204Z</updated>
     
     <summary type="html">
     
