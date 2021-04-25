@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dna049.com/MoAlgorithm/</loc>
-    <lastmod>2021-04-24</lastmod>
+    <loc>https://dna049.com/templateOfCpp/</loc>
+    <lastmod>2021-04-25</lastmod>
   </url>  <url>
     <loc>https://dna049.com/codeforces/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-25</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/MoAlgorithm/</loc>
+    <lastmod>2021-04-24</lastmod>
   </url>  <url>
     <loc>https://dna049.com/cayleyHamiltonTheorem/</loc>
     <lastmod>2021-04-23</lastmod>
@@ -14,9 +17,6 @@
     <lastmod>2021-04-23</lastmod>
   </url>  <url>
     <loc>https://dna049.com/classicalCombination/</loc>
-    <lastmod>2021-04-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/templateOfCpp/</loc>
     <lastmod>2021-04-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/DixmierMoeglinEquivalence/</loc>
@@ -121,9 +121,6 @@
     <loc>https://dna049.com/computationOfPiX/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fastNumberTranslation/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/printSelfWithCpp/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
@@ -163,19 +160,13 @@
     <loc>https://dna049.com/ctypes/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/SpecialNumberSequences/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/printSelfWithPy/</loc>
+    <loc>https://dna049.com/SpecialNumberSequences/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/imageToChar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/syntacticSugar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/autoInputWithPy/</loc>
@@ -184,13 +175,19 @@
     <loc>https://dna049.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/printSelfWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/syntacticSugar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
@@ -247,10 +244,10 @@
     <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fairAssignment/</loc>
+    <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/dirichletProduct/</loc>
+    <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
