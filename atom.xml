@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dna049.com/"/>
-  <updated>2021-04-25T13:37:35.303Z</updated>
+  <updated>2021-05-06T16:14:18.332Z</updated>
   <id>https://dna049.com/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>整体二分</title>
+    <link href="https://dna049.com/overallDichotomy/"/>
+    <id>https://dna049.com/overallDichotomy/</id>
+    <published>2021-05-06T15:22:15.000Z</published>
+    <updated>2021-05-06T16:14:18.332Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;整体二分是 由 许昊然 于 2013 年集训队论文《浅谈数据结构题的几个非经典解法》提出的一类&lt;strong&gt;离线算法&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;学习资料：&lt;a href=&quot;https://oi-wiki.org/misc/parallel-binsearch/&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>可持久化算法</title>
+    <link href="https://dna049.com/persistableAlgorithm/"/>
+    <id>https://dna049.com/persistableAlgorithm/</id>
+    <published>2021-05-06T10:41:57.000Z</published>
+    <updated>2021-05-06T16:37:06.057Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;可持久化数据结构 (Persistent data structure) 总是可以保留每一个历史版本，并且支持操作的不可变特性 (immutable)。(OI-wiki 原话)，然而实际上我们常见的可持久化数据结构都是依赖于可持续化线段树。&lt;/p&gt;
+&lt;p&gt;学习资料：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CF gym 103048 H. Histogram in 3D</title>
+    <link href="https://dna049.com/cfgym103048H/"/>
+    <id>https://dna049.com/cfgym103048H/</id>
+    <published>2021-04-28T11:39:12.000Z</published>
+    <updated>2021-05-06T11:49:19.848Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;二维直方图最大矩形是一个特别经典的问题，利用单调栈即可在 $O(n)$ 复杂度解决，那么三维的呢？你会发现无从下手（暴力方法就不说了，没啥意思，最多就是多线程处理）。&lt;/p&gt;
+&lt;p&gt;此题我于 2021-4-13 看到， 4-15 号开始想做此题，然后即使看了题解依然不会。
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>莫队</title>
@@ -450,75 +528,6 @@
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
       <category term="动态规划" scheme="https://dna049.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Grossman 常数</title>
-    <link href="https://dna049.com/grossmanConstant/"/>
-    <id>https://dna049.com/grossmanConstant/</id>
-    <published>2020-05-16T14:17:57.000Z</published>
-    <updated>2020-08-22T11:29:06.968Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\begin{aligned}
-A_{n+2} = \frac{A_n}{1+A_{n+1}} \\
-A_0=1,\; A_1=x
-\end{aligned}&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得 $\lbrace A_n \rbrace$ 收敛。这个 $x_0 = 0.7373383…$  被称为 Grossman 常数。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://mathworld.wolfram.com/GrossmansConstant.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Grossman 常数&lt;/a&gt; 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 &lt;a href=&quot;1987_Article_MathematicalEntertainments.pdf&quot;&gt;Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. &lt;em&gt;Math. Intel.&lt;/em&gt; &lt;strong&gt;9&lt;/strong&gt;, 40-43, 1987.&lt;/a&gt; 折腾终于下下来了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;吐槽一下 Wolfram 百科提供的所有 Reference 链接没法访问。。。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vim 和 Linux Shell</title>
-    <link href="https://dna049.com/vimWithLinuxShell/"/>
-    <id>https://dna049.com/vimWithLinuxShell/</id>
-    <published>2020-05-13T05:20:20.000Z</published>
-    <updated>2020-08-28T08:59:59.105Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Windows10 + WSL(Ubuntu 20.04LTS) 用的越来越多，就想系统的入门一下： vim 和 Linux Shell&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>中国剩余定理</title>
-    <link href="https://dna049.com/chineseRemainTheorem/"/>
-    <id>https://dna049.com/chineseRemainTheorem/</id>
-    <published>2020-05-05T15:45:40.000Z</published>
-    <updated>2020-08-20T11:58:08.738Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;仅以此博文，感谢知乎好友 &lt;a href=&quot;https://www.zhihu.com/people/li-yong-xiang-38&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vivr0&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;中国剩余定理也称孙子定理，是中国古代求解一次同余方程组的方法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
-      <category term="Math" scheme="https://dna049.com/tags/Math/"/>
-    
-      <category term="Python" scheme="https://dna049.com/tags/Python/"/>
     
   </entry>
   

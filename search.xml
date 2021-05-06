@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>整体二分</title>
+      <link href="/overallDichotomy/"/>
+      <url>/overallDichotomy/</url>
+      
+        <content type="html"><![CDATA[<p>整体二分是 由 许昊然 于 2013 年集训队论文《浅谈数据结构题的几个非经典解法》提出的一类<strong>离线算法</strong>。</p><p>学习资料：<a href="https://oi-wiki.org/misc/parallel-binsearch/" target="_blank" rel="noopener">oi-wiki</a>，<a href="https://zhuanlan.zhihu.com/p/237500272" target="_blank" rel="noopener">知乎</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>可持久化算法</title>
+      <link href="/persistableAlgorithm/"/>
+      <url>/persistableAlgorithm/</url>
+      
+        <content type="html"><![CDATA[<p>可持久化数据结构 (Persistent data structure) 总是可以保留每一个历史版本，并且支持操作的不可变特性 (immutable)。(OI-wiki 原话)，然而实际上我们常见的可持久化数据结构都是依赖于可持续化线段树。</p><p>学习资料：<a href="https://zhuanlan.zhihu.com/p/250565583" target="_blank" rel="noopener">知乎 Pecco 的文章</a> 和 <a href="https://oi-wiki.org/ds/persistent/" target="_blank" rel="noopener">OI-wiki</a></p><h2 id="可持续化线段树（入门）"><a href="#可持续化线段树（入门）" class="headerlink" title="可持续化线段树（入门）"></a>可持续化线段树（入门）</h2><p>（单点更新）可持续化线段树，区间修改版本也类似（同样需要打 tag 延迟更新，没有找到例题就不给了）</p><p>本质: 每一次建一个新的线段树，但是由于新的线段树和旧的线段树最多只有一条链不一致，因此我们可以共用很多节点。因此我们必须 <strong>动态开点</strong> 的方式建线段树，并且可以做到<strong>真正的在线</strong>。</p><p>模板例题：<a href="https://www.luogu.com.cn/problem/P3919" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P3919</a> 的<a href="https://www.luogu.com.cn/record/50171248" target="_blank" rel="noopener">解答</a></p><h2 id="权值线段树（根据权值建的可持续化线段树）"><a href="#权值线段树（根据权值建的可持续化线段树）" class="headerlink" title="权值线段树（根据权值建的可持续化线段树）"></a>权值线段树（根据权值建的可持续化线段树）</h2><blockquote><p>权值线段树可以不离散化！！！可以动态开点，用多少使用开多少，离散化只是节省了空间。</p></blockquote><h3 id="权值线段树求静态区间-MEX"><a href="#权值线段树求静态区间-MEX" class="headerlink" title="权值线段树求静态区间 MEX"></a>权值线段树求静态区间 MEX</h3><blockquote><p>静态区间 MEX 可用<a href="https://www.luogu.com.cn/record/49961900" target="_blank" rel="noopener">删除版本的回滚莫队 $O(n \sqrt{n})$ 解决</a>。</p></blockquote><p>我们对每一个右端点建一颗线段树，注意到我们关心的是每一个值出现的最后的位置。因此我们在线段树上存每个节点的右位置，然后区间存的是区间值的最小值。这样我们就可以利用线段树自带的二分得到 MEX。</p><blockquote><p>注意到此时不需要离散化（即真正的在线），因为根据 MEX 的性质，如果值大于 n，必然不能为 MEX 做贡献。</p></blockquote><p>例题：<a href="https://www.luogu.com.cn/problem/P4137" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P4137</a> 的<a href="https://www.luogu.com.cn/record/50213885" target="_blank" rel="noopener">解答</a></p><blockquote><p>如果支持修改怎么做呢？</p></blockquote><h3 id="可持久化线段树求静态区间第-k-小（主席树）"><a href="#可持久化线段树求静态区间第-k-小（主席树）" class="headerlink" title="可持久化线段树求静态区间第 k 小（主席树）"></a>可持久化线段树求静态区间第 k 小（主席树）</h3><blockquote><p>此方法由 黄嘉泰 发明，因为缩写 hjt 和当时主席名字缩写一致因此被戏称为 主席树。</p></blockquote><p>首先离散化，不相同的数的个数为线段树的总区间大小 $m$，然后每个点存的值为当前每个数出现的次数。那么就可以对于区间 $[l, r] $ 的第 $k$ 小，我们判断第 k 小的数就是找 第 r 颗线段树 $[0, x]$ 的和，减去第 l 颗线段树 $[0, x]$ 的和大于等于 k 的最小的 $x$。因为线段树自带二分，因此查询是 $\log m$ 的。</p><p>模板例题：<a href="https://www.luogu.com.cn/problem/P3834" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P3834</a> 的<a href="https://www.luogu.com.cn/record/50185289" target="_blank" rel="noopener">解答</a></p><p>小插曲：原始提交：<a href="https://www.luogu.com.cn/record/50179184" target="_blank" rel="noopener">https://www.luogu.com.cn/record/50179184</a> 中 <code>tree[q] = tree[p];</code> 移动到 update 的开头即可。但是一直没注意到，然后在 codeforces 群经过群友热心讨论，最后被 badcw 找到了问题。</p><h3 id="可持久化线段树求动态区间第-k-小（这里动态表示内容可修改）"><a href="#可持久化线段树求动态区间第-k-小（这里动态表示内容可修改）" class="headerlink" title="可持久化线段树求动态区间第 k 小（这里动态表示内容可修改）"></a>可持久化线段树求动态区间第 k 小（这里动态表示内容可修改）</h3><p>动态区间第 k 小可以用树状数组维护前缀和，这样单次修改就只需修改 $O(log)$ 个 线段树。从而在 $O(n \log^2 n)$ 时空复杂度解决。注意到此时我们此时每颗线段树都只需保存自己最后的版本，因此不用多开点来修改从而节省内存。</p><p>例题：<a href="https://www.luogu.com.cn/problem/P2617" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P2617</a> 的<a href="https://www.luogu.com.cn/record/50374069" target="_blank" rel="noopener">解答</a>。</p><blockquote><p>此问题可以 <a href="/overallDichotomy/" title="整体二分">整体二分</a> 解决。</p></blockquote><h2 id="可持久化-Trie"><a href="#可持久化-Trie" class="headerlink" title="可持久化 Trie"></a><a href="https://oi-wiki.org/ds/persistent-trie/" target="_blank" rel="noopener">可持久化 Trie</a></h2><p>待补</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CF gym 103048 H. Histogram in 3D</title>
+      <link href="/cfgym103048H/"/>
+      <url>/cfgym103048H/</url>
+      
+        <content type="html"><![CDATA[<p>二维直方图最大矩形是一个特别经典的问题，利用单调栈即可在 $O(n)$ 复杂度解决，那么三维的呢？你会发现无从下手（暴力方法就不说了，没啥意思，最多就是多线程处理）。</p><p>此题我于 2021-4-13 看到， 4-15 号开始想做此题，然后即使看了题解依然不会。 4-16 号询问好友 <a href="https://codeforces.com/profile/SevenDawns" target="_blank" rel="noopener">SevenDawns</a> 才知道此题问原题：<a href="https://www.luogu.com.cn/problem/P7164" target="_blank" rel="noopener">COCI2020-2021#1</a> 唯一的一篇题解用到了 <a href="https://www.luogu.com.cn/problem/P3309" target="_blank" rel="noopener">SDOI2014 向量集</a> 的技术。而 Kczno1 的做法牵扯到了线段树优化，凸包优化 <a href="https://www.luogu.com.cn/blog/user9168/solution-p3309" target="_blank" rel="noopener">https://www.luogu.com.cn/blog/user9168/solution-p3309</a> ，在这里学习 <a href="https://zhuanlan.zhihu.com/p/363772434" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/363772434</a> 凸包优化 DP，但是又牵扯到 线段树优化 DP，于是取 OI-wiki 学习一下 <a href="https://oi-wiki.org/ds/persistent-seg/" target="_blank" rel="noopener">可持续化线段树</a>，在这里 <a href="https://zhuanlan.zhihu.com/p/250565583" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/250565583</a> 又知道了，为什么这个东西叫主席树，因为可持续线段树缩写 hjt。这里 <a href="https://www.jianshu.com/p/7c82d7cbf799" target="_blank" rel="noopener">https://www.jianshu.com/p/7c82d7cbf799</a> 也讲了线段树优化 DP 准备做 <a href="https://www.luogu.com.cn/problem/P1295" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P1295</a> 和 <a href="https://www.luogu.com.cn/problem/CF115E。" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/CF115E。</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>莫队</title>
       <link href="/MoAlgorithm/"/>
       <url>/MoAlgorithm/</url>
