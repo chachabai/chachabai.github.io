@@ -1149,8 +1149,9 @@ f_{i, j} = f_{i + 2^{j + 1}} + \sum_{t = i + 2^{j}}^{i + 2 ^{j + 1} - 1} c_t</sc
 <li>2021-4-13 看到</li>
 <li>2021-4-15 想做（然后即使看了题解依然不会）</li>
 <li>2021-4-16 询问好友 <a href="https://codeforces.com/profile/SevenDawns" target="_blank" rel="noopener">SevenDawns</a> 才知道此题问原题：<a href="https://www.luogu.com.cn/problem/P7164" target="_blank" rel="noopener">COCI2020-2021#1</a>，并给了他同学写的题解（依然看不懂）</li>
-<li>2021-4-18 在洛谷里其中唯一的一篇题解用到了 <a href="https://www.luogu.com.cn/problem/P3309" target="_blank" rel="noopener">SDOI2014 向量集</a> 的技术。而此题 <a href="https://www.luogu.com.cn/blog/user9168/solution-p3309" target="_blank" rel="noopener">Kczno1 的做法</a> 牵扯到了线段树优化，凸包优化。于是想<a href="https://zhuanlan.zhihu.com/p/363772434" target="_blank" rel="noopener">在这里</a> 学习凸包优化 DP，但是又牵扯到 线段树优化 DP 于是乎</li>
-<li>2021-5-4 在 OI-wiki 学习一下 <a href="https://oi-wiki.org/ds/persistent-seg/" target="_blank" rel="noopener">可持续化线段树</a>，详细见 <a href="/persistableAlgorithm/" title="可持久化算法">可持久化算法</a> </li>
+<li>2021-4-18 在洛谷里其中唯一的一篇题解用到了 <a href="https://www.luogu.com.cn/problem/P3309" target="_blank" rel="noopener">SDOI2014 向量集</a> 的技术。而此题 <a href="https://www.luogu.com.cn/blog/user9168/solution-p3309" target="_blank" rel="noopener">Kczno1 的做法</a> 牵扯到了线段树优化，凸包优化。于是想<a href="https://zhuanlan.zhihu.com/p/363772434" target="_blank" rel="noopener">在这里</a> 学习凸包优化 DP（后来才知道这就是斜率优化 DP），但是又牵扯到 线段树优化 DP 于是乎</li>
+<li>2021-5-4 在 OI-wiki 学习一下 <a href="https://oi-wiki.org/ds/persistent-seg/" target="_blank" rel="noopener">可持续化线段树</a>，详见 <a href="/persistableAlgorithm/" title="可持久化算法">可持久化算法</a>，学完之后发现权值线段树问题可以用整体二分来离线处理，详见 <a href="/overallDichotomy/" title="整体二分">整体二分</a></li>
+<li>2021-5-7 开始动手 <a href="https://www.luogu.com.cn/problem/P3309" target="_blank" rel="noopener">SDOI2014 向量集</a></li>
 </ul>
 ]]></content>
       <tags>
@@ -2621,7 +2622,10 @@ r[j] = \min_{0 \leq k \leq j} r[k] - s[k] + s[j]</script><figure class="highligh
 <li>第二次 dfs 进行 DP。</li>
 </ul>
 <p>其它例题：<a href="https://codeforces.com/problemset/problem/1324/F" target="_blank" rel="noopener">1324F</a> 和 <a href="https://codeforces.com/problemset/problem/708/C" target="_blank" rel="noopener">708C</a></p>
-<h2 id="斜率优化-DP"><a href="#斜率优化-DP" class="headerlink" title="斜率优化 DP"></a>斜率优化 DP</h2><p>形如 $dp[i] = c_i + \min_{j &lt; i} a_j x_i + b_j$ 的都可以用斜率优化 DP（要求 $x_i, a_j$ 单调，最大值同理也是一样的）</p>
+<h2 id="斜率优化-DP"><a href="#斜率优化-DP" class="headerlink" title="斜率优化 DP"></a>斜率优化 DP</h2><p>形如 $\displaystyle dp[i] = c_i + \min_{j &lt; i} a_j x_i + b_j$ 的都可以用斜率优化 DP（要求 $x_i, a_j$ 单调，最大值同理也是一样的）</p>
+<blockquote>
+<p>也称<a href="https://zhuanlan.zhihu.com/p/363772434" target="_blank" rel="noopener">凸壳优化 DP</a></p>
+</blockquote>
 <p>例题：<a href="https://www.luogu.com.cn/problem/P2120" target="_blank" rel="noopener">LOJ P2120</a> </p>
 <p>就此题具体说明斜率优化 DP</p>
 <p>首先设 <code>dp[i]</code> 为在第 i 个工厂建设仓库，前 i 个工厂的费用之和的最小值。显然 $dp[0] = 0$</p>
