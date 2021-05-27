@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dna049.com/classicalCombination/</loc>
-    <lastmod>2021-05-25</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/codeforces/</loc>
+    <lastmod>2021-05-27</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/nimSgFunction/</loc>
+    <lastmod>2021-05-26</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/classicalCombination/</loc>
     <lastmod>2021-05-25</lastmod>
   </url>  <url>
     <loc>https://dna049.com/scrite/</loc>
@@ -27,9 +30,6 @@
   </url>  <url>
     <loc>https://dna049.com/sageMath/</loc>
     <lastmod>2021-05-12</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/nimSgFunction/</loc>
-    <lastmod>2021-05-08</lastmod>
   </url>  <url>
     <loc>https://dna049.com/cfgym103048H/</loc>
     <lastmod>2021-05-07</lastmod>
@@ -175,28 +175,28 @@
     <loc>https://dna049.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToChar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/syntacticSugar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/printSelfWithPy/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/calculatorWithC/</loc>
+    <loc>https://dna049.com/printSelfWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/imageToChar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/autoInputWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
@@ -250,10 +250,10 @@
     <loc>https://dna049.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/dirichletProduct/</loc>
+    <loc>https://dna049.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/fairAssignment/</loc>
+    <loc>https://dna049.com/dirichletProduct/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
     <loc>https://dna049.com/specialTopologyOnNaturalNumber/</loc>
