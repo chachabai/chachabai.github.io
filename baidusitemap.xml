@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dna049.com/formulaOfPowSumOfNaturalNumber/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>  <url>
     <loc>https://dna049.com/ntt/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
@@ -10,10 +13,10 @@
     <loc>https://dna049.com/SpecialNumberSequences/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/templateOfCpp/</loc>
+    <loc>https://dna049.com/inverseFormulaAndItsMatrixForm/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/inverseFormulaAndItsMatrixForm/</loc>
+    <loc>https://dna049.com/templateOfCpp/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
     <loc>https://dna049.com/dirichletProduct/</loc>
@@ -29,9 +32,6 @@
     <lastmod>2021-05-29</lastmod>
   </url>  <url>
     <loc>https://dna049.com/classicalCombination/</loc>
-    <lastmod>2021-05-28</lastmod>
-  </url>  <url>
-    <loc>https://dna049.com/formulaOfPowSumOfNaturalNumber/</loc>
     <lastmod>2021-05-28</lastmod>
   </url>  <url>
     <loc>https://dna049.com/nimSgFunction/</loc>
@@ -187,22 +187,22 @@
     <loc>https://dna049.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/imageToByte/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>https://dna049.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/syntacticSugar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/primePowSum/</loc>
+    <loc>https://dna049.com/imageToByte/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>https://dna049.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>https://dna049.com/nthPrimeNumber/</loc>
+    <loc>https://dna049.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>https://dna049.com/catWithPy/</loc>
