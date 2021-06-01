@@ -193,9 +193,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
   </entry>
   
@@ -345,7 +345,7 @@
     <link href="https://dna049.com/templateOfCpp/"/>
     <id>https://dna049.com/templateOfCpp/</id>
     <published>2020-07-17T17:20:02.000Z</published>
-    <updated>2021-05-30T23:49:41.460Z</updated>
+    <updated>2021-06-01T07:56:17.803Z</updated>
     
     <summary type="html">
     
@@ -397,27 +397,27 @@
   
   <entry>
     <title>快速数论变换</title>
-    <link href="https://dna049.com/nft/"/>
-    <id>https://dna049.com/nft/</id>
+    <link href="https://dna049.com/ntt/"/>
+    <id>https://dna049.com/ntt/</id>
     <published>2020-06-01T21:45:09.000Z</published>
-    <updated>2021-05-23T09:26:16.999Z</updated>
+    <updated>2021-06-01T07:57:09.086Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;快速 Fourier 变换，被称为 20 世纪最伟大的十大算法之一。所以很多软件都有对应的 FFT，例如 Python 的 &lt;code&gt;scipy.fftpack&lt;/code&gt; 中就有关于 FFT 的包。所以个人写 FFT 就没有那么必要了。但是 NFT 的包一般都没多少，而且会写 NFT 必然就会写 FFT 了。大约在 5 年前就写过 NFT 的 C++ 代码，现在一看依然不记得蝶式映射到底是咋想的，&lt;del&gt;所以想独立思考出整个过程&lt;/del&gt;(失败）。&lt;/p&gt;
+      &lt;p&gt;快速 Fourier 变换（FFT），被称为 20 世纪最伟大的十大算法之一。所以很多软件都有对应的 FFT，例如 Python 的 &lt;code&gt;scipy.fftpack&lt;/code&gt; 中就有关于 FFT 的包。所以个人写 FFT 就没有那么必要了。但是 NTT（快速数论变换） 的包一般都没多少，而且会写 NTT 必然就会写 FFT 了。大约在 5 年前就写过 NTT 的 C++ 代码，现在一看依然不记得蝶式映射到底是咋想的，&lt;del&gt;所以想独立思考出整个过程&lt;/del&gt;(失败）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo 博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;发现 NFT 一个很大的限制就是你只能在 &lt;code&gt;NFT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为 $3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
-&lt;p&gt;选择 $n$ 个 &lt;code&gt;NFT-friendly&lt;/code&gt; 的大基底 $p_1,\cdots, p_n$ 使得 $p_1\cdots p_n$ 大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
+&lt;p&gt;发现 NTT 一个很大的限制就是你只能在 &lt;code&gt;NTT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为 $3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
+&lt;p&gt;选择 $n$ 个 &lt;code&gt;NTT-friendly&lt;/code&gt; 的大基底 $p_1,\cdots, p_n$ 使得 $p_1\cdots p_n$ 大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
     
     </summary>
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="SageMath" scheme="https://dna049.com/tags/SageMath/"/>
     
@@ -449,7 +449,7 @@
     <link href="https://dna049.com/codeforces/"/>
     <id>https://dna049.com/codeforces/</id>
     <published>2020-05-22T09:32:11.000Z</published>
-    <updated>2021-05-31T02:17:31.151Z</updated>
+    <updated>2021-06-01T07:56:17.819Z</updated>
     
     <summary type="html">
     
@@ -466,9 +466,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="图论" scheme="https://dna049.com/tags/%E5%9B%BE%E8%AE%BA/"/>
     
@@ -495,9 +495,9 @@
     
     
     
-      <category term="C++" scheme="https://dna049.com/tags/C/"/>
-    
       <category term="Math" scheme="https://dna049.com/tags/Math/"/>
+    
+      <category term="C++" scheme="https://dna049.com/tags/C/"/>
     
       <category term="运筹学" scheme="https://dna049.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
