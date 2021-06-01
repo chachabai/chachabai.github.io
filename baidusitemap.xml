@@ -1,265 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/hexoBlog/formulaOfPowSumOfNaturalNumber/</loc>
+    <loc>http://yoursite.com/byebye/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/ntt/</loc>
+    <loc>http://yoursite.com/formulaOfPowSumOfNaturalNumber/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/codeforces/</loc>
+    <loc>http://yoursite.com/ntt/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/SpecialNumberSequences/</loc>
+    <loc>http://yoursite.com/codeforces/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/templateOfCpp/</loc>
+    <loc>http://yoursite.com/templateOfCpp/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/inverseFormulaAndItsMatrixForm/</loc>
+    <loc>http://yoursite.com/SpecialNumberSequences/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/dirichletProduct/</loc>
+    <loc>http://yoursite.com/inverseFormulaAndItsMatrixForm/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/dirichletProduct/</loc>
     <lastmod>2021-05-31</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/algorithmsOfRootComplex/</loc>
+    <loc>http://yoursite.com/algorithmsOfRootComplex/</loc>
     <lastmod>2021-05-30</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/finiteDomainIsField/</loc>
+    <loc>http://yoursite.com/finiteDomainIsField/</loc>
     <lastmod>2021-05-30</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/scrite/</loc>
+    <loc>http://yoursite.com/scrite/</loc>
     <lastmod>2021-05-29</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/classicalCombination/</loc>
+    <loc>http://yoursite.com/classicalCombination/</loc>
     <lastmod>2021-05-28</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/nimSgFunction/</loc>
+    <loc>http://yoursite.com/nimSgFunction/</loc>
     <lastmod>2021-05-26</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/graph/</loc>
+    <loc>http://yoursite.com/graph/</loc>
     <lastmod>2021-05-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/stl/</loc>
+    <loc>http://yoursite.com/stl/</loc>
     <lastmod>2021-05-15</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/sageMath/</loc>
+    <loc>http://yoursite.com/sageMath/</loc>
     <lastmod>2021-05-12</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/cfgym103048H/</loc>
+    <loc>http://yoursite.com/cfgym103048H/</loc>
     <lastmod>2021-05-07</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/dynamicProgramming/</loc>
+    <loc>http://yoursite.com/dynamicProgramming/</loc>
     <lastmod>2021-05-07</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/overallDichotomy/</loc>
+    <loc>http://yoursite.com/overallDichotomy/</loc>
     <lastmod>2021-05-07</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/persistableAlgorithm/</loc>
+    <loc>http://yoursite.com/persistableAlgorithm/</loc>
     <lastmod>2021-05-06</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/MoAlgorithm/</loc>
+    <loc>http://yoursite.com/MoAlgorithm/</loc>
     <lastmod>2021-04-25</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/cayleyHamiltonTheorem/</loc>
+    <loc>http://yoursite.com/cayleyHamiltonTheorem/</loc>
     <lastmod>2021-04-23</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/DixmierMoeglinEquivalence/</loc>
+    <loc>http://yoursite.com/DixmierMoeglinEquivalence/</loc>
     <lastmod>2021-04-15</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/pointSetTopology/</loc>
+    <loc>http://yoursite.com/pointSetTopology/</loc>
     <lastmod>2021-04-12</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/codeStyle/</loc>
+    <loc>http://yoursite.com/codeStyle/</loc>
     <lastmod>2021-03-19</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/perronFrobeniusTheory/</loc>
+    <loc>http://yoursite.com/perronFrobeniusTheory/</loc>
     <lastmod>2021-03-17</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/fastPowSumOfNaturalNumber/</loc>
+    <loc>http://yoursite.com/fastPowSumOfNaturalNumber/</loc>
     <lastmod>2021-03-06</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/string/</loc>
+    <loc>http://yoursite.com/string/</loc>
     <lastmod>2021-02-19</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/quadraticResidueAndGaussReciprocity/</loc>
+    <loc>http://yoursite.com/quadraticResidueAndGaussReciprocity/</loc>
     <lastmod>2021-02-18</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/primeInOperatorRing/</loc>
+    <loc>http://yoursite.com/primeInOperatorRing/</loc>
     <lastmod>2021-01-16</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/primeInPolyRing/</loc>
+    <loc>http://yoursite.com/primeInPolyRing/</loc>
     <lastmod>2020-12-28</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/simplex/</loc>
+    <loc>http://yoursite.com/simplex/</loc>
     <lastmod>2020-11-10</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/helloHexo/</loc>
+    <loc>http://yoursite.com/helloHexo/</loc>
     <lastmod>2020-11-10</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/butterfly/</loc>
+    <loc>http://yoursite.com/butterfly/</loc>
     <lastmod>2020-11-10</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/nondecraseSubsequence/</loc>
+    <loc>http://yoursite.com/nondecraseSubsequence/</loc>
     <lastmod>2020-10-27</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/heapWithPy/</loc>
+    <loc>http://yoursite.com/heapWithPy/</loc>
     <lastmod>2020-10-17</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
+    <loc>http://yoursite.com/exampleOfFunctionOnlyContinueAtOnePoint/</loc>
     <lastmod>2020-10-14</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/ide/</loc>
+    <loc>http://yoursite.com/ide/</loc>
     <lastmod>2020-08-29</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/vimWithLinuxShell/</loc>
+    <loc>http://yoursite.com/vimWithLinuxShell/</loc>
     <lastmod>2020-08-28</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/maoshanMarathon2017/</loc>
+    <loc>http://yoursite.com/maoshanMarathon2017/</loc>
     <lastmod>2020-08-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/hengDianMarathon2017/</loc>
+    <loc>http://yoursite.com/hengDianMarathon2017/</loc>
     <lastmod>2020-08-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/xiamenMarathon2016/</loc>
+    <loc>http://yoursite.com/xiamenMarathon2016/</loc>
     <lastmod>2020-08-24</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/fermatSqureSumTheorem/</loc>
+    <loc>http://yoursite.com/fermatSqureSumTheorem/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/jordanDecompositionOfMatrix/</loc>
+    <loc>http://yoursite.com/jordanDecompositionOfMatrix/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/lieAlgebra/</loc>
+    <loc>http://yoursite.com/lieAlgebra/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/zariskiTopologyOfRing/</loc>
+    <loc>http://yoursite.com/zariskiTopologyOfRing/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/computationOfPiX/</loc>
+    <loc>http://yoursite.com/computationOfPiX/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/printSelfWithCpp/</loc>
+    <loc>http://yoursite.com/printSelfWithCpp/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/scanfAndPrintInC/</loc>
+    <loc>http://yoursite.com/scanfAndPrintInC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/numberOfdivisors/</loc>
+    <loc>http://yoursite.com/numberOfdivisors/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/fiveLemma/</loc>
+    <loc>http://yoursite.com/fiveLemma/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/singleChip/</loc>
+    <loc>http://yoursite.com/singleChip/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/zariskiTopologyOnKn/</loc>
+    <loc>http://yoursite.com/zariskiTopologyOnKn/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/kaplanskyTheorem/</loc>
+    <loc>http://yoursite.com/kaplanskyTheorem/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/LectureOnModuleAndRing/</loc>
+    <loc>http://yoursite.com/LectureOnModuleAndRing/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/commutativeAlgebraByMatsumura/</loc>
+    <loc>http://yoursite.com/commutativeAlgebraByMatsumura/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/xorAndItsApplicationInNimGame/</loc>
+    <loc>http://yoursite.com/xorAndItsApplicationInNimGame/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/pythonLearning/</loc>
+    <loc>http://yoursite.com/pythonLearning/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/pythonGui/</loc>
+    <loc>http://yoursite.com/pythonGui/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/ctypes/</loc>
+    <loc>http://yoursite.com/ctypes/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/shutdownWithPy/</loc>
+    <loc>http://yoursite.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/autoInputWithPy/</loc>
+    <loc>http://yoursite.com/autoInputWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/imageToChar/</loc>
+    <loc>http://yoursite.com/imageToChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/imageToByte/</loc>
+    <loc>http://yoursite.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/syntacticSugar/</loc>
+    <loc>http://yoursite.com/syntacticSugar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/printSelfWithPy/</loc>
+    <loc>http://yoursite.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/primePowSum/</loc>
+    <loc>http://yoursite.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/nthPrimeNumber/</loc>
+    <loc>http://yoursite.com/nthPrimeNumber/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/calculatorWithC/</loc>
+    <loc>http://yoursite.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/catWithPy/</loc>
+    <loc>http://yoursite.com/catWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/convertChar/</loc>
+    <loc>http://yoursite.com/convertChar/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/gaussianElimination/</loc>
+    <loc>http://yoursite.com/gaussianElimination/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/juliaLearning/</loc>
+    <loc>http://yoursite.com/juliaLearning/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/orderOfGLnZm/</loc>
+    <loc>http://yoursite.com/orderOfGLnZm/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/grossmanConstant/</loc>
+    <loc>http://yoursite.com/grossmanConstant/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/quadraticModEquation/</loc>
+    <loc>http://yoursite.com/quadraticModEquation/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/huaIndentity/</loc>
+    <loc>http://yoursite.com/huaIndentity/</loc>
     <lastmod>2020-08-21</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/matrixCommuteWithOne/</loc>
+    <loc>http://yoursite.com/matrixCommuteWithOne/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/meanInequation/</loc>
+    <loc>http://yoursite.com/meanInequation/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/nilpotentMatrix/</loc>
+    <loc>http://yoursite.com/nilpotentMatrix/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/naturalBase/</loc>
+    <loc>http://yoursite.com/naturalBase/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/schurTheorem/</loc>
+    <loc>http://yoursite.com/schurTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/workWithLatex/</loc>
+    <loc>http://yoursite.com/workWithLatex/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/zhuangbility/</loc>
+    <loc>http://yoursite.com/zhuangbility/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/chineseRemainTheorem/</loc>
+    <loc>http://yoursite.com/chineseRemainTheorem/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/fairAssignment/</loc>
+    <loc>http://yoursite.com/fairAssignment/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/specialTopologyOnNaturalNumber/</loc>
+    <loc>http://yoursite.com/specialTopologyOnNaturalNumber/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexoBlog/graphOfNoncommutativeRing/</loc>
+    <loc>http://yoursite.com/graphOfNoncommutativeRing/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>
 </urlset>

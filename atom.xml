@@ -3,10 +3,10 @@
   <title>dna049</title>
   <icon>http://yoursite.com/icon.png</icon>
   <subtitle>love math love zly</subtitle>
-  <link href="/hexoBlog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-07T08:16:09.030Z</updated>
+  <updated>2021-06-01T23:45:56.501Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>byebye</title>
+    <link href="http://yoursite.com/byebye/"/>
+    <id>http://yoursite.com/byebye/</id>
+    <published>2021-06-01T23:45:32.000Z</published>
+    <updated>2021-06-01T23:45:56.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;再见了
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>整体二分</title>
@@ -351,10 +374,10 @@
     
       &lt;p&gt;此处只包含通用代码块，以下为其它内容：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/hexoBlog/codeStyle/&quot; title=&quot;C++ 代码规范&quot;&gt;C++ 代码规范&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/hexoBlog/graph/&quot; title=&quot;C++ 图论模板&quot;&gt;C++ 图论模板&lt;/a&gt;（因为图论内容实在太多）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/hexoBlog/string/&quot; title=&quot;C++ 字符串模板&quot;&gt;C++ 字符串模板&lt;/a&gt;（内容相对独立）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/hexoBlog/stl/&quot; title=&quot;STL 和 C++17 学习记录&quot;&gt;STL 和 C++17 学习记录&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;/codeStyle/&quot; title=&quot;C++ 代码规范&quot;&gt;C++ 代码规范&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/graph/&quot; title=&quot;C++ 图论模板&quot;&gt;C++ 图论模板&lt;/a&gt;（因为图论内容实在太多）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/string/&quot; title=&quot;C++ 字符串模板&quot;&gt;C++ 字符串模板&lt;/a&gt;（内容相对独立）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/stl/&quot; title=&quot;STL 和 C++17 学习记录&quot;&gt;STL 和 C++17 学习记录&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;欢迎使用或转载代码块，唯一要求添加一行注释&lt;/strong&gt;: &lt;code&gt;https://dna049.com&lt;/code&gt;&lt;/p&gt;
@@ -409,7 +432,7 @@
 &lt;p&gt;此博文特别划水，建议直接阅读 &lt;a href=&quot;http://blog.miskcoo.com/2015/04/polynomial-multiplication-and-fast-fourier-transform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;miskcoo 博文：从多项式乘法到快速傅里叶变换&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;发现 NTT 一个很大的限制就是你只能在 &lt;code&gt;NTT-friendly&lt;/code&gt; 的域（例如 $\mod 998244353 = 119 \cdot2^{23}$，原根为 $3$ ）或者模很小的数的环中处理。即环中所有运算放在整数环中都不会超过选择的大基底。&lt;/p&gt;
-&lt;p&gt;选择 $n$ 个 &lt;code&gt;NTT-friendly&lt;/code&gt; 的大基底 $p_1,\cdots, p_n$ 使得 $p_1\cdots p_n$ 大于 ans 的上界，然后再用 &lt;a href=&quot;/hexoBlog/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
+&lt;p&gt;选择 $n$ 个 &lt;code&gt;NTT-friendly&lt;/code&gt; 的大基底 $p_1,\cdots, p_n$ 使得 $p_1\cdots p_n$ 大于 ans 的上界，然后再用 &lt;a href=&quot;/chineseRemainTheorem/&quot; title=&quot;中国剩余定理&quot;&gt;中国剩余定理&lt;/a&gt; 就可以把 ans 搞出来了。&lt;/p&gt;
     
     </summary>
     
@@ -432,7 +455,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;显然，我们只需考虑 $0 \leq a &amp;lt; n$ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作 &lt;a href=&quot;/hexoBlog/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和 Gauss 互反律&quot;&gt;二次剩余和 Gauss 互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
+      &lt;p&gt;显然，我们只需考虑 $0 \leq a &amp;lt; n$ 的情形。这个问题应该很早就被人考虑好了，不过无所谓吧（反正只是个博文而已）。以下内容都是独立完成的。并可看作 &lt;a href=&quot;/quadraticResidueAndGaussReciprocity/&quot; title=&quot;二次剩余和 Gauss 互反律&quot;&gt;二次剩余和 Gauss 互反律&lt;/a&gt; 这篇博文的延续。最后再给出方程的一个解（如果存在的话）。&lt;/p&gt;
     
     </summary>
     
@@ -502,34 +525,6 @@
       <category term="运筹学" scheme="http://yoursite.com/tags/%E8%BF%90%E7%AD%B9%E5%AD%A6/"/>
     
       <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Grossman 常数</title>
-    <link href="http://yoursite.com/grossmanConstant/"/>
-    <id>http://yoursite.com/grossmanConstant/</id>
-    <published>2020-05-16T14:17:57.000Z</published>
-    <updated>2020-08-22T11:29:06.968Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;考虑由如下递推关系确定的实数数列 $\lbrace A_n \rbrace$：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\begin{aligned}
-A_{n+2} = \frac{A_n}{1+A_{n+1}} \\
-A_0=1,\; A_1=x
-\end{aligned}&lt;/script&gt;&lt;p&gt;可以证明，有且仅有一个 $x=x_0$ 使得 $\lbrace A_n \rbrace$ 收敛。这个 $x_0 = 0.7373383…$  被称为 Grossman 常数。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://mathworld.wolfram.com/GrossmansConstant.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Grossman 常数&lt;/a&gt; 在 Wolfram 百科里面有讲，也在 Finch, S. R.《 Mathematical Constants》又讲，但是都依赖于核心论文 &lt;a href=&quot;1987_Article_MathematicalEntertainments.pdf&quot;&gt;Janssen, A. J. E. M. and Tjaden, D. L. A. Solution to Problem 86-2. &lt;em&gt;Math. Intel.&lt;/em&gt; &lt;strong&gt;9&lt;/strong&gt;, 40-43, 1987.&lt;/a&gt; 折腾终于下下来了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;吐槽一下 Wolfram 百科提供的所有 Reference 链接没法访问。。。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
     
   </entry>
   
