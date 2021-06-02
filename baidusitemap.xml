@@ -184,7 +184,13 @@
     <loc>http://yoursite.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
+    <loc>http://yoursite.com/autoInputWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/imageToChar/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/syntacticSugar/</loc>
@@ -193,19 +199,13 @@
     <loc>http://yoursite.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/imageToByte/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/autoInputWithPy/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/calculatorWithC/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/nthPrimeNumber/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/catWithPy/</loc>
