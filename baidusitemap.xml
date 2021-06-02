@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/byebye/</loc>
-    <lastmod>2021-06-01</lastmod>
+    <lastmod>2021-06-02</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/formulaOfPowSumOfNaturalNumber/</loc>
     <lastmod>2021-06-01</lastmod>
@@ -16,10 +16,10 @@
     <loc>http://yoursite.com/templateOfCpp/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/SpecialNumberSequences/</loc>
+    <loc>http://yoursite.com/inverseFormulaAndItsMatrixForm/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/inverseFormulaAndItsMatrixForm/</loc>
+    <loc>http://yoursite.com/SpecialNumberSequences/</loc>
     <lastmod>2021-06-01</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/dirichletProduct/</loc>
@@ -184,13 +184,7 @@
     <loc>http://yoursite.com/shutdownWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/autoInputWithPy/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/imageToChar/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/imageToByte/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/syntacticSugar/</loc>
@@ -199,13 +193,19 @@
     <loc>http://yoursite.com/printSelfWithPy/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
+    <loc>http://yoursite.com/imageToByte/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/autoInputWithPy/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/calculatorWithC/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/primePowSum/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/nthPrimeNumber/</loc>
-    <lastmod>2020-08-22</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/calculatorWithC/</loc>
     <lastmod>2020-08-22</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/catWithPy/</loc>
